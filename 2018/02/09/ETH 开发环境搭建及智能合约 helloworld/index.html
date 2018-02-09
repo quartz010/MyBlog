@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.3" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.0.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="以太坊,区块链,智能合约," />
+
+
+<meta name="description" content="ETH 开发环境搭建及智能合约 helloworld     自己的菜鸟级的起步教程,也算是给自己给自己长记性 准备什么是以太坊以太坊白皮书_ZH 以太坊白皮书_EN 环境介绍这里使用了,以下两个开发工具  truffle testrpc   Truffle 是一个基于js 开发的 以太坊开发框架,其集成很多开发功能及一身, 能够在本地编译, 部署智能合约, 并且可以通过console 对节点进行">
+<meta name="keywords" content="以太坊,区块链,智能合约">
+<meta property="og:type" content="article">
+<meta property="og:title" content="智能合约 helloworld">
+<meta property="og:url" content="http://yoursite.com/2018/02/09/ETH 开发环境搭建及智能合约 helloworld/index.html">
+<meta property="og:site_name" content="R4y&#39;s小窝">
+<meta property="og:description" content="ETH 开发环境搭建及智能合约 helloworld     自己的菜鸟级的起步教程,也算是给自己给自己长记性 准备什么是以太坊以太坊白皮书_ZH 以太坊白皮书_EN 环境介绍这里使用了,以下两个开发工具  truffle testrpc   Truffle 是一个基于js 开发的 以太坊开发框架,其集成很多开发功能及一身, 能够在本地编译, 部署智能合约, 并且可以通过console 对节点进行">
+<meta property="og:image" content="http://www.ethdocs.org/en/latest/_images/cpp_35k9.png">
+<meta property="og:image" content="http://www.ethdocs.org/en/latest/_images/ETHEREUM-ICON_Black.png">
+<meta property="og:updated_time" content="2018-02-09T16:43:09.391Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="智能合约 helloworld">
+<meta name="twitter:description" content="ETH 开发环境搭建及智能合约 helloworld     自己的菜鸟级的起步教程,也算是给自己给自己长记性 准备什么是以太坊以太坊白皮书_ZH 以太坊白皮书_EN 环境介绍这里使用了,以下两个开发工具  truffle testrpc   Truffle 是一个基于js 开发的 以太坊开发框架,其集成很多开发功能及一身, 能够在本地编译, 部署智能合约, 并且可以通过console 对节点进行">
+<meta name="twitter:image" content="http://www.ethdocs.org/en/latest/_images/cpp_35k9.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/02/09/ETH 开发环境搭建及智能合约 helloworld/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>智能合约 helloworld | R4y's小窝</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    
+    <!-- 这里是网页头带 -->
+    <a href="https://github.com/quartz010" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">R4y's小窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/09/ETH 开发环境搭建及智能合约 helloworld/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="R4y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="R4y's小窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">智能合约 helloworld</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-09T00:00:00+08:00">2018-02-09</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="ETH-开发环境搭建及智能合约-helloworld"><a href="#ETH-开发环境搭建及智能合约-helloworld" class="headerlink" title="ETH 开发环境搭建及智能合约 helloworld"></a>ETH 开发环境搭建及智能合约 helloworld</h1><p><img src="http://www.ethdocs.org/en/latest/_images/cpp_35k9.png" alt="CPP">    <img src="http://www.ethdocs.org/en/latest/_images/ETHEREUM-ICON_Black.png" alt="logo"></p>
+<p><strong>自己的菜鸟级的起步教程,也算是给自己给自己长记性</strong></p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="什么是以太坊"><a href="#什么是以太坊" class="headerlink" title="什么是以太坊"></a>什么是以太坊</h3><p><a href="http://ethfans.org/posts/ethereum-whitepaper" target="_blank" rel="noopener">以太坊白皮书_ZH</a></p>
+<p><a href="">以太坊白皮书_EN</a></p>
+<h3 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h3><p>这里使用了,以下两个开发工具</p>
+<ul>
+<li>truffle</li>
+<li>testrpc </li>
+</ul>
+<p>Truffle 是一个基于js 开发的 以太坊开发框架,其集成很多开发功能及一身, 能够在本地编译, 部署智能合约, 并且可以通过console 对节点进行 rpc 。</p>
+<p>testrpc 严格意义上是一个节点模拟工具(调试环境), 打开本地端口后, 其数据存在内存中, 不在硬盘的数据库内(不同于 geth ,mist ) 用于测试合约很方便,<br>(如果在geth 上测试合约,需要自己开私链,还是方便了不少)</p>
+<h3 id="工具安装"><a href="#工具安装" class="headerlink" title="工具安装"></a>工具安装</h3><h4 id="truffle-安装"><a href="#truffle-安装" class="headerlink" title="truffle 安装"></a>truffle 安装</h4><p>truffle 是node.js工程<br>所以先安装 <a href="http://nodejs.cn" target="_blank" rel="noopener">node.js</a> </p>
+<p>安装环境后 console 执行</p>
+<pre><code>npm install -g truffle        #可能需要权限
+</code></pre><p>安装完成后执行</p>
+<pre><code>truffle version
+</code></pre><p>回显</p>
+<pre><code>Truffle v4.0.5 (core: 4.0.5)
+Solidity v0.4.18 (solc-js)
+</code></pre><p>如上安装成功</p>
+<p><strong>这个框架在激烈的开发中,所以不同版本,可能出入大,(反正我是支持支持最新版!)</strong></p>
+<h4 id="testrpc-安装"><a href="#testrpc-安装" class="headerlink" title="testrpc 安装"></a>testrpc 安装</h4><pre><code>npm install -g ethereumjs-testrpc
+</code></pre><p>也是js 开发,所以,一键安装它<br>执行后,回显如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">EthereumJS TestRPC v6.0.3 (ganache-core: 2.0.2)</span><br><span class="line"></span><br><span class="line">Available Accounts</span><br><span class="line">==================</span><br><span class="line">(0) 0x819d0cce264d8c7028f079f828ec44ad50ab6f1f</span><br><span class="line">(1) 0xa0eb8d663514aed055c26fdfa02082f283e3814b</span><br><span class="line">(2) 0x083c2e3debbd83e7193d430c95cb65dfac38be2e</span><br><span class="line">(3) 0xa268de20bc84f2a371f46e71dd51a437fd0b2b8a</span><br><span class="line">(4) 0x6a183c520fac524984ff620f6962e758b0a72d3c</span><br><span class="line">(5) 0xe365cc8ef2ab2bc1bc4d6bbda83a8abb589239cc</span><br><span class="line">(6) 0x179aa33ae7918af15c956d8b2c8e784004da30e7</span><br><span class="line">(7) 0x596a67f06884c15ffe9c8767b698730791d6a80d</span><br><span class="line">(8) 0x318bb06f46a24a322a2a0a173712b630a41f8755</span><br><span class="line">(9) 0xe1b157fed1cbd523538ed0785bbafef2bb5b5aa5</span><br><span class="line"></span><br><span class="line">Private Keys</span><br><span class="line">==================</span><br><span class="line">(0) 660f587668641256e4ad353e0a2df52f02524c41641ea3e55aa4ad28300f3c63</span><br><span class="line">(1) 1ff553362355f36b2d2c3bcef0487cbf4a0db041eeab71e00c6bfb5b43a82e67</span><br><span class="line">(2) bd10b1b76af76ab8a02a9299efd9ff3cafff68a6af0adf4b7e1ff83abc50b479</span><br><span class="line">(3) 673ee36f18ee7d58ce0ddfd78b4a584c9b2f12be4c7860d813e9e906582aba15</span><br><span class="line">(4) 794e336225d007e6a3fbd06a60d087fd0a0380fb04a39adbc066e765c676a105</span><br><span class="line">(5) c7cd161d995caf782f90ac51e86aa9acece2dbf2f95e1fa0ddd286c98dcbe6ec</span><br><span class="line">(6) 9058ad2690b7db693675badc61388fe563b6b35e800e02e760e8b3a681660470</span><br><span class="line">(7) 5b343a275911d1cb644ef55081feabc5d40fce12e1036b2f2eb3c639763e2f7a</span><br><span class="line">(8) fb237a23e02e29711e7050f394c09bdee3d7818ab91dfcb82501773a80b61c5a</span><br><span class="line">(9) f6f62f1d1ef0811a9f2c63cde211fc2a57032a4752505cee8e18caa85ff94339</span><br><span class="line"></span><br><span class="line">HD Wallet</span><br><span class="line">==================</span><br><span class="line">Mnemonic:      rose april chef waste mule setup coffee icon upper news amused lecture</span><br><span class="line">Base HD Path:  m/44&apos;/60&apos;/0&apos;/0/&#123;account_index&#125;</span><br><span class="line"></span><br><span class="line">Listening on localhost:8545</span><br></pre></td></tr></table></figure>
+<p>会自动的分配我们十个地址,用于测试, 打开8545 rpc端口</p>
+<h3 id="环境测试"><a href="#环境测试" class="headerlink" title="环境测试"></a>环境测试</h3><p>先启动节点 testrpc</p>
+<pre><code>testrpc
+</code></pre><p>之后启动truffle的rpc命令行</p>
+<pre><code>truffle console        #可能会有网络问题,见后
+</code></pre><p>当终端1出现</p>
+<pre><code>truffle(development)&gt;
+</code></pre><p>说明已经,正常接入rpc控制台</p>
+<p>执行命令</p>
+<pre><code>truffle(development)&gt; web3.eth.accounts
+[ &apos;0x819d0cce264d8c7028f079f828ec44ad50ab6f1f&apos;,
+  &apos;0xa0eb8d663514aed055c26fdfa02082f283e3814b&apos;,
+  &apos;0x083c2e3debbd83e7193d430c95cb65dfac38be2e&apos;,
+  &apos;0xa268de20bc84f2a371f46e71dd51a437fd0b2b8a&apos;,
+  &apos;0x6a183c520fac524984ff620f6962e758b0a72d3c&apos;,
+  &apos;0xe365cc8ef2ab2bc1bc4d6bbda83a8abb589239cc&apos;,
+  &apos;0x179aa33ae7918af15c956d8b2c8e784004da30e7&apos;,
+  &apos;0x596a67f06884c15ffe9c8767b698730791d6a80d&apos;,
+  &apos;0x318bb06f46a24a322a2a0a173712b630a41f8755&apos;,
+  &apos;0xe1b157fed1cbd523538ed0785bbafef2bb5b5aa5&apos; ]
+</code></pre><p>回显恰好是分配我们的测试地址</p>
+<p>余额查询</p>
+<pre><code>ruffle(development)&gt; web3.eth.getBalance(web3.eth.accounts[0])
+BigNumber { s: 1, e: 20, c: [ 1000000 ] }
+</code></pre><p>(好像js 对大数支持不好???)</p>
+<h1 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h1><p>因为这个版本迭代太快,所以发现网上有些教程,存在各种报错<br>所以算是自己慢慢摸索考证,解决了部分问题</p>
+<pre><code>Q: 运行truffle console 时 报错,说是网络有问题相关
+    Error: No network specified. Cannot determine current network.
+
+A: 修改目录下的truffle.js的内容 用于指定RPC的地址
+
+
+    module.exports = {
+        networks: {
+                development: {
+                  host: &quot;localhost&quot;,
+                  port: 8545,
+                  network_id: &quot;*&quot;
+                   }
+        }
+    };
+</code></pre><p>至此环境搭建完毕</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>上面算是搭建好了开发的环境<br>下面开始写一个hello world的智能合约</p>
+<h3 id="什么是智能合约"><a href="#什么是智能合约" class="headerlink" title="什么是智能合约"></a>什么是智能合约</h3><blockquote>
+<p>其实在我的理解上 EVM 以太坊虚拟机,就是我们允许智能合约的平台, 我们使用solidity 编写的合约,然后,经过编译器,将其编译成字节码(op) , (真的神奇), 当部署,和使用合约之后,就会被执行<br>就是一个函数,签订合同的就可以使用(估计错误)</p>
+</blockquote>
+<p>这样援引一段话</p>
+<blockquote>
+<p>智能合约只是一些运行在电脑（或其他节点）的区块链加密货币网络的特定代码，一旦节点执行了这个代码，合约就会更新总账（ledger）。所以如果你们熟悉我的话，我喜欢在一些已经存在的概念上(notion)，做一些类比和抽象上的尝试。实际上这可以构建的知识结构，比如模式(schema)。<br><a href="https://www.jianshu.com/p/0caf303e1f4c" target="_blank" rel="noopener">什么是智能合约</a></p>
+</blockquote>
+<p>这里是部分EOS(基于eth的去中心操作系统的部分合约代码)</p>
+<pre><code>contract DSAuthority {
+function canCall(
+    address src, address dst, bytes4 sig
+    ) constant returns (bool);
+}
+
+contract DSAuthEvents {
+    event LogSetAuthority (address indexed authority);
+    event LogSetOwner     (address indexed owner);
+}
+</code></pre><p>下面是部分的evm机器码(汇编!!!)</p>
+<pre><code>PUSH1 0x60
+PUSH1 0x40
+MSTORE
+CALLDATASIZE
+ISZERO
+PUSH2 0x011b
+JUMPI
+</code></pre><p>这里是的<a href="https://etherscan.io/address/0x86fa049857e0209aa7d9e616f7eb3b3b78ecfdb0#code" target="_blank" rel="noopener">EOS合约内容</a></p>
+<h3 id="合约部署"><a href="#合约部署" class="headerlink" title="合约部署"></a>合约部署</h3><h4 id="工程模板"><a href="#工程模板" class="headerlink" title="工程模板"></a>工程模板</h4><p>truffle 很方便的给我们提供了,便捷的工程模板的搭建</p>
+<p>建立目录hello 执行</p>
+<pre><code>truffle init
+</code></pre><p>等待片刻</p>
+<pre><code>Downloading...
+Unpacking...
+Setting up...
+Unbox successful. Sweet!
+
+Commands:
+
+  Compile:        truffle compile
+  Migrate:        truffle migrate
+  Test contracts: truffle test
+</code></pre><p>以上回显 表示模板建立OK 目录结构</p>
+<pre><code>hello
+├── contracts
+│   └── Migrations.sol
+├── migrations
+│   └── 1_initial_migration.js
+├── test
+├── truffle-config.js
+└── truffle.js
+
+3 directories, 4 files
+</code></pre><p>模板初始化完毕</p>
+<h4 id="合约编译"><a href="#合约编译" class="headerlink" title="合约编译"></a>合约编译</h4><p>solidity是编写合约的语言,和js相似(奈何没学过),所以从度娘那里抄了一个helloworld</p>
+<pre><code>pragma solidity ^0.4.4;
+
+contract hello {
+    function sayHello() returns (string) {
+            return (&quot;Hello World&quot;);
+    }
+}
+</code></pre><p>contract {} 说明是合约, 定义函数,说明返回值类型,函数体返回字符串,所以最后应该会显示该字符串(应该吧)</p>
+<p>保存为hello.sol ,保存在contract 目录下<br>(模板本身自带一个合约,可以删除,可以不动,没影响)</p>
+<p>执行 完成编译</p>
+<pre><code>truffle compile 
+Compiling ./contracts/Migrations.sol...
+Compiling ./contracts/hello.sol...
+
+Compilation warnings encountered:
+
+/Users/r4y/Misc/tmmp/contracts/hello.sol:4:6: Warning: No visibility specified. Defaulting to &quot;public&quot;.
+        function sayHello() returns (string) {
+     ^
+Spanning multiple lines.
+,/Users/r4y/Misc/tmmp/contracts/hello.sol:4:6: Warning: Function state mutability can be restricted to pure
+        function sayHello() returns (string) {
+     ^
+Spanning multiple lines.
+
+Writing artifacts to ./build/contracts
+</code></pre><p>警告先忽略, 编译内容在我们的 <strong>build/contract</strong> 下的json文件中</p>
+<h4 id="合约部署-1"><a href="#合约部署-1" class="headerlink" title="合约部署"></a>合约部署</h4><p>修改部署脚本 <strong>igrations/1_initial_migration.js</strong></p>
+<pre><code>ar Migrations = artifacts.require(&quot;./hello.sol&quot;);
+
+module.exports = function(deployer) {
+  deployer.deploy(Migrations);
+};
+</code></pre><p><strong>部署合约前先要启动节点</strong><br>执行 以进行合约部署</p>
+<pre><code>truffle migrate    --reset    #出现网络问题,要注意网络部署 见前
+</code></pre><p>注意 : 当增加或者删除了某个合约后，可以执行“truffle migrate –reset”命令重新部署合约。<br>终端回显</p>
+<pre><code>Running migration: 1_initial_migration.js
+  Deploying hello...
+  ... 0xf4f68259d28b84c26ce9bdfb5b246c40441f2733b7810d555fbcdeda24249b6e
+  hello: 0x84c33260f8085d2b236184734072755cd661dceb
+Saving artifacts...
+</code></pre><p>同时 节点终端dbg<br>    有我们的TX gas</p>
+<pre><code>Transaction: 0xf4f68259d28b84c26ce9bdfb5b246c40441f2733b7810d555fbcdeda24249b6e
+Contract created: 0x84c33260f8085d2b236184734072755cd661dceb
+Gas usage: 142468
+Block Number: 1
+Block Time: Thu Jan 25 2118 xx:xx:21 GMT+0x00 (CST)
+</code></pre><p>合约部署完毕 </p>
+<h4 id="合约执行"><a href="#合约执行" class="headerlink" title="合约执行"></a>合约执行</h4><pre><code>truffle consloe     #进入rpc 命令行
+
+ruffle(development)&gt; var contract
+undefined
+truffle(development)&gt; hello.deployed().then(instance =&gt; contract = instance)
+......
+truffle(development)&gt; contract.sayHello.call()
+&apos;Hello World&apos;
+</code></pre><p>至此HELLOworld 总算是hel出来了</p>
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><p><a href="http://8btc.com/thread-23195-1-1.html" target="_blank" rel="noopener">Q&amp;A</a></p>
+
+      
+    </div>
+
+    <div> 
+      
+        <!-- 这里是添加文章结束标记 -->
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <!--  这里用来改变标签样式 -->
+            <a href="/tags/以太坊/" rel="tag"><i class="fa fa-tag"></i> 以太坊</a>
+          
+            <!--  这里用来改变标签样式 -->
+            <a href="/tags/区块链/" rel="tag"><i class="fa fa-tag"></i> 区块链</a>
+          
+            <!--  这里用来改变标签样式 -->
+            <a href="/tags/智能合约/" rel="tag"><i class="fa fa-tag"></i> 智能合约</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/05/teatime语录/" rel="next" title="TeaHour_ETH笔记">
+                <i class="fa fa-chevron-left"></i> TeaHour_ETH笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">R4y</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">categories</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ETH-开发环境搭建及智能合约-helloworld"><span class="nav-number">1.</span> <span class="nav-text">ETH 开发环境搭建及智能合约 helloworld</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">1.1.</span> <span class="nav-text">准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是以太坊"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么是以太坊</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境介绍"><span class="nav-number">1.1.2.</span> <span class="nav-text">环境介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工具安装"><span class="nav-number">1.1.3.</span> <span class="nav-text">工具安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#truffle-安装"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">truffle 安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#testrpc-安装"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">testrpc 安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境测试"><span class="nav-number">1.1.4.</span> <span class="nav-text">环境测试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Q-amp-A"><span class="nav-number">2.</span> <span class="nav-text">Q&amp;A</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-number">2.1.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是智能合约"><span class="nav-number">2.1.1.</span> <span class="nav-text">什么是智能合约</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合约部署"><span class="nav-number">2.1.2.</span> <span class="nav-text">合约部署</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#工程模板"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">工程模板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合约编译"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">合约编译</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合约部署-1"><span class="nav-number">2.1.2.3.</span> <span class="nav-text">合约部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合约执行"><span class="nav-number">2.1.2.4.</span> <span class="nav-text">合约执行</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见问题"><span class="nav-number">2.1.3.</span> <span class="nav-text">常见问题</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <!-- 站长统计的插件 -->
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">R4y</span>
+  
+  <!-- 这里是流量统计的内容(uv统计) -->
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+    本站访客数:<span id="busuanzi_value_site_uv"></span>
+  </span>
+  </div>
+  
+  
+
+  
+</div>
+
+
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a>
+</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.0.3</div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.3"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
