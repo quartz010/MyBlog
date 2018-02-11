@@ -103,17 +103,17 @@
   <meta name="keywords" content="Hexo, NexT" />
 
 
-<meta name="description" content="发行自己的ERC20 Token这次主要实现 发行一个自己的ERC20 标准的 Token. (然后进行ICO, 圈钱跑路, 走上人生巅峰,XD)  其实把Token 叫做代币, 容易让人产生误解.实际上是一种凭证, 只是被现在狂热的人们搅浑了.  前现在币圈的狂热之势四起, 昨天一个朋友, 发来一串神秘代码, 说转账有 3000多的糖果.这里偷偷的放一下地址, 可以去玩玩..  ENU: 0x2">
+<meta name="description" content="发行自己的ERC20 Token这次主要实现 发行一个自己的ERC20 标准的 Token. (然后进行ICO, 圈钱跑路, 走上人生巅峰,XD)  其实把Token 叫做代币, 容易让人产生误解.实际上是一种凭证, 只是被现在狂热的人们搅浑了. Token的持有人可以完全控制资产，遵守ERC20的token可以跟踪任何人在任何时间拥有多少token.  前现在币圈的狂热之势四起, 昨天一个朋友,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="R4y&#39;s小窝">
 <meta property="og:url" content="blog.diglp.xyz/2018/02/11/发行自己的ERC20 Token/index.html">
 <meta property="og:site_name" content="R4y&#39;s小窝">
-<meta property="og:description" content="发行自己的ERC20 Token这次主要实现 发行一个自己的ERC20 标准的 Token. (然后进行ICO, 圈钱跑路, 走上人生巅峰,XD)  其实把Token 叫做代币, 容易让人产生误解.实际上是一种凭证, 只是被现在狂热的人们搅浑了.  前现在币圈的狂热之势四起, 昨天一个朋友, 发来一串神秘代码, 说转账有 3000多的糖果.这里偷偷的放一下地址, 可以去玩玩..  ENU: 0x2">
+<meta property="og:description" content="发行自己的ERC20 Token这次主要实现 发行一个自己的ERC20 标准的 Token. (然后进行ICO, 圈钱跑路, 走上人生巅峰,XD)  其实把Token 叫做代币, 容易让人产生误解.实际上是一种凭证, 只是被现在狂热的人们搅浑了. Token的持有人可以完全控制资产，遵守ERC20的token可以跟踪任何人在任何时间拥有多少token.  前现在币圈的狂热之势四起, 昨天一个朋友,">
 <meta property="og:image" content="/images/tx.png">
-<meta property="og:updated_time" content="2018-02-11T09:50:17.108Z">
+<meta property="og:updated_time" content="2018-02-11T14:08:41.373Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="R4y&#39;s小窝">
-<meta name="twitter:description" content="发行自己的ERC20 Token这次主要实现 发行一个自己的ERC20 标准的 Token. (然后进行ICO, 圈钱跑路, 走上人生巅峰,XD)  其实把Token 叫做代币, 容易让人产生误解.实际上是一种凭证, 只是被现在狂热的人们搅浑了.  前现在币圈的狂热之势四起, 昨天一个朋友, 发来一串神秘代码, 说转账有 3000多的糖果.这里偷偷的放一下地址, 可以去玩玩..  ENU: 0x2">
+<meta name="twitter:description" content="发行自己的ERC20 Token这次主要实现 发行一个自己的ERC20 标准的 Token. (然后进行ICO, 圈钱跑路, 走上人生巅峰,XD)  其实把Token 叫做代币, 容易让人产生误解.实际上是一种凭证, 只是被现在狂热的人们搅浑了. Token的持有人可以完全控制资产，遵守ERC20的token可以跟踪任何人在任何时间拥有多少token.  前现在币圈的狂热之势四起, 昨天一个朋友,">
 <meta name="twitter:image" content="/images/tx.png">
 
 
@@ -337,13 +337,132 @@
         <h1 id="发行自己的ERC20-Token"><a href="#发行自己的ERC20-Token" class="headerlink" title="发行自己的ERC20 Token"></a>发行自己的ERC20 Token</h1><p>这次主要实现 发行一个自己的ERC20 标准的 Token. (然后进行ICO, 圈钱跑路, 走上人生巅峰,XD)</p>
 <blockquote>
 <p>其实把Token 叫做代币, 容易让人产生误解.实际上是一种凭证, 只是被现在狂热的人们搅浑了.</p>
+<p>Token的持有人可以完全控制资产，遵守ERC20的token可以跟踪任何人在任何时间拥有多少token.</p>
 </blockquote>
 <h2 id="前"><a href="#前" class="headerlink" title="前"></a>前</h2><p>现在币圈的狂热之势四起, 昨天一个朋友, 发来一串神秘代码, 说转账有 3000多的糖果.<br>这里偷偷的放一下地址, 可以去玩玩..</p>
 <blockquote>
 <p>ENU: 0x275b69AA7c8C1d648A0557656bCe1C286e69a29d</p>
 </blockquote>
 <p><img src="/images/tx.png" alt="Tx"></p>
+<p>这个转账记录还真是来势汹汹. 然后就好奇的 用<a href="https://etherscan.io/address/0x275b69aa7c8c1d648a0557656bce1c286e69a29d#code" target="_blank" rel="noopener">浏览器</a> 看了看合约代码</p>
+<pre><code>string public constant name = &quot;Enumivo&quot;;
+string public constant symbol = &quot;ENU&quot;;
+uint public constant decimals = 8;
 
+uint256 public totalSupply = 1000000000e8;
+uint256 public totalDistributed = 100000000e8;
+uint256 public totalRemaining = totalSupply.sub(totalDistributed);
+uint256 public value;
+</code></pre><p>这个 <code>totalSupply</code> 是不是相当惊人… 这个估计是用来测试的合约, 不知道被谁发现了来.</p>
+<p>所以, 这玩意这么火, 这次就自己实现一个!</p>
+<h2 id="ERC20-Token标准"><a href="#ERC20-Token标准" class="headerlink" title="ERC20 Token标准"></a>ERC20 Token标准</h2><p>实现这样的一个token 实际上还是使用Solidity语言编写的合约来实现, 只是合约的形式符合了ERC20 的标准. 这样就可以被区块浏览器识别成一个 Token.</p>
+<blockquote>
+<p><a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md" target="_blank" rel="noopener">官方标准 ERC-20 Token Standard</a></p>
+</blockquote>
+<p>手册里说明了代码的应有的函数和成员 (看E文 还是难受, 找到了一篇译文, 不过是机翻的, 看着玩吧)</p>
+<blockquote>
+<p><a href="http://blog.csdn.net/diandianxiyu_geek/article/details/78082551?utm_source=gold_browser_extension" target="_blank" rel="noopener">以太坊ERC20 Token标准完整说明</a></p>
+</blockquote>
+<p>合约的框架如下</p>
+<pre><code>// https://github.com/ethereum/EIPs/issues/20
+// 接口标准
+  contract ERC20 {
+      function totalSupply() constant returns (uint totalSupply);    // 总发行量
+      function balanceOf(address _owner) constant returns (uint balance);
+      function transfer(address _to, uint _value) returns (bool success);    // 代币分发(注意, 这个只有合约的Creator 可以调用)
+      function transferFrom(address _from, address _to, uint _value) returns (bool success);    // 这里是拥有者和拥有者之间的代币转移
+      function approve(address _spender, uint _value) returns (bool success);
+      function allowance(address _owner, address _spender) constant returns (uint remaining);
+
+      event Transfer(address indexed _from, address indexed _to, uint _value);
+      event Approval(address indexed _owner, address indexed _spender, uint _value);
+
+// Token信息
+     string public constant name = &quot;4FunCoin&quot;;
+    string public constant symbol = &quot;4FC&quot;;
+    uint8 public constant decimals = 18;  // token的精度, 大部分都是18
+}
+</code></pre><h2 id="Token实现代码"><a href="#Token实现代码" class="headerlink" title="Token实现代码"></a>Token实现代码</h2><pre><code>pragma solidity ^0.4.16;
+
+interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public; }    // token的 接受者 这里声明接口, 将会在我们的ABI里
+
+contract TokenERC20 {
+    string public name = 4FunCoin;
+    string public symbol = 4FC;
+    uint8 public decimals = 18;  // 18 是建议的默认值
+    uint256 public totalSupply;    // 发行量
+
+    mapping (address =&gt; uint256) public balanceOf;  // 
+    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+
+    event Transfer(address indexed from, address indexed to, uint256 value);
+
+    event Burn(address indexed from, uint256 value);
+
+
+    function TokenERC20(uint256 initialSupply, string tokenName, string tokenSymbol) public {
+        totalSupply = initialSupply * 10 ** uint256(decimals);
+        balanceOf[msg.sender] = totalSupply;
+        name = tokenName;
+        symbol = tokenSymbol;
+    }
+
+
+    function _transfer(address _from, address _to, uint _value) internal {
+        require(_to != 0x0);
+        require(balanceOf[_from] &gt;= _value);
+        require(balanceOf[_to] + _value &gt; balanceOf[_to]);
+        uint previousBalances = balanceOf[_from] + balanceOf[_to];
+        balanceOf[_from] -= _value;
+        balanceOf[_to] += _value;
+        Transfer(_from, _to, _value);
+        assert(balanceOf[_from] + balanceOf[_to] == previousBalances);
+    }
+
+    function transfer(address _to, uint256 _value) public {
+        _transfer(msg.sender, _to, _value);
+    }
+
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
+        require(_value &lt;= allowance[_from][msg.sender]);     // Check allowance
+        allowance[_from][msg.sender] -= _value;
+        _transfer(_from, _to, _value);
+        return true;
+    }
+
+    function approve(address _spender, uint256 _value) public
+        returns (bool success) {
+        allowance[msg.sender][_spender] = _value;
+        return true;
+    }
+
+    function approveAndCall(address _spender, uint256 _value, bytes _extraData) public returns (bool success) {
+        tokenRecipient spender = tokenRecipient(_spender);
+        if (approve(_spender, _value)) {
+            spender.receiveApproval(msg.sender, _value, this, _extraData);
+            return true;
+        }
+    }
+
+    function burn(uint256 _value) public returns (bool success) {
+        require(balanceOf[msg.sender] &gt;= _value);
+        balanceOf[msg.sender] -= _value;
+        totalSupply -= _value;
+        Burn(msg.sender, _value);
+        return true;
+    }
+
+    function burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] &gt;= _value);
+        require(_value &lt;= allowance[_from][msg.sender]);
+        balanceOf[_from] -= _value;
+        allowance[_from][msg.sender] -= _value;
+        totalSupply -= _value;
+        Burn(_from, _value);
+        return true;
+    }
+}
+</code></pre>
       
     </div>
 
@@ -552,7 +671,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#发行自己的ERC20-Token"><span class="nav-number">1.</span> <span class="nav-text">发行自己的ERC20 Token</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前"><span class="nav-number">1.1.</span> <span class="nav-text">前</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#发行自己的ERC20-Token"><span class="nav-number">1.</span> <span class="nav-text">发行自己的ERC20 Token</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前"><span class="nav-number">1.1.</span> <span class="nav-text">前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ERC20-Token标准"><span class="nav-number">1.2.</span> <span class="nav-text">ERC20 Token标准</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Token实现代码"><span class="nav-number">1.3.</span> <span class="nav-text">Token实现代码</span></a></li></ol></li></ol></div>
             
 
           </div>
