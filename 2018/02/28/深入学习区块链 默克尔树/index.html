@@ -112,8 +112,8 @@
 <meta property="og:description" content="区块链原理 默克尔树what is Merkle Tree 许多区块链或是散列链都是基于一种叫做默克尔树的结构。与相对概念比较新的区块链技术相比，默克尔树最早诞生于1979年，由Ralph Merkle发明。  Hashhash（散列算法），使我们生活中极为常用。其定义就是对任意长度的数据输入经过该算法后得到一个定长的输出。这样的一个映射具有唯一性，和单向性。  唯一性 是指， 输入和输出是唯一对">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="/images/BC_hash.png">
-<meta property="og:image" content="/images/BC_MK.png">
-<meta property="og:updated_time" content="2018-02-28T08:57:17.650Z">
+<meta property="og:image" content="/images/BC_MK.jpeg">
+<meta property="og:updated_time" content="2018-02-28T08:58:28.759Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="区块链原理 默克尔树">
 <meta name="twitter:description" content="区块链原理 默克尔树what is Merkle Tree 许多区块链或是散列链都是基于一种叫做默克尔树的结构。与相对概念比较新的区块链技术相比，默克尔树最早诞生于1979年，由Ralph Merkle发明。  Hashhash（散列算法），使我们生活中极为常用。其定义就是对任意长度的数据输入经过该算法后得到一个定长的输出。这样的一个映射具有唯一性，和单向性。  唯一性 是指， 输入和输出是唯一对">
@@ -429,7 +429,7 @@
 </blockquote>
 <p>不同于Hashlist，默克尔树是二叉结构，所有的根节点两两进行hash，得到其父节点，父节点再次进行两两hash，最终会得到一个根节点（Merkle Root）。</p>
 <p>默克尔树在使用时，从根节点出发，同步下一个高度（D1）的数据（D2的hash），得到（D1）的两个hash值之后，自己进行hash校验。如果正确继续进行下一级的Hash的获取（这次将会有4个Hash），得到之后再次进行校验。正确则继续获取下一层的Hash，这样递归下去，直到得到存放在根节点的数据。</p>
-<p>拓扑图如下，整体结构是一个倒挂的二叉树。<br><img src="/images/BC_MK.png" alt="merkle"></p>
+<p>拓扑图如下，整体结构是一个倒挂的二叉树。<br><img src="/images/BC_MK.jpeg" alt="merkle"></p>
 <blockquote>
 <p>Merkle Tree的特点</p>
 <ul>
