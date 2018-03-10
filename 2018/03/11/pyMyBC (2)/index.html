@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="R4y&#39;s小窝">
 <meta property="og:description" content="Py区块链源码笔记 （2）P2P网络怎么学习区块链知识呢? 各种的资料看的头大，还是晕晕乎乎。所以那不如自己实现一个吧？？ 说是自己实现，实际上想先对源码进行解读。这里给出的源码，是一个基于Python实现的一个功能较为健全的区块链。下面给出项目地址  项目地址  P2P网络为什么使用P2P我们日常里用的磁链，迅雷之类的东西都是P2P技术实现的，所以P2P这个名词听起来不会太陌生。 其实在这里是对">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-09T12:04:10.382Z">
+<meta property="og:updated_time" content="2018-03-09T13:02:51.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Py区块链源码笔记 （2）P2P网络">
 <meta name="twitter:description" content="Py区块链源码笔记 （2）P2P网络怎么学习区块链知识呢? 各种的资料看的头大，还是晕晕乎乎。所以那不如自己实现一个吧？？ 说是自己实现，实际上想先对源码进行解读。这里给出的源码，是一个基于Python实现的一个功能较为健全的区块链。下面给出项目地址  项目地址  P2P网络为什么使用P2P我们日常里用的磁链，迅雷之类的东西都是P2P技术实现的，所以P2P这个名词听起来不会太陌生。 其实在这里是对">
@@ -370,7 +370,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">3.1k</span>
+                <span title="字数统计">6.1k</span>
               
 
               
@@ -384,7 +384,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:03</span>
+                <span title="阅读时长">0:06</span>
               
             </div>
           
@@ -496,6 +496,92 @@ response = {
 }
 return jsonify(response), 201
 </code></pre><p>这里代码可见，把node的list以json的形式直接post上去。解析之后直接append。</p>
+<hr>
+<h3 id="节点解析-resolve"><a href="#节点解析-resolve" class="headerlink" title="节点解析(resolve)"></a>节点解析(resolve)</h3><p>这段代码是请求的节点更新的代码，因为一个去中心的网络，需要实施的维护个更新自己的数据。也就是区块链中的账本。所以这段代码算是实现了简单的<strong>DAO</strong>(Distributed Autonomous Organization),翻译过来是<strong>分布式自治组织</strong>。</p>
+<p>节点之间进行互相的请求，以确保自己的区块高度是目前的最高区块，如果当前区块不是最高，则在其他的路由节点获取当前的区块信息。</p>
+<pre><code>@app.route(&apos;/nodes/resolve&apos;, methods=[&apos;GET&apos;])    # 请求响应
+def consensus():
+replaced = blockchain.resolve_conflicts()        # 区块冲突解决
+
+if replaced:            
+    response = {
+        &apos;message&apos;: &apos;Our chain was replaced&apos;,    # 如果其他节点区块高度大于我们，则更新我们的节点
+        &apos;new_chain&apos;: blockchain.chain
+    }
+else:
+    response = {
+        &apos;message&apos;: &apos;Our chain is authoritative(当局的)&apos;,    # 如果我们是最新，就保持
+        &apos;chain&apos;: blockchain.chain
+    }
+
+return jsonify(response), 200
+</code></pre><p>下面这段就是我们的区块更新的代码，同等简单的方式，更新获取相邻节点的区块高度。进行append判断。这里实现简单的共识算法，使用使用最高网络区块直接替换来解决区块的冲突。</p>
+<p>实际上，这里的共识的实现是十分重要和复杂的一个要点。因为在全部网络上，我们不可避免的存在着<strong>拜占庭节点</strong>（byzantine）来作恶。如果我们使用直接最高区块的简单的共识算法。那么网络上的的拜占庭节点，可随随便便的编造区块数据，并且使用PoS把他的伪造交易数据添加到链上。大家发现他是最高的，所以纷纷认为他是对的。这样对网络是毁灭性的打击</p>
+<pre><code>def resolve_conflicts(self):
+    &quot;&quot;&quot;
+    :return: True if our chain was replaced, False if not
+    &quot;&quot;&quot;
+
+    neighbours = self.nodes
+    new_chain = None
+
+    # 找到我们自己的区块高度
+    max_length = len(self.chain)
+
+    # 获取并且验证我们在网络上得到的区块
+    for node in neighbours:
+        response = requests.get(f&apos;http://{node}/chain&apos;)        # 获取网络节点的完整链，
+
+        if response.status_code == 200:
+            length = response.json()[&apos;length&apos;]        # 得到区块高度
+            chain = response.json()[&apos;chain&apos;]        # 和当前的完整链
+
+            # 检查是否最长链，并且检验链的有效性
+            if length &gt; max_length and self.valid_chain(chain):        # 最长链，并进行合法性检验
+                max_length = length    
+                new_chain = chain
+
+    #  如果有效且最长，我们替换我们的本地链
+    if new_chain:
+        self.chain = new_chain
+        return True
+
+    return False
+</code></pre><p>可见这里就实现了一个简易的区块共识协议，我们可以称之为最长就是最好 2333</p>
+<hr>
+<p><strong>合法区块检测</strong></p>
+<p>用于判断获取的链的合法性，简单的说就是进行；链上区块遍历，判断其hash是否成链，即 <code>block[&#39;previous_hash&#39;] != self.hash(last_block)</code> ,并且对区块的 proof ，last_proof，previous_hash ，进行一次hash计算，判断是否是四个0 开头的</p>
+<blockquote>
+<p>PoS 的过程可以看上一篇的内容 <a href="http://blog.diglp.xyz/2018/03/11/pyMyBC%20(2">挖矿</a>/)`</p>
+</blockquote>
+<pre><code>def valid_chain(self, chain):
+    &quot;&quot;&quot;
+    :param chain: A blockchain
+    :return: True if valid, False if not
+    &quot;&quot;&quot;
+
+    last_block = chain[0]
+    current_index = 1
+
+    while current_index &lt; len(chain):        # 遍历链上区块
+        block = chain[current_index]
+        print(f&apos;{last_block}&apos;)
+        print(f&apos;{block}&apos;)
+        print(&quot;\n-----------\n&quot;)
+        # 检查hash是否成链
+        if block[&apos;previous_hash&apos;] != self.hash(last_block):
+            return False
+
+        # 检查proof（nonce）是否合法
+        if not self.valid_proof(last_block[&apos;proof&apos;], block[&apos;proof&apos;], last_block[&apos;previous_hash&apos;]):
+            return False
+
+        last_block = block
+        current_index += 1
+
+    return True
+</code></pre><p>所以我们可以看到，区块链之所以安全，其内核基本就是靠这里所描述的功能保护的，虽然这里的代码是十分简易，不过大体上也是描述出了灵魂所在。可以使用hssh链，进行整个链的合法性校验，所以，使得链上的数据修改基本成为<strong>不可能！！！</strong></p>
+<hr>
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>这里的源码实现的P2P网络是比较简单，这里只是实现了节点的添加，并没有实现节点路由和拓展，及路由表的查询。所以后面打算自己可以实现一个</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>这篇可能比较水，因为源码本身实在太过简化，后面考虑自己添加部分功能，可以及时PR</p>
 
@@ -774,7 +860,7 @@ return jsonify(response), 201
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Py区块链源码笔记-（2）P2P网络"><span class="nav-number">1.</span> <span class="nav-text">Py区块链源码笔记 （2）P2P网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#P2P网络"><span class="nav-number">1.1.</span> <span class="nav-text">P2P网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么使用P2P"><span class="nav-number">1.1.1.</span> <span class="nav-text">为什么使用P2P</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码分析"><span class="nav-number">1.1.2.</span> <span class="nav-text">源码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#节点注册"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">节点注册</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">1.1.3.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">1.2.</span> <span class="nav-text">后记</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Py区块链源码笔记-（2）P2P网络"><span class="nav-number">1.</span> <span class="nav-text">Py区块链源码笔记 （2）P2P网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#P2P网络"><span class="nav-number">1.1.</span> <span class="nav-text">P2P网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么使用P2P"><span class="nav-number">1.1.1.</span> <span class="nav-text">为什么使用P2P</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码分析"><span class="nav-number">1.1.2.</span> <span class="nav-text">源码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#节点注册"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">节点注册</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点解析-resolve"><span class="nav-number">1.1.3.</span> <span class="nav-text">节点解析(resolve)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">1.1.4.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">1.2.</span> <span class="nav-text">后记</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -816,7 +902,7 @@ return jsonify(response), 201
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">61k</span>
+    <span title="站点总字数">64k</span>
   
 
   
@@ -825,7 +911,7 @@ return jsonify(response), 201
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读时长">1:01</span>
+    <span title="站点总阅读时长">1:04</span>
   
 </div>
 
