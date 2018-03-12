@@ -100,28 +100,28 @@
 
 
   
-  <meta name="keywords" content="以太坊,区块链,智能合约," />
+  <meta name="keywords" content="BC原理," />
 
 
-<meta name="description" content="CrowdSale 合约分析前前面的文章实现了自己创建的 Token 在以太坊网络的发布, 这一篇, 接着来, 也是涉及到了更多的东西. 这次实现一个合约, 实现我们可以进行自动的 Token发放. 合约代码此段代码选自官方的教程, 这里凭着个人的学习和理解, 加上注释  官方代码  pragma solidity ^0.4.16;  interface token {     function">
-<meta name="keywords" content="以太坊,区块链,智能合约">
+<meta name="description" content="What is BlockChain?现在比特币这个词，相比对普通人来说也是越来越熟悉了。所以这一篇文章的定位是一篇科普文，希望大家可以通过这篇文章，至少可以理解这个是什么玩意。 所谓区块链，就是比特币这种数字货币的底层技术。区块链这个名字虽然不是那么响亮，不过我真正的相信，这个将会是下一代的互联网。 现在的互联网在现在的互联网，大家常常发送电子邮件。实际上发送的这些东西我们称之为信息。像是QQ文">
+<meta name="keywords" content="BC原理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CrowdSale 合约分析">
-<meta property="og:url" content="blog.diglp.xyz/2018/02/14/CrowdSale合约实现/index.html">
+<meta property="og:title" content="What is BlockChain?">
+<meta property="og:url" content="blog.diglp.xyz/2018/03/13/What is BlockChain/index.html">
 <meta property="og:site_name" content="R4y&#39;s小窝">
-<meta property="og:description" content="CrowdSale 合约分析前前面的文章实现了自己创建的 Token 在以太坊网络的发布, 这一篇, 接着来, 也是涉及到了更多的东西. 这次实现一个合约, 实现我们可以进行自动的 Token发放. 合约代码此段代码选自官方的教程, 这里凭着个人的学习和理解, 加上注释  官方代码  pragma solidity ^0.4.16;  interface token {     function">
+<meta property="og:description" content="What is BlockChain?现在比特币这个词，相比对普通人来说也是越来越熟悉了。所以这一篇文章的定位是一篇科普文，希望大家可以通过这篇文章，至少可以理解这个是什么玩意。 所谓区块链，就是比特币这种数字货币的底层技术。区块链这个名字虽然不是那么响亮，不过我真正的相信，这个将会是下一代的互联网。 现在的互联网在现在的互联网，大家常常发送电子邮件。实际上发送的这些东西我们称之为信息。像是QQ文">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-28T09:44:55.261Z">
+<meta property="og:updated_time" content="2018-03-12T05:31:39.493Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CrowdSale 合约分析">
-<meta name="twitter:description" content="CrowdSale 合约分析前前面的文章实现了自己创建的 Token 在以太坊网络的发布, 这一篇, 接着来, 也是涉及到了更多的东西. 这次实现一个合约, 实现我们可以进行自动的 Token发放. 合约代码此段代码选自官方的教程, 这里凭着个人的学习和理解, 加上注释  官方代码  pragma solidity ^0.4.16;  interface token {     function">
+<meta name="twitter:title" content="What is BlockChain?">
+<meta name="twitter:description" content="What is BlockChain?现在比特币这个词，相比对普通人来说也是越来越熟悉了。所以这一篇文章的定位是一篇科普文，希望大家可以通过这篇文章，至少可以理解这个是什么玩意。 所谓区块链，就是比特币这种数字货币的底层技术。区块链这个名字虽然不是那么响亮，不过我真正的相信，这个将会是下一代的互联网。 现在的互联网在现在的互联网，大家常常发送电子邮件。实际上发送的这些东西我们称之为信息。像是QQ文">
 
 
 
 
 
 
-  <link rel="canonical" href="blog.diglp.xyz/2018/02/14/CrowdSale合约实现/"/>
+  <link rel="canonical" href="blog.diglp.xyz/2018/03/13/What is BlockChain/"/>
 
 
 
@@ -130,7 +130,7 @@
     sidebar: "",
   };
 </script>
-  <title>CrowdSale 合约分析 | R4y's小窝</title>
+  <title>What is BlockChain? | R4y's小窝</title>
   
 
 
@@ -292,7 +292,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/02/14/CrowdSale合约实现/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/03/13/What is BlockChain/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="R4y">
@@ -309,7 +309,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">CrowdSale 合约分析</h2>
+          <h2 class="post-title" itemprop="name headline">What is BlockChain?</h2>
         
 
         <div class="post-meta">
@@ -321,7 +321,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-14T00:00:00+08:00">2018-02-14</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-13T00:00:00+08:00">2018-03-13</time>
             
 
             
@@ -342,7 +342,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链开发/" itemprop="url" rel="index"><span itemprop="name">区块链开发</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链相关/" itemprop="url" rel="index"><span itemprop="name">区块链相关</span></a></span>
 
                 
                 
@@ -370,7 +370,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">7.4k</span>
+                <span title="字数统计">2.4k</span>
               
 
               
@@ -384,7 +384,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:07</span>
+                <span title="阅读时长">0:02</span>
               
             </div>
           
@@ -404,222 +404,38 @@
       
 
       
-        <h1 id="CrowdSale-合约分析"><a href="#CrowdSale-合约分析" class="headerlink" title="CrowdSale 合约分析"></a>CrowdSale 合约分析</h1><h2 id="前"><a href="#前" class="headerlink" title="前"></a>前</h2><p>前面的文章实现了自己创建的 Token 在以太坊网络的发布, 这一篇, 接着来, 也是涉及到了更多的东西. 这次实现一个合约, 实现我们可以进行自动的 Token发放.</p>
-<h2 id="合约代码"><a href="#合约代码" class="headerlink" title="合约代码"></a>合约代码</h2><p>此段代码选自官方的教程, 这里凭着个人的学习和理解, 加上注释</p>
-<blockquote>
-<p><a href="https://www.ethereum.org/crowdsale" target="_blank" rel="noopener">官方代码</a></p>
-</blockquote>
-<pre><code>pragma solidity ^0.4.16;
-
-interface token {
-    function transfer(address receiver, uint amount);   // 这里调用你的Token合约的函数接口
-}
-
-contract Crowdsale {
-    address public beneficiary;     // ICO的目标账户
-    uint public fundingGoal;        // 筹集的目标金额
-    uint public amountRaised;       // 当前募集的金额
-    uint public deadline;           // 时间限制
-    uint public price;              // 单token的定价
-    token public tokenReward;       // 这里是token的地址
-    mapping(address =&gt; uint256) public balanceOf;       // 地址和Token的映射关系
-    // 以上所有的数据都是Public的
-    bool fundingGoalReached = false;                    // 是否筹够
-    bool crowdsaleClosed = false;                       // 是否进行
-
-    event GoalReached(address recipient, uint totalAmountRaised);       // 达标事件
-    event FundTransfer(address backer, uint amount, bool isContribution);       // 转款事件
-    // 事件用于记录信息, Dapp读取事件
-
-    /**
-     * Constrctor function
-     *
-     * Setup the owner
-     */
-    function Crowdsale(                                 // 构造函数
-        address ifSuccessfulSendTo,                     // 参数表
-        uint fundingGoalInEthers,
-        uint durationInMinutes,
-        uint etherCostOfEachToken,
-        address addressOfTokenUsedAsReward
-    ) {
-        beneficiary = ifSuccessfulSendTo;
-        fundingGoal = fundingGoalInEthers * 1 ether;
-        deadline = now + durationInMinutes * 1 minutes;
-        price = etherCostOfEachToken * 1 ether;
-        tokenReward = token(addressOfTokenUsedAsReward);
-        // 对上面的数据变量进行赋值
-    }
-
-    /**
-     * Fallback function
-     *
-     * The function without name is the default function that is called whenever anyone sends funds to a contract
-     * 无名函数用于任何时候有人转钱了的回调, 这里是分配token的重点
-     */
-    function () payable {
-        require(!crowdsaleClosed);      // 保证Ico是没有结束
-        uint amount = msg.value;
-        balanceOf[msg.sender] += amount;    
-        amountRaised += amount;
-        tokenReward.transfer(msg.sender, amount / price);   // 这里调用接口,把等价的Token分配给msg
-        FundTransfer(msg.sender, amount, true);             // 产生事件, 已经转Token了!
-    }
-
-    modifier afterDeadline() { if (now &gt;= deadline) _; }    // 修饰符, 是不是已经过了时间
-
-    /**
-     * Check if goal was reached
-     *
-     * Checks if the goal or time limit has been reached and ends the campaign
-     */
-    function checkGoalReached() afterDeadline {     // 注意这里的修饰符, 如果已经超时了, 直接关闭ICO, 
-        if (amountRaised &gt;= fundingGoal){
-            fundingGoalReached = true;              // 判断是否筹齐, 齐了就发事件
-            GoalReached(beneficiary, amountRaised);
-        }
-        crowdsaleClosed = true;
-    }
-
-
-    /**
-     * Withdraw the funds (退钱的)
-     *
-     * Checks to see if goal or time limit has been reached, and if so, and the funding goal was reached,
-     * sends the entire amount to the beneficiary. If goal was not reached, each contributor can withdraw
-     * the amount they contributed.
-     * 检查时间, 和总额是否集齐, 如果达到 , 就把合约中的所有的钱款转入 受益人的账户. 如果没有达成,投钱的可以拿回自己的钱
-     */
-    function safeWithdrawal() afterDeadline {
-        if (!fundingGoalReached) {                  // 没达成
-            uint amount = balanceOf[msg.sender];    // 投资人有多少Token
-            balanceOf[msg.sender] = 0;              // 把他的token 清零
-            if (amount &gt; 0) {                       
-                if (msg.sender.send(amount)) {      
-                    // 这里应该是有个发送请求(后面自己看看)
-                    FundTransfer(msg.sender, amount, false);
-                } else {
-                    // 保持总额不变
-                    balanceOf[msg.sender] = amount; 
-                }
-            }
-        }
-
-        if (fundingGoalReached &amp;&amp; beneficiary == msg.sender) {          // 如果已经集齐,而且是发起人调用了合约
-            if (beneficiary.send(amountRaised)) {                       // 这里和上面一样, 应该是Address的一个成员函数
-                FundTransfer(beneficiary, amountRaised, false);         // 发送 转款事件
-            } else {
-                //If we fail to send the funds to beneficiary, unlock funders balance
-                fundingGoalReached = false;
-            }
-        }
-    }
-}
-</code></pre><p>其实可见, 一个实现token 众售的合约实际上还是比较容易理解的, 主要是 token 的发放, 退钱的, 和owner 用来提钱的这几个部分组成</p>
-<h2 id="Point"><a href="#Point" class="headerlink" title="Point"></a>Point</h2><p>这里对上面的合约出现的新的Solidity要点进行说明</p>
-<h3 id="接口-interface"><a href="#接口-interface" class="headerlink" title="接口(interface)"></a>接口(interface)</h3><p>接口这个东西 , 其实在上一篇文章中已经有说过 , 哪里没有用到. 是个很重要的东西 , 就是实现可以在合约中调用其他合约的 external 的函数. </p>
-<pre><code>interface token {
-    function transfer(address receiver, uint amount);   // 这里调用你的Token合约的函数接口
-}
-</code></pre><p>这里定义 的一个接口, 主要是是实现调用 我们Token合约中的合约发放函数.</p>
-<p>这里有个很棒的例子: 这个是著名的以太坊的<a href="https://etherscan.io/address/0x06012c8cf97bead5deae237070f9587f8e7a266d#code" target="_blank" rel="noopener">加密猫</a>, 这个项目当时可是导致了以太坊网络的严重堵塞. 这里选取里其中一段合约代码. </p>
-<pre><code>function getKitty(uint256 _id)
-    external
-    view
-    returns (
-    bool isGestating,
-    bool isReady,
-    uint256 cooldownIndex,
-    uint256 nextActionAt,
-    uint256 siringWithId,
-    uint256 birthTime,
-    uint256 matronId,
-    uint256 sireId,
-    uint256 generation,
-    uint256 genes
-) {
-    Kitty storage kit = kitties[_id];
-
-    // if this variable is 0 then it&apos;s not gestating
-    isGestating = (kit.siringWithId != 0);
-    isReady = (kit.cooldownEndBlock &lt;= block.number);
-    cooldownIndex = uint256(kit.cooldownIndex);
-    nextActionAt = uint256(kit.cooldownEndBlock);
-    siringWithId = uint256(kit.siringWithId);
-    birthTime = uint256(kit.birthTime);
-    matronId = uint256(kit.matronId);
-    sireId = uint256(kit.sireId);
-    generation = uint256(kit.generation);
-    genes = kit.genes;
-}
-</code></pre><p>由名字和返回值可见 , 这个是blahblah 一大堆,用于获取某只Kitty 的所有信息的函数. 这里如果我们的合约突然想使用一下这里的喵的DNA怎么办? 很好, 我们可以使用接口了!</p>
-<pre><code>interface Kitty {
-      function getKitty(uint256 _id) external view returns (
-        bool isGestating,
-        bool isReady,
-        uint256 cooldownIndex,
-        uint256 nextActionAt,
-        uint256 siringWithId,
-        uint256 birthTime,
-        uint256 matronId,
-        uint256 sireId,
-        uint256 generation,
-        uint256 genes
-    );
-}
-</code></pre><p>上面我们就定义了一个对应的接口, 如何使用呢?</p>
-<pre><code>address ckAddr = 0x06012c8cf97bead5deae237070f9587f8e7a266d;
-Kitty kittyInterface = Kitty(ckAddress);     // 这里实例化这个接口!
-// 下面就是调用了
-uint dna;
-,,,,,,,,dna = kittyInterface.getKitty(0)        // 假定是 0 号Kitty
-// 这里是多返回值
-</code></pre><p>这样我们就可以获取dna了, 使用接口, 是不是很精妙?</p>
-<h2 id="回退函数"><a href="#回退函数" class="headerlink" title="回退函数"></a>回退函数</h2><blockquote>
-<p>每一个合约有且仅有一个没有名字的函数。这个函数无参数，也无返回值。如果调用合约时，没有匹配上任何一个函数(或者没有传哪怕一点数据)，就会调用默认的回退函数。</p>
-</blockquote>
-<p>在示例代码中, 我们使用到了回退函数,(可见只有一个修饰符, 没有函数名的)</p>
-<pre><code>function () payable {
-    require(!crowdsaleClosed);      // 保证Ico是没有结束
-    uint amount = msg.value;
-    balanceOf[msg.sender] += amount;    
-    amountRaised += amount;
-    tokenReward.transfer(msg.sender, amount / price);   // 这里调用接口,把等价的Token分配给msg
-    FundTransfer(msg.sender, amount, true);             // 产生事件, 已经转Token了!
-}
-</code></pre><p>这个也是我们ICO合约的重要函数, 实现Token的分发. 根据定义, 我们如果直接对合约地址转账, 那么默认就会调用了回退函数, 这里很巧妙的利用来转账!</p>
-<h2 id="地址-Address"><a href="#地址-Address" class="headerlink" title="地址(Address)"></a>地址(Address)</h2><p>上面的代码有一处是没看懂</p>
-<pre><code>if (msg.sender.send(amount)) {      
-    // 这里应该是有个发送请求(后面自己看看)
-    FundTransfer(msg.sender, amount, false);
-} else {
-    // 保持总额不变
-    balanceOf[msg.sender] = amount; 
-}
-</code></pre><p>这里感觉是一个请求, 会有返回值.于是下面就查证官方的Wiki看到</p>
-<blockquote>
-<p>地址类型的成员</p>
-<p>属性：balance</p>
-<p>函数：send()，call()，delegatecall()，callcode()。</p>
-</blockquote>
-<ul>
-<li><p>地址字面量(literal)</p>
-<p>  其实我们可以理解成一个常量, 在Solidity 里如果有字面量</p>
-<pre><code>0x06012c8cf97bead5deae237070f9587f8e7a266d
-</code></pre><p>  这个会直接被编译器理解为Address类型.</p>
-</li>
-<li><p>balance</p>
-<p>  这个如其定义一样 <code>myAddress.balance</code>, 这个值就是我们的当前余额</p>
-</li>
-<li><p>send</p>
-<p>  这个比较重要, 之前没理解,怎么是下面这张形式</p>
-<pre><code>beneficiary.send(amountRaised)
-</code></pre><p>  最后Wiki’中知道了, 这个理解顺序是 <code>this to beneficiary</code>,  就是由合约向其他的账户发送Ether.</p>
-</li>
-</ul>
-<h2 id="后面的话"><a href="#后面的话" class="headerlink" title="后面的话"></a>后面的话</h2><p>这次的crowdsale 结合上一次的token , 就可以发动一场轰轰烈烈的ICO了. 不过 希望能够只是以学习为目的, 尊重技术. 不要让这种没有意义的代码充斥 以太坊网络 </p>
-<p><strong>Don’t be evil</strong></p>
-<p>后面还会有一篇,crowdsale在测试网络上的部署. 自己记录本身, 也是学习, 和大家共勉!</p>
+        <h1 id="What-is-BlockChain"><a href="#What-is-BlockChain" class="headerlink" title="What is BlockChain?"></a>What is BlockChain?</h1><p>现在比特币这个词，相比对普通人来说也是越来越熟悉了。所以这一篇文章的定位是一篇科普文，希望大家可以通过这篇文章，至少可以理解这个是什么玩意。</p>
+<p>所谓区块链，就是比特币这种数字货币的底层技术。区块链这个名字虽然不是那么响亮，不过我真正的相信，这个将会是下一代的互联网。</p>
+<h2 id="现在的互联网"><a href="#现在的互联网" class="headerlink" title="现在的互联网"></a>现在的互联网</h2><p>在现在的互联网，大家常常发送电子邮件。实际上发送的这些东西我们称之为信息。像是QQ文件之类的，我们发送的文件实际上只是一个副本（copy）。如果只是这些信息的话，我把他发给A，B，C是完全可能的。</p>
+<p>可是，如果现在不是单纯的信息，而是100块钱，我把这100块发给你，你当然不会希望这是一个副本。</p>
+<p>我只有100块，我给A发送100块，我又给B发送100块。在现代的互联网里面，这种保持价值的传递时无法做到的。可以说现代的互联网只能实现<strong>传播</strong>而不是<strong>传递</strong>。</p>
+<p>那么，为了弥补这些缺陷，我们的信息价值重视被那些大的中介企业所担保。这里举个例子：我们日常生活中极为常用的支付宝，带着妹子去买东西，在付款的时候，我只是向云端传输了鉴权代码。商家就可以收到这100块了。这是怎么做到的？</p>
+<p>没错，就是我们讲到的大的可信中介(支付宝)，因为大家信任它，所以这个机构是可信的。他维护者这个账本，当你付款了，他就很简单的你减去100，商家加上100。</p>
+<p>上面描述的流程在生活中再常见不过了，感觉非常的合理。他们的业务和做法时相当的广泛，从身份认证，到结算记账，基本是对这个流程是无所不包的。<br>可是，实际上，其中的问题和威胁也是会慢慢的浮现：</p>
+<hr>
+<h3 id="集权化-centralization"><a href="#集权化-centralization" class="headerlink" title="集权化(centralization)"></a>集权化(centralization)</h3><p>由于这些巨型中介对所有的东西无所不包，人们对其只能够以信任为基础和支柱，这个信任一旦出现裂痕，那么这种模式将会出现历史性的倒退</p>
+<p>其次，信息的安全保证，随着互联网的飞速的发展，信息安全这个point已经显得越来越重要。如果有组织想黑客军团里那样，清除了Evil公司的所有的财富数据，也必将是一场大乱</p>
+<p>他们仅仅的少数的人，却可以把全球的数十亿人排除在经济这两个字之外。也正是这些中介的存在，拖慢了我们的信息的速度：比如我给美国的朋友发一封邮件，可能只需数秒，他就可以收到。可是一旦我的这个信息包含了100块的价值，<strong>可能需要几天，甚至几周</strong>才能漂洋过海的到达他的手里，而且在这流动的途中，各种的费用慢慢叠加，我们的信息的价值还会因此衰减。</p>
+<p>再者，我们和这些大型的中介是严重的信息不对等的，我们提供了大量的个人信息，告诉他我们是谁，可是我们只能无条件的信任这些大的企业不会做恶。</p>
+<hr>
+<h2 id="实现价值的互联网"><a href="#实现价值的互联网" class="headerlink" title="实现价值的互联网"></a>实现价值的互联网</h2><p><strong>从比特币开始</strong></p>
+<p>所以，为了实现这样的伟大构想，一个伟大的创举开始了，这个就是中本聪(Satoshi Nokamoto)提出的比特币(BitCoin)。这种货币根本构想是实现一个没有第三方的互信体系并可以进行交易。比特币作为一种数字资产，不同其他的国家法币。不过重点不在于这个货币(Currency)。而是其底层的技术，也就是区块链。</p>
+<hr>
+<p><strong>人人都有的账本</strong></p>
+<p>所以，得力的区块链技术的核心，就是实现一个价值的互联网，而不单单是信息构成。这样我们就有了一个巨大的遍布全球的账本(ledger)，这帐本运行在世界上成千上万的计算机上。</p>
+<p>我们生活中一切有价值的东西，像是电影，音乐，照片等等，都可以在这巨大的账本上面进行保存，转移，交易和互换。在这种情况下完全不需要有相关的中介参加这些过程，所有的一切都是可信的。</p>
+<p>这一切是基于密码学实现的，所以他是可信的。</p>
+<hr>
+<h3 id="如何工作"><a href="#如何工作" class="headerlink" title="如何工作"></a>如何工作</h3><p>在这个区块链体系中，我们对我们的资产不是存储，而实把价值寄托在链上。由于人人都有一个账本，各个节点之间通过共识算法实现了弱一致性。所以你的资产会被绝大多数的节点所记录。</p>
+<p>当你尝试发起一笔交易(transcation)的时候，你给这个消息进行一次签名，证明是你发起的(技术细节后面讲到)。之后把这个请求发送到互联网上，所有的节点彼此路由，很快传播到世界上所有的节点上。这个过程我们称之为 <strong>交易广播(Broadcast Transaction)</strong></p>
+<p>接下来是一个重要的角色，叫做矿工(挖矿行业非同彼挖矿)，把交易数据进行合法性计算(你是否有足够的资产)，并且进行存储。每十分钟，像是比特币网络上的一个心跳，他们使用其强大的运算能力，始疯狂的计算一道数学题(PoS技术细节以后讲解)。这些人中只有一个获胜者。之后它可以把这个区块(含有数学题答案的)广播出去。说之间发现了这个区块。所有的节点开始验证答案是否正确(很快),如果正确，就把这个块入链。可以想到，十分钟的交易记录都加入到了这个链里面。这样，你的交易就被确认了呀</p>
+<p>上面提到的入链，是区块链中的一个很重要的概念，上面产生的是一个区块，也就是十分钟所有的交易。如果大家知道hash，不懂也没关系，可以理解为指纹。我的当前区块会包含上一个区块的指纹，所以一旦新的区块产生，上一个区块的数据就变得不可改变了，或者说是很难改变。正是这种特性给区块链提供了无语伦比的安全性。</p>
+<p>所以可见，区块链的精妙且强大的体系，是一种革命性的保障。</p>
+<h2 id="代码即律"><a href="#代码即律" class="headerlink" title="代码即律"></a>代码即律</h2><p>上面我们描述了资产在区块链上流动的基本的工作原理。这里就是区块链技术的另一个拓展。</p>
+<p>这个项目我们称之为以太坊(Ethereum),前面提到的区块链技术，提供里一个可信的平台，BTC实现的是一个货币。这里的以太坊实现的就是一个EVM(以太坊虚拟机)。</p>
+<p>在这个虚拟机上，我们可以执行自己的图灵完备的代码，这样的代码我们称之为智能合约(Smart Contract)。顾名思义，我们可以在这个网络上签订各种的合约，而且前提是这些都是可信的。那么会有什么改变？</p>
+<p>可以看到基本是场革命，我们的保险，贷款，征信等等等的东西，不在会有诈骗，不予执行这些人为欺骗和不可信的事情发生了！</p>
+<h2 id="后面的话"><a href="#后面的话" class="headerlink" title="后面的话"></a>后面的话</h2><p>区块链作为一种新型的技术，想必已经得到了正视。在这大好浪潮之中，一场革命正在积蓄力量</p>
 
       
     </div>
@@ -686,13 +502,7 @@ uint dna;
         <div class="post-tags">
           
             <!--  这里用来改变标签样式 -->
-            <a href="/tags/以太坊/" rel="tag"><i class="fa fa-tag"></i> 以太坊</a>
-          
-            <!--  这里用来改变标签样式 -->
-            <a href="/tags/区块链/" rel="tag"><i class="fa fa-tag"></i> 区块链</a>
-          
-            <!--  这里用来改变标签样式 -->
-            <a href="/tags/智能合约/" rel="tag"><i class="fa fa-tag"></i> 智能合约</a>
+            <a href="/tags/BC原理/" rel="tag"><i class="fa fa-tag"></i> BC原理</a>
           
         </div>
       
@@ -705,8 +515,8 @@ uint dna;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/13/ERC20 Token 合约代码分析/" rel="next" title="ERC20 Token 合约代码分析">
-                <i class="fa fa-chevron-left"></i> ERC20 Token 合约代码分析
+              <a href="/2018/03/12/pyMyBC (3)/" rel="next" title="Py区块链源码笔记 （3）交易">
+                <i class="fa fa-chevron-left"></i> Py区块链源码笔记 （3）交易
               </a>
             
           </div>
@@ -714,10 +524,6 @@ uint dna;
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/21/一周干货集 (1)/" rel="prev" title="一周干货集 (1)">
-                一周干货集 (1) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -908,7 +714,7 @@ uint dna;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CrowdSale-合约分析"><span class="nav-number">1.</span> <span class="nav-text">CrowdSale 合约分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前"><span class="nav-number">1.1.</span> <span class="nav-text">前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合约代码"><span class="nav-number">1.2.</span> <span class="nav-text">合约代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Point"><span class="nav-number">1.3.</span> <span class="nav-text">Point</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#接口-interface"><span class="nav-number">1.3.1.</span> <span class="nav-text">接口(interface)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回退函数"><span class="nav-number">1.4.</span> <span class="nav-text">回退函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#地址-Address"><span class="nav-number">1.5.</span> <span class="nav-text">地址(Address)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后面的话"><span class="nav-number">1.6.</span> <span class="nav-text">后面的话</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-BlockChain"><span class="nav-number">1.</span> <span class="nav-text">What is BlockChain?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#现在的互联网"><span class="nav-number">1.1.</span> <span class="nav-text">现在的互联网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#集权化-centralization"><span class="nav-number">1.1.1.</span> <span class="nav-text">集权化(centralization)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现价值的互联网"><span class="nav-number">1.2.</span> <span class="nav-text">实现价值的互联网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何工作"><span class="nav-number">1.2.1.</span> <span class="nav-text">如何工作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码即律"><span class="nav-number">1.3.</span> <span class="nav-text">代码即律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后面的话"><span class="nav-number">1.4.</span> <span class="nav-text">后面的话</span></a></li></ol></li></ol></div>
             
 
           </div>
