@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="R4y&#39;s小窝">
 <meta property="og:description" content="拜占庭将军与共识算法前随着自己慢慢对BlockChain的基本原理的深入了解，对区块链的基本原理也是慢慢的有了清晰的了解。对共识，PoW，的概念也是更加清晰了。所以以此文来总结一下 拜占庭将军问题起源首先什么是拜占庭将军(Byzantine failures)问题呢？这里引用一下百科:  拜占庭位于如今的土耳其的伊斯坦布尔，是东罗马帝国的首都。由于当时拜占庭罗马帝国国土辽阔，为了防御目的，因此每个">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-13T05:55:02.994Z">
+<meta property="og:updated_time" content="2018-03-13T06:03:58.879Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="拜占庭将军与共识算法">
 <meta name="twitter:description" content="拜占庭将军与共识算法前随着自己慢慢对BlockChain的基本原理的深入了解，对区块链的基本原理也是慢慢的有了清晰的了解。对共识，PoW，的概念也是更加清晰了。所以以此文来总结一下 拜占庭将军问题起源首先什么是拜占庭将军(Byzantine failures)问题呢？这里引用一下百科:  拜占庭位于如今的土耳其的伊斯坦布尔，是东罗马帝国的首都。由于当时拜占庭罗马帝国国土辽阔，为了防御目的，因此每个">
@@ -453,7 +453,7 @@ return False
 </code></pre><blockquote>
 <p><a href="https://github.com/quartz010/blockchain" target="_blank" rel="noopener">pyBlockChain项目地址</a>（这个是笔者Fork的后面可能会自己拓展功能）</p>
 </blockquote>
-<p>关于其具体的实现和分析可以笔者的之前的文章<a href="http://blog.diglp.xyz/2018/03/11/pyMyBC%20(2">Py区块链源码笔记 （2）P2P网络</a>/)</p>
+<p>关于其具体的实现和分析可以笔者的之前的文章<a href="blog.diglp.xyz/2018/03/11/pyMyBC_2/">Py区块链源码笔记 （2）P2P网络</a></p>
 <hr>
 <p>上面贴出的代码看上去十分简单，实际上也是十分简单。他意在在网络上站找到一个最长链，之后验证这个最长链的合法性(这点可以看看上面的文章的同一系列)。只要是合法的链，我们就直接替换掉我们的本地链。</p>
 <p>可是这样的一个过程，到底是怎么解决区块链共识的问题呢？不就是要最长嘛，那我就编编编伪造一堆的虚假的区块数据让自己变得更长，那么不是轻轻松松在区块链实际翻云覆雨了，走上人生巅峰了？？</p>
@@ -464,7 +464,7 @@ return False
 <p>如果在链圈币圈混过的那么对挖矿这个词一定不会陌生，没错挖矿就是PoW！听着很奇怪？老套路去看看什么是<strong>挖矿/PoW</strong>把。</p>
 <p>还是笔者之前写的文章，一样的是Pyhton的简单区块链</p>
 <blockquote>
-<p>文章地址: <a href="http://blog.diglp.xyz/2018/03/09/pyMyBC(1">Py区块链源码笔记 （1）挖矿</a>/)</p>
+<p>文章地址: <a href="http://blog.diglp.xyz/2018/03/09/pyMyBC_1">Py区块链源码笔记 （1）挖矿</a></p>
 </blockquote>
 <hr>
 <p>好，现在大家知道了什么是PoW了，那我们现在来看看这个共识到底是怎么实现的。刚刚说啥来着？我们需要找到网络中的最长链，那么我们就可以编对不对？现在一旦引入了PoW的机制，这样我们每个新的区块的产生是需要成本的，<strong>需要强大的Hash运算能力</strong>。所以我们编编编区块的这种想法是<strong>行不通</strong>的了</p>
