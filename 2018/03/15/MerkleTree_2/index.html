@@ -100,28 +100,30 @@
 
 
   
-  <meta name="keywords" content="以太坊,区块链,智能合约," />
+  <meta name="keywords" content="BC原理," />
 
 
-<meta name="description" content="ERC20 Token 合约代码分析合约接口代码// https://github.com/ethereum/EIPs/issues/20  // 接口标准   contract ERC20 {       function totalSupply() constant returns (uint totalSupply);    // 总发行量       function balanceOf(">
-<meta name="keywords" content="以太坊,区块链,智能合约">
+<meta name="description" content="MerkleTree与零知识证明前默克尔树这个数据结构，至于区块链就是他的骨架了。 之前的文章对默克尔树是什么做了个十分十分简单的介绍。最近啃书，又看见了这个MerklerTree结构的介绍。对于其精妙之处再一次的感到。所以记录之。 默克尔树简介默克尔树，又名是哈希树。关于其较详细的简介可以看看之前的文章  什么是默克尔树  现在简单讲是一个哈希构成的二叉树了。 其主要的特性有  最下面的叶子节点">
+<meta name="keywords" content="BC原理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ERC20 Token 合约代码分析">
-<meta property="og:url" content="blog.diglp.xyz/2018/02/13/ERC20 Token 合约代码分析/index.html">
+<meta property="og:title" content="什么是默克尔树">
+<meta property="og:url" content="blog.diglp.xyz/2018/03/15/MerkleTree_2/index.html">
 <meta property="og:site_name" content="R4y&#39;s小窝">
-<meta property="og:description" content="ERC20 Token 合约代码分析合约接口代码// https://github.com/ethereum/EIPs/issues/20  // 接口标准   contract ERC20 {       function totalSupply() constant returns (uint totalSupply);    // 总发行量       function balanceOf(">
+<meta property="og:description" content="MerkleTree与零知识证明前默克尔树这个数据结构，至于区块链就是他的骨架了。 之前的文章对默克尔树是什么做了个十分十分简单的介绍。最近啃书，又看见了这个MerklerTree结构的介绍。对于其精妙之处再一次的感到。所以记录之。 默克尔树简介默克尔树，又名是哈希树。关于其较详细的简介可以看看之前的文章  什么是默克尔树  现在简单讲是一个哈希构成的二叉树了。 其主要的特性有  最下面的叶子节点">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-28T09:50:26.761Z">
+<meta property="og:image" content="http://blog.diglp.xyz/images/BC_MK.jpeg">
+<meta property="og:updated_time" content="2018-03-14T05:45:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ERC20 Token 合约代码分析">
-<meta name="twitter:description" content="ERC20 Token 合约代码分析合约接口代码// https://github.com/ethereum/EIPs/issues/20  // 接口标准   contract ERC20 {       function totalSupply() constant returns (uint totalSupply);    // 总发行量       function balanceOf(">
+<meta name="twitter:title" content="什么是默克尔树">
+<meta name="twitter:description" content="MerkleTree与零知识证明前默克尔树这个数据结构，至于区块链就是他的骨架了。 之前的文章对默克尔树是什么做了个十分十分简单的介绍。最近啃书，又看见了这个MerklerTree结构的介绍。对于其精妙之处再一次的感到。所以记录之。 默克尔树简介默克尔树，又名是哈希树。关于其较详细的简介可以看看之前的文章  什么是默克尔树  现在简单讲是一个哈希构成的二叉树了。 其主要的特性有  最下面的叶子节点">
+<meta name="twitter:image" content="http://blog.diglp.xyz/images/BC_MK.jpeg">
 
 
 
 
 
 
-  <link rel="canonical" href="blog.diglp.xyz/2018/02/13/ERC20 Token 合约代码分析/"/>
+  <link rel="canonical" href="blog.diglp.xyz/2018/03/15/MerkleTree_2/"/>
 
 
 
@@ -130,7 +132,7 @@
     sidebar: "",
   };
 </script>
-  <title>ERC20 Token 合约代码分析 | R4y's小窝</title>
+  <title>什么是默克尔树 | R4y's小窝</title>
   
 
 
@@ -292,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/02/13/ERC20 Token 合约代码分析/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/03/15/MerkleTree_2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="R4y">
@@ -309,7 +311,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">ERC20 Token 合约代码分析</h2>
+          <h2 class="post-title" itemprop="name headline">什么是默克尔树</h2>
         
 
         <div class="post-meta">
@@ -321,7 +323,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-13T00:00:00+08:00">2018-02-13</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T00:00:00+08:00">2018-03-15</time>
             
 
             
@@ -342,7 +344,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链开发/" itemprop="url" rel="index"><span itemprop="name">区块链开发</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链原理/" itemprop="url" rel="index"><span itemprop="name">区块链原理</span></a></span>
 
                 
                 
@@ -370,7 +372,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">7.9k</span>
+                <span title="字数统计">1.4k</span>
               
 
               
@@ -384,7 +386,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:08</span>
+                <span title="阅读时长">0:01</span>
               
             </div>
           
@@ -404,211 +406,48 @@
       
 
       
-        <h1 id="ERC20-Token-合约代码分析"><a href="#ERC20-Token-合约代码分析" class="headerlink" title="ERC20 Token 合约代码分析"></a>ERC20 Token 合约代码分析</h1><h2 id="合约接口代码"><a href="#合约接口代码" class="headerlink" title="合约接口代码"></a>合约接口代码</h2><pre><code>// https://github.com/ethereum/EIPs/issues/20
-
-// 接口标准
-  contract ERC20 {
-      function totalSupply() constant returns (uint totalSupply);    // 总发行量
-      function balanceOf(address _owner) constant returns (uint balance);
-      function transfer(address _to, uint _value) returns (bool success);    // 代币分发(注意, 这个只有合约的Creator 可以调用)
-      function transferFrom(address _from, address _to, uint _value) returns (bool success);    // 这里是拥有者和拥有者之间的代币转移
-
-      function approve(address _spender, uint _value) returns (bool success);
-      function allowance(address _owner, address _spender) constant returns (uint remaining);
-
-      event Transfer(address indexed _from, address indexed _to, uint _value);
-      event Approval(address indexed _owner, address indexed _spender, uint _value);
-
-// Token信息
-     string public constant name = &quot;4FunCoin&quot;;
-    string public constant symbol = &quot;4FC&quot;;
-    uint8 public constant decimals = 18;  // token的精度, 大部分都是18
-}
-</code></pre><p>上面的代码是一个标准的ERC20标准的代码, 他给出了框架, 我们只需要实现相应的函数就好了, 这里给出函数说明:</p>
-<h3 id="接口函数"><a href="#接口函数" class="headerlink" title="接口函数"></a>接口函数</h3><ul>
-<li>函数的形参是局部有效, 所以前面使用下划线, 与其他的变量区别开来. 如 _owner.</li>
-<li><code>totalSupply()</code> 函数返回这个Token的总发行量;</li>
-<li><code>balanceOf()</code> 查询某个地址的Token数量 , 结合mapping实现</li>
-<li><code>transfer()</code> owner 使用这个进行发送代币</li>
-<li><code>transferFrom ()</code> token的所有者用来发送token</li>
-<li><code>allowance()</code> 控制代币的交易，如可交易账号及资产, 控制Token的流通</li>
-<li><code>approve()</code> 允许用户可花费的代币数；</li>
-</ul>
-<h3 id="事件函数"><a href="#事件函数" class="headerlink" title="事件函数"></a>事件函数</h3><p>这里两个Event是重点, 之前没弄懂, 现在倒是明白不少, 就是产生事件, 从而可以被前端代码捕获到, 从对事件使用事件服务函数进行处理 , 这里的参数,也将传递给服务函数</p>
-<ul>
-<li>event Transfer() Token的转账事件</li>
-<li>event Approval() 允许事件</li>
-</ul>
-<h2 id="合约实现代码"><a href="#合约实现代码" class="headerlink" title="合约实现代码"></a>合约实现代码</h2><p>理解了上面的函数, 下面的代码,就实现了Token合约的函数填充</p>
-<pre><code>pragma solidity ^0.4.16;
-
-interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public; }    // token的 接受者 这里声明接口, 将会在我们的ABI里
-
-contract TokenERC20 {
-/*********Token的属性说明************/
-    string public name = 4FunCoin;
-    string public symbol = 4FC;
-    uint8 public decimals = 18;  // 18 是建议的默认值
-    uint256 public totalSupply;    // 发行量
-
-    // 建立映射 地址对应了 uint&apos; 便是他的余额
-    mapping (address =&gt; uint256) public balanceOf;   
-    // 地址对应余额
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
-
-     // 事件，用来通知客户端Token交易发生
-    event Transfer(address indexed from, address indexed to, uint256 value);
-
-     // 事件，用来通知客户端代币被消耗(这里就不是转移, 是token用了就没了)
-    event Burn(address indexed from, uint256 value);
-
-    // 这里是构造函数, 实例创建时候执行
-    function TokenERC20(uint256 initialSupply, string tokenName, string tokenSymbol) public {
-        totalSupply = initialSupply * 10 ** uint256(decimals);    // 这里确定了总发行量
-
-        balanceOf[msg.sender] = totalSupply;    // 这里就比较重要, 这里相当于实现了, 把token 全部给合约的Creator
-
-        name = tokenName;
-        symbol = tokenSymbol;
-    }
-
-    // token的发送函数
-    function _transfer(address _from, address _to, uint _value) internal {
-
-        require(_to != 0x0);    // 不是零地址
-        require(balanceOf[_from] &gt;= _value);        // 有足够的余额来发送
-        require(balanceOf[_to] + _value &gt; balanceOf[_to]);    // 这里也有意思, 不能发送负数的值(hhhh)
-
-        uint previousBalances = balanceOf[_from] + balanceOf[_to];    // 这个是为了校验, 避免过程出错, 总量不变对吧?
-        balanceOf[_from] -= _value;    //发钱 不多说
-        balanceOf[_to] += _value;
-        Transfer(_from, _to, _value);    // 这里触发了转账的事件 , 见上event
-        assert(balanceOf[_from] + balanceOf[_to] == previousBalances);    // 判断总额是否一致, 避免过程出错
-    }
-
-    function transfer(address _to, uint256 _value) public {
-        _transfer(msg.sender, _to, _value);    // 这里已经储存了 合约创建者的信息, 这个函数是只能被合约创建者使用
-    }
-
-    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        require(_value &lt;= allowance[_from][msg.sender]);     // 这句很重要, 地址对应的合约地址(也就是token余额)
-        allowance[_from][msg.sender] -= _value;
-        _transfer(_from, _to, _value);
-        return true;
-    }
-
-    function approve(address _spender, uint256 _value) public
-        returns (bool success) {
-        allowance[msg.sender][_spender] = _value;    // 这里是可花费总量
-        return true;
-    }
-
-    function approveAndCall(address _spender, uint256 _value, bytes _extraData) public returns (bool success) {
-        tokenRecipient spender = tokenRecipient(_spender);
-        if (approve(_spender, _value)) {
-            spender.receiveApproval(msg.sender, _value, this, _extraData);
-            return true;
-        }
-    }
-    // 正如其名, 这个是烧币(SB)的.. ,用于把创建者的 token 烧掉
-    function burn(uint256 _value) public returns (bool success) {
-        require(balanceOf[msg.sender] &gt;= _value);    // 必须要有这么多
-        balanceOf[msg.sender] -= _value;
-        totalSupply -= _value;
-        Burn(msg.sender, _value);
-        return true;
-    }
-    // 这个是用户销毁token.....
-    function burnFrom(address _from, uint256 _value) public returns (bool success) {
-        require(balanceOf[_from] &gt;= _value);        // 一样要有这么多
-        require(_value &lt;= allowance[_from][msg.sender]);    // 
-        balanceOf[_from] -= _value;
-        allowance[_from][msg.sender] -= _value;
-        totalSupply -= _value;
-        Burn(_from, _value);
-        return true;
-    }
-}
-</code></pre><p>上面的代码阅读难度不大, 也写了大多处的注释, 这里吧自己学的几个Point 提一下</p>
-<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><pre><code>// 这里是构造函数, 实例创建时候执行
-function TokenERC20(uint256 initialSupply, string tokenName, string tokenSymbol) public {
-    totalSupply = initialSupply * 10 ** uint256(decimals);    // 这里确定了总发行量
-        balanceOf[msg.sender] = totalSupply;    // 这里就比较重要, 这里相当于实现了, 把token 全部给合约的Creator
-
-        name = tokenName;
-        symbol = tokenSymbol;
-    }
-</code></pre><p>在Solidity里面, Contract 我们可以直接理解成一个Class吧. 如C++ 一样, 这里面也存在一个<br>构造函数而且他们的功能也是近乎相同, 在合约创建的时候执行一次.(没错 , 合约整个生命周期里只能执行这样一次) , 所以他的作用就是实现合约信息的初始化, 一旦数据写入区块数据, 将是无法更改的了(永固性).</p>
-<p>构造函数的是不能有返回值的(有也无法接受), 但是可以带参数, 像是此处代码, 把发行量, token的名称和token的 符号作为参数留出. 在合约初始化时候我们便可以自行定义.</p>
-<p>函数体中可见, 我们对货币总量, 名称和 符号进行赋值, 这样,这些值就永远的记录在了我们的合约的区块数据中了</p>
-<h3 id="映射-mapping"><a href="#映射-mapping" class="headerlink" title="映射(mapping)"></a>映射(mapping)</h3><pre><code>// 建立映射 地址对应了 uint&apos; 便是他的余额
-mapping (address =&gt; uint256) public balanceOf;   
-// 地址对应余额
-mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
-</code></pre><p>这个形式,乍一眼看上去是没那么好懂. 其实慢慢的 也是理解了, 这里的映射, 通俗的讲,就是相当于我们的字典, 是一个键值对. 上述的代码也是建立了一个 address 到 uint类型的映射关系. </p>
-<pre><code>balanceOf[msg.sender] = 10000;    //msg.sender 是一个地址
-</code></pre><p>这样简单的方法, 相当于对账户进行余额的赋值;</p>
-<h3 id="事件-event"><a href="#事件-event" class="headerlink" title="事件(event)"></a>事件(event)</h3><p>Solidity 是基于事件驱动(前面有说不是消息驱动), 事件也是连接前端的桥梁, 一个事件的触发, 可以被前端所捕获, 从而做出相应的响应.比如MeteMask的支付窗口一样. 点了支付 ,他就弹出来了对吧.</p>
-<pre><code>// 事件，用来通知客户端Token交易发生
-event Transfer(address indexed from, address indexed to, uint256 value);
-
-// 下面是事件监听
-var ClientReceipt = web3.eth.contract(abi);    //导入接口说明
-var clientReceipt = ClientReceipt.at(0x123 /* address */);    //合约地址
-// 对事件进行监听, 
-var event = clientReceipt.Deposit(function(error, result) {
-    if (!error)
-        console.log(result);
-});
-// 对事件进行绑定
-     bindEvents: function() {
-    $(document).on(&apos;click&apos;, &apos;.btn-adopt&apos;, App.handleAdopt);
-  },
-</code></pre><p>EG:</p>
+        <h1 id="MerkleTree与零知识证明"><a href="#MerkleTree与零知识证明" class="headerlink" title="MerkleTree与零知识证明"></a>MerkleTree与零知识证明</h1><h2 id="前"><a href="#前" class="headerlink" title="前"></a>前</h2><p>默克尔树这个数据结构，至于区块链就是他的骨架了。 之前的文章对默克尔树是什么做了个十分十分简单的介绍。最近啃书，又看见了这个MerklerTree结构的介绍。对于其精妙之处再一次的感到。所以记录之。</p>
+<h2 id="默克尔树简介"><a href="#默克尔树简介" class="headerlink" title="默克尔树简介"></a>默克尔树简介</h2><p>默克尔树，又名是哈希树。关于其较详细的简介可以看看之前的文章</p>
 <blockquote>
-<p>事件 是合约和区块链通讯的一种机制。你的前端应用“监听”某些事件，并做出反应。</p>
+<p><a href="http://blog.diglp.xyz/2018/02/28/MerkleTree_1/">什么是默克尔树</a></p>
 </blockquote>
-<pre><code>// in contract
-// 这里建立事件
-event IntegersAdded(uint x, uint y, uint result);
-
-function add(uint _x, uint _y) public {
-  uint result = _x + _y;
-  //触发事件，通知app
-  IntegersAdded(_x, _y, result);
-  return result;
-}
-
-//in js
-// 你的 app 前端可以监听这个事件。JavaScript 实现如下:
-
-YourContract.IntegersAdded(function(error, result) { 
-  // do something
-}
-</code></pre><h3 id="接口-interface"><a href="#接口-interface" class="headerlink" title="接口(interface)"></a>接口(interface)</h3><p>这个合约的第二行就是, 差点忘了… 这个也是一个相对重要的东西, 合约主要的作用个人理解来说就是实现与其他合约的交互.</p>
-<p>如果我们的合约需要和区块链上的其他的合约交互(比如使用其中的公有函数)，则需先定义一个 interface (接口)。</p>
-<p>先举一个简单的例子子。 假设在区块链上有这么一个合约：</p>
-<pre><code>contract LuckyNumber {
-  mapping(address =&gt; uint) numbers;
-
-  function setNum(uint _num) public {
-    numbers[msg.sender] = _num;
-  }
-
-  function getNum(address _myAddress) public view returns (uint) {
-    return numbers[_myAddress];
-  }
-}
-</code></pre><p>这是个很简单的合约，您可以用它存储自己的幸运号码，并将其与地址关联。 这样其他人就可以通过地址得到号码了。</p>
-<p>现在假设我们有一个外部合约，使用 getNum 函数可读取其中的数据。</p>
-<p>首先，我们定义 LuckyNumber 合约的 interface ：</p>
-<pre><code>interface NumberInterface {
-  function getNum(address _myAddress) public view returns (uint);
-}
-</code></pre><p>首先，我们只用声明进行交互的函数 —— 在本例中为 getNum.(声明, 函数体是空的)</p>
-<p>然后我们在我们自己的合约中直接对接口进行访问, 就可以getnum 了.</p>
-<p>Ethereum 内部有一个散列函数keccak256，它用了SHA3版本。一个散列函数基本上就是把一个字符串转换为一个256位的16进制数字。字符串的一个微小变化会引起散列数据极大变化。</p>
-<h2 id="后面的话"><a href="#后面的话" class="headerlink" title="后面的话"></a>后面的话</h2><p>这次的分析也是基于上一篇的 Token发布的文章的进一步, 通过自己读读代码,总结一下里面的point, 借此也是学习力Solidity. </p>
+<p>现在简单讲是一个哈希构成的二叉树了。</p>
+<p>其主要的特性有</p>
+<ul>
+<li>最下面的叶子节点时包含的时存储数据和其哈希值</li>
+<li>非叶子节点的值是他的两个孩子节点的内容的Hash</li>
+</ul>
+<p>在逻辑上讲，他们的父节点就是子节点的摘要。任何的数据改变将会最终的传递到根节点上。也正是这种性质成就了精巧的区块链体系。</p>
+<hr>
+<h2 id="默克尔树的作用"><a href="#默克尔树的作用" class="headerlink" title="默克尔树的作用"></a>默克尔树的作用</h2><h3 id="大量数据比较"><a href="#大量数据比较" class="headerlink" title="大量数据比较"></a>大量数据比较</h3><p>由于默克尔树的所有的存储数据都是存在于其叶子节点上，所有的非叶子节点是孩子节点的哈希。所以我们进行大文件比较时候。我们从根节点依次递归。每次找到当前的高度的存在hash差异节点。并且进入下一个高度。周而复始便可以找到我们存在差异的叶子节点。</p>
+<p>所以根据这样的方法可以很快的找到差异数据块。如果只是进行文件的本身的对比，那么只需要对比根哈希即可。</p>
+<h3 id="快速定位修改"><a href="#快速定位修改" class="headerlink" title="快速定位修改"></a>快速定位修改</h3><p>其实和上面的对比，这个差不多。我们的文件发生了根哈希改变，那么我们根据深度依次递归，找到了我们的最终变化的叶子节点就好了</p>
+<hr>
+<h2 id="零知识证明-zero-knowledge-proof"><a href="#零知识证明-zero-knowledge-proof" class="headerlink" title="零知识证明 (zero-knowledge proof)"></a>零知识证明 (zero-knowledge proof)</h2><p>这里是一个比较重要的点，所以把他放在最后。这个技术已经被很多的加密货币所采用比如较为有名的<strong>ZCash</strong>(零币)。在零币体系中就是使用了merkleTree的零知识证明的这一应用特性，实现了其招牌的匿名性。</p>
+<blockquote>
+<p>“零知识证明”－zero-knowledge proof，是由S.Goldwasser、S.Micali及C.Rackoff在20世纪80年代初提出的。它指的是证明者能够在不向验证者提供任何有用的信息的情况下，使验证者相信某个论断是正确的。</p>
+</blockquote>
+<p>这个是不是听着比较玄乎?不告诉你这个内容，又使你相信这个是真的。怎么做到呢?我们从下图入手。</p>
+<p><img src="http://blog.diglp.xyz/images/BC_MK.jpeg" alt="MKT"></p>
+<p>这个图所绘制的是一个十分简单的实现的默克尔树。</p>
+<p>如果我要向其他人证明我是数据A的拥有者，却不可向其他人公布任何关于A的信息，那么要怎么做呢？</p>
+<p>证明如下：我们可以公布Habcd，Hcd，Hb的值。我作为拥有者只需要提高我的数据的Hash即可。作为验证者只需要进行验证</p>
+<pre><code>Habcd == H(H(a,b),Hcd);
+</code></pre><p>这样的一个等式即可，如果返回是True ，那么可以说明，你就是这个数据的 拥有者了，整个的过程是不需要涉及到数据A的数据信息的。</p>
+<hr>
+<p>我们进一步把这个证明贴近我们的生活中去,举个简单的例子：</p>
+<p>A要向B证明自己拥有某个房间的钥匙，假设该房间只能用钥匙打开锁，而其他任何方法都打不开。这时有2个方法：</p>
+<ol>
+<li><p>A把钥匙出示给B，B用这把钥匙打开该房间的锁，从而证明A拥有该房间的正确的钥匙。</p>
+</li>
+<li><p>B确定该房间内有某一物体，A用自己拥有的钥匙打开该房间的门，然后把物体拿出来出示给B，从而证明自己确实拥有该房间的钥匙 。</p>
+</li>
+</ol>
+<p>后面这个方法属于零知识证明。好处在于在整个证明的过程中，B始终不能看到钥匙的样子，从而避免了钥匙的泄露。</p>
+<blockquote>
+<p><a href="http://www.sohu.com/a/121847942_475384" target="_blank" rel="noopener">详细的ZCash的匿名转账的实现原理</a></p>
+</blockquote>
+<h2 id="后面的话"><a href="#后面的话" class="headerlink" title="后面的话"></a>后面的话</h2><p>此文其实只是对以区块链技术的加密体系的初探。对新的知识做了粗浅的了解，不看也罢</p>
 
       
     </div>
@@ -675,13 +514,7 @@ YourContract.IntegersAdded(function(error, result) {
         <div class="post-tags">
           
             <!--  这里用来改变标签样式 -->
-            <a href="/tags/以太坊/" rel="tag"><i class="fa fa-tag"></i> 以太坊</a>
-          
-            <!--  这里用来改变标签样式 -->
-            <a href="/tags/区块链/" rel="tag"><i class="fa fa-tag"></i> 区块链</a>
-          
-            <!--  这里用来改变标签样式 -->
-            <a href="/tags/智能合约/" rel="tag"><i class="fa fa-tag"></i> 智能合约</a>
+            <a href="/tags/BC原理/" rel="tag"><i class="fa fa-tag"></i> BC原理</a>
           
         </div>
       
@@ -694,8 +527,8 @@ YourContract.IntegersAdded(function(error, result) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/12/发行自己的ERC20 Token/" rel="next" title="发行自己的ERC20 Token">
-                <i class="fa fa-chevron-left"></i> 发行自己的ERC20 Token
+              <a href="/2018/03/14/Byzantium/" rel="next" title="拜占庭将军与共识算法">
+                <i class="fa fa-chevron-left"></i> 拜占庭将军与共识算法
               </a>
             
           </div>
@@ -703,10 +536,6 @@ YourContract.IntegersAdded(function(error, result) {
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/14/CrowdSale合约实现/" rel="prev" title="CrowdSale 合约分析">
-                CrowdSale 合约分析 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -897,7 +726,7 @@ YourContract.IntegersAdded(function(error, result) {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ERC20-Token-合约代码分析"><span class="nav-number">1.</span> <span class="nav-text">ERC20 Token 合约代码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#合约接口代码"><span class="nav-number">1.1.</span> <span class="nav-text">合约接口代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#接口函数"><span class="nav-number">1.1.1.</span> <span class="nav-text">接口函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件函数"><span class="nav-number">1.1.2.</span> <span class="nav-text">事件函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合约实现代码"><span class="nav-number">1.2.</span> <span class="nav-text">合约实现代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数"><span class="nav-number">1.2.1.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#映射-mapping"><span class="nav-number">1.2.2.</span> <span class="nav-text">映射(mapping)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件-event"><span class="nav-number">1.2.3.</span> <span class="nav-text">事件(event)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口-interface"><span class="nav-number">1.2.4.</span> <span class="nav-text">接口(interface)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后面的话"><span class="nav-number">1.3.</span> <span class="nav-text">后面的话</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MerkleTree与零知识证明"><span class="nav-number">1.</span> <span class="nav-text">MerkleTree与零知识证明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前"><span class="nav-number">1.1.</span> <span class="nav-text">前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#默克尔树简介"><span class="nav-number">1.2.</span> <span class="nav-text">默克尔树简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#默克尔树的作用"><span class="nav-number">1.3.</span> <span class="nav-text">默克尔树的作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#大量数据比较"><span class="nav-number">1.3.1.</span> <span class="nav-text">大量数据比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速定位修改"><span class="nav-number">1.3.2.</span> <span class="nav-text">快速定位修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#零知识证明-zero-knowledge-proof"><span class="nav-number">1.4.</span> <span class="nav-text">零知识证明 (zero-knowledge proof)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后面的话"><span class="nav-number">1.5.</span> <span class="nav-text">后面的话</span></a></li></ol></li></ol></div>
             
 
           </div>
