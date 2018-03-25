@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="R4y&#39;s小窝">
 <meta property="og:description" content="Py区块链源码笔记 （1）挖矿怎么学习区块链知识呢? 各种的资料看的头大，还是晕晕乎乎。所以那不如自己实现一个吧？？ 说是自己实现，实际上想先对源码进行解读。这里给出的源码，是一个基于Python实现的一个功能较为健全的区块链。下面给出项目地址  项目地址  挖矿（mine）什么是挖矿当然进入币圈或者链圈的人当然对挖矿这个词不会陌生。区块链的核心问题就是解决了拜占庭将军问题，实现了全网的可信。在比">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-08T16:05:13.332Z">
+<meta property="og:updated_time" content="2018-03-25T02:29:26.177Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Py区块链源码笔记 （1）挖矿">
 <meta name="twitter:description" content="Py区块链源码笔记 （1）挖矿怎么学习区块链知识呢? 各种的资料看的头大，还是晕晕乎乎。所以那不如自己实现一个吧？？ 说是自己实现，实际上想先对源码进行解读。这里给出的源码，是一个基于Python实现的一个功能较为健全的区块链。下面给出项目地址  项目地址  挖矿（mine）什么是挖矿当然进入币圈或者链圈的人当然对挖矿这个词不会陌生。区块链的核心问题就是解决了拜占庭将军问题，实现了全网的可信。在比">
@@ -447,12 +447,12 @@ test(func)    # func 是个pointer
 </code></pre><h4 id="Miner"><a href="#Miner" class="headerlink" title="Miner"></a>Miner</h4><p>这里是miner的代码，这里实现了一个简单的挖矿过程，虽然和实际的挖矿过程还是有些差距，不过也正是简单易读，所以我们好理解。</p>
 <h4 id="miner的请求处理"><a href="#miner的请求处理" class="headerlink" title="miner的请求处理"></a>miner的请求处理</h4><pre><code>@app.route(&apos;/mine&apos;, methods=[&apos;GET&apos;])
 def mine():
-    # 这里使用POS共识机制。
+    # 这里使用PoWPoW共识机制。
 
     # 这里的返回了一个ARRAY的tail其定义是 chain = []
     last_block = blockchain.last_block            
 
-    # 这里使用POS，代码后面展开
+    # 这里使用PoW，代码后面展开
     proof = blockchain.proof_of_work(last_block)    
 
 
@@ -480,7 +480,7 @@ def mine():
         &apos;previous_hash&apos;: block[&apos;previous_hash&apos;],
     }
     return jsonify(response), 200
-</code></pre><h4 id="PoS的实现代码"><a href="#PoS的实现代码" class="headerlink" title="PoS的实现代码"></a>PoS的实现代码</h4><pre><code>def proof_of_work(self, last_block):
+</code></pre><h4 id="PoW的实现代码"><a href="#PoW的实现代码" class="headerlink" title="PoW的实现代码"></a>PoW的实现代码</h4><pre><code>def proof_of_work(self, last_block):
     &quot;&quot;&quot;
     一段简单的工作量证明的算法:
 
@@ -511,7 +511,7 @@ return guess_hash[:4] == &quot;0000&quot;
 <li>对其进行sha256的hash。得到hash值。</li>
 <li>之后判断该hash的值是否是以四个0结尾</li>
 <li>返回是否找到合法的proof值，如果找到，返回True</li>
-<li>返回上层函数PoS的过程结束</li>
+<li>返回上层函数PoW的过程结束</li>
 </ul>
 <p>这里是部分的打印结果：挖出第一个块的打印（第0块，是创世区块，设置的proof是100）</p>
 <pre><code>f49bd479bb433aa37bcb01b36cc6e4f3f8881ae4cdfeecfc3fc84a2a69a29951
@@ -524,7 +524,7 @@ d71f73e0d52ad34fbc8848d85890a0951773fafc6c7214fe94794cc9c2dca904
 <pre><code>42d9c8f25d3b438157c2e4cd06fff288600eb78ef9536aeec60dea13c46fb41d
 00006b342191c828ecfeeb21ad3cfe3320ded31d4a0bc64fcf5c103c5a8806cb
 16623 187207 58f183fc794d087ccce036e25ca039099af9738d7cdf5c23564def4254eb1281
-</code></pre><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>可见这里的代码很简单的实现了一个pos的模型，proof可以类比于我们寻找的 nonce 的这个值，实际上，关于BTC的难度系数的动态调整，就是和这得到的hash的零的个数，和后面数值的有效的大小的要求而确定的。</p>
+</code></pre><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>可见这里的代码很简单的实现了一个PoW的模型，proof可以类比于我们寻找的 nonce 的这个值，实际上，关于BTC的难度系数的动态调整，就是和这得到的hash的零的个数，和后面数值的有效的大小的要求而确定的。</p>
 <p>这里我们在<a href="https://btc.com/000000000000000000474697c175dadd12b11f9736c10e2a632aa52d7a555a0f" target="_blank" rel="noopener">BTC</a>的区块链浏览器可以直接看到我们的区块数据。</p>
 <blockquote>
 <p><a href="https://btc.com/000000000000000000474697c175dadd12b11f9736c10e2a632aa52d7a555a0f" target="_blank" rel="noopener">BTC里面的随便一个区块</a></p>
@@ -840,7 +840,7 @@ d71f73e0d52ad34fbc8848d85890a0951773fafc6c7214fe94794cc9c2dca904
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Py区块链源码笔记-（1）挖矿"><span class="nav-number">1.</span> <span class="nav-text">Py区块链源码笔记 （1）挖矿</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#挖矿（mine）"><span class="nav-number">1.1.</span> <span class="nav-text">挖矿（mine）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是挖矿"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么是挖矿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码的实现"><span class="nav-number">1.1.2.</span> <span class="nav-text">源码的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Web端"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">Web端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python的函数修饰符"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">Python的函数修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Miner"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">Miner</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#miner的请求处理"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">miner的请求处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PoS的实现代码"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">PoS的实现代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">1.1.3.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后面的话"><span class="nav-number">1.2.</span> <span class="nav-text">后面的话</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Py区块链源码笔记-（1）挖矿"><span class="nav-number">1.</span> <span class="nav-text">Py区块链源码笔记 （1）挖矿</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#挖矿（mine）"><span class="nav-number">1.1.</span> <span class="nav-text">挖矿（mine）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是挖矿"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么是挖矿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码的实现"><span class="nav-number">1.1.2.</span> <span class="nav-text">源码的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Web端"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">Web端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python的函数修饰符"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">Python的函数修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Miner"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">Miner</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#miner的请求处理"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">miner的请求处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PoW的实现代码"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">PoW的实现代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">1.1.3.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后面的话"><span class="nav-number">1.2.</span> <span class="nav-text">后面的话</span></a></li></ol></li></ol></div>
             
 
           </div>
