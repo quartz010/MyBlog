@@ -103,12 +103,12 @@
   <meta name="keywords" content="Hexo, NexT" />
 
 
-<meta name="description" content="STM32 逆向初步##背景 终于难得闲暇和久违的激情 , 赶紧动手 , 这次也是初步的体验 , 所以目的就是简单的 dump 程序 , 和基本反汇编 ##工具集介绍 ###软件部分  OpenOCD  Open On-Chip Debugger 著名的开源硬件调试器  支持多种的 调试器 (St-link)(jlink) 之类的符合JTAG标准的  支持多种 MPU 调试 只要是主流的都有(这次">
+<meta name="description" content="STM32 逆向初步背景终于难得闲暇和久违的激情 , 赶紧动手 , 这次也是初步的体验 , 所以目的就是简单的 dump 程序 , 和基本反汇编 工具集介绍软件部分 OpenOCD  Open On-Chip Debugger 著名的开源硬件调试器  支持多种的 调试器 (St-link)(jlink) 之类的符合JTAG标准的  支持多种 MPU 调试 只要是主流的都有(这次用到的 STM32F">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STM32 逆向初步">
 <meta property="og:url" content="blog.diglp.xyz/2017/11/17/STM32F1x/index.html">
 <meta property="og:site_name" content="R4y&#39;s小窝">
-<meta property="og:description" content="STM32 逆向初步##背景 终于难得闲暇和久违的激情 , 赶紧动手 , 这次也是初步的体验 , 所以目的就是简单的 dump 程序 , 和基本反汇编 ##工具集介绍 ###软件部分  OpenOCD  Open On-Chip Debugger 著名的开源硬件调试器  支持多种的 调试器 (St-link)(jlink) 之类的符合JTAG标准的  支持多种 MPU 调试 只要是主流的都有(这次">
+<meta property="og:description" content="STM32 逆向初步背景终于难得闲暇和久违的激情 , 赶紧动手 , 这次也是初步的体验 , 所以目的就是简单的 dump 程序 , 和基本反汇编 工具集介绍软件部分 OpenOCD  Open On-Chip Debugger 著名的开源硬件调试器  支持多种的 调试器 (St-link)(jlink) 之类的符合JTAG标准的  支持多种 MPU 调试 只要是主流的都有(这次用到的 STM32F">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://img.blog.csdn.net/20171117171231646?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20171117171217647?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
@@ -118,10 +118,10 @@
 <meta property="og:image" content="http://img.blog.csdn.net/20171117175632250?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20171117180454679?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20171117180754767?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2018-03-27T13:52:16.111Z">
+<meta property="og:updated_time" content="2018-03-27T14:14:21.893Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STM32 逆向初步">
-<meta name="twitter:description" content="STM32 逆向初步##背景 终于难得闲暇和久违的激情 , 赶紧动手 , 这次也是初步的体验 , 所以目的就是简单的 dump 程序 , 和基本反汇编 ##工具集介绍 ###软件部分  OpenOCD  Open On-Chip Debugger 著名的开源硬件调试器  支持多种的 调试器 (St-link)(jlink) 之类的符合JTAG标准的  支持多种 MPU 调试 只要是主流的都有(这次">
+<meta name="twitter:description" content="STM32 逆向初步背景终于难得闲暇和久违的激情 , 赶紧动手 , 这次也是初步的体验 , 所以目的就是简单的 dump 程序 , 和基本反汇编 工具集介绍软件部分 OpenOCD  Open On-Chip Debugger 著名的开源硬件调试器  支持多种的 调试器 (St-link)(jlink) 之类的符合JTAG标准的  支持多种 MPU 调试 只要是主流的都有(这次用到的 STM32F">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20171117171231646?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
@@ -412,11 +412,8 @@
       
 
       
-        <h1 id="STM32-逆向初步"><a href="#STM32-逆向初步" class="headerlink" title="STM32 逆向初步"></a>STM32 逆向初步</h1><p>##背景</p>
-<p>终于难得闲暇和久违的激情 , 赶紧动手 , 这次也是初步的体验 , 所以目的就是简单的 dump 程序 , 和基本反汇编</p>
-<p>##工具集介绍</p>
-<p>###软件部分</p>
-<ul>
+        <h1 id="STM32-逆向初步"><a href="#STM32-逆向初步" class="headerlink" title="STM32 逆向初步"></a>STM32 逆向初步</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>终于难得闲暇和久违的激情 , 赶紧动手 , 这次也是初步的体验 , 所以目的就是简单的 dump 程序 , 和基本反汇编</p>
+<h2 id="工具集介绍"><a href="#工具集介绍" class="headerlink" title="工具集介绍"></a>工具集介绍</h2><h3 id="软件部分"><a href="#软件部分" class="headerlink" title="软件部分"></a>软件部分</h3><ul>
 <li><p>OpenOCD<br>  Open On-Chip Debugger 著名的开源硬件调试器<br>  支持多种的 调试器 (St-link)(jlink) 之类的符合JTAG标准的<br>  支持多种 MPU 调试 只要是主流的都有(这次用到的 STM32F1x 默认有了配置文件)</p>
 <blockquote>
 <p><a href="http://openocd.zylin.com/" target="_blank" rel="noopener">http://openocd.zylin.com/</a><br>  这里附上配置文件下载地址可以选择不同的 mpu</p>
@@ -427,15 +424,14 @@
 <li><p>gdb<br>  GDB, the GNU Project debugger 著名开源调试器<br>  这里用于代替 OCD 的调试 , 毕竟还是专业许多<br>  我们需要的功能虽然 OCD 就可以实现 , 但是使用GDB 还是方便很多</p>
 </li>
 </ul>
-<p>###硬件部分<br>由于也是初步尝试 , 所以直接找了正点原子的 战舰开发板<br>(我们要使用的就是 JTAG 调试口, 当然开发板已经接好了)</p>
+<h3 id="硬件部分"><a href="#硬件部分" class="headerlink" title="硬件部分"></a>硬件部分</h3><p>由于也是初步尝试 , 所以直接找了正点原子的 战舰开发板<br>(我们要使用的就是 JTAG 调试口, 当然开发板已经接好了)</p>
 <ul>
 <li><p>战舰F1开发板 * 1<br>  <img src="http://img.blog.csdn.net/20171117171231646?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="办办办"><br>  采用的 STM32F1X 系列的 MPU  这个型号很重要 , 这个就决定了我们要dump的地址<br>  这样才能 找到flash 和sram 等</p>
 </li>
 <li><p>Jlink * 1<br>  (当然国产寨版)<br>  <img src="http://img.blog.csdn.net/20171117171217647?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="能用就行"><br>  这个就是淘宝货 , 简单暴力 , 久经沙场 , 人手一个 , 纵横江湖</p>
 </li>
 </ul>
-<p>##动手</p>
-<h3 id="该接的先都接上-电源-jlink-blah"><a href="#该接的先都接上-电源-jlink-blah" class="headerlink" title="该接的先都接上 (电源 jlink blah..)"></a>该接的先都接上 (电源 jlink blah..)</h3><h3 id="运行OCD"><a href="#运行OCD" class="headerlink" title="运行OCD"></a>运行OCD</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openocd -f interface/jlink.cfg -f target/stm32f1x.cfg</span><br><span class="line">#注意不要反了</span><br></pre></td></tr></table></figure>
+<h2 id="动手"><a href="#动手" class="headerlink" title="动手"></a>动手</h2><h3 id="该接的先都接上-电源-jlink-blah"><a href="#该接的先都接上-电源-jlink-blah" class="headerlink" title="该接的先都接上 (电源 jlink blah..)"></a>该接的先都接上 (电源 jlink blah..)</h3><h3 id="运行OCD"><a href="#运行OCD" class="headerlink" title="运行OCD"></a>运行OCD</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openocd -f interface/jlink.cfg -f target/stm32f1x.cfg</span><br><span class="line">#注意不要反了</span><br></pre></td></tr></table></figure>
 <p>这里的两个 f 是指定的配置文件, 大众器件 所以自带的都有,  要是没有的话就在上面给出的网址下载即可<br>    (这个不是全路径 是相对与 ocd 的安装目录 )</p>
 <p>运行之后 , 效果如图<br><img src="http://img.blog.csdn.net/20171117173304085?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="神奇耶"><br>    这样显示之后 , 说明调试器链接正常 , 且已经进入调试模式</p>
 <h3 id="OCD命令"><a href="#OCD命令" class="headerlink" title="OCD命令"></a>OCD命令</h3><p>OCD在 成功 介入JTAG之后 会返回一个  4444 的 tty控制台 我们直接 telnet上去</p>
@@ -460,7 +456,7 @@
 <p>上述命令就是以二进制形式 Dump 内存 和 flash 的数据出来</p>
 <p><img src="http://img.blog.csdn.net/20171117180454679?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="Dump"></p>
 <p>查看文件 大小就是我们的存储空间<br>到这里 本次 DUMP 完毕</p>
-<p>##后记<br>这里 只是逆向的初步,分析才是关键<br>得到 flash 和 sram 数据后 使用 IDA 进行 操作 (这才是逆向)</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>这里 只是逆向的初步,分析才是关键<br>得到 flash 和 sram 数据后 使用 IDA 进行 操作 (这才是逆向)</p>
 <p><img src="http://img.blog.csdn.net/20171117180754767?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 
       
@@ -749,7 +745,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#STM32-逆向初步"><span class="nav-number">1.</span> <span class="nav-text">STM32 逆向初步</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#该接的先都接上-电源-jlink-blah"><span class="nav-number">1.0.1.</span> <span class="nav-text">该接的先都接上 (电源 jlink blah..)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行OCD"><span class="nav-number">1.0.2.</span> <span class="nav-text">运行OCD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OCD命令"><span class="nav-number">1.0.3.</span> <span class="nav-text">OCD命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GDB-Attach"><span class="nav-number">1.0.4.</span> <span class="nav-text">GDB Attach</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DUMP-重要"><span class="nav-number">1.0.5.</span> <span class="nav-text">DUMP(重要)</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#STM32-逆向初步"><span class="nav-number">1.</span> <span class="nav-text">STM32 逆向初步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具集介绍"><span class="nav-number">1.2.</span> <span class="nav-text">工具集介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件部分"><span class="nav-number">1.2.1.</span> <span class="nav-text">软件部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#硬件部分"><span class="nav-number">1.2.2.</span> <span class="nav-text">硬件部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动手"><span class="nav-number">1.3.</span> <span class="nav-text">动手</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#该接的先都接上-电源-jlink-blah"><span class="nav-number">1.3.1.</span> <span class="nav-text">该接的先都接上 (电源 jlink blah..)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行OCD"><span class="nav-number">1.3.2.</span> <span class="nav-text">运行OCD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OCD命令"><span class="nav-number">1.3.3.</span> <span class="nav-text">OCD命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GDB-Attach"><span class="nav-number">1.3.4.</span> <span class="nav-text">GDB Attach</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DUMP-重要"><span class="nav-number">1.3.5.</span> <span class="nav-text">DUMP(重要)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">1.4.</span> <span class="nav-text">后记</span></a></li></ol></li></ol></div>
             
 
           </div>
