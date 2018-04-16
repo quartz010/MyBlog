@@ -100,28 +100,31 @@
 
 
   
-  <meta name="keywords" content="BC原理," />
+  <meta name="keywords" content="C/C++," />
 
 
-<meta name="description" content="拜占庭将军与共识算法前随着自己慢慢对BlockChain的基本原理的深入了解，对区块链的基本原理也是慢慢的有了清晰的了解。对共识，PoW，的概念也是更加清晰了。所以以此文来总结一下 拜占庭将军问题起源首先什么是拜占庭将军(Byzantine failures)问题呢？这里引用一下百科:  拜占庭位于如今的土耳其的伊斯坦布尔，是东罗马帝国的首都。由于当时拜占庭罗马帝国国土辽阔，为了防御目的，因此每个">
-<meta name="keywords" content="BC原理">
+<meta name="description" content="剑指offer （4）前网络方面的问题离不开 TCP/IP这玩意，所以这次做个详尽的总结 网络OSI模型经典的协议栈模型，当属OSI和TCP/IP 这两种。这里的一幅图，很好的展示了这个协议的层次   图片引用自imyalost OSI模型分为7层， TCP/IP协议是4层，其中对应的关系也在途中很好的体现了出来。  协议栈之所以为栈，因为其工作过程中的自顶而下的逐层封装的特性，这种逐层封装在传输">
+<meta name="keywords" content="C&#x2F;C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="拜占庭将军与共识算法">
-<meta property="og:url" content="blog.diglp.xyz/2018/03/14/Byzantium/index.html">
+<meta property="og:title" content="剑指offer (4)">
+<meta property="og:url" content="blog.diglp.xyz/2018/04/06/剑指offer_4/index.html">
 <meta property="og:site_name" content="R4y&#39;s小窝">
-<meta property="og:description" content="拜占庭将军与共识算法前随着自己慢慢对BlockChain的基本原理的深入了解，对区块链的基本原理也是慢慢的有了清晰的了解。对共识，PoW，的概念也是更加清晰了。所以以此文来总结一下 拜占庭将军问题起源首先什么是拜占庭将军(Byzantine failures)问题呢？这里引用一下百科:  拜占庭位于如今的土耳其的伊斯坦布尔，是东罗马帝国的首都。由于当时拜占庭罗马帝国国土辽阔，为了防御目的，因此每个">
+<meta property="og:description" content="剑指offer （4）前网络方面的问题离不开 TCP/IP这玩意，所以这次做个详尽的总结 网络OSI模型经典的协议栈模型，当属OSI和TCP/IP 这两种。这里的一幅图，很好的展示了这个协议的层次   图片引用自imyalost OSI模型分为7层， TCP/IP协议是4层，其中对应的关系也在途中很好的体现了出来。  协议栈之所以为栈，因为其工作过程中的自顶而下的逐层封装的特性，这种逐层封装在传输">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-13T06:03:58.879Z">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/983980/201611/983980-20161121173924409-1128983178.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/983980/201611/983980-20161122175036159-1060298763.png">
+<meta property="og:updated_time" content="2018-04-16T09:43:12.996Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="拜占庭将军与共识算法">
-<meta name="twitter:description" content="拜占庭将军与共识算法前随着自己慢慢对BlockChain的基本原理的深入了解，对区块链的基本原理也是慢慢的有了清晰的了解。对共识，PoW，的概念也是更加清晰了。所以以此文来总结一下 拜占庭将军问题起源首先什么是拜占庭将军(Byzantine failures)问题呢？这里引用一下百科:  拜占庭位于如今的土耳其的伊斯坦布尔，是东罗马帝国的首都。由于当时拜占庭罗马帝国国土辽阔，为了防御目的，因此每个">
+<meta name="twitter:title" content="剑指offer (4)">
+<meta name="twitter:description" content="剑指offer （4）前网络方面的问题离不开 TCP/IP这玩意，所以这次做个详尽的总结 网络OSI模型经典的协议栈模型，当属OSI和TCP/IP 这两种。这里的一幅图，很好的展示了这个协议的层次   图片引用自imyalost OSI模型分为7层， TCP/IP协议是4层，其中对应的关系也在途中很好的体现了出来。  协议栈之所以为栈，因为其工作过程中的自顶而下的逐层封装的特性，这种逐层封装在传输">
+<meta name="twitter:image" content="https://images2015.cnblogs.com/blog/983980/201611/983980-20161121173924409-1128983178.png">
 
 
 
 
 
 
-  <link rel="canonical" href="blog.diglp.xyz/2018/03/14/Byzantium/"/>
+  <link rel="canonical" href="blog.diglp.xyz/2018/04/06/剑指offer_4/"/>
 
 
 
@@ -130,7 +133,7 @@
     sidebar: "",
   };
 </script>
-  <title>拜占庭将军与共识算法 | R4y's小窝</title>
+  <title>剑指offer (4) | R4y's小窝</title>
   
 
 
@@ -292,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/03/14/Byzantium/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/04/06/剑指offer_4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="R4y">
@@ -309,7 +312,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">拜占庭将军与共识算法</h2>
+          <h2 class="post-title" itemprop="name headline">剑指offer (4)</h2>
         
 
         <div class="post-meta">
@@ -321,7 +324,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T00:00:00+08:00">2018-03-14</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-06T00:00:00+08:00">2018-04-06</time>
             
 
             
@@ -342,7 +345,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链原理/" itemprop="url" rel="index"><span itemprop="name">区块链原理</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/剑指offer/" itemprop="url" rel="index"><span itemprop="name">剑指offer</span></a></span>
 
                 
                 
@@ -370,7 +373,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">3.5k</span>
+                <span title="字数统计">1.1k</span>
               
 
               
@@ -384,7 +387,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:04</span>
+                <span title="阅读时长">0:01</span>
               
             </div>
           
@@ -404,96 +407,42 @@
       
 
       
-        <h1 id="拜占庭将军与共识算法"><a href="#拜占庭将军与共识算法" class="headerlink" title="拜占庭将军与共识算法"></a>拜占庭将军与共识算法</h1><h2 id="前"><a href="#前" class="headerlink" title="前"></a>前</h2><p>随着自己慢慢对BlockChain的基本原理的深入了解，对区块链的基本原理也是慢慢的有了清晰的了解。对共识，PoW，的概念也是更加清晰了。所以以此文来总结一下</p>
-<h2 id="拜占庭将军问题"><a href="#拜占庭将军问题" class="headerlink" title="拜占庭将军问题"></a>拜占庭将军问题</h2><h3 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h3><p>首先什么是拜占庭将军(<code>Byzantine failures</code>)问题呢？这里引用一下百科:</p>
+        <h1 id="剑指offer-（4）"><a href="#剑指offer-（4）" class="headerlink" title="剑指offer （4）"></a>剑指offer （4）</h1><h2 id="前"><a href="#前" class="headerlink" title="前"></a>前</h2><p>网络方面的问题离不开 TCP/IP这玩意，所以这次做个详尽的总结</p>
+<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><h3 id="OSI模型"><a href="#OSI模型" class="headerlink" title="OSI模型"></a>OSI模型</h3><p>经典的协议栈模型，当属OSI和TCP/IP 这两种。这里的一幅图，很好的展示了这个协议的层次</p>
+<p><img src="https://images2015.cnblogs.com/blog/983980/201611/983980-20161121173924409-1128983178.png" alt="协议"></p>
 <blockquote>
-<p>拜占庭位于如今的土耳其的伊斯坦布尔，是东罗马帝国的首都。由于当时拜占庭罗马帝国国土辽阔，为了防御目的，因此每个军队都分隔很远，将军与将军之间只能靠信差传消息。 在战争的时候，拜占庭军队内所有将军和副官必需达成一致的共识，决定是否有赢的机会才去攻打敌人的阵营。但是，在军队内有可能存有叛徒和敌军的间谍，左右将军们的决定又扰乱整体军队的秩序。在进行共识时，结果并不代表大多数人的意见。这时候，在已知有成员谋反的情况下，其余忠诚的将军在不受叛徒的影响下如何达成一致的协议，拜占庭问题就此形成。</p>
+<p>图片引用自<a href="http://www.cnblogs.com/imyalost/p/6086808.html" title="imyalost" target="_blank" rel="noopener">imyalost</a></p>
+<p>OSI模型分为<strong>7层</strong>， TCP/IP协议是<strong>4层</strong>，其中对应的关系也在途中很好的体现了出来。</p>
 </blockquote>
-<p>简单讲，就是一个军队中出了几个叛徒，我们怎么做，使得我们军队的意见表决的结果不会被这样叛徒改变。最终整个军队达成正确的共识。</p>
-<h3 id="区块链中"><a href="#区块链中" class="headerlink" title="区块链中"></a>区块链中</h3><p>上面的就是拜占庭问题的起源，如果字多看着太麻烦，那么我们用自己的话简单的总结一下：</p>
-<p>在我们的网络中存在着恶意节点，这些节点可能发送虚假的恶意消息，这样的节点我们就称之为<strong>拜占庭节点(Byzantine Node)</strong>。我们如何在网络存在着拜占庭节点的条件下保证我们整个区块链的所入链的区块依旧是正确的区块？也就是达成<strong>区块链共识</strong>，这样的问题就是我们区块链中的拜占庭将军问题。</p>
-<p>实际上在区块链中，还有一类节点。他们可能出现故障(halting,crash)，对外界的信息没有响应。这样的不会发出拜占庭信息的单点故障我们称之非拜占庭故障。</p>
-<h2 id="共识算法"><a href="#共识算法" class="headerlink" title="共识算法"></a>共识算法</h2><p>在区块链里面，用于解决上述的问题的算法我们就称之共识算法(Consensus Algorithm)。</p>
-<p>上面的节点分为拜占庭节点和 故障节点。所以我们的共识算法也是分为两大类：<strong>Crash Fault Tolerance(CFT)和 Byzantine Fault Tolerance(BFT)</strong>。我们直接翻译过来，这里就是<strong>故障容错 和 拜占庭容错</strong>。</p>
-<h3 id="区块链上"><a href="#区块链上" class="headerlink" title="区块链上"></a>区块链上</h3><p>了解了什么是共识算法之后，我们把它加在区块链上。像是比特币这样的<strong>公链</strong>(指的是人人可接入的区块链网络，类比于私链，联盟链)。由于其人人可接入的特性，当然导致了存在拜占庭节点的现象。可是我们的数据当然要保持绝对的正确，不能被拜占庭节点干扰。所以一个<strong>拜占庭容错的</strong>共识算法在比特币这一区块链体系下显得十分重要了！</p>
-<h3 id="一个简单的共识算法"><a href="#一个简单的共识算法" class="headerlink" title="一个简单的共识算法"></a>一个简单的共识算法</h3><p>这里贴上的代码是一个用Python实现一个简易的区块链的<a href="https://github.com/quartz010/blockchain" target="_blank" rel="noopener">开源项目</a>的代码节选。这代码就实现了一个十分简易的共识算法。项目地址在后面附上</p>
-<p>这里随着段代码作一下分析。</p>
-<pre><code>def resolve_conflicts(self):
-&quot;&quot;&quot;
-这里是实现的一个简单的共识算法，这里是使用最长链来替换本地的链，实现区块链共识
-
-:return: True if our chain was replaced, False if not
-&quot;&quot;&quot;
-
-neighbours = self.nodes
-new_chain = None
-
-# 找到我们自己的区块高度
-max_length = len(self.chain)
-
-# 获取并且验证我们在网络上得到的区块
-for node in neighbours:
-    response = requests.get(f&apos;http://{node}/chain&apos;)        # 获取网络节点的完整链，
-
-    if response.status_code == 200:
-        length = response.json()[&apos;length&apos;]        # 得到区块高度
-        chain = response.json()[&apos;chain&apos;]        # 和当前的完整链
-
-        # 检查是否最长链，并且检验链的有效性
-        if length &gt; max_length and self.valid_chain(chain):        # 最长链，并进行合法性检验
-            max_length = length    
-            new_chain = chain
-
-#  如果有效且最长，我们替换我们的本地链
-if new_chain:
-    self.chain = new_chain
-    return True
-
-return False
-</code></pre><blockquote>
-<p><a href="https://github.com/quartz010/blockchain" target="_blank" rel="noopener">pyBlockChain项目地址</a>（这个是笔者Fork的后面可能会自己拓展功能）</p>
-</blockquote>
-<p>关于其具体的实现和分析可以笔者的之前的文章<a href="blog.diglp.xyz/2018/03/11/pyMyBC_2/">Py区块链源码笔记 （2）P2P网络</a></p>
-<hr>
-<p>上面贴出的代码看上去十分简单，实际上也是十分简单。他意在在网络上站找到一个最长链，之后验证这个最长链的合法性(这点可以看看上面的文章的同一系列)。只要是合法的链，我们就直接替换掉我们的本地链。</p>
-<p>可是这样的一个过程，到底是怎么解决区块链共识的问题呢？不就是要最长嘛，那我就编编编伪造一堆的虚假的区块数据让自己变得更长，那么不是轻轻松松在区块链实际翻云覆雨了，走上人生巅峰了？？</p>
-<p>真的有这么简单吗？答案不用说当然是否定的，我们伟大的<strong>Satoshi</strong>先生当然不会忽略这点。这样我们的一个新的名词就要因此而生了：</p>
-<p><strong>工作量证明(Proof of Work)</strong> 一般简写为PoW。</p>
-<hr>
-<h3 id="工作量证明的引入"><a href="#工作量证明的引入" class="headerlink" title="工作量证明的引入"></a>工作量证明的引入</h3><p>前面讲到，如果是单单的最长链的替换，那么谁都可以编编编从而使得这个网络崩溃，这里的工作量证明(Proof of Work)机制，十分巧妙的解决了这个问题。PoW 是一种基于概率的共识算法</p>
-<p>如果在链圈币圈混过的那么对挖矿这个词一定不会陌生，没错挖矿就是PoW！听着很奇怪？老套路去看看什么是<strong>挖矿/PoW</strong>把。</p>
-<p>还是笔者之前写的文章，一样的是Pyhton的简单区块链</p>
+<p>协议栈之所以为栈，因为其工作过程中的自顶而下的逐层封装的特性，这种逐层封装在传输终端也会逐层的解析。所以这种协议模式也成为<strong>对等协议</strong>，IP(Internet Protocol)</p>
+<p>在我们的TCP/IP的协议栈中。具体的情况如下</p>
+<pre><code>应用层    http请求                    http请求
+传输层    TCP/UDP头(端口)            TCP头    http请求
+网络层    IP头    (IP地址)                IP头        TCP头    http请求
+链路层    MAC头(MAC地址)                MAC头    IP头        TCP头    http请求
+</code></pre><p>所以协议栈自上而下是逐层封装的过程，各层也是负责其具体的职能</p>
+<p>具体的层次之间的职能分共也是如下图所显示的。</p>
+<p><img src="https://images2015.cnblogs.com/blog/983980/201611/983980-20161122175036159-1060298763.png" alt="作用"></p>
 <blockquote>
-<p>文章地址: <a href="http://blog.diglp.xyz/2018/03/09/pyMyBC_1">Py区块链源码笔记 （1）挖矿</a></p>
+<p>图片引用自<a href="http://www.cnblogs.com/imyalost/p/6086808.html" title="imyalost" target="_blank" rel="noopener">imyalost</a></p>
 </blockquote>
-<hr>
-<p>好，现在大家知道了什么是PoW了，那我们现在来看看这个共识到底是怎么实现的。刚刚说啥来着？我们需要找到网络中的最长链，那么我们就可以编对不对？现在一旦引入了PoW的机制，这样我们每个新的区块的产生是需要成本的，<strong>需要强大的Hash运算能力</strong>。所以我们编编编区块的这种想法是<strong>行不通</strong>的了</p>
-<h4 id="重点"><a href="#重点" class="headerlink" title="重点"></a><strong>重点</strong></h4><p>那么我就自己计算嘛，自己编交易记录，自己计算自己把链编成可以吧？没错当然可以，不过现在体现<strong>比特币的去中心化的思想的时候就来了</strong>。<br>记住，比特币是公链，在网络上的所有的人都可以参与挖矿，随着挖矿的人数越来越多，整个网络的运算能力在极大幅度的提高。</p>
-<p>那么由于Hash是不存在启发式算法的，所以谁的运算能力强，谁的爆块概率就大，这是线性的！所以算力强的就有大几率变成最长的区块。</p>
-<p>所以可以看见，如果真的有一个拜占庭节点，想伪造区块记录，那么要有个必须条件：<strong>他必须具有极为强大的算力，使得自己的链始终是全网最长的</strong>，因为只有最长的链才会被矿工认为是有效的链！那么我不具有极为强的算力，在网络上编造的任何的区块都会是无效的。<strong>这便是比特币网络上的拜占庭容错</strong>。</p>
-<h4 id="51-Attack"><a href="#51-Attack" class="headerlink" title="51% Attack"></a>51% Attack</h4><p>任何的容错机制都会有他的容错率，我们的比特币也是不例外的。51% 攻击就是比特币系统目前可见的最大的威胁。</p>
-<blockquote>
-<p>一提到对比特币的攻击，大部分人想到的就是51%攻击。所谓51%攻击，就是利用比特币使用算力作为竞争条件的特点，使用算力优势撤销自己已经发生的付款交易。如果有人掌握了50%以上的算力，他能够比其他人更快地找到开采区块需要的那个随机数，因此他实际上拥有了绝对哪个一区块的有效权利。</p>
-</blockquote>
-<p>他能够：</p>
-<ol>
-<li>修改自己的交易记录，这可以使他进行双重支付</li>
-<li>阻止区块确认部分或者全部交易</li>
-<li>阻止部分或全部矿工开采到任何有效的区块</li>
+<p>对上图的内容进行总结的话，实际上在传输层实现了<strong>端到端</strong>的通信，在网络层是实现了<strong>点到点</strong>的通信，或者说是主机和主机。到了数据链路层，主要的就是控制我们的数据包流向，这里就有了路由协议。</p>
+<p>路由是存在于网络层，交换机，和中继器处于数据链路层。</p>
+<p>传输层的端到端数据段(segment).网络层是点到点的数据包(packet).数据链路层是网络节点间的通信，数据帧(frame).下面的物理层就是以比特为单位的电平了。</p>
+<h3 id="TCP-UDP"><a href="#TCP-UDP" class="headerlink" title="TCP/UDP"></a>TCP/UDP</h3><ol>
+<li><p>TCP面向连接（如打电话要先拨号建立连接）;UDP是无连接的，即发送数据之前不需要建立连接</p>
+</li>
+<li><p>TCP提供可靠的服务。也就是说，通过TCP连接传送的数据，无差错，不丢失，不重复，且按序到达;UDP尽最大努力交付，即不保证可靠交付<br>Tcp通过校验和，重传控制，序号标识，滑动窗口、确认应答实现可靠传输。如丢包时的重发控制，还可以对次序乱掉的分包进行顺序控制。</p>
+</li>
+<li><p>UDP具有较好的实时性，工作效率比TCP高，适用于对高速传输和实时性有较高的通信或广播通信。</p>
+</li>
+<li><p>每一条TCP连接只能是点到点的;UDP支持一对一，一对多，多对一和多对多的交互通信</p>
+</li>
+<li><p>TCP对系统资源要求较多，UDP对系统资源要求较少。</p>
+</li>
 </ol>
-<p>但是他无法做到：</p>
-<ol>
-<li>修改其他人的交易记录</li>
-<li>阻止交易被发出去（交易会被发出，只是显示0个确认而已）</li>
-<li>改变每个区块产生的比特币数量</li>
-<li>凭空产生比特币</li>
-<li>把不属于他的比特币发送给自己或其他人</li>
-</ol>
-<p>历史上已经发生过了51%攻击的案例了！</p>
-<h3 id="25-威胁"><a href="#25-威胁" class="headerlink" title="25% 威胁"></a>25% 威胁</h3><blockquote>
-<p><a href="https://www.zhihu.com/question/21976182" target="_blank" rel="noopener">比特币的自私挖矿</a></p>
-</blockquote>
-<h2 id="后面的话"><a href="#后面的话" class="headerlink" title="后面的话"></a>后面的话</h2><p>本来是想找到BTC代码较以分析的，发现。。。还是有点困难。只能作罢。写博文的同时自己也是慢慢熟悉了和了解了这样的一个系统的精妙之处。<br>博文显得比较粗浅，笔者也是初学者，只能从较感性的层面分析这个逻辑的原理。后面也许会有深入理解系列</p>
+<h3 id="TCP-IP模型的安全性"><a href="#TCP-IP模型的安全性" class="headerlink" title="TCP/IP模型的安全性"></a>TCP/IP模型的安全性</h3><h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><p><strong>Q:</strong> 完全使用TCP的协议是？</p>
+<p><strong>A:</strong> 这里需要注意的是 DNS 是同时涉及到<strong>TPC和UDP</strong>协议的，所以这里容易出错</p>
 
       
     </div>
@@ -560,7 +509,7 @@ return False
     <strong>本文作者： </strong>R4y</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="blog.diglp.xyz/2018/03/14/Byzantium/" title="拜占庭将军与共识算法">blog.diglp.xyz/2018/03/14/Byzantium/</a>
+    <a href="blog.diglp.xyz/2018/04/06/剑指offer_4/" title="剑指offer (4)">blog.diglp.xyz/2018/04/06/剑指offer_4/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -574,7 +523,7 @@ return False
         <div class="post-tags">
           
             <!--  这里用来改变标签样式 -->
-            <a href="/tags/BC原理/" rel="tag"><i class="fa fa-tag"></i> BC原理</a>
+            <a href="/tags/C-C/" rel="tag"><i class="fa fa-tag"></i> C/C++</a>
           
         </div>
       
@@ -587,8 +536,8 @@ return False
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/13/What is BlockChain/" rel="next" title="What is BlockChain?">
-                <i class="fa fa-chevron-left"></i> What is BlockChain?
+              <a href="/2018/04/05/剑指offer_3/" rel="next" title="剑指offer (3)">
+                <i class="fa fa-chevron-left"></i> 剑指offer (3)
               </a>
             
           </div>
@@ -596,10 +545,6 @@ return False
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/15/MerkleTree_2/" rel="prev" title="MerkleTree与零知识证明">
-                MerkleTree与零知识证明 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -798,7 +743,7 @@ return False
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#拜占庭将军与共识算法"><span class="nav-number">1.</span> <span class="nav-text">拜占庭将军与共识算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前"><span class="nav-number">1.1.</span> <span class="nav-text">前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拜占庭将军问题"><span class="nav-number">1.2.</span> <span class="nav-text">拜占庭将军问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#起源"><span class="nav-number">1.2.1.</span> <span class="nav-text">起源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区块链中"><span class="nav-number">1.2.2.</span> <span class="nav-text">区块链中</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#共识算法"><span class="nav-number">1.3.</span> <span class="nav-text">共识算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#区块链上"><span class="nav-number">1.3.1.</span> <span class="nav-text">区块链上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个简单的共识算法"><span class="nav-number">1.3.2.</span> <span class="nav-text">一个简单的共识算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工作量证明的引入"><span class="nav-number">1.3.3.</span> <span class="nav-text">工作量证明的引入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#重点"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">重点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#51-Attack"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">51% Attack</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-威胁"><span class="nav-number">1.3.4.</span> <span class="nav-text">25% 威胁</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后面的话"><span class="nav-number">1.4.</span> <span class="nav-text">后面的话</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#剑指offer-（4）"><span class="nav-number">1.</span> <span class="nav-text">剑指offer （4）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前"><span class="nav-number">1.1.</span> <span class="nav-text">前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络"><span class="nav-number">1.2.</span> <span class="nav-text">网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OSI模型"><span class="nav-number">1.2.1.</span> <span class="nav-text">OSI模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-UDP"><span class="nav-number">1.2.2.</span> <span class="nav-text">TCP/UDP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP模型的安全性"><span class="nav-number">1.2.3.</span> <span class="nav-text">TCP/IP模型的安全性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-amp-A"><span class="nav-number">1.3.</span> <span class="nav-text">Q&amp;A</span></a></li></ol></li></ol></div>
             
 
           </div>
