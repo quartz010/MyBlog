@@ -20,6 +20,10 @@
 
 
 
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
 
 
 
@@ -77,7 +81,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '6.0.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -100,11 +104,11 @@
 
 
   
-  <meta name="keywords" content="区块链,以太坊,智能合约," />
+  <meta name="keywords" content="以太坊,区块链,智能合约," />
 
 
 <meta name="description" content="发行自己的ERC20 Token这次主要实现 发行一个自己的ERC20 标准的 Token. (然后进行ICO, 圈钱跑路, 走上人生巅峰,XD)  其实把Token 叫做代币, 容易让人产生误解.实际上是一种凭证, 只是被现在狂热的人们搅浑了. Token的持有人可以完全控制资产，遵守ERC20的token可以跟踪任何人在任何时间拥有多少token.  前现在币圈的狂热之势四起, 昨天一个朋友,">
-<meta name="keywords" content="区块链,以太坊,智能合约">
+<meta name="keywords" content="以太坊,区块链,智能合约">
 <meta property="og:type" content="article">
 <meta property="og:title" content="发行自己的ERC20 Token">
 <meta property="og:url" content="blog.diglp.xyz/2018/02/12/发行自己的ERC20 Token/index.html">
@@ -234,9 +238,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">15</span>
+              </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">9</span>
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">8</span>
               </a>
         </li>
       
@@ -359,6 +370,17 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/12/发行自己的ERC20 Token/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/02/12/发行自己的ERC20 Token/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -391,7 +413,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:06</span>
+                <span title="阅读时长">0:11</span>
               
             </div>
           
@@ -405,7 +427,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
@@ -675,10 +697,10 @@ contract TokenERC20 {
         <div class="post-tags">
           
             <!--  这里用来改变标签样式 -->
-            <a href="/tags/区块链/" rel="tag"><i class="fa fa-tag"></i> 区块链</a>
+            <a href="/tags/以太坊/" rel="tag"><i class="fa fa-tag"></i> 以太坊</a>
           
             <!--  这里用来改变标签样式 -->
-            <a href="/tags/以太坊/" rel="tag"><i class="fa fa-tag"></i> 以太坊</a>
+            <a href="/tags/区块链/" rel="tag"><i class="fa fa-tag"></i> 区块链</a>
           
             <!--  这里用来改变标签样式 -->
             <a href="/tags/智能合约/" rel="tag"><i class="fa fa-tag"></i> 智能合约</a>
@@ -731,6 +753,16 @@ contract TokenERC20 {
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
 
   
 
@@ -809,9 +841,7 @@ contract TokenERC20 {
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   
                 </div>
@@ -887,6 +917,12 @@ contract TokenERC20 {
 
           
           
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
 
           
           
@@ -918,6 +954,13 @@ contract TokenERC20 {
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -932,7 +975,7 @@ contract TokenERC20 {
         <!-- 站长统计的插件 -->
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -960,7 +1003,7 @@ contract TokenERC20 {
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读时长">1:52</span>
+    <span title="站点总阅读时长">3:06</span>
   
 </div>
 
@@ -980,7 +1023,7 @@ contract TokenERC20 {
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.0.3</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a></div>
 
 
 
@@ -999,11 +1042,6 @@ contract TokenERC20 {
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
     
@@ -1093,6 +1131,31 @@ contract TokenERC20 {
 
   
 
+  
+    <script id="dsq-count-scr" src="https://diglp.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'blog.diglp.xyz/2018/02/12/发行自己的ERC20 Token/';
+        this.page.identifier = '2018/02/12/发行自己的ERC20 Token/';
+        this.page.title = '发行自己的ERC20 Token';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://diglp.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
 
 
 	
@@ -1107,10 +1170,6 @@ contract TokenERC20 {
 
 
 
-  
-
-
-
 
 
 
@@ -1131,11 +1190,23 @@ contract TokenERC20 {
   
 
   
+  
+
+  
+  
+
+  
+
 
   
   
 
   
+  
+  
+  <script src="/lib/pangu/dist/pangu.min.js?v=3.3"></script>
+  <script type="text/javascript">pangu.spacingPage();</script>
+
 
   
   <script type="text/javascript" src="/js/src/js.cookie.js?v=6.0.3"></script>
