@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.3" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.0.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="HackWare," />
+
+
+<meta name="description" content="HackWare BootLoader 原理前最近, follow 一个开源项目, BusPirate ,总线海盗,一个很棒的超多功能集一身的一个 tool. 对其中的 bootloader 印象深刻, 虽然不是第一次知道这东西, 这次也是来了兴致. 学习一下.   BusPirate Github BusPirate Offical Website  What先看看词条的定义:  在嵌入式操作系">
+<meta name="keywords" content="HackWare">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HackWare BootLoader 原理">
+<meta property="og:url" content="blog.diglp.xyz/2018/06/21/HackWare_Booloader/index.html">
+<meta property="og:site_name" content="R4y&#39;s小窝">
+<meta property="og:description" content="HackWare BootLoader 原理前最近, follow 一个开源项目, BusPirate ,总线海盗,一个很棒的超多功能集一身的一个 tool. 对其中的 bootloader 印象深刻, 虽然不是第一次知道这东西, 这次也是来了兴致. 学习一下.   BusPirate Github BusPirate Offical Website  What先看看词条的定义:  在嵌入式操作系">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-21T06:19:10.352Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HackWare BootLoader 原理">
+<meta name="twitter:description" content="HackWare BootLoader 原理前最近, follow 一个开源项目, BusPirate ,总线海盗,一个很棒的超多功能集一身的一个 tool. 对其中的 bootloader 印象深刻, 虽然不是第一次知道这东西, 这次也是来了兴致. 学习一下.   BusPirate Github BusPirate Offical Website  What先看看词条的定义:  在嵌入式操作系">
+
+
+
+
+
+
+  <link rel="canonical" href="blog.diglp.xyz/2018/06/21/HackWare_Booloader/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>HackWare BootLoader 原理 | R4y's小窝</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118678642-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-118678642-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    
+    <!-- 这里是网页头带 -->
+    
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">R4y's小窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">个人技术站</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">18</span>
+              </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">9</span>
+              </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">42</span>
+              </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-想读的书">
+          <a href="/books/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />想读的书</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+  
+  
+  
+    
+      
+    
+    <a href="https://github.com/quartz010" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
+    
+      </a>
+    
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/06/21/HackWare_Booloader/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="R4y">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="R4y's小窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">HackWare BootLoader 原理</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-21T00:00:00+08:00">2018-06-21</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/HackSome/" itemprop="url" rel="index"><span itemprop="name">HackSome</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/21/HackWare_Booloader/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/21/HackWare_Booloader/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">21k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">0:35</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="HackWare-BootLoader-原理"><a href="#HackWare-BootLoader-原理" class="headerlink" title="HackWare BootLoader 原理"></a>HackWare BootLoader 原理</h1><h2 id="前"><a href="#前" class="headerlink" title="前"></a>前</h2><p>最近, follow 一个开源项目, BusPirate ,总线海盗,一个很棒的超多功能集一身的一个 tool. 对其中的 bootloader 印象深刻, 虽然不是第一次知道这东西, 这次也是来了兴致. 学习一下.</p>
+<hr>
+<ul>
+<li><a href="https://github.com/BusPirate/Bus_Pirate" target="_blank" rel="noopener">BusPirate Github</a></li>
+<li><a href="http://dangerousprototypes.com/docs/Bus_Pirate/zh-hans#.7E_.E8.87.AA.E6.A3.80" target="_blank" rel="noopener">BusPirate Offical Website</a></li>
+</ul>
+<h2 id="What"><a href="#What" class="headerlink" title="What"></a>What</h2><p>先看看<a href="https://baike.baidu.com/item/BootLoader/8733520" target="_blank" rel="noopener">词条</a>的定义:</p>
+<blockquote>
+<p>在嵌入式操作系统中，BootLoader是在操作系统内核运行之前运行。可以初始化硬件设备、建立内存空间映射图，从而将系统的软硬件环境带到一个合适状态，以便为最终调用操作系统内核准备好正确的环境。在嵌入式系统中，通常并没有像BIOS那样的固件程序（注，有的嵌入式CPU也会内嵌一段短小的启动程序），因此整个系统的加载启动任务就完全由BootLoader来完成。在一个基于ARM7TDMI core的嵌入式系统中，系统在上电或复位时通常都从地址0x00000000处开始执行，而在这个地址处安排的通常就是系统的BootLoader程序。</p>
+</blockquote>
+<p>实际上我们简单讲, 就是在嵌入式设备中, 给我们即将执行的程序(系统),     提供运行初始化环境的东西, 在初始化完成之后, 直接进行 <strong>jmp</strong> 使得<strong>PC</strong> 到目标程序空间, 永不返回(一般性).</p>
+<p>这里,就是以这个项目提供的bootloader源码进行.</p>
+<h2 id="How"><a href="#How" class="headerlink" title="How"></a>How</h2><p>文件定位:    <a href="https://github.com/BusPirate/Bus_Pirate/blob/master/Bootloaders/BPv3-bootloader/firmware-v4.5/ds30loader.s" target="_blank" rel="noopener">https://github.com</a></p>
+<p>本想着可能是使用 C 写的, 发现除了配置文件, 只有 .s 汇编了,</p>
+<hr>
+<p>文件前段,是以下内容注释:</p>
+<blockquote>
+<p>ds30 Loader is free software: you can redistribute it and/or modify<br>;<br>it under the terms of the GNU General Public License as published by the Free Software Foundation.</p>
+</blockquote>
+<p>这个 bootloader 应该是,第三方所开发的框架, 直接对其进行修改就好</p>
+<h3 id="静态初始化"><a href="#静态初始化" class="headerlink" title="静态初始化"></a>静态初始化</h3><pre><code>;------------------------------------------------------------------------------
+; Register usage
+;------------------------------------------------------------------------------
+        ;.equ    MIXED,        W0        ;immediate
+        .equ    DOERASE,    W1        ;flag indicated erase should be done before next write
+        .equ    WBUFPTR,    W2        ;buffer pointer
+        .equ    WCNT,        W3        ;loop counter
+        .equ    WADDR2,        W4        ;memory pointer
+        .equ    WADDR,        W5        ;memory pointer        
+        .equ    PPSTEMP1,    W6        ;used to restore pps register
+        .equ    PPSTEMP2,    W7        ;used to restore pps register
+        .equ    WFWJUMP,    W8        ;did we jump here from the firmware?
+        ;.equ    UNUSED,        W9        ;
+        .equ    WDEL1,        W10        ;delay outer
+        .equ    WDEL2,        W11        ;delay inner
+        ;.equ    UNUSED,        W12        ;
+        .equ    WCMD,        W13        ;command
+        .equ     WCRC,         W14        ;checksum
+        .equ    WSTPTR,     W15     ;stack pointer
+</code></pre><p>这里的一段代码来自文件首,<code>,equ</code>的伪指令也说明了 这里是,寄存器的宏定义,给不同寄存器,起别名, 保证了程序易读性.</p>
+<p>下面导入, 单片机设置. 和我们平时使用的 <code>#include &lt;reg52.h&gt;</code> 类似</p>
+<pre><code>;------------------------------------------------------------------------------
+; Includes
+;------------------------------------------------------------------------------
+.include &quot;settings.inc&quot; 
+</code></pre><hr>
+<p>在这段代码的注释部分已经说明, 这里是 constants的 ,不需要进行修改. 主要内容主要是, 对于 将会使用的常量的宏. 内容有 字符, 延时, 串口波特率, 页大小, 和 STARTADDR . 其原文的注释,对这些 静态符号也有很好的说明</p>
+<pre><code>;------------------------------------------------------------------------------
+; Constants, don&apos;t change
+;------------------------------------------------------------------------------
+        .equ    VERMAJ,        1                                        /*firmware version major*/
+        .equ    VERMIN,        0                                        /*fimrware version minor*/
+        .equ    VERREV,        2                                        /*firmware version revision*/
+
+        .equ     HELLO,         0xC1        
+        .equ     OK,         &apos;K&apos;                                        /*erase/write ok*/
+        .equ     CHECKSUMERR,&apos;N&apos;                                        /*checksum error*/
+        .equ    VERFAIL,    &apos;V&apos;                                        /*verification failed*/
+        .equ       BLPROT,     &apos;P&apos;                                      /*bl protection tripped*/
+
+
+        .equ    BLDELAY,    ( BLTIME * (FCY / 1000) / (65536 * 7) )    /*delay berfore user application is loaded*/
+        ;.equ    UARTBR,        ( (((FCY / BAUDRATE) / 8) - 1) / 2 )    /*baudrate*/
+        /* issue 11 in errata for A3, optimal value causes reception to fail */
+        /* autocalculate: 0x21, &lt;2.5% error    */
+        /* working: 0x22, &lt;3% error, same as main firmware */
+        .equ     UARTBR,     0x22;((FCY/(4*BAUDRATE))-1)
+        .equ    PAGESIZE,    512                                        /*words*/
+        .equ    ROWSIZE,    64                                        /*words*/        
+        ; 这个 指令是注释掉了的, 
+;        .equ    STARTADDR,    ( FLASHSIZE - 2*(PAGESIZE * 2) )         /*place bootloader in 2nd last program page*/
+        .equ    STARTADDR,    ( FLASHSIZE - (2* (PAGESIZE)) )         /*place bootloader in last program page*/
+        .equ    BLCHECKST,  ( STARTADDR - (ROWSIZE) )            /*precalculate the first row write position that would overwrite the bootloader*/
+        .equ     BLVERSION,     0x0405                                 ;bootloader version for Bus Pirate firmware (located at last instruction before flash config words)
+</code></pre><p>对 一些 宏的 定义值进行合法性检测.</p>
+<pre><code>;------------------------------------------------------------------------------
+; Validate user settings
+;------------------------------------------------------------------------------
+        ; Internal cycle clock
+        .if FCY &gt; 16000000
+            .error &quot;Fcy specified is out of range&quot;
+        .endif
+
+        ; Baudrate error
+        .equ REALBR,    ( FCY / (4 * (UARTBR+1)) )
+        .equ BAUDERR,    ( (1000 * ( BAUDRATE - REALBR)) / BAUDRATE )
+        .if ( BAUDERR &gt; 30) || (BAUDERR &lt; -30 )
+            .error &quot;Baudrate error is more than 3%. Remove this check or try another baudrate and/or clockspeed.&quot;
+        .endif 
+
+        .if BLDELAY&lt;1
+           .error &quot;Bootloader delay is 0&quot;
+.endif 
+
+...
+</code></pre><p>这里,在数据段分配空间 , 存放固件签名地址<br>    ;——————————————————————————<br>    ; Uninitialized variables in data memory<br>    ;——————————————————————————<br>            .bss<br>    buffer:    .space ( ROWSIZE <em> 3 + 1/</em>checksum*/ ) </p>
+<pre><code>        .equ FIRMWARE_SIGNATURE_LOW, 0x3141
+        .equ FIRMWARE_SIGNATURE_HIGH, 0x5926
+
+        .global skip_pgc_pgd_check
+        .global firmware_signature
+
+        .section *, bss, address(0x27FA)
+skip_pgc_pgd_check: .space 2
+firmware_signature: .space 4
+</code></pre><h3 id="签名校验"><a href="#签名校验" class="headerlink" title="签名校验"></a>签名校验</h3><p>在文件的前面, 有声明一个全局符号</p>
+<pre><code>;------------------------------------------------------------------------------
+; Global declarations
+;------------------------------------------------------------------------------
+        .global __reset              ;the label for the first line of code, needed by the linker script
+</code></pre><p>由符号可以直接看出, 是一个复位向量, 下面是标号内容, 也就是我们一上电会执行的东西</p>
+<pre><code>;--------------------------------------------------    ----------------------------
+; Reset vector
+;------------------------------------------------------------------------------
+        .section *, code, address(STARTADDR)    ; 指定段 及段偏移
+__reset:mov     #__SP_init, WSTPTR    ; 初始化栈指针
+
+
+;------------------------------------------------------------------------------
+; User specific entry code go here, see also user exit code section at end of file
+;------------------------------------------------------------------------------
+        bclr OSCCON, #SOSCEN
+        bclr CLKDIV, #RCDIV0 ;set clock divider to 0
+
+waitPLL:btss OSCCON, #LOCK            ; 锁相环初始化
+        bra waitPLL ;wait for the PLL to lock
+
+        mov #0xFFFF, W0 ;all pins to digital
+        mov W0, AD1PCFG                ; IO初始化
+
+        ; Make sure the firmware has been started at least once.
+        ;
+        ; If the firmware signature is found in memory then it is
+        ; extremely plausible that skip_pgc_pgd_check has been
+        ; initialised to the correct value.
+
+        ; 读取片内地址, 与硬编码签名进行比较
+        mov #firmware_signature, W0
+        mov [W0++], W1    ; 这里读取高字节
+
+        mov #FIRMWARE_SIGNATURE_HIGH, W2    ; 加载 正确签名高字节
+        cp W1, W2                ; 比较
+        bra nz, jumper_test        ; 不等跳转
+
+        mov [W0], W1
+        mov #FIRMWARE_SIGNATURE_LOW, W2        ; 加载 正确签名低字节
+        cp W1, W2
+        bra nz, jumper_test        ; 不等跳转
+
+        mov #skip_pgc_pgd_check, W0            ; 加载标志位地址
+        cp0.b [W0]
+        clr.b [W0]       ; should not change flags
+        ; 上面的 PIC 汇编,没看懂, 查了查没有 .b 这样的语法???
+        ; 理应是把这个地址的 内容复位吧.
+
+        bra nz, setup            ; 开始启动配置
+</code></pre><p>上面的这段代码, 实际上应该是对,当前的单片机内是否有 <strong>有效的固件</strong> 进行检测. 固件包含签名, 有签名就是有固件.</p>
+<h3 id="跳线检测"><a href="#跳线检测" class="headerlink" title="跳线检测"></a>跳线检测</h3><pre><code>jumper_test:
+
+        mov #skip_pgc_pgd_check, W0    ; 老规矩, 加载标志位的地址
+        clr.b [W0]    ; 清空内容
+
+        ;jumper check test
+        ;setup the jumper check
+        ;enable input on PGx
+
+        ; 这里是引脚配置部分,使得拥有电平检测的功能
+        bclr LATB, #LATB1 ;rb1 low
+        bset TRISB, #TRISB1 ;rb1 input
+        bset CNPU1, #CN5PUE ;enable pullups on PGC/CN5/RB1
+        ;ground/output on PGx
+        bclr LATB, #RB0 ;rb0 low
+        bclr TRISB, #TRISB0 ;rb0 output
+
+        ;wait
+        nop
+        nop
+
+        ;check for jumper
+        btsc PORTB,#RB1    ;跳过下条指令, 如果 RB1=0(即存在jmper), 这样就继续进行配置部分
+
+        ;;;;;;;;;;;重要;;;;;;;;;;;;;
+        bra quit ; 如果是不存在 jumper 的那么,就退出 ,开始执行 用户程序
+
+        clr WFWJUMP        ;we came from jumper and reset, not firmware jump
+
+        ;注意,后面紧接着就是 setup
+setup:
+        .ifdef BUSPIRATEV2
+        ...
+</code></pre><hr>
+<p>结合实际上的具体操作, 上面的这部分就是比较容易理解了.</p>
+<p>实际上, 在给板子使用 bootloader 进行固件烧写的时候,的确需要一个 jumper 连接 pgc 和 pgd 这两个脚. 否则的话, 显示如下err内容,</p>
+<pre><code>+++++++++++++++++++++++++++++++++++++++++++
+  Pirate-Loader for BP with Bootloader v4+
+  Loader version: 1.0.2  OS: WINDOWS
++++++++++++++++++++++++++++++++++++++++++++
+
+Parsing HEX file [BPv3-firmware-v6.2-r1981.hex]
+Found 21502 words (64506 bytes)
+Fixing bootloader/userprogram jumps
+Opening serial device COM13...OK
+Configuring serial port settings...OK
+Sending Hello to the Bootloader...ERROR
+No reply from the bootloader, or invalid reply received: 0
+Please make sure that PGND and PGC are connected, replug the devide and try again
+</code></pre><p>上述的代码, 就是对上电时候是否有进行 跳线进行检测, 从而执行不同的后续操作.</p>
+<ul>
+<li><a href="http://dangerousprototypes.com/docs/V4.x_to_v4.3_upgrade" target="_blank" rel="noopener">Firmware Upgrade - dangerousprototypes</a></li>
+</ul>
+<h3 id="用户程序-UserApp"><a href="#用户程序-UserApp" class="headerlink" title="用户程序 UserApp"></a>用户程序 UserApp</h3><p>在上面的bootloader , bra 到quit 标号的时候, 惊奇的发现,后面就开始执行我们的用户程序了. </p>
+<pre><code>quit:    ;clean up from jumper test
+        ; 根据注释,这里应该是把 之前的跳线检测,进行复位
+        bclr CNPU1, #CN5PUE ;disable pullups on PGC/CN5/RB1
+        bset TRISB, #TRISB0 ;rb0 back to input
+        mov #0x0000, W0 ;clear pins to analog default
+        mov W0, AD1PCFG    
+
+;------------------------------------------------------------------------------
+; Load user application
+;------------------------------------------------------------------------------
+        ; 没错,就是这里, 直接到了我们的用户程序了, 永不返回;
+        bra     usrapp
+</code></pre><p>可是, 上面的 setup 必须是要有个 jumper 多麻烦, 这里的 G1k精神所在, 所以, 会有以下的标号段. </p>
+<pre><code>;------------------------------------------------------------------------------
+; firmware jump entry point (kind of like a function because it&apos;s never reached from the above code
+;------------------------------------------------------------------------------
+firmwarejump:
+        mov #0xffff, WFWJUMP    ;flag that we jumped from firmware
+        bra setup    ;jump to just after jumper check
+</code></pre><p>这个符号被导出, 我们的用户程序中, 可以进行一次跳转. 回到我们的 bootloader.</p>
+<p>这里 也找到在固件中存在的 跳转部分</p>
+<ul>
+<li>源文件链接 <a href="https://github.com/DangerousPrototypes/Bus_Pirate/blob/master/Firmware/procMenu.c" target="_blank" rel="noopener">ProcMenu.c:666</a></li>
+</ul>
+<p>C 代码如下</p>
+<pre><code>// ProcMenu.c    
+case &apos;$&apos;: //bpWline(&quot;-bootloader jump&quot;);
+    if (agree()) { //bpWline(&quot;BOOTLOADER&quot;);
+        BPMSG1094;
+        bpDelayMS(100);
+        bpInit(); // turn off nasty things, cleanup first needed?
+        while (0 == UART1TXRdy()); //wait untill TX finishes
+
+        // 这里使用内联汇编, 加载地址,直接跳转, 妙啊
+        asm volatile (&quot;mov #BLJUMPADDRESS, w1 \n&quot; //bootloader location
+                    &quot;goto w1 \n&quot;);
+    }
+
+// Base.h
+//sets the address in the bootloader to jump to on the bootloader command
+//must be defined in asm
+asm (&quot;.equ BLJUMPADDRESS, 0xABF8&quot;);
+</code></pre><h3 id="串口初始化-UART"><a href="#串口初始化-UART" class="headerlink" title="串口初始化 UART"></a>串口初始化 UART</h3><p>在前面的检测中, 如果jumper是存在的, 这里就进行 setup操作, 这里的第一步就是配置 硬件串口</p>
+<pre><code>setup:
+    ;----------------------------------------------------------------------
+    ; UART pps config
+    ;----------------------------------------------------------------------
+    .ifdef BUSPIRATEV2
+        ; Backup, these are restored in exit code at end of file
+        ; Changes needs to be done in exit, search for xxx
+        mov        RPINR18, PPSTEMP1        ;xxx
+        mov        RPOR2, PPSTEMP2            ;xxx
+
+        ; Receive, map pin to uart (RP5 on 2/3, RP3 on v1a)
+        ; 初始化 串口接收
+        bset    RPINR18, #U1RXR0        ;xxx
+        bclr    RPINR18, #U1RXR1        ;xxx
+        bset    RPINR18, #U1RXR2        ;xxx
+        bclr    RPINR18, #U1RXR3        ;xxx
+        bclr    RPINR18, #U1RXR4        ;xxx
+
+        ; Transmit, map uart to pin (RPOR2bits.RP4R = 3 on 2/3, RPOR1bits.RP2R=3 on v1a)
+        ...
+        ; 配置 串口发送
+
+        ; MODE LED on during bootload  (A1 on 2/3, B4 on v1a)
+        ; 增加性能的 rgb 
+        bset LATA, #LATA1 ;on    
+        bclr TRISA, #TRISA1 ;output
+    .endif
+
+    ; 不同版本
+    .ifdef BUSPIRATEV1A
+        ...
+    .endif
+</code></pre><hr>
+<p>完成了配置之后, 进行初始化</p>
+<pre><code>;------------------------------------------------------------------------------
+; Init
+;------------------------------------------------------------------------------
+    clr        DOERASE
+
+    ;UART
+    mov        #UARTBR, W0         ;set    
+    mov     W0, UBRG            ; baudrate
+    bset    UMODE, #BRGH        ;enable BRGH
+    bset     UMODE, #UARTEN        ;enable UART
+    bset     USTA, #UTXEN        ;enable TX
+</code></pre><h3 id="设备握手"><a href="#设备握手" class="headerlink" title="设备握手"></a>设备握手</h3><p>这里的设备握手, 是直接在 串口的后面执行的.<br>    ;——————————————————————————<br>    ; Receive hello<br>    ;——————————————————————————<br>            rcall     Receive        ; 这里调用 函数符号 读取串口, 具体函数见后</p>
+<pre><code>        sub     #HELLO, W0            ;check
+        ; .equ HELLO, 0xC1 在前面静态定义了 HELLO 的值
+        bra     z, helloOK            ; prompt
+
+        sub     #&apos;#&apos;, W0            ; check
+        ; Exit point, clean up and load user application
+        bra     z, exit                ; prompt
+
+        ; 如果这两个符号都不是, 说明过程出现错误.
+        ; 打印,当前BL的硬编码版本 
+        SendL   &apos;B&apos;            ; 发送宏
+        SendL   &apos;L&apos;
+        SendL   &apos;4&apos;
+        SendL   &apos;+&apos;
+        ; 同上面的exit同样
+           bra    checkexit
+
+;------------------------------------------------------------------------------
+; Send device id and firmware version
+;------------------------------------------------------------------------------
+        ; 发送宏
+helloOK:SendL     DEVICEID
+        SendL    VERMAJ
+        SendL    (VERMIN*16 + VERREV)
+        ; 这里通过串口, 把板子数据发送出去
+</code></pre><hr>
+<p>串口内容的单字节接收函数, 用于握手识别 </p>
+<pre><code>;------------------------------------------------------------------------------
+; Receive
+;------------------------------------------------------------------------------
+        ; Init delay
+Receive:mov     #BLDELAY, WDEL1
+
+        ; Check for received byte
+rpt1:    clr        WDEL2
+rptc:    clrwdt                        ;clear watchdog
+        btss     USTA, #URXDA        
+        bra     notrcv                ; not receive 在这个函数中, 循环等待,接收
+        mov     URXREG, W0            ; 接收的数据装载在 W0
+        add     WCRC, W0, WCRC        ;add to checksum 和 进行循环冗余校验
+        return
+</code></pre><p>串口数据发送宏, 实现单字节数据发送. </p>
+<pre><code>;------------------------------------------------------------------------------
+; Send macro
+;------------------------------------------------------------------------------
+    .macro SendL char
+        mov #\char, W0                ; 装载内容
+        mov W0, UTXREG                ; 
+    .endm
+</code></pre><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><pre><code>    ; Send ok
+Main:    SendL     OK
+        ; Init checksum
+main1:    clr     WCRC
+
+        ;----------------------------------------------------------------------
+        ; Receive address
+        ;----------------------------------------------------------------------
+
+        ...
+        rcall Receive 
+        mov W0, TBLPAG                ;  
+        mov.b WREG, PR1+1
+        mov.b WREG, PR1
+        ... 
+
+    ; 这里的重复过程 , 从串口读取数据, 写到分配的静态空间里去.
+    ;----------------------------------------------------------------------
+    ; Receive command
+    ;----------------------------------------------------------------------
+
+    ;----------------------------------------------------------------------
+    ; Receive nr of data bytes that will follow
+    ;----------------------------------------------------------------------
+</code></pre><h3 id="数据接收"><a href="#数据接收" class="headerlink" title="数据接收"></a>数据接收</h3><p>这里就是开始接收 数据了</p>
+<pre><code>;----------------------------------------------------------------------
+; Receive data        
+;----------------------------------------------------------------------
+        ;;     .bss
+        ; buffer: .space ( ROWSIZE * 3 + 1/*checksum*/ )
+         ; 在附加段, 定义了一个大的缓冲区
+
+        mov     #buffer, WBUFPTR    ; 加载缓冲区地址
+rcvdata:
+        rcall     Receive                ; 接收字节
+        mov.b     W0, [WBUFPTR++]        ; 循环接收
+        dec        WCNT, WCNT            ; 数据计数
+        bra nz, rcvdata             ; 不是0 的话, 就跳转回去继续接收
+
+        ;last byte received is checksum
+
+;----------------------------------------------------------------------
+; Check checksum
+;----------------------------------------------------------------------
+    cp0.b     WCRC                    ; 
+    bra     z, bladdrchk            ; 这里是CheckSum 的一个校验 ,合法就继续
+    SendL     CHECKSUMERR        
+    bra main1                         ; 不合法, 发送校验值, 重新接收.
+</code></pre><h3 id="烧写准备"><a href="#烧写准备" class="headerlink" title="烧写准备"></a>烧写准备</h3><p>这里的部分, 是把数据真正的烧入 flash 前的检验工作, 确保 我写入的数据是不会影响到我 Bl 的本身的空间的, 如果影响到自己, 把自己抹掉了不就是尴尬了.</p>
+<p>检查是否数据容量是否超出, 导致覆盖, 这里保留官方的注释</p>
+<pre><code>;----------------------------------------------------------------------
+; Check address
+;----------------------------------------------------------------------    
+;check that write and erase range does not overlap the bootloader
+;this is pretty specific to the bootloader being in the last page
+;additional checks are needed if your bootloader is located elsewhere.
+;TBLPAG is always = to 0 on this PIC, no need to verify (check if you have bigger than 64K flash)
+
+;check the end address    检查结束的地址
+;write row size is fixed, any writes at (bootloader start-63) are an error
+;if write end address (W0) is &lt;= bl start address (WCNT) then OK
+;= is ok because we don&apos;t DEC after adding, write 10 bytes to 10 = end at 19
+
+bladdrchk:        
+        ;; 在前面有定义 BL 的起始地址
+        ;;.equ    BLCHECKST,  ( STARTADDR - (ROWSIZE) )            /*precalculate the first row write position that would overwrite the bootloader*/
+
+        mov    #BLCHECKST, WCNT    ;last row write postion that won&apos;t overwrite the bootloader
+        ;; 比较 当前内存指针, 和我们的 BL 的末地址.
+        cp        WADDR, WCNT            ;compare end address, does it overlap?
+        bra GTU, bladdrerror ;if greater unsigned then error
+
+        ...
+
+        ;handle the address error 地址错误的处理, 发送错误信息, 跳转进行重新的读.
+bladdrerror:clr    DOERASE             ;clear, just in case
+              SendL   BLPROT    ;send bootloader protection error
+            bra main1 ;
+</code></pre><hr>
+<p><strong>指针初始化</strong> </p>
+<pre><code>    ;----------------------------------------------------------------------
+    ; Init pointer
+    ;----------------------------------------------------------------------            
+            ; 装载缓冲区地址指针
+ptrinit:mov     #buffer, WBUFPTR
+
+    ;----------------------------------------------------------------------
+    ; Check command
+    ;----------------------------------------------------------------------            
+    ; Write row            0x00 02 00 - 0x02 AB FA 
+    btsc    WCMD,    #1    ; 这里是对烧写命令的判断
+    bra        erase        ; 不为 1 ,就不擦
+
+    ; Else erase page
+    mov        #0xffff, DOERASE
+    bra Main
+</code></pre><h3 id="烧写-Flash"><a href="#烧写-Flash" class="headerlink" title="烧写 Flash"></a>烧写 Flash</h3><p>这一部分, 就开始由 BL 实现对 Flash 的烧写了, 首先对flash 进行擦出.</p>
+<pre><code>;----------------------------------------------------------------------        
+; Erase page
+;----------------------------------------------------------------------        
+erase:    btss    DOERASE, #0            ;; DOERASE  标志位, 是否已经被擦出
+        bra        program        
+        tblwtl    WADDR, [WADDR]        ;&quot;Set base address of erase block&quot;, equivalent to setting nvmadr/u in dsPIC30F?
+        ; Erase
+        mov     #0x4042, W0            ; 这里的W0 是一个控制字, 绝对了,写函数是进行 写, 还是擦出.
+        rcall     Write    
+        ; Erase finished
+        clr DOERASE
+</code></pre><p>对Flash 进行擦出之后, 就可以开始我们的烧写过程了</p>
+<pre><code>;----------------------------------------------------------------------        
+; Write row
+;----------------------------------------------------------------------        
+program:mov     #ROWSIZE, WCNT        ; 寄存Row的空间
+
+        ; Load latches
+latlo:    tblwth.b     [WBUFPTR++], [WADDR]     ;upper byte
+        tblwtl.b    [WBUFPTR++], [WADDR++]     ;low byte
+        tblwtl.b    [WBUFPTR++], [WADDR++]     ;high byte    
+        dec     WCNT, WCNT
+        bra     nz, latlo
+
+        ; Write flash row
+        mov     #0x4001, W0            ; 这里的W0 是一个控制字
+        rcall     Write
+</code></pre><p>这里, 是写命令的实现部分, 突然发现,这里用的应该是一个硬件控制器,实现的对,flash的控制</p>
+<pre><code>;------------------------------------------------------------------------------
+; Write
+;------------------------------------------------------------------------------
+Write:    mov     W0, NVMCON            ; 这里是 控制器的配置部分
+        mov     #0x55, W0
+        mov     W0, NVMKEY
+        mov     #0xAA, W0
+        mov     W0, NVMKEY
+
+        bset     NVMCON, #WR            ; 置位状态字
+        nop
+        nop    
+        ; Wait for erase/write to finish    
+compl:    btsc    NVMCON, #WR            ; 循环等待,烧写完成
+        bra     compl                
+        return
+</code></pre><hr>
+<p>对于烧写部分的后续过程, 还有, 内容校验, 和错误处理的过程.</p>
+<pre><code>;----------------------------------------------------------------------        
+; Verify row
+;----------------------------------------------------------------------
+
+;----------------------------------------------------------------------
+; Verify fail
+;----------------------------------------------------------------------    
+</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过这个源码, 算是对简单的Bootloader 有了简单的了解, 在 Bp 的这个 bootloader里面, 显示通过检测 调试开关 , 决定是否进入调试状态. 之后进行串口初始化. 完成之后进行串口握手以确认设备, 即版本, 随后开始进行数据接收, 把其存放在 一个 缓冲区内, 之后通过 NVM 控制器, 对Flash进行烧写, 完成烧写过程. </p>
+
+      
+    </div>
+
+
+    <div> 
+      
+        <!-- 这里是添加文章结束标记 -->
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    
+
+
+    
+    
+    
+
+    
+    
+    <!--  这里用来添加以太reward -->
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Thanks anyway!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="R4y 比特币"/>
+        <p>比特币</p>
+      </div>
+    
+
+    
+      <div id="ethereum" style="display: inline-block">
+        <img id="ethereum_qr" src="/images/eth.png" alt="R4y 以太坊"/>
+        <p>以太坊</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>R4y</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="blog.diglp.xyz/2018/06/21/HackWare_Booloader/" title="HackWare BootLoader 原理">blog.diglp.xyz/2018/06/21/HackWare_Booloader/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <!--  这里用来改变标签样式 -->
+            <a href="/tags/HackWare/" rel="tag"><i class="fa fa-tag"></i> HackWare</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/16/HackTool_MSF/" rel="next" title="HackTool MSF">
+                <i class="fa fa-chevron-left"></i> HackTool MSF
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">R4y</p>
+              <p class="site-description motion-element" itemprop="description">个人技术站</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/quartz010" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:r4y.root@gmail.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/r4y.root" target="_blank" title="Google" rel="external nofollow"><i class="fa fa-fw fa-google"></i>Google</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HackWare-BootLoader-原理"><span class="nav-number">1.</span> <span class="nav-text">HackWare BootLoader 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前"><span class="nav-number">1.1.</span> <span class="nav-text">前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What"><span class="nav-number">1.2.</span> <span class="nav-text">What</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How"><span class="nav-number">1.3.</span> <span class="nav-text">How</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态初始化"><span class="nav-number">1.3.1.</span> <span class="nav-text">静态初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#签名校验"><span class="nav-number">1.3.2.</span> <span class="nav-text">签名校验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跳线检测"><span class="nav-number">1.3.3.</span> <span class="nav-text">跳线检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户程序-UserApp"><span class="nav-number">1.3.4.</span> <span class="nav-text">用户程序 UserApp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#串口初始化-UART"><span class="nav-number">1.3.5.</span> <span class="nav-text">串口初始化 UART</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设备握手"><span class="nav-number">1.3.6.</span> <span class="nav-text">设备握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">1.3.7.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据接收"><span class="nav-number">1.3.8.</span> <span class="nav-text">数据接收</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#烧写准备"><span class="nav-number">1.3.9.</span> <span class="nav-text">烧写准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#烧写-Flash"><span class="nav-number">1.3.10.</span> <span class="nav-text">烧写 Flash</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <!-- 站长统计的插件 -->
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">R4y</span>
+  
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">228k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点总阅读时长">6:21</span>
+  
+</div>
+
+
+  
+
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a></div>
+
+
+
+  <div class="footer-custom">Hosted by <a target="_blank" rel="external nofollow" href="https://pages.github.com"><b>GitHub Pages</b></a> <span class="post-meta-divider">|</span> <span id="busuanzi_container_site_uv">本站访客数:<span id="busuanzi_value_site_uv"></span></span></div>
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.3"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://just4blog.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'blog.diglp.xyz/2018/06/21/HackWare_Booloader/';
+        this.page.identifier = '2018/06/21/HackWare_Booloader/';
+        this.page.title = 'HackWare BootLoader 原理';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://just4blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+  
+  
+  <script src="/lib/pangu/dist/pangu.min.js?v=3.3"></script>
+  <script type="text/javascript">pangu.spacingPage();</script>
+
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.0.3"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.0.3"></script>
+
+
+  
+
+  
+
+  
+  <!-- 点击烟花 -->
+  
+
+  <!-- 点击桃心 -->
+  
+   <script type="text/javascript" src="/js/src/aceheart.js"></script>
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({});</script></body>
+</html>
