@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="R4y&#39;s小窝">
 <meta property="og:description" content="Py区块链源码笔记 （1）挖矿怎么学习区块链知识呢? 各种的资料看的头大，还是晕晕乎乎。所以那不如自己实现一个吧？？ 说是自己实现，实际上想先对源码进行解读。这里给出的源码，是一个基于Python实现的一个功能较为健全的区块链。下面给出项目地址  项目地址  挖矿（mine）什么是挖矿当然进入币圈或者链圈的人当然对挖矿这个词不会陌生。区块链的核心问题就是解决了拜占庭将军问题，实现了全网的可信。在比">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-25T02:29:26.177Z">
+<meta property="og:updated_time" content="2018-08-19T17:23:09.753Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Py区块链源码笔记 （1）挖矿">
 <meta name="twitter:description" content="Py区块链源码笔记 （1）挖矿怎么学习区块链知识呢? 各种的资料看的头大，还是晕晕乎乎。所以那不如自己实现一个吧？？ 说是自己实现，实际上想先对源码进行解读。这里给出的源码，是一个基于Python实现的一个功能较为健全的区块链。下面给出项目地址  项目地址  挖矿（mine）什么是挖矿当然进入币圈或者链圈的人当然对挖矿这个词不会陌生。区块链的核心问题就是解决了拜占庭将军问题，实现了全网的可信。在比">
@@ -242,21 +242,21 @@
         
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">18</span>
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">20</span>
               </a>
         </li>
       
         
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">9</span>
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">10</span>
               </a>
         </li>
       
         
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">43</span>
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">45</span>
               </a>
         </li>
       
@@ -396,7 +396,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">4.4k</span>
+                <span title="字数统计">4.3k</span>
               
 
               
@@ -480,32 +480,31 @@ def mine():
 
     # 这里使用PoW，代码后面展开
     proof = blockchain.proof_of_work(last_block)    
+</code></pre><p>​    </p>
+<pre><code># We must receive a reward for finding the proof.
+# The sender is &quot;0&quot; to signify that this node has mined a new coin.
+# 翻译过来，这个就是区块奖励，也就是CoinBase,
+# 作为一个区块的第一笔交易，所以发送者是零地址。
 
+blockchain.new_transaction(
+    sender=&quot;0&quot;,
+    recipient=node_identifier,
+    amount=1,
+)
 
-    # We must receive a reward for finding the proof.
-    # The sender is &quot;0&quot; to signify that this node has mined a new coin.
-    # 翻译过来，这个就是区块奖励，也就是CoinBase,
-    # 作为一个区块的第一笔交易，所以发送者是零地址。
+# 把这个    区块加到链尾，实现了到主链的融合
+previous_hash = blockchain.hash(last_block)
+block = blockchain.new_block(proof, previous_hash)
 
-    blockchain.new_transaction(
-        sender=&quot;0&quot;,
-        recipient=node_identifier,
-        amount=1,
-    )
-
-    # 把这个    区块加到链尾，实现了到主链的融合
-    previous_hash = blockchain.hash(last_block)
-    block = blockchain.new_block(proof, previous_hash)
-
-    # 这里把新的区块数据反馈到前端
-    response = {
-        &apos;message&apos;: &quot;New Block Forged&quot;,
-        &apos;index&apos;: block[&apos;index&apos;],
-        &apos;transactions&apos;: block[&apos;transactions&apos;],
-        &apos;proof&apos;: block[&apos;proof&apos;],
-        &apos;previous_hash&apos;: block[&apos;previous_hash&apos;],
-    }
-    return jsonify(response), 200
+# 这里把新的区块数据反馈到前端
+response = {
+    &apos;message&apos;: &quot;New Block Forged&quot;,
+    &apos;index&apos;: block[&apos;index&apos;],
+    &apos;transactions&apos;: block[&apos;transactions&apos;],
+    &apos;proof&apos;: block[&apos;proof&apos;],
+    &apos;previous_hash&apos;: block[&apos;previous_hash&apos;],
+}
+return jsonify(response), 200
 </code></pre><h4 id="PoW的实现代码"><a href="#PoW的实现代码" class="headerlink" title="PoW的实现代码"></a>PoW的实现代码</h4><pre><code>def proof_of_work(self, last_block):
     &quot;&quot;&quot;
     一段简单的工作量证明的算法:
@@ -520,7 +519,7 @@ def mine():
         proof += 1
 
     return proof
-</code></pre><p>上述代码的实际上的工作原理： 先使得 proof的值为零，之后慢慢的递增。直到找到</p>
+</code></pre><p>​<br>上述代码的实际上的工作原理： 先使得 proof的值为零，之后慢慢的递增。直到找到</p>
 <p><strong>找到一个数字<code>P</code>，使得<code>Hash(P,P&#39;)</code>的哈希值是前面包含了4个0的，这里的`P’是上一个区块的P值</strong> </p>
 <p>实际上我们的挖矿的过程和这个差不多，这个P在实际上是一个nonce(number once)的值。这里一样的进行了大量的简化</p>
 <hr>
@@ -556,16 +555,9 @@ d71f73e0d52ad34fbc8848d85890a0951773fafc6c7214fe94794cc9c2dca904
 <p><a href="https://btc.com/000000000000000000474697c175dadd12b11f9736c10e2a632aa52d7a555a0f" target="_blank" rel="noopener">BTC里面的随便一个区块</a></p>
 </blockquote>
 <ul>
-<li>高度        512,589 </li>
-<li>确认数    2 </li>
-<li>大小        1,096,630 Bytes </li>
-<li><strong>Nonce</strong>    <strong>0x185d9c75</strong> </li>
-<li>时间        2018-03-08 22:05:10</li>
-<li>块哈希    </li>
-<li>000000000000000000474697c175dadd12b11f9736c10e2a632aa52d7a555a0f </li>
-<li>前一个块    </li>
-<li>00000000000000000000021c043e439b5f4b632389b0062306bf2d4e0b657c7c </li>
-<li>后一个块    </li>
+<li>高度        512,589<br>   确认数    2<br>   大小        1,096,630 Bytes<br>   <strong>Nonce</strong>    <strong>0x185d9c75</strong><br>   时间        2018-03-08 22:05:10<br>   块哈希    </li>
+<li>000000000000000000474697c175dadd12b11f9736c10e2a632aa52d7a555a0f<br>   前一个块    </li>
+<li>00000000000000000000021c043e439b5f4b632389b0062306bf2d4e0b657c7c<br>   后一个块    </li>
 <li>000000000000000000434de347737700f50cacde89f956e08ed4a39dddd23bf0 </li>
 </ul>
 <p>可以看到，其实，差不多2333.</p>
@@ -663,8 +655,8 @@ d71f73e0d52ad34fbc8848d85890a0951773fafc6c7214fe94794cc9c2dca904
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/07/misc_一周杂记_3/" rel="next" title="一周干货集 (3)">
-                <i class="fa fa-chevron-left"></i> 一周干货集 (3)
+              <a href="/2018/03/07/HyperLedger/" rel="next" title="HyperLeager 入坑手册">
+                <i class="fa fa-chevron-left"></i> HyperLeager 入坑手册
               </a>
             
           </div>
@@ -749,7 +741,7 @@ d71f73e0d52ad34fbc8848d85890a0951773fafc6c7214fe94794cc9c2dca904
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">43</span>
+                    <span class="site-state-item-count">45</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -780,7 +772,9 @@ d71f73e0d52ad34fbc8848d85890a0951773fafc6c7214fe94794cc9c2dca904
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -829,7 +823,11 @@ d71f73e0d52ad34fbc8848d85890a0951773fafc6c7214fe94794cc9c2dca904
                     
                       
                     
-                    <span class="site-state-item-count">18</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -932,7 +930,7 @@ d71f73e0d52ad34fbc8848d85890a0951773fafc6c7214fe94794cc9c2dca904
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">246k</span>
+    <span title="站点总字数">256k</span>
   
 
   
@@ -941,7 +939,7 @@ d71f73e0d52ad34fbc8848d85890a0951773fafc6c7214fe94794cc9c2dca904
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读时长">6:50</span>
+    <span title="站点总阅读时长">7:07</span>
   
 </div>
 
