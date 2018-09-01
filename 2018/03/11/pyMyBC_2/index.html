@@ -104,18 +104,18 @@
 
 
   
-  <meta name="keywords" content="BC原理," />
+  <meta name="keywords" content="区块链原理," />
 
 
 <meta name="description" content="Py区块链源码笔记 （2）P2P网络怎么学习区块链知识呢? 各种的资料看的头大，还是晕晕乎乎。所以那不如自己实现一个吧？？ 说是自己实现，实际上想先对源码进行解读。这里给出的源码，是一个基于Python实现的一个功能较为健全的区块链。下面给出项目地址  项目地址  P2P网络为什么使用P2P我们日常里用的磁链，迅雷之类的东西都是P2P技术实现的，所以P2P这个名词听起来不会太陌生。 其实在这里是对">
-<meta name="keywords" content="BC原理">
+<meta name="keywords" content="区块链原理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Py区块链源码笔记 （2）P2P网络">
 <meta property="og:url" content="blog.diglp.xyz/2018/03/11/pyMyBC_2/index.html">
 <meta property="og:site_name" content="R4y&#39;s小窝">
 <meta property="og:description" content="Py区块链源码笔记 （2）P2P网络怎么学习区块链知识呢? 各种的资料看的头大，还是晕晕乎乎。所以那不如自己实现一个吧？？ 说是自己实现，实际上想先对源码进行解读。这里给出的源码，是一个基于Python实现的一个功能较为健全的区块链。下面给出项目地址  项目地址  P2P网络为什么使用P2P我们日常里用的磁链，迅雷之类的东西都是P2P技术实现的，所以P2P这个名词听起来不会太陌生。 其实在这里是对">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-09T13:02:51.995Z">
+<meta property="og:updated_time" content="2018-09-01T08:48:52.497Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Py区块链源码笔记 （2）P2P网络">
 <meta name="twitter:description" content="Py区块链源码笔记 （2）P2P网络怎么学习区块链知识呢? 各种的资料看的头大，还是晕晕乎乎。所以那不如自己实现一个吧？？ 说是自己实现，实际上想先对源码进行解读。这里给出的源码，是一个基于Python实现的一个功能较为健全的区块链。下面给出项目地址  项目地址  P2P网络为什么使用P2P我们日常里用的磁链，迅雷之类的东西都是P2P技术实现的，所以P2P这个名词听起来不会太陌生。 其实在这里是对">
@@ -249,7 +249,7 @@
         
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">10</span>
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">8</span>
               </a>
         </li>
       
@@ -368,7 +368,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链原理/" itemprop="url" rel="index"><span itemprop="name">区块链原理</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a></span>
 
                 
                 
@@ -439,9 +439,7 @@
 <p>其实在这里是对P2P技术的一种泛化，指的是这一类的去中心化的网络。所以P2P在区块链里面就是显得十分重要了。</p>
 <p>一个P2P网络的功能基本大致可以有一下三个：</p>
 <ul>
-<li>路由拓展    可以在自己的路由表里，发现或者初始化添加其他路由节点</li>
-<li>节点路由    请求向其他节点路由 </li>
-<li>节点保存    把已知节点写入我们的路由表</li>
+<li>路由拓展    可以在自己的路由表里，发现或者初始化添加其他路由节点<br>   节点路由    请求向其他节点路由<br>   节点保存    把已知节点写入我们的路由表</li>
 </ul>
 <hr>
 <h3 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h3><p>这里是其项目里的测试代码</p>
@@ -690,7 +688,7 @@ return jsonify(response), 200
         <div class="post-tags">
           
             <!--  这里用来改变标签样式 -->
-            <a href="/tags/BC原理/" rel="tag"><i class="fa fa-tag"></i> BC原理</a>
+            <a href="/tags/区块链原理/" rel="tag"><i class="fa fa-tag"></i> 区块链原理</a>
           
         </div>
       
@@ -818,11 +816,7 @@ return jsonify(response), 200
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

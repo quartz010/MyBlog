@@ -104,11 +104,11 @@
 
 
   
-  <meta name="keywords" content="以太坊,区块链,智能合约," />
+  <meta name="keywords" content="以太坊,区块链开发,智能合约," />
 
 
 <meta name="description" content="ETH 开发环境搭建及智能合约 helloworld     自己的菜鸟级的起步教程,也算是给自己给自己长记性 准备什么是以太坊以太坊白皮书_ZH 以太坊白皮书_EN 环境介绍这里使用了,以下两个开发工具  truffle testrpc   Truffle 是一个基于js 开发的 以太坊开发框架,其集成很多开发功能及一身, 能够在本地编译, 部署智能合约, 并且可以通过console 对节点进行">
-<meta name="keywords" content="以太坊,区块链,智能合约">
+<meta name="keywords" content="以太坊,区块链开发,智能合约">
 <meta property="og:type" content="article">
 <meta property="og:title" content="智能合约 HelloWorld">
 <meta property="og:url" content="blog.diglp.xyz/2018/02/09/ETH 开发环境搭建及智能合约 helloworld/index.html">
@@ -117,7 +117,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.ethdocs.org/en/latest/_images/cpp_35k9.png">
 <meta property="og:image" content="http://www.ethdocs.org/en/latest/_images/ETHEREUM-ICON_Black.png">
-<meta property="og:updated_time" content="2018-02-28T09:50:35.698Z">
+<meta property="og:updated_time" content="2018-09-01T08:50:04.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="智能合约 HelloWorld">
 <meta name="twitter:description" content="ETH 开发环境搭建及智能合约 helloworld     自己的菜鸟级的起步教程,也算是给自己给自己长记性 准备什么是以太坊以太坊白皮书_ZH 以太坊白皮书_EN 环境介绍这里使用了,以下两个开发工具  truffle testrpc   Truffle 是一个基于js 开发的 以太坊开发框架,其集成很多开发功能及一身, 能够在本地编译, 部署智能合约, 并且可以通过console 对节点进行">
@@ -252,7 +252,7 @@
         
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">10</span>
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">8</span>
               </a>
         </li>
       
@@ -371,7 +371,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链开发/" itemprop="url" rel="index"><span itemprop="name">区块链开发</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a></span>
 
                 
                 
@@ -487,18 +487,8 @@ BigNumber { s: 1, e: 20, c: [ 1000000 ] }
     Error: No network specified. Cannot determine current network.
 
 A: 修改目录下的truffle.js的内容 用于指定RPC的地址
-
-
-    module.exports = {
-        networks: {
-                development: {
-                  host: &quot;localhost&quot;,
-                  port: 8545,
-                  network_id: &quot;*&quot;
-                   }
-        }
-    };
-</code></pre><p>至此环境搭建完毕</p>
+</code></pre><p>​<br>        module.exports = {<br>            networks: {<br>                    development: {<br>                      host: “localhost”,<br>                      port: 8545,<br>                      network_id: “*”<br>                       }<br>            }<br>        };</p>
+<p>至此环境搭建完毕</p>
 <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>上面算是搭建好了开发的环境<br>下面开始写一个hello world的智能合约</p>
 <h3 id="什么是智能合约"><a href="#什么是智能合约" class="headerlink" title="什么是智能合约"></a>什么是智能合约</h3><blockquote>
 <p>其实在我的理解上 EVM 以太坊虚拟机,就是我们允许智能合约的平台, 我们使用solidity 编写的合约,然后,经过编译器,将其编译成字节码(op) , (真的神奇), 当部署,和使用合约之后,就会被执行<br>就是一个函数,签订合同的就可以使用(估计错误)</p>
@@ -695,7 +685,7 @@ truffle(development)&gt; contract.sayHello.call()
             <a href="/tags/以太坊/" rel="tag"><i class="fa fa-tag"></i> 以太坊</a>
           
             <!--  这里用来改变标签样式 -->
-            <a href="/tags/区块链/" rel="tag"><i class="fa fa-tag"></i> 区块链</a>
+            <a href="/tags/区块链开发/" rel="tag"><i class="fa fa-tag"></i> 区块链开发</a>
           
             <!--  这里用来改变标签样式 -->
             <a href="/tags/智能合约/" rel="tag"><i class="fa fa-tag"></i> 智能合约</a>
@@ -826,11 +816,7 @@ truffle(development)&gt; contract.sayHello.call()
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

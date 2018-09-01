@@ -116,7 +116,7 @@
 <meta property="og:description" content="读本好书 《揭秘家用路由器0Day挖掘技术》前我想未来对安全方面的需求会越来越大，随着这个体系的越发庞大，其潜在的安全威胁，可能愈发的丰富。 简介 书名：揭秘家用路由器0Day挖掘技术 作者：吴少华 ISBN：9787121263927  硬件安全，将会随着物联网的兴起得到苏醒，而且变得更加的多元化 本书分为 三个部分  基础知识 原理与应用 分析与利用  同样这里对内容，所学做极简要总结。 基础">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2897833-ec918cbd4442e4c4.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/453">
-<meta property="og:updated_time" content="2018-04-27T08:05:04.206Z">
+<meta property="og:updated_time" content="2018-09-01T08:51:52.511Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="读本好书 《揭秘家用路由器0Day挖掘技术》">
 <meta name="twitter:description" content="读本好书 《揭秘家用路由器0Day挖掘技术》前我想未来对安全方面的需求会越来越大，随着这个体系的越发庞大，其潜在的安全威胁，可能愈发的丰富。 简介 书名：揭秘家用路由器0Day挖掘技术 作者：吴少华 ISBN：9787121263927  硬件安全，将会随着物联网的兴起得到苏醒，而且变得更加的多元化 本书分为 三个部分  基础知识 原理与应用 分析与利用  同样这里对内容，所学做极简要总结。 基础">
@@ -251,7 +251,7 @@
         
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">10</span>
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">8</span>
               </a>
         </li>
       
@@ -503,12 +503,8 @@ eg: GET /from.html HTTP/1.1 (CRLF)
 <p>POST克服了GET方法的一些缺点。因为通过Post进行表单数据的提交的时候，数据本身不是URL请求的一部分，而是作为标准数据传送给服务器，这点克服了GET进行数据传递的时候信息无法加密和提交数据量太小的缺点。</p>
 <p><strong>HTTP报头</strong></p>
 <ul>
-<li>Accept:    表示希望接收的资源类型</li>
-<li>Accept-Encoding:    表示内容编码</li>
-<li>Cookies:    表示客户端向服务器进行Cookies认证的信息</li>
-<li>Accept-Encoding:    指定一种自然语言</li>
-<li><strong>Host:主机及其端口号，默认80，通常从URL中得到</strong></li>
-<li>User-Agent：    用户代理，实际上包含着用户的部分信息，系统，浏览器内核等等</li>
+<li>Accept:    表示希望接收的资源类型<br>   Accept-Encoding:    表示内容编码<br>   Cookies:    表示客户端向服务器进行Cookies认证的信息<br>   Accept-Encoding:    指定一种自然语言</li>
+<li><strong>Host:主机及其端口号，默认80，通常从URL中得到</strong><br>   User-Agent：    用户代理，实际上包含着用户的部分信息，系统，浏览器内核等等</li>
 </ul>
 <p>请求头示例：</p>
 <pre><code>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -646,9 +642,7 @@ VOID Sub_2()
 </ul>
 <p>固件的提取思路主要是找到一个文件的签名头,这样才可以识别出到底是什么文件,比如我们常用的<code>file</code></p>
 <ol>
-<li><strong>strings|grep</strong>    全文检索文件系统的 magic 签名头</li>
-<li><strong>hexdump|grep</strong>    检索 magic 签名偏移</li>
-<li><strong>dd|file</strong>         确定migic签名偏移处的文件系统格式</li>
+<li><strong>strings|grep</strong>    全文检索文件系统的 magic 签名头<br> . <strong>hexdump|grep</strong>    检索 magic 签名偏移<br> . <strong>dd|file</strong>         确定migic签名偏移处的文件系统格式</li>
 </ol>
 <p>eg: cramfs 的magic的签名是 0x28cd3d45,squashfs 有 sqsh,hsqs…</p>
 <pre><code>string firmware.bin | grep `python -c &apos;print &quot;\x28\xcd\x3d\x45&quot;&apos;`
@@ -876,11 +870,7 @@ string firmware.bin | grep `python -c &apos;print &quot;\x45\x3d\xcd\x28&quot;&a
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

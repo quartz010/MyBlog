@@ -104,11 +104,11 @@
 
 
   
-  <meta name="keywords" content="BC原理," />
+  <meta name="keywords" content="区块链原理," />
 
 
 <meta name="description" content="what is Merkle Tree 许多区块链或是散列链都是基于一种叫做默克尔树的结构。与相对概念比较新的区块链技术相比，默克尔树最早诞生于1979年，由Ralph Merkle发明。  Hashhash（散列算法），使我们生活中极为常用。其定义就是对任意长度的数据输入经过该算法后得到一个定长的输出。这样的一个映射具有唯一性，和单向性。  唯一性 是指， 输入和输出是唯一对应的，不存在输入到输">
-<meta name="keywords" content="BC原理">
+<meta name="keywords" content="区块链原理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="什么是默克尔树">
 <meta property="og:url" content="blog.diglp.xyz/2018/02/28/MerkleTree_1/index.html">
@@ -117,7 +117,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="/images/BC_hash.png">
 <meta property="og:image" content="/images/BC_MK.jpeg">
-<meta property="og:updated_time" content="2018-03-13T11:22:09.770Z">
+<meta property="og:updated_time" content="2018-09-01T08:49:29.396Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="什么是默克尔树">
 <meta name="twitter:description" content="what is Merkle Tree 许多区块链或是散列链都是基于一种叫做默克尔树的结构。与相对概念比较新的区块链技术相比，默克尔树最早诞生于1979年，由Ralph Merkle发明。  Hashhash（散列算法），使我们生活中极为常用。其定义就是对任意长度的数据输入经过该算法后得到一个定长的输出。这样的一个映射具有唯一性，和单向性。  唯一性 是指， 输入和输出是唯一对应的，不存在输入到输">
@@ -252,7 +252,7 @@
         
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">10</span>
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">8</span>
               </a>
         </li>
       
@@ -371,7 +371,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链原理/" itemprop="url" rel="index"><span itemprop="name">区块链原理</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a></span>
 
                 
                 
@@ -399,7 +399,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">1.7k</span>
+                <span title="字数统计">1.6k</span>
               
 
               
@@ -439,13 +439,12 @@
 <h2 id="Hash"><a href="#Hash" class="headerlink" title="Hash"></a>Hash</h2><p>hash（散列算法），使我们生活中极为常用。其定义就是对任意长度的数据输入经过该算法后得到一个定长的输出。这样的一个映射具有唯一性，和单向性。</p>
 <ul>
 <li>唯一性 是指， 输入和输出是唯一对应的，不存在输入到输出的多个映射</li>
-<li>单向性 是指， 由输入很容易计算出输出，但是输出很难得到输入。（实际上使用大量计算数学（碰撞）上是可能找到，所以说是很难）。</li>
+<li><p>单向性 是指， 由输入很容易计算出输出，但是输出很难得到输入。（实际上使用大量计算数学（碰撞）上是可能找到，所以说是很难）。</p>
+<p>  –        </p>
+<p>  MD5 (“hellowolrd”) = 78932c6b96a60237f48407558e91cb23<br>  MD5 (“helloworlD”) = 9f7599f32fcd536ccfb8c668f735a588<br>  MD5 (“hellowor1d”) = 9063e763e70bea4fc4052ed7ac933428</p>
+</li>
 </ul>
-<hr>
-<pre><code>MD5 (&quot;hellowolrd&quot;) = 78932c6b96a60237f48407558e91cb23
-MD5 (&quot;helloworlD&quot;) = 9f7599f32fcd536ccfb8c668f735a588
-MD5 (&quot;hellowor1d&quot;) = 9063e763e70bea4fc4052ed7ac933428
-</code></pre><p>这里可见，输入数据的小变化进行Hash之后的输出是天壤之别了已经，这个也是哈希技术的一个核心点叫做输入敏感性。所以散列技术也是用作<strong>数据指纹（FingerPoint）</strong>。<br>常用的散列算法有 <code>MD5，sha1，sha256</code>等。</p>
+<p>这里可见，输入数据的小变化进行Hash之后的输出是天壤之别了已经，这个也是哈希技术的一个核心点叫做输入敏感性。所以散列技术也是用作<strong>数据指纹（FingerPoint）</strong>。<br>常用的散列算法有 <code>MD5，sha1，sha256</code>等。</p>
 <h2 id="Hash-Table"><a href="#Hash-Table" class="headerlink" title="Hash Table"></a>Hash Table</h2><p>哈希表，现在就说BT下载了。（下的人越多，越快）要是究其原因就很简单，因为是P2P从大家哪里获取资源呀。</p>
 <p>可是现在问题来了，我们从这么多的匿名用户地方获取我们的资源，我们怎么能保证这些提供资源的节点不作恶呢？万一我的100G的小姐姐，被突然换成了新闻联播怎么办？？？！！！</p>
 <p>这里很自然就要用到上面的数据指纹技术了！我们先把这个小姐姐的MD5（指纹）接受过来，然后我们对下载的东西进行校验。一眼就看出了，这不是新闻联播，这样就不用傻傻的下上一天了。</p>
@@ -547,7 +546,7 @@ MD5 (&quot;hellowor1d&quot;) = 9063e763e70bea4fc4052ed7ac933428
         <div class="post-tags">
           
             <!--  这里用来改变标签样式 -->
-            <a href="/tags/BC原理/" rel="tag"><i class="fa fa-tag"></i> BC原理</a>
+            <a href="/tags/区块链原理/" rel="tag"><i class="fa fa-tag"></i> 区块链原理</a>
           
         </div>
       
@@ -675,11 +674,7 @@ MD5 (&quot;hellowor1d&quot;) = 9063e763e70bea4fc4052ed7ac933428
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

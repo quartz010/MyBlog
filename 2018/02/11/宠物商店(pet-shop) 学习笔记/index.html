@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="R4y&#39;s小窝">
 <meta property="og:description" content="宠物商店(pet-shop) 学习笔记truffle 可以算是一个超级强大的 Ethereum 开发工具集, 集各种的功能集一身, 今天, 照着官方的文档, 和 手把手的教程, 完成了其中提供的一个demo. truffle的目录结构目录树demo ├── build │   └── contracts │       ├── Migrations.json │       └──  Adopti">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-28T09:42:46.529Z">
+<meta property="og:updated_time" content="2018-09-01T08:46:50.193Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="宠物商店Dapp 学习笔记">
 <meta name="twitter:description" content="宠物商店(pet-shop) 学习笔记truffle 可以算是一个超级强大的 Ethereum 开发工具集, 集各种的功能集一身, 今天, 照着官方的文档, 和 手把手的教程, 完成了其中提供的一个demo. truffle的目录结构目录树demo ├── build │   └── contracts │       ├── Migrations.json │       └──  Adopti">
@@ -249,7 +249,7 @@
         
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">10</span>
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">8</span>
               </a>
         </li>
       
@@ -368,7 +368,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链开发/" itemprop="url" rel="index"><span itemprop="name">区块链开发</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a></span>
 
                 
                 
@@ -447,7 +447,8 @@
 │   └──1_initial_migration.js
 └── src
     └── ...
-</code></pre><ul>
+</code></pre><p>​    </p>
+<ul>
 <li>contract  此目录就是我们的编写的智能合约所存在的目录, 使用solidity语言编写</li>
 <li>migrations 此目录下是用于迁移部署合约的JS的脚本</li>
 <li>test 测试合约时所用的测试脚本</li>
@@ -538,16 +539,9 @@ Compiling ./contracts/Adoption.sol...
 Compiling ./test/TestAdoption.sol...
 Compiling truffle/Assert.sol...
 Compiling truffle/DeployedAddresses.sol...
-
-
-  TestAdoption
-    ✓ testUserCanAdoptPet (113ms)
-    ✓ testGetAdopterAddressByPetId (110ms)
-    ✓ testGetAdopterAddressByPetIdInArray (196ms)
-
-
-  3 passing (1s)
-</code></pre><p>可见, 通过测试命令, Truffle 对每个函数进行自动的 测试, 对运行结果进行assert(断言)分析, 如果合约代码存在问题, 测试过程会把错误显示出. 这里是全部测试通过的情况.</p>
+</code></pre><p>​<br>      TestAdoption<br>        ✓ testUserCanAdoptPet (113ms)<br>        ✓ testGetAdopterAddressByPetId (110ms)<br>        ✓ testGetAdopterAddressByPetIdInArray (196ms)</p>
+<p>​<br>      3 passing (1s)</p>
+<p>可见, 通过测试命令, Truffle 对每个函数进行自动的 测试, 对运行结果进行assert(断言)分析, 如果合约代码存在问题, 测试过程会把错误显示出. 这里是全部测试通过的情况.</p>
 <h3 id="前端应用代码"><a href="#前端应用代码" class="headerlink" title="前端应用代码"></a>前端应用代码</h3><p>奈何 没接触过JS 所以看起来有些吃力, 也算是借这个学习一下了!</p>
 <p>代码主体存在于 <code>src/js/app.js</code> , 从功能上讲就是对 我们的合约进行调用, 把我们领养的宠物这个信息记录在区块里.</p>
 <h4 id="InitWeb3"><a href="#InitWeb3" class="headerlink" title="InitWeb3"></a>InitWeb3</h4><pre><code>initWeb3: function () {
@@ -870,11 +864,7 @@ App.contracts.Adoption.deployed().then(function(instance) {
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

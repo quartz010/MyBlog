@@ -104,18 +104,18 @@
 
 
   
-  <meta name="keywords" content="以太坊,区块链,智能合约," />
+  <meta name="keywords" content="以太坊,区块链开发,智能合约," />
 
 
 <meta name="description" content="CrowdSale 合约分析前前面的文章实现了自己创建的 Token 在以太坊网络的发布, 这一篇, 接着来, 也是涉及到了更多的东西. 这次实现一个合约, 实现我们可以进行自动的 Token发放. 合约代码此段代码选自官方的教程, 这里凭着个人的学习和理解, 加上注释  官方代码  pragma solidity ^0.4.16;  interface token {     function">
-<meta name="keywords" content="以太坊,区块链,智能合约">
+<meta name="keywords" content="以太坊,区块链开发,智能合约">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CrowdSale 合约分析">
 <meta property="og:url" content="blog.diglp.xyz/2018/02/14/CrowdSale合约实现/index.html">
 <meta property="og:site_name" content="R4y&#39;s小窝">
 <meta property="og:description" content="CrowdSale 合约分析前前面的文章实现了自己创建的 Token 在以太坊网络的发布, 这一篇, 接着来, 也是涉及到了更多的东西. 这次实现一个合约, 实现我们可以进行自动的 Token发放. 合约代码此段代码选自官方的教程, 这里凭着个人的学习和理解, 加上注释  官方代码  pragma solidity ^0.4.16;  interface token {     function">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-28T09:44:55.261Z">
+<meta property="og:updated_time" content="2018-09-01T08:51:13.646Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CrowdSale 合约分析">
 <meta name="twitter:description" content="CrowdSale 合约分析前前面的文章实现了自己创建的 Token 在以太坊网络的发布, 这一篇, 接着来, 也是涉及到了更多的东西. 这次实现一个合约, 实现我们可以进行自动的 Token发放. 合约代码此段代码选自官方的教程, 这里凭着个人的学习和理解, 加上注释  官方代码  pragma solidity ^0.4.16;  interface token {     function">
@@ -249,7 +249,7 @@
         
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">10</span>
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">8</span>
               </a>
         </li>
       
@@ -368,7 +368,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链开发/" itemprop="url" rel="index"><span itemprop="name">区块链开发</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a></span>
 
                 
                 
@@ -506,10 +506,8 @@ contract Crowdsale {
         }
         crowdsaleClosed = true;
     }
-
-
-    /**
-     * Withdraw the funds (退钱的)
+</code></pre><p>​<br>        /**</p>
+<pre><code>     * Withdraw the funds (退钱的)
      *
      * Checks to see if goal or time limit has been reached, and if so, and the funding goal was reached,
      * sends the entire amount to the beneficiary. If goal was not reached, each contributor can withdraw
@@ -729,7 +727,7 @@ uint dna;
             <a href="/tags/以太坊/" rel="tag"><i class="fa fa-tag"></i> 以太坊</a>
           
             <!--  这里用来改变标签样式 -->
-            <a href="/tags/区块链/" rel="tag"><i class="fa fa-tag"></i> 区块链</a>
+            <a href="/tags/区块链开发/" rel="tag"><i class="fa fa-tag"></i> 区块链开发</a>
           
             <!--  这里用来改变标签样式 -->
             <a href="/tags/智能合约/" rel="tag"><i class="fa fa-tag"></i> 智能合约</a>
@@ -860,11 +858,7 @@ uint dna;
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
