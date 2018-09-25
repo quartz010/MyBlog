@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="R4y&#39;s小窝">
 <meta property="og:description" content="正则简明正则表达式，可谓是相当常用的东西了，看起来就是一堆奇怪的符号。正则表达式的强大之处就是在构建一个文本的规则  这次就对正则表达式做一个简单的学习记录吧。  参考链接 http://www.runoob.com/regexp  简介正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为”元字符”）。 正则表达式的功能">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-25T16:34:37.300Z">
+<meta property="og:updated_time" content="2018-09-25T16:56:52.666Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则简明">
 <meta name="twitter:description" content="正则简明正则表达式，可谓是相当常用的东西了，看起来就是一堆奇怪的符号。正则表达式的强大之处就是在构建一个文本的规则  这次就对正则表达式做一个简单的学习记录吧。  参考链接 http://www.runoob.com/regexp  简介正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为”元字符”）。 正则表达式的功能">
@@ -396,7 +396,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">3.5k</span>
+                <span title="字数统计">3.6k</span>
               
 
               
@@ -506,12 +506,14 @@
 <td>标记限定符</td>
 </tr>
 <tr>
-<td>\</td>
-<td></td>
+<td>&#124;</td>
 <td>两项间选择</td>
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p>题外话：这里的<code>|</code>符号在表格里面，由于是用来制表的，所以这里使用特殊方法<code>&amp;#124;</code> 来输出</p>
+</blockquote>
 <h3 id="限定符"><a href="#限定符" class="headerlink" title="限定符"></a>限定符</h3><p>限定符用于指定一个匹配部分需要被匹配的限定（匹配次数）。</p>
 <p><code>*, +, ?, {n},{n,},{n,m}</code></p>
 <table>
@@ -526,8 +528,7 @@
 <tr>
 <td>*</td>
 <td>匹配前面子表达式0或多次</td>
-<td>‘ab*‘ re abbb\</td>
-<td>a</td>
+<td>‘ab*‘ re abbb or a</td>
 </tr>
 <tr>
 <td>+</td>
@@ -537,8 +538,7 @@
 <tr>
 <td>?</td>
 <td>零次或一次</td>
-<td>ab \</td>
-<td>a</td>
+<td>ab or a</td>
 </tr>
 <tr>
 <td>{n}</td>
@@ -608,13 +608,13 @@
 <td>\</td>
 <td></td>
 <td>表达式或操作</td>
-<td>a\</td>
+<td>a \</td>
 <td>zxc 匹配a或者zxc</td>
 </tr>
 <tr>
 <td>[]</td>
 <td>字符集合</td>
-<td>[abc]\ [a-b]</td>
+<td>[abc] or [a-b]</td>
 </tr>
 <tr>
 <td>[^]</td>
@@ -628,16 +628,6 @@
 </tr>
 <tr>
 <td>[^a-z]</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
 <td></td>
 </tr>
 </tbody>
@@ -758,8 +748,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/09/OP_Nginx_CGI/" rel="next" title="Nginx 基础杂记">
-                <i class="fa fa-chevron-left"></i> Nginx 基础杂记
+              <a href="/2019/09/09/MangoDB/" rel="next" title="MongoDB 简明入门">
+                <i class="fa fa-chevron-left"></i> MongoDB 简明入门
               </a>
             
           </div>
