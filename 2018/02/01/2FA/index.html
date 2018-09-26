@@ -323,7 +323,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="R4yd">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -352,7 +352,23 @@
 
             
             
+              
+                
+              
+            
 
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-02T23:05:47+08:00">2018-02-02</time>
             
           </span>
 
@@ -518,11 +534,6 @@ else
     
 
     
-      <div id="ethereum" style="display: inline-block">
-        <img id="ethereum_qr" src="/images/eth.png" alt="R4yd 以太坊"/>
-        <p>以太坊</p>
-      </div>
-    
 
   </div>
 </div>
@@ -567,8 +578,8 @@ else
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/17/STM32F1x/" rel="next" title="STM32 逆向初步">
-                <i class="fa fa-chevron-left"></i> STM32 逆向初步
+              <a href="/2018/02/01/想想未来/" rel="next" title="未来已来">
+                <i class="fa fa-chevron-left"></i> 未来已来
               </a>
             
           </div>
@@ -577,8 +588,8 @@ else
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/01/想想未来/" rel="prev" title="未来已来">
-                未来已来 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/05/teatime语录/" rel="prev" title="TeaHour_ETH笔记">
+                TeaHour_ETH笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -651,6 +662,10 @@ else
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="R4yd" />
             
               <p class="site-author-name" itemprop="name">R4yd</p>
               <p class="site-description motion-element" itemprop="description">个人技术站</p>
@@ -775,11 +790,6 @@ else
               
                 <span class="links-of-author-item">
                   <a href="mailto:r4y.root@gmail.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://plus.google.com/r4y.root" target="_blank" title="Google" rel="external nofollow"><i class="fa fa-fw fa-google"></i>Google</a>
                   
                 </span>
               
@@ -935,6 +945,8 @@ else
 
 
 
+  
+
 
 
 
@@ -960,6 +972,11 @@ else
   
   
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -998,7 +1015,7 @@ else
   
 
   
-    <script id="dsq-count-scr" src="https://just4blog.disqus.com/count.js" async></script>
+    <script id="dsq-count-scr" src="https://diglp.disqus.com/count.js" async></script>
   
 
   
@@ -1010,12 +1027,26 @@ else
       };
       function loadComments () {
         var d = document, s = d.createElement('script');
-        s.src = 'https://just4blog.disqus.com/embed.js';
+        s.src = 'https://diglp.disqus.com/embed.js';
         s.setAttribute('data-timestamp', '' + +new Date());
         (d.head || d.body).appendChild(s);
       }
       
-        loadComments();
+        $(function () {
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          if (offsetTop <= 0) {
+            // load directly when there's no a scrollbar
+            loadComments();
+          } else {
+            $(window).on('scroll.disqus_scroll', function () {
+              var scrollTop = document.documentElement.scrollTop;
+              if (scrollTop >= offsetTop) {
+                $(window).off('.disqus_scroll');
+                loadComments();
+              }
+            });
+          }
+        });
       
     </script>
   

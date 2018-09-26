@@ -322,7 +322,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="R4yd">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -353,7 +353,23 @@
 
             
             
+              
+                
+              
+            
 
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-01T16:51:13+08:00">2018-09-01</time>
             
           </span>
 
@@ -449,7 +465,14 @@
 
 官方代码
 
-pragma 
+pragma solidity ^0.4.16;
+
+interface token {
+    function transfer(address receiver, uint amount);   // 这里调用你的Token合约的函数接口
+}
+
+contract Crowdsale {
+    address
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -521,7 +544,7 @@ pragma
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="R4yd">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -552,7 +575,23 @@ pragma
 
             
             
+              
+                
+              
+            
 
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-01T16:50:31+08:00">2018-09-01</time>
             
           </span>
 
@@ -647,7 +686,9 @@ pragma
 
 // 接口标准
   contract ERC20 {
-      function totalSupply() constant returns (uint 
+      function totalSupply() constant returns (uint totalSupply);    // 总发行量
+      function balanceOf(address _owner) constant returns (uint balance);
+      function transfer(address _to, uint _value) r
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -719,7 +760,7 @@ pragma
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="R4yd">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -750,7 +791,23 @@ pragma
 
             
             
+              
+                
+              
+            
 
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-01T16:46:42+08:00">2018-09-01</time>
             
           </span>
 
@@ -844,7 +901,14 @@ pragma
           发行自己的ERC20 Token这次主要实现 发行一个自己的ERC20 标准的 Token. (然后进行ICO, 圈钱跑路, 走上人生巅峰,XD)
 
 其实把Token 叫做代币, 容易让人产生误解.实际上是一种凭证, 只是被现在狂热的人们搅浑了.
-Token的持有人可以完全控制资产，遵守ERC20的
+Token的持有人可以完全控制资产，遵守ERC20的token可以跟踪任何人在任何时间拥有多少token.
+
+前现在币圈的狂热之势四起, 昨天一个朋友, 发来一串神秘代码, 说转账有 3000多的糖果.这里偷偷的放一下地址, 可以去玩玩..
+
+ENU: 0x275b69AA7c8C1d648A0557656bCe1C286e69a29d
+
+
+这个转账
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -916,7 +980,7 @@ Token的持有人可以完全控制资产，遵守ERC20的
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="R4yd">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -947,7 +1011,23 @@ Token的持有人可以完全控制资产，遵守ERC20的
 
             
             
+              
+                
+              
+            
 
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-01T16:46:50+08:00">2018-09-01</time>
             
           </span>
 
@@ -1041,7 +1121,14 @@ Token的持有人可以完全控制资产，遵守ERC20的
           宠物商店(pet-shop) 学习笔记truffle 可以算是一个超级强大的 Ethereum 开发工具集, 集各种的功能集一身, 今天, 照着官方的文档, 和 手把手的教程, 完成了其中提供的一个demo.
 truffle的目录结构目录树demo
 ├── build
-│   └── contrac
+│   └── contracts
+│       ├── Migrations.json
+│       └──  Adoption.json
+├── contracts
+│   ├── Migrations.sol
+│   └── Adoption.sol
+├── migrations
+│   └── 1_initial_m
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1113,7 +1200,7 @@ truffle的目录结构目录树demo
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="R4yd">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1144,7 +1231,23 @@ truffle的目录结构目录树demo
 
             
             
+              
+                
+              
+            
 
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-01T16:50:04+08:00">2018-09-01</time>
             
           </span>
 
@@ -1244,7 +1347,8 @@ truffle的目录结构目录树demo
 truffle
 testrpc 
 
-Truffle 是一个基于js 开发的 以太坊开发框架,
+Truffle 是一个基于js 开发的 以太坊开发框架,其集成很多开发功能及一身, 能够在本地编译, 部署智能合约, 并且可以通过console 对节点进行 rpc 。
+testrpc 严格意义上是一个节点模拟工具(调试环境), 打开本地端口后, 其数据存在内存中, 不在硬盘的数据库内(不同于 geth ,mist ) 用于测试合约很方便,(如果在get
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1316,7 +1420,7 @@ Truffle 是一个基于js 开发的 以太坊开发框架,
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="R4yd">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1347,7 +1451,23 @@ Truffle 是一个基于js 开发的 以太坊开发框架,
 
             
             
+              
+                
+              
+            
 
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-01T16:47:34+08:00">2018-09-01</time>
             
           </span>
 
@@ -1444,10 +1564,237 @@ Truffle 是一个基于js 开发的 以太坊开发框架,
 语录:
 
 ruby - 参差多态才是幸福的本源
+有屠龙刀, 没有龙
+大神做的事情,不一定适合众生
+
+区块链杂谈自从比特币掀起了区块链的浪潮, 也得益于其代码的开源性质, 所以各种各样的币也就横空出世, 比如
+
+优化加密算法(scrypt)和出块速度的 LTC
+主打加密匿踪的 ZEC
+社区支持的DASH
+etc….
+
+这一类基于比特币思想, 再加
           ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/02/05/teatime语录/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+
+    <div> 
+      
+    </div>
+
+    
+
+
+    
+    
+    
+
+    
+    
+    <!--  这里用来添加以太reward -->
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/02/01/2FA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="R4yd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="R4y's小窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/01/2FA/" itemprop="url">2FA 双因素认证</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-01T00:00:00+08:00">2018-02-01</time>
+            
+
+            
+            
+              
+                
+              
+            
+
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-02T23:05:47+08:00">2018-02-02</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/浪潮之巅/" itemprop="url" rel="index"><span itemprop="name">浪潮之巅</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/01/2FA/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/02/01/2FA/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">1.3k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">0:02</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          2FA 双因素认证前登陆在现在的网络生活中是少不了, 登陆的本质就是认证(authentication)
+通过认证, 来证明你是就你, 不是别人冒充,顶替的(知道密码的委托人除外)
+昨天注册了一个网站, 和正常一样, 账号密码, 可是最后, 有了一项 2FA 绑定, 需要谷歌验证器. 打开后, 一种似曾相识的感觉飘来, 没错,就是很久很久以前的qq令牌,依稀记得这个是S40的jar了.
+小时候就像过, 这个怎么这么神奇, 又不联网,怎么能都知道密码是多少呢.所以,当日常百科,来个所以然 
+2FA的概念2FA 是(two-fact authentication)的缩写, 下面是百科的定义
+
+2F
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/01/2FA/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1515,7 +1862,7 @@ ruby - 参差多态才是幸福的本源
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="R4yd">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1546,7 +1893,23 @@ ruby - 参差多态才是幸福的本源
 
             
             
+              
+                
+              
+            
 
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-06T19:42:38+08:00">2018-03-06</time>
             
           </span>
 
@@ -1645,207 +2008,13 @@ ruby - 参差多态才是幸福的本源
 任何在我35岁之后诞生的科技，都是违反自然规律要遭天谴的。
 
 
-这段话就是道格拉斯·亚当斯（《银河系漫游指南》作者）令人印象深刻
+这段话就是道格拉斯·亚当斯（《银河系漫游指南》作者）令人印象深刻的科技三定律。
+又一次，表弟来到家里玩，拿着一颗弹珠问道：“哥，这个是什么东西啊”，这时候我突然感觉时代这个词，第一次在眼前如此的赫然醒目。笑谈着：“自己真实老了”，但是细细思之。只是诞生在时间轴上t坐标的两个点，其中的差距却是如此的微妙。
+小时候，父亲讲起了自己的童年故事，那时候土地改革。可是那时
           ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/02/01/想想未来/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-
-    <div> 
-      
-    </div>
-
-    
-
-
-    
-    
-    
-
-    
-    
-    <!--  这里用来添加以太reward -->
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/02/01/2FA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R4yd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's小窝">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/01/2FA/" itemprop="url">2FA 双因素认证</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-01T00:00:00+08:00">2018-02-01</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/浪潮之巅/" itemprop="url" rel="index"><span itemprop="name">浪潮之巅</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/02/01/2FA/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/02/01/2FA/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">1.3k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">0:02</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          2FA 双因素认证前登陆在现在的网络生活中是少不了, 登陆的本质就是认证(authentication)
-通过认证, 来证明你是就你, 不是别人冒充,顶替的(知道密码的委托人除外)
-昨天注册了一个网站, 和正常一样, 账号密码, 可是最后, 有了一项 2FA 绑定, 需要谷歌验证器. 打开后, 一种
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/01/2FA/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1913,7 +2082,7 @@ ruby - 参差多态才是幸福的本源
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="R4yd">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1944,7 +2113,23 @@ ruby - 参差多态才是幸福的本源
 
             
             
+              
+                
+              
+            
 
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-27T22:14:21+08:00">2018-03-27</time>
             
           </span>
 
@@ -2037,7 +2222,12 @@ ruby - 参差多态才是幸福的本源
           
           STM32 逆向初步背景终于难得闲暇和久违的激情 , 赶紧动手 , 这次也是初步的体验 , 所以目的就是简单的 dump 程序 , 和基本反汇编
 工具集介绍软件部分
-OpenOCD  Open On-Chip Debugger 著名的开源硬件调试器  支持多种的 调试器 (St-link)(jlin
+OpenOCD  Open On-Chip Debugger 著名的开源硬件调试器  支持多种的 调试器 (St-link)(jlink) 之类的符合JTAG标准的  支持多种 MPU 调试 只要是主流的都有(这次用到的 STM32F1x 默认有了配置文件)
+
+http://openocd.zylin.com/  这里附上配置文件下载地址可以选择不同的 mpu
+
+
+Arm-none-edbi-*  ARM 裸机使用的工具链 (注意
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2124,6 +2314,10 @@ OpenOCD  Open On-Chip Debugger 著名的开源硬件调试器  支持多种的 �
       <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="R4yd" />
             
               <p class="site-author-name" itemprop="name">R4yd</p>
               <p class="site-description motion-element" itemprop="description">个人技术站</p>
@@ -2248,11 +2442,6 @@ OpenOCD  Open On-Chip Debugger 著名的开源硬件调试器  支持多种的 �
               
                 <span class="links-of-author-item">
                   <a href="mailto:r4y.root@gmail.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://plus.google.com/r4y.root" target="_blank" title="Google" rel="external nofollow"><i class="fa fa-fw fa-google"></i>Google</a>
                   
                 </span>
               
@@ -2392,6 +2581,8 @@ OpenOCD  Open On-Chip Debugger 著名的开源硬件调试器  支持多种的 �
 
 
 
+  
+
 
 
 
@@ -2417,6 +2608,11 @@ OpenOCD  Open On-Chip Debugger 著名的开源硬件调试器  支持多种的 �
   
   
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -2451,7 +2647,7 @@ OpenOCD  Open On-Chip Debugger 著名的开源硬件调试器  支持多种的 �
   
 
   
-    <script id="dsq-count-scr" src="https://just4blog.disqus.com/count.js" async></script>
+    <script id="dsq-count-scr" src="https://diglp.disqus.com/count.js" async></script>
   
 
   
