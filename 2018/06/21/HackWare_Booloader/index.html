@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="R4y&#39;s小窝">
 <meta property="og:description" content="HackWare BootLoader 原理前最近, follow 一个开源项目, BusPirate ,总线海盗,一个很棒的超多功能集一身的一个 tool. 对其中的 bootloader 印象深刻, 虽然不是第一次知道这东西, 这次也是来了兴致. 学习一下.   BusPirate Github BusPirate Offical Website  What先看看词条的定义:  在嵌入式操作系">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-21T06:19:10.352Z">
+<meta property="og:updated_time" content="2018-09-26T15:11:27.912Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HackWare BootLoader 原理">
 <meta name="twitter:description" content="HackWare BootLoader 原理前最近, follow 一个开源项目, BusPirate ,总线海盗,一个很棒的超多功能集一身的一个 tool. 对其中的 bootloader 印象深刻, 虽然不是第一次知道这东西, 这次也是来了兴致. 学习一下.   BusPirate Github BusPirate Offical Website  What先看看词条的定义:  在嵌入式操作系">
@@ -368,7 +368,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-21T14:19:10+08:00">2018-06-21</time>
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-26T23:11:27+08:00">2018-09-26</time>
             
           </span>
 
@@ -423,7 +423,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">21k</span>
+                <span title="字数统计">20k</span>
               
 
               
@@ -437,7 +437,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:35</span>
+                <span title="阅读时长">0:33</span>
               
             </div>
           
@@ -516,22 +516,8 @@
         .equ     CHECKSUMERR,&apos;N&apos;                                        /*checksum error*/
         .equ    VERFAIL,    &apos;V&apos;                                        /*verification failed*/
         .equ       BLPROT,     &apos;P&apos;                                      /*bl protection tripped*/
-
-
-        .equ    BLDELAY,    ( BLTIME * (FCY / 1000) / (65536 * 7) )    /*delay berfore user application is loaded*/
-        ;.equ    UARTBR,        ( (((FCY / BAUDRATE) / 8) - 1) / 2 )    /*baudrate*/
-        /* issue 11 in errata for A3, optimal value causes reception to fail */
-        /* autocalculate: 0x21, &lt;2.5% error    */
-        /* working: 0x22, &lt;3% error, same as main firmware */
-        .equ     UARTBR,     0x22;((FCY/(4*BAUDRATE))-1)
-        .equ    PAGESIZE,    512                                        /*words*/
-        .equ    ROWSIZE,    64                                        /*words*/        
-        ; 这个 指令是注释掉了的, 
-;        .equ    STARTADDR,    ( FLASHSIZE - 2*(PAGESIZE * 2) )         /*place bootloader in 2nd last program page*/
-        .equ    STARTADDR,    ( FLASHSIZE - (2* (PAGESIZE)) )         /*place bootloader in last program page*/
-        .equ    BLCHECKST,  ( STARTADDR - (ROWSIZE) )            /*precalculate the first row write position that would overwrite the bootloader*/
-        .equ     BLVERSION,     0x0405                                 ;bootloader version for Bus Pirate firmware (located at last instruction before flash config words)
-</code></pre><p>对 一些 宏的 定义值进行合法性检测.</p>
+</code></pre><p>​<br>            .equ    BLDELAY,    ( BLTIME <em> (FCY / 1000) / (65536 </em> 7) )    /<em>delay berfore user application is loaded</em>/<br>            ;.equ    UARTBR,        ( (((FCY / BAUDRATE) / 8) - 1) / 2 )    /<em>baudrate</em>/<br>            /<em> issue 11 in errata for A3, optimal value causes reception to fail </em>/<br>            /<em> autocalculate: 0x21, &lt;2.5% error    </em>/<br>            /<em> working: 0x22, &lt;3% error, same as main firmware </em>/<br>            .equ     UARTBR,     0x22;((FCY/(4<em>BAUDRATE))-1)<br>            .equ    PAGESIZE,    512                                        /</em>words<em>/<br>            .equ    ROWSIZE,    64                                        /</em>words<em>/<br>            ; 这个 指令是注释掉了的,<br>    ;        .equ    STARTADDR,    ( FLASHSIZE - 2</em>(PAGESIZE <em> 2) )         /</em>place bootloader in 2nd last program page<em>/<br>            .equ    STARTADDR,    ( FLASHSIZE - (2</em> (PAGESIZE)) )         /<em>place bootloader in last program page</em>/<br>            .equ    BLCHECKST,  ( STARTADDR - (ROWSIZE) )            /<em>precalculate the first row write position that would overwrite the bootloader</em>/<br>            .equ     BLVERSION,     0x0405                                 ;bootloader version for Bus Pirate firmware (located at last instruction before flash config words)</p>
+<p>对 一些 宏的 定义值进行合法性检测.</p>
 <pre><code>;------------------------------------------------------------------------------
 ; Validate user settings
 ;------------------------------------------------------------------------------
@@ -552,402 +538,73 @@
 .endif 
 
 ...
-</code></pre><p>这里,在数据段分配空间 , 存放固件签名地址<br>    ;——————————————————————————<br>    ; Uninitialized variables in data memory<br>    ;——————————————————————————<br>            .bss<br>    buffer:    .space ( ROWSIZE <em> 3 + 1/</em>checksum*/ ) </p>
-<pre><code>        .equ FIRMWARE_SIGNATURE_LOW, 0x3141
-        .equ FIRMWARE_SIGNATURE_HIGH, 0x5926
+</code></pre><p>这里,在数据段分配空间 , 存放固件签名地址</p>
+<pre><code>;------------------------------------------------------------------------------
+; Uninitialized variables in data memory
+;------------------------------------------------------------------------------
+    .bss
+buffer:    .space ( ROWSIZE * 3 + 1/*checksum*/ ) 
+    .equ FIRMWARE_SIGNATURE_LOW, 0x3141
+    .equ FIRMWARE_SIGNATURE_HIGH, 0x5926
 
-        .global skip_pgc_pgd_check
-        .global firmware_signature
+    .global skip_pgc_pgd_check
+    .global firmware_signature
 
-        .section *, bss, address(0x27FA)
+    .section *, bss, address(0x27FA)
 skip_pgc_pgd_check: .space 2
 firmware_signature: .space 4
 </code></pre><h3 id="签名校验"><a href="#签名校验" class="headerlink" title="签名校验"></a>签名校验</h3><p>在文件的前面, 有声明一个全局符号</p>
-<pre><code>;------------------------------------------------------------------------------
-; Global declarations
-;------------------------------------------------------------------------------
-        .global __reset              ;the label for the first line of code, needed by the linker script
-</code></pre><p>由符号可以直接看出, 是一个复位向量, 下面是标号内容, 也就是我们一上电会执行的东西</p>
-<pre><code>;--------------------------------------------------    ----------------------------
-; Reset vector
-;------------------------------------------------------------------------------
-        .section *, code, address(STARTADDR)    ; 指定段 及段偏移
-__reset:mov     #__SP_init, WSTPTR    ; 初始化栈指针
-
-
-;------------------------------------------------------------------------------
-; User specific entry code go here, see also user exit code section at end of file
-;------------------------------------------------------------------------------
-        bclr OSCCON, #SOSCEN
-        bclr CLKDIV, #RCDIV0 ;set clock divider to 0
-
-waitPLL:btss OSCCON, #LOCK            ; 锁相环初始化
-        bra waitPLL ;wait for the PLL to lock
-
-        mov #0xFFFF, W0 ;all pins to digital
-        mov W0, AD1PCFG                ; IO初始化
-
-        ; Make sure the firmware has been started at least once.
-        ;
-        ; If the firmware signature is found in memory then it is
-        ; extremely plausible that skip_pgc_pgd_check has been
-        ; initialised to the correct value.
-
-        ; 读取片内地址, 与硬编码签名进行比较
-        mov #firmware_signature, W0
-        mov [W0++], W1    ; 这里读取高字节
-
-        mov #FIRMWARE_SIGNATURE_HIGH, W2    ; 加载 正确签名高字节
-        cp W1, W2                ; 比较
-        bra nz, jumper_test        ; 不等跳转
-
-        mov [W0], W1
-        mov #FIRMWARE_SIGNATURE_LOW, W2        ; 加载 正确签名低字节
-        cp W1, W2
-        bra nz, jumper_test        ; 不等跳转
-
-        mov #skip_pgc_pgd_check, W0            ; 加载标志位地址
-        cp0.b [W0]
-        clr.b [W0]       ; should not change flags
-        ; 上面的 PIC 汇编,没看懂, 查了查没有 .b 这样的语法???
-        ; 理应是把这个地址的 内容复位吧.
-
-        bra nz, setup            ; 开始启动配置
-</code></pre><p>上面的这段代码, 实际上应该是对,当前的单片机内是否有 <strong>有效的固件</strong> 进行检测. 固件包含签名, 有签名就是有固件.</p>
-<h3 id="跳线检测"><a href="#跳线检测" class="headerlink" title="跳线检测"></a>跳线检测</h3><pre><code>jumper_test:
-
-        mov #skip_pgc_pgd_check, W0    ; 老规矩, 加载标志位的地址
-        clr.b [W0]    ; 清空内容
-
-        ;jumper check test
-        ;setup the jumper check
-        ;enable input on PGx
-
-        ; 这里是引脚配置部分,使得拥有电平检测的功能
-        bclr LATB, #LATB1 ;rb1 low
-        bset TRISB, #TRISB1 ;rb1 input
-        bset CNPU1, #CN5PUE ;enable pullups on PGC/CN5/RB1
-        ;ground/output on PGx
-        bclr LATB, #RB0 ;rb0 low
-        bclr TRISB, #TRISB0 ;rb0 output
-
-        ;wait
-        nop
-        nop
-
-        ;check for jumper
-        btsc PORTB,#RB1    ;跳过下条指令, 如果 RB1=0(即存在jmper), 这样就继续进行配置部分
-
-        ;;;;;;;;;;;重要;;;;;;;;;;;;;
-        bra quit ; 如果是不存在 jumper 的那么,就退出 ,开始执行 用户程序
-
-        clr WFWJUMP        ;we came from jumper and reset, not firmware jump
-
-        ;注意,后面紧接着就是 setup
-setup:
-        .ifdef BUSPIRATEV2
-        ...
-</code></pre><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">; Global declarations</span><br><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">        .global __reset          	;the label for the first line of code, needed by the linker script</span><br></pre></td></tr></table></figure>
+<p>由符号可以直接看出, 是一个复位向量, 下面是标号内容, 也就是我们一上电会执行的东西</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">;--------------------------------------------------	----------------------------</span><br><span class="line">; Reset vector</span><br><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">		.section *, code, address(STARTADDR)	; 指定段 及段偏移</span><br><span class="line">__reset:mov 	#__SP_init, WSTPTR	; 初始化栈指针</span><br></pre></td></tr></table></figure>
+<p>​<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">; User specific entry code go here, see also user exit code section at end of file</span><br><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">		bclr OSCCON, #SOSCEN</span><br><span class="line">		bclr CLKDIV, #RCDIV0 ;set clock divider to 0</span><br><span class="line"></span><br><span class="line">waitPLL:btss OSCCON, #LOCK			; 锁相环初始化</span><br><span class="line">		bra waitPLL ;wait for the PLL to lock</span><br><span class="line"></span><br><span class="line">		mov #0xFFFF, W0 ;all pins to digital</span><br><span class="line">		mov W0, AD1PCFG				; IO初始化</span><br><span class="line">		</span><br><span class="line">		; Make sure the firmware has been started at least once.</span><br><span class="line">		;</span><br><span class="line">		; If the firmware signature is found in memory then it is</span><br><span class="line">		; extremely plausible that skip_pgc_pgd_check has been</span><br><span class="line">		; initialised to the correct value.</span><br><span class="line">		</span><br><span class="line">		; 读取片内地址, 与硬编码签名进行比较</span><br><span class="line">		mov #firmware_signature, W0</span><br><span class="line">		mov [W0++], W1	; 这里读取高字节</span><br><span class="line"></span><br><span class="line">		mov #FIRMWARE_SIGNATURE_HIGH, W2	; 加载 正确签名高字节</span><br><span class="line">		cp W1, W2				; 比较</span><br><span class="line">		bra nz, jumper_test		; 不等跳转</span><br><span class="line"></span><br><span class="line">		mov [W0], W1</span><br><span class="line">		mov #FIRMWARE_SIGNATURE_LOW, W2		; 加载 正确签名低字节</span><br><span class="line">		cp W1, W2</span><br><span class="line">		bra nz, jumper_test		; 不等跳转</span><br><span class="line">		</span><br><span class="line">		mov #skip_pgc_pgd_check, W0			; 加载标志位地址</span><br><span class="line">		cp0.b [W0]</span><br><span class="line">		clr.b [W0]       ; should not change flags</span><br><span class="line">		; 上面的 PIC 汇编,没看懂, 查了查没有 .b 这样的语法???</span><br><span class="line">		; 理应是把这个地址的 内容复位吧.</span><br><span class="line"></span><br><span class="line">		bra nz, setup			; 开始启动配置</span><br></pre></td></tr></table></figure></p>
+<p>上面的这段代码, 实际上应该是对,当前的单片机内是否有 <strong>有效的固件</strong> 进行检测. 固件包含签名, 有签名就是有固件.</p>
+<h3 id="跳线检测"><a href="#跳线检测" class="headerlink" title="跳线检测"></a>跳线检测</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">jumper_test:</span><br><span class="line">    </span><br><span class="line">		mov #skip_pgc_pgd_check, W0	; 老规矩, 加载标志位的地址</span><br><span class="line">		clr.b [W0]	; 清空内容</span><br><span class="line">    </span><br><span class="line">		;jumper check test</span><br><span class="line">		;setup the jumper check</span><br><span class="line">		;enable input on PGx</span><br><span class="line">		</span><br><span class="line">		; 这里是引脚配置部分,使得拥有电平检测的功能</span><br><span class="line">		bclr LATB, #LATB1 ;rb1 low</span><br><span class="line">		bset TRISB, #TRISB1 ;rb1 input</span><br><span class="line">		bset CNPU1, #CN5PUE ;enable pullups on PGC/CN5/RB1</span><br><span class="line">		;ground/output on PGx</span><br><span class="line">		bclr LATB, #RB0 ;rb0 low</span><br><span class="line">		bclr TRISB, #TRISB0 ;rb0 output</span><br><span class="line">		</span><br><span class="line">		;wait</span><br><span class="line">		nop</span><br><span class="line">		nop</span><br><span class="line"></span><br><span class="line">		;check for jumper</span><br><span class="line">		btsc PORTB,#RB1	;跳过下条指令, 如果 RB1=0(即存在jmper), 这样就继续进行配置部分</span><br><span class="line">		</span><br><span class="line">		;;;;;;;;;;;重要;;;;;;;;;;;;;</span><br><span class="line">		bra quit ; 如果是不存在 jumper 的那么,就退出 ,开始执行 用户程序</span><br><span class="line"></span><br><span class="line">		clr WFWJUMP		;we came from jumper and reset, not firmware jump</span><br><span class="line">		</span><br><span class="line">		;注意,后面紧接着就是 setup</span><br><span class="line">setup:</span><br><span class="line">		.ifdef BUSPIRATEV2</span><br><span class="line">		...</span><br></pre></td></tr></table></figure>
+<hr>
 <p>结合实际上的具体操作, 上面的这部分就是比较容易理解了.</p>
 <p>实际上, 在给板子使用 bootloader 进行固件烧写的时候,的确需要一个 jumper 连接 pgc 和 pgd 这两个脚. 否则的话, 显示如下err内容,</p>
-<pre><code>+++++++++++++++++++++++++++++++++++++++++++
-  Pirate-Loader for BP with Bootloader v4+
-  Loader version: 1.0.2  OS: WINDOWS
-+++++++++++++++++++++++++++++++++++++++++++
-
-Parsing HEX file [BPv3-firmware-v6.2-r1981.hex]
-Found 21502 words (64506 bytes)
-Fixing bootloader/userprogram jumps
-Opening serial device COM13...OK
-Configuring serial port settings...OK
-Sending Hello to the Bootloader...ERROR
-No reply from the bootloader, or invalid reply received: 0
-Please make sure that PGND and PGC are connected, replug the devide and try again
-</code></pre><p>上述的代码, 就是对上电时候是否有进行 跳线进行检测, 从而执行不同的后续操作.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">+++++++++++++++++++++++++++++++++++++++++++</span><br><span class="line">  Pirate-Loader for BP with Bootloader v4+</span><br><span class="line">  Loader version: 1.0.2  OS: WINDOWS</span><br><span class="line">+++++++++++++++++++++++++++++++++++++++++++</span><br><span class="line"></span><br><span class="line">Parsing HEX file [BPv3-firmware-v6.2-r1981.hex]</span><br><span class="line">Found 21502 words (64506 bytes)</span><br><span class="line">Fixing bootloader/userprogram jumps</span><br><span class="line">Opening serial device COM13...OK</span><br><span class="line">Configuring serial port settings...OK</span><br><span class="line">Sending Hello to the Bootloader...ERROR</span><br><span class="line">No reply from the bootloader, or invalid reply received: 0</span><br><span class="line">Please make sure that PGND and PGC are connected, replug the devide and try again</span><br></pre></td></tr></table></figure>
+<p>上述的代码, 就是对上电时候是否有进行 跳线进行检测, 从而执行不同的后续操作.</p>
 <ul>
 <li><a href="http://dangerousprototypes.com/docs/V4.x_to_v4.3_upgrade" target="_blank" rel="noopener">Firmware Upgrade - dangerousprototypes</a></li>
 </ul>
 <h3 id="用户程序-UserApp"><a href="#用户程序-UserApp" class="headerlink" title="用户程序 UserApp"></a>用户程序 UserApp</h3><p>在上面的bootloader , bra 到quit 标号的时候, 惊奇的发现,后面就开始执行我们的用户程序了. </p>
-<pre><code>quit:    ;clean up from jumper test
-        ; 根据注释,这里应该是把 之前的跳线检测,进行复位
-        bclr CNPU1, #CN5PUE ;disable pullups on PGC/CN5/RB1
-        bset TRISB, #TRISB0 ;rb0 back to input
-        mov #0x0000, W0 ;clear pins to analog default
-        mov W0, AD1PCFG    
-
-;------------------------------------------------------------------------------
-; Load user application
-;------------------------------------------------------------------------------
-        ; 没错,就是这里, 直接到了我们的用户程序了, 永不返回;
-        bra     usrapp
-</code></pre><p>可是, 上面的 setup 必须是要有个 jumper 多麻烦, 这里的 G1k精神所在, 所以, 会有以下的标号段. </p>
-<pre><code>;------------------------------------------------------------------------------
-; firmware jump entry point (kind of like a function because it&apos;s never reached from the above code
-;------------------------------------------------------------------------------
-firmwarejump:
-        mov #0xffff, WFWJUMP    ;flag that we jumped from firmware
-        bra setup    ;jump to just after jumper check
-</code></pre><p>这个符号被导出, 我们的用户程序中, 可以进行一次跳转. 回到我们的 bootloader.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">quit:	;clean up from jumper test</span><br><span class="line">		; 根据注释,这里应该是把 之前的跳线检测,进行复位</span><br><span class="line">		bclr CNPU1, #CN5PUE ;disable pullups on PGC/CN5/RB1</span><br><span class="line">		bset TRISB, #TRISB0 ;rb0 back to input</span><br><span class="line">		mov #0x0000, W0 ;clear pins to analog default</span><br><span class="line">		mov W0, AD1PCFG	</span><br><span class="line"></span><br><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">; Load user application</span><br><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">        ; 没错,就是这里, 直接到了我们的用户程序了, 永不返回;</span><br><span class="line">		bra 	usrapp</span><br></pre></td></tr></table></figure>
+<p>可是, 上面的 setup 必须是要有个 jumper 多麻烦, 这里的 G1k精神所在, 所以, 会有以下的标号段. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">; firmware jump entry point (kind of like a function because it&apos;s never reached from the above code</span><br><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">firmwarejump:</span><br><span class="line">		mov #0xffff, WFWJUMP	;flag that we jumped from firmware</span><br><span class="line">		bra setup	;jump to just after jumper check</span><br></pre></td></tr></table></figure>
+<p>这个符号被导出, 我们的用户程序中, 可以进行一次跳转. 回到我们的 bootloader.</p>
 <p>这里 也找到在固件中存在的 跳转部分</p>
 <ul>
 <li>源文件链接 <a href="https://github.com/DangerousPrototypes/Bus_Pirate/blob/master/Firmware/procMenu.c" target="_blank" rel="noopener">ProcMenu.c:666</a></li>
 </ul>
-<p>C 代码如下</p>
-<pre><code>// ProcMenu.c    
-case &apos;$&apos;: //bpWline(&quot;-bootloader jump&quot;);
-    if (agree()) { //bpWline(&quot;BOOTLOADER&quot;);
-        BPMSG1094;
-        bpDelayMS(100);
-        bpInit(); // turn off nasty things, cleanup first needed?
-        while (0 == UART1TXRdy()); //wait untill TX finishes
-
-        // 这里使用内联汇编, 加载地址,直接跳转, 妙啊
-        asm volatile (&quot;mov #BLJUMPADDRESS, w1 \n&quot; //bootloader location
-                    &quot;goto w1 \n&quot;);
-    }
-
-// Base.h
-//sets the address in the bootloader to jump to on the bootloader command
-//must be defined in asm
-asm (&quot;.equ BLJUMPADDRESS, 0xABF8&quot;);
-</code></pre><h3 id="串口初始化-UART"><a href="#串口初始化-UART" class="headerlink" title="串口初始化 UART"></a>串口初始化 UART</h3><p>在前面的检测中, 如果jumper是存在的, 这里就进行 setup操作, 这里的第一步就是配置 硬件串口</p>
-<pre><code>setup:
-    ;----------------------------------------------------------------------
-    ; UART pps config
-    ;----------------------------------------------------------------------
-    .ifdef BUSPIRATEV2
-        ; Backup, these are restored in exit code at end of file
-        ; Changes needs to be done in exit, search for xxx
-        mov        RPINR18, PPSTEMP1        ;xxx
-        mov        RPOR2, PPSTEMP2            ;xxx
-
-        ; Receive, map pin to uart (RP5 on 2/3, RP3 on v1a)
-        ; 初始化 串口接收
-        bset    RPINR18, #U1RXR0        ;xxx
-        bclr    RPINR18, #U1RXR1        ;xxx
-        bset    RPINR18, #U1RXR2        ;xxx
-        bclr    RPINR18, #U1RXR3        ;xxx
-        bclr    RPINR18, #U1RXR4        ;xxx
-
-        ; Transmit, map uart to pin (RPOR2bits.RP4R = 3 on 2/3, RPOR1bits.RP2R=3 on v1a)
-        ...
-        ; 配置 串口发送
-
-        ; MODE LED on during bootload  (A1 on 2/3, B4 on v1a)
-        ; 增加性能的 rgb 
-        bset LATA, #LATA1 ;on    
-        bclr TRISA, #TRISA1 ;output
-    .endif
-
-    ; 不同版本
-    .ifdef BUSPIRATEV1A
-        ...
-    .endif
-</code></pre><hr>
+<p>C 代码如下<br>​<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// ProcMenu.c	</span><br><span class="line">case &apos;$&apos;: //bpWline(&quot;-bootloader jump&quot;);</span><br><span class="line">    if (agree()) &#123; //bpWline(&quot;BOOTLOADER&quot;);</span><br><span class="line">        BPMSG1094;</span><br><span class="line">        bpDelayMS(100);</span><br><span class="line">        bpInit(); // turn off nasty things, cleanup first needed?</span><br><span class="line">        while (0 == UART1TXRdy()); //wait untill TX finishes</span><br><span class="line"></span><br><span class="line">		// 这里使用内联汇编, 加载地址,直接跳转, 妙啊</span><br><span class="line">        asm volatile (&quot;mov #BLJUMPADDRESS, w1 \n&quot; //bootloader location</span><br><span class="line">                    &quot;goto w1 \n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">// Base.h</span><br><span class="line">//sets the address in the bootloader to jump to on the bootloader command</span><br><span class="line">//must be defined in asm</span><br><span class="line">asm (&quot;.equ BLJUMPADDRESS, 0xABF8&quot;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="串口初始化-UART"><a href="#串口初始化-UART" class="headerlink" title="串口初始化 UART"></a>串口初始化 UART</h3><p>在前面的检测中, 如果jumper是存在的, 这里就进行 setup操作, 这里的第一步就是配置 硬件串口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">setup:</span><br><span class="line">	;----------------------------------------------------------------------</span><br><span class="line">	; UART pps config</span><br><span class="line">	;----------------------------------------------------------------------</span><br><span class="line">	.ifdef BUSPIRATEV2</span><br><span class="line">		; Backup, these are restored in exit code at end of file</span><br><span class="line">		; Changes needs to be done in exit, search for xxx</span><br><span class="line">		mov		RPINR18, PPSTEMP1		;xxx</span><br><span class="line">		mov		RPOR2, PPSTEMP2			;xxx</span><br><span class="line"></span><br><span class="line">		; Receive, map pin to uart (RP5 on 2/3, RP3 on v1a)</span><br><span class="line">		; 初始化 串口接收</span><br><span class="line">		bset	RPINR18, #U1RXR0		;xxx</span><br><span class="line">		bclr	RPINR18, #U1RXR1		;xxx</span><br><span class="line">		bset	RPINR18, #U1RXR2		;xxx</span><br><span class="line">		bclr	RPINR18, #U1RXR3		;xxx</span><br><span class="line">		bclr	RPINR18, #U1RXR4		;xxx</span><br><span class="line">		</span><br><span class="line">		; Transmit, map uart to pin (RPOR2bits.RP4R = 3 on 2/3, RPOR1bits.RP2R=3 on v1a)</span><br><span class="line">		...</span><br><span class="line">		; 配置 串口发送</span><br><span class="line">		</span><br><span class="line">		; MODE LED on during bootload  (A1 on 2/3, B4 on v1a)</span><br><span class="line">		; 增加性能的 rgb </span><br><span class="line">		bset LATA, #LATA1 ;on	</span><br><span class="line">		bclr TRISA, #TRISA1 ;output</span><br><span class="line">	.endif</span><br><span class="line"></span><br><span class="line">	; 不同版本</span><br><span class="line">	.ifdef BUSPIRATEV1A</span><br><span class="line">		...</span><br><span class="line">	.endif</span><br></pre></td></tr></table></figure>
+<hr>
 <p>完成了配置之后, 进行初始化</p>
-<pre><code>;------------------------------------------------------------------------------
-; Init
-;------------------------------------------------------------------------------
-    clr        DOERASE
-
-    ;UART
-    mov        #UARTBR, W0         ;set    
-    mov     W0, UBRG            ; baudrate
-    bset    UMODE, #BRGH        ;enable BRGH
-    bset     UMODE, #UARTEN        ;enable UART
-    bset     USTA, #UTXEN        ;enable TX
-</code></pre><h3 id="设备握手"><a href="#设备握手" class="headerlink" title="设备握手"></a>设备握手</h3><p>这里的设备握手, 是直接在 串口的后面执行的.<br>    ;——————————————————————————<br>    ; Receive hello<br>    ;——————————————————————————<br>            rcall     Receive        ; 这里调用 函数符号 读取串口, 具体函数见后</p>
-<pre><code>        sub     #HELLO, W0            ;check
-        ; .equ HELLO, 0xC1 在前面静态定义了 HELLO 的值
-        bra     z, helloOK            ; prompt
-
-        sub     #&apos;#&apos;, W0            ; check
-        ; Exit point, clean up and load user application
-        bra     z, exit                ; prompt
-
-        ; 如果这两个符号都不是, 说明过程出现错误.
-        ; 打印,当前BL的硬编码版本 
-        SendL   &apos;B&apos;            ; 发送宏
-        SendL   &apos;L&apos;
-        SendL   &apos;4&apos;
-        SendL   &apos;+&apos;
-        ; 同上面的exit同样
-           bra    checkexit
-
-;------------------------------------------------------------------------------
-; Send device id and firmware version
-;------------------------------------------------------------------------------
-        ; 发送宏
-helloOK:SendL     DEVICEID
-        SendL    VERMAJ
-        SendL    (VERMIN*16 + VERREV)
-        ; 这里通过串口, 把板子数据发送出去
-</code></pre><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">; Init</span><br><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">	clr		DOERASE</span><br><span class="line">	</span><br><span class="line">	;UART</span><br><span class="line">	mov		#UARTBR, W0 		;set	</span><br><span class="line">	mov 	W0, UBRG			; baudrate</span><br><span class="line">	bset	UMODE, #BRGH		;enable BRGH</span><br><span class="line">	bset 	UMODE, #UARTEN		;enable UART</span><br><span class="line">	bset 	USTA, #UTXEN		;enable TX</span><br></pre></td></tr></table></figure>
+<h3 id="设备握手"><a href="#设备握手" class="headerlink" title="设备握手"></a>设备握手</h3><p>这里的设备握手, 是直接在 串口的后面执行的.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">	;------------------------------------------------------------------------------</span><br><span class="line">	; Receive hello</span><br><span class="line">	;------------------------------------------------------------------------------</span><br><span class="line">    	rcall 	Receive		; 这里调用 函数符号 读取串口, 具体函数见后</span><br><span class="line">    	sub 	#HELLO, W0			;check</span><br><span class="line">		; .equ HELLO, 0xC1 在前面静态定义了 HELLO 的值</span><br><span class="line">		bra 	z, helloOK			; prompt</span><br><span class="line">		</span><br><span class="line">		sub 	#&apos;#&apos;, W0			; check</span><br><span class="line">		; Exit point, clean up and load user application</span><br><span class="line">		bra 	z, exit				; prompt</span><br><span class="line">		</span><br><span class="line">		; 如果这两个符号都不是, 说明过程出现错误.</span><br><span class="line">		; 打印,当前BL的硬编码版本 </span><br><span class="line">		SendL   &apos;B&apos;			; 发送宏</span><br><span class="line">		SendL   &apos;L&apos;</span><br><span class="line">		SendL   &apos;4&apos;</span><br><span class="line">		SendL   &apos;+&apos;</span><br><span class="line">		; 同上面的exit同样</span><br><span class="line">   		bra    checkexit</span><br><span class="line"></span><br><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">; Send device id and firmware version</span><br><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">		; 发送宏</span><br><span class="line">helloOK:SendL 	DEVICEID</span><br><span class="line">		SendL	VERMAJ</span><br><span class="line">		SendL	(VERMIN*16 + VERREV)</span><br><span class="line">		; 这里通过串口, 把板子数据发送出去</span><br></pre></td></tr></table></figure>
+<hr>
 <p>串口内容的单字节接收函数, 用于握手识别 </p>
-<pre><code>;------------------------------------------------------------------------------
-; Receive
-;------------------------------------------------------------------------------
-        ; Init delay
-Receive:mov     #BLDELAY, WDEL1
-
-        ; Check for received byte
-rpt1:    clr        WDEL2
-rptc:    clrwdt                        ;clear watchdog
-        btss     USTA, #URXDA        
-        bra     notrcv                ; not receive 在这个函数中, 循环等待,接收
-        mov     URXREG, W0            ; 接收的数据装载在 W0
-        add     WCRC, W0, WCRC        ;add to checksum 和 进行循环冗余校验
-        return
-</code></pre><p>串口数据发送宏, 实现单字节数据发送. </p>
-<pre><code>;------------------------------------------------------------------------------
-; Send macro
-;------------------------------------------------------------------------------
-    .macro SendL char
-        mov #\char, W0                ; 装载内容
-        mov W0, UTXREG                ; 
-    .endm
-</code></pre><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><pre><code>    ; Send ok
-Main:    SendL     OK
-        ; Init checksum
-main1:    clr     WCRC
-
-        ;----------------------------------------------------------------------
-        ; Receive address
-        ;----------------------------------------------------------------------
-
-        ...
-        rcall Receive 
-        mov W0, TBLPAG                ;  
-        mov.b WREG, PR1+1
-        mov.b WREG, PR1
-        ... 
-
-    ; 这里的重复过程 , 从串口读取数据, 写到分配的静态空间里去.
-    ;----------------------------------------------------------------------
-    ; Receive command
-    ;----------------------------------------------------------------------
-
-    ;----------------------------------------------------------------------
-    ; Receive nr of data bytes that will follow
-    ;----------------------------------------------------------------------
-</code></pre><h3 id="数据接收"><a href="#数据接收" class="headerlink" title="数据接收"></a>数据接收</h3><p>这里就是开始接收 数据了</p>
-<pre><code>;----------------------------------------------------------------------
-; Receive data        
-;----------------------------------------------------------------------
-        ;;     .bss
-        ; buffer: .space ( ROWSIZE * 3 + 1/*checksum*/ )
-         ; 在附加段, 定义了一个大的缓冲区
-
-        mov     #buffer, WBUFPTR    ; 加载缓冲区地址
-rcvdata:
-        rcall     Receive                ; 接收字节
-        mov.b     W0, [WBUFPTR++]        ; 循环接收
-        dec        WCNT, WCNT            ; 数据计数
-        bra nz, rcvdata             ; 不是0 的话, 就跳转回去继续接收
-
-        ;last byte received is checksum
-
-;----------------------------------------------------------------------
-; Check checksum
-;----------------------------------------------------------------------
-    cp0.b     WCRC                    ; 
-    bra     z, bladdrchk            ; 这里是CheckSum 的一个校验 ,合法就继续
-    SendL     CHECKSUMERR        
-    bra main1                         ; 不合法, 发送校验值, 重新接收.
-</code></pre><h3 id="烧写准备"><a href="#烧写准备" class="headerlink" title="烧写准备"></a>烧写准备</h3><p>这里的部分, 是把数据真正的烧入 flash 前的检验工作, 确保 我写入的数据是不会影响到我 Bl 的本身的空间的, 如果影响到自己, 把自己抹掉了不就是尴尬了.</p>
-<p>检查是否数据容量是否超出, 导致覆盖, 这里保留官方的注释</p>
-<pre><code>;----------------------------------------------------------------------
-; Check address
-;----------------------------------------------------------------------    
-;check that write and erase range does not overlap the bootloader
-;this is pretty specific to the bootloader being in the last page
-;additional checks are needed if your bootloader is located elsewhere.
-;TBLPAG is always = to 0 on this PIC, no need to verify (check if you have bigger than 64K flash)
-
-;check the end address    检查结束的地址
-;write row size is fixed, any writes at (bootloader start-63) are an error
-;if write end address (W0) is &lt;= bl start address (WCNT) then OK
-;= is ok because we don&apos;t DEC after adding, write 10 bytes to 10 = end at 19
-
-bladdrchk:        
-        ;; 在前面有定义 BL 的起始地址
-        ;;.equ    BLCHECKST,  ( STARTADDR - (ROWSIZE) )            /*precalculate the first row write position that would overwrite the bootloader*/
-
-        mov    #BLCHECKST, WCNT    ;last row write postion that won&apos;t overwrite the bootloader
-        ;; 比较 当前内存指针, 和我们的 BL 的末地址.
-        cp        WADDR, WCNT            ;compare end address, does it overlap?
-        bra GTU, bladdrerror ;if greater unsigned then error
-
-        ...
-
-        ;handle the address error 地址错误的处理, 发送错误信息, 跳转进行重新的读.
-bladdrerror:clr    DOERASE             ;clear, just in case
-              SendL   BLPROT    ;send bootloader protection error
-            bra main1 ;
-</code></pre><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">; Receive</span><br><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">		; Init delay</span><br><span class="line">Receive:mov 	#BLDELAY, WDEL1</span><br><span class="line"></span><br><span class="line">		; Check for received byte</span><br><span class="line">rpt1:	clr		WDEL2</span><br><span class="line">rptc:	clrwdt						;clear watchdog</span><br><span class="line">		btss 	USTA, #URXDA		</span><br><span class="line">		bra 	notrcv				; not receive 在这个函数中, 循环等待,接收</span><br><span class="line">		mov 	URXREG, W0			; 接收的数据装载在 W0</span><br><span class="line">		add 	WCRC, W0, WCRC		;add to checksum 和 进行循环冗余校验</span><br><span class="line">		return</span><br></pre></td></tr></table></figure>
+<p>串口数据发送宏, 实现单字节数据发送. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">; Send macro</span><br><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">	.macro SendL char</span><br><span class="line">		mov #\char, W0				; 装载内容</span><br><span class="line">		mov W0, UTXREG				; </span><br><span class="line">	.endm</span><br></pre></td></tr></table></figure>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">	; Send ok</span><br><span class="line">Main:	SendL 	OK</span><br><span class="line">		; Init checksum</span><br><span class="line">main1:	clr 	WCRC</span><br><span class="line">	</span><br><span class="line">		;----------------------------------------------------------------------</span><br><span class="line">		; Receive address</span><br><span class="line">		;----------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">		...</span><br><span class="line">		rcall Receive </span><br><span class="line">		mov W0, TBLPAG				;  </span><br><span class="line">		mov.b WREG, PR1+1</span><br><span class="line">		mov.b WREG, PR1</span><br><span class="line">		... </span><br><span class="line"></span><br><span class="line">	; 这里的重复过程 , 从串口读取数据, 写到分配的静态空间里去.</span><br><span class="line">	;----------------------------------------------------------------------</span><br><span class="line">	; Receive command</span><br><span class="line">	;----------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">	;----------------------------------------------------------------------</span><br><span class="line">	; Receive nr of data bytes that will follow</span><br><span class="line">	;----------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+<h3 id="数据接收"><a href="#数据接收" class="headerlink" title="数据接收"></a>数据接收</h3><p>这里就是开始接收 数据了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">;----------------------------------------------------------------------</span><br><span class="line">; Receive data		</span><br><span class="line">;----------------------------------------------------------------------</span><br><span class="line">		;; 	.bss</span><br><span class="line">		; buffer: .space ( ROWSIZE * 3 + 1/*checksum*/ )</span><br><span class="line">		 ; 在附加段, 定义了一个大的缓冲区</span><br><span class="line">		mov 	#buffer, WBUFPTR	; 加载缓冲区地址</span><br><span class="line">rcvdata:</span><br><span class="line">		rcall 	Receive				; 接收字节</span><br><span class="line">		mov.b 	W0, [WBUFPTR++]		; 循环接收</span><br><span class="line">		dec		WCNT, WCNT			; 数据计数</span><br><span class="line">		bra nz, rcvdata 			; 不是0 的话, 就跳转回去继续接收</span><br><span class="line"></span><br><span class="line">		;last byte received is checksum</span><br><span class="line"></span><br><span class="line">;----------------------------------------------------------------------</span><br><span class="line">; Check checksum</span><br><span class="line">;----------------------------------------------------------------------</span><br><span class="line">	cp0.b 	WCRC					; </span><br><span class="line">	bra 	z, bladdrchk			; 这里是CheckSum 的一个校验 ,合法就继续</span><br><span class="line">	SendL 	CHECKSUMERR		</span><br><span class="line">	bra main1 						; 不合法, 发送校验值, 重新接收.</span><br></pre></td></tr></table></figure>
+<h3 id="烧写准备"><a href="#烧写准备" class="headerlink" title="烧写准备"></a>烧写准备</h3><p>这里的部分, 是把数据真正的烧入 flash 前的检验工作, 确保 我写入的数据是不会影响到我 Bl 的本身的空间的, 如果影响到自己, 把自己抹掉了不就是尴尬了.<br>​<br>检查是否数据容量是否超出, 导致覆盖, 这里保留官方的注释</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">;----------------------------------------------------------------------</span><br><span class="line">; Check address</span><br><span class="line">;----------------------------------------------------------------------	</span><br><span class="line">;check that write and erase range does not overlap the bootloader</span><br><span class="line">;this is pretty specific to the bootloader being in the last page</span><br><span class="line">;additional checks are needed if your bootloader is located elsewhere.</span><br><span class="line">;TBLPAG is always = to 0 on this PIC, no need to verify (check if you have bigger than 64K flash)</span><br><span class="line"></span><br><span class="line">;check the end address	检查结束的地址</span><br><span class="line">;write row size is fixed, any writes at (bootloader start-63) are an error</span><br><span class="line">;if write end address (W0) is &lt;= bl start address (WCNT) then OK</span><br><span class="line">;= is ok because we don&apos;t DEC after adding, write 10 bytes to 10 = end at 19</span><br><span class="line"></span><br><span class="line">bladdrchk:		</span><br><span class="line">		;; 在前面有定义 BL 的起始地址</span><br><span class="line">		;;.equ	BLCHECKST,  ( STARTADDR - (ROWSIZE) )			/*precalculate the first row write position that would overwrite the bootloader*/</span><br><span class="line"></span><br><span class="line">		mov	#BLCHECKST, WCNT	;last row write postion that won&apos;t overwrite the bootloader</span><br><span class="line">		;; 比较 当前内存指针, 和我们的 BL 的末地址.</span><br><span class="line">		cp		WADDR, WCNT			;compare end address, does it overlap?</span><br><span class="line">		bra GTU, bladdrerror ;if greater unsigned then error</span><br><span class="line"></span><br><span class="line">		...</span><br><span class="line"></span><br><span class="line">		;handle the address error 地址错误的处理, 发送错误信息, 跳转进行重新的读.</span><br><span class="line">bladdrerror:clr	DOERASE 			;clear, just in case</span><br><span class="line">      		SendL   BLPROT	;send bootloader protection error</span><br><span class="line">			bra main1 ;</span><br></pre></td></tr></table></figure>
+<hr>
 <p><strong>指针初始化</strong> </p>
-<pre><code>    ;----------------------------------------------------------------------
-    ; Init pointer
-    ;----------------------------------------------------------------------            
-            ; 装载缓冲区地址指针
-ptrinit:mov     #buffer, WBUFPTR
-
-    ;----------------------------------------------------------------------
-    ; Check command
-    ;----------------------------------------------------------------------            
-    ; Write row            0x00 02 00 - 0x02 AB FA 
-    btsc    WCMD,    #1    ; 这里是对烧写命令的判断
-    bra        erase        ; 不为 1 ,就不擦
-
-    ; Else erase page
-    mov        #0xffff, DOERASE
-    bra Main
-</code></pre><h3 id="烧写-Flash"><a href="#烧写-Flash" class="headerlink" title="烧写 Flash"></a>烧写 Flash</h3><p>这一部分, 就开始由 BL 实现对 Flash 的烧写了, 首先对flash 进行擦出.</p>
-<pre><code>;----------------------------------------------------------------------        
-; Erase page
-;----------------------------------------------------------------------        
-erase:    btss    DOERASE, #0            ;; DOERASE  标志位, 是否已经被擦出
-        bra        program        
-        tblwtl    WADDR, [WADDR]        ;&quot;Set base address of erase block&quot;, equivalent to setting nvmadr/u in dsPIC30F?
-        ; Erase
-        mov     #0x4042, W0            ; 这里的W0 是一个控制字, 绝对了,写函数是进行 写, 还是擦出.
-        rcall     Write    
-        ; Erase finished
-        clr DOERASE
-</code></pre><p>对Flash 进行擦出之后, 就可以开始我们的烧写过程了</p>
-<pre><code>;----------------------------------------------------------------------        
-; Write row
-;----------------------------------------------------------------------        
-program:mov     #ROWSIZE, WCNT        ; 寄存Row的空间
-
-        ; Load latches
-latlo:    tblwth.b     [WBUFPTR++], [WADDR]     ;upper byte
-        tblwtl.b    [WBUFPTR++], [WADDR++]     ;low byte
-        tblwtl.b    [WBUFPTR++], [WADDR++]     ;high byte    
-        dec     WCNT, WCNT
-        bra     nz, latlo
-
-        ; Write flash row
-        mov     #0x4001, W0            ; 这里的W0 是一个控制字
-        rcall     Write
-</code></pre><p>这里, 是写命令的实现部分, 突然发现,这里用的应该是一个硬件控制器,实现的对,flash的控制</p>
-<pre><code>;------------------------------------------------------------------------------
-; Write
-;------------------------------------------------------------------------------
-Write:    mov     W0, NVMCON            ; 这里是 控制器的配置部分
-        mov     #0x55, W0
-        mov     W0, NVMKEY
-        mov     #0xAA, W0
-        mov     W0, NVMKEY
-
-        bset     NVMCON, #WR            ; 置位状态字
-        nop
-        nop    
-        ; Wait for erase/write to finish    
-compl:    btsc    NVMCON, #WR            ; 循环等待,烧写完成
-        bra     compl                
-        return
-</code></pre><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">	;----------------------------------------------------------------------</span><br><span class="line">	; Init pointer</span><br><span class="line">	;----------------------------------------------------------------------			</span><br><span class="line">			; 装载缓冲区地址指针</span><br><span class="line">ptrinit:mov 	#buffer, WBUFPTR</span><br><span class="line"></span><br><span class="line">	;----------------------------------------------------------------------</span><br><span class="line">	; Check command</span><br><span class="line">	;----------------------------------------------------------------------			</span><br><span class="line">	; Write row			0x00 02 00 - 0x02 AB FA </span><br><span class="line">	btsc	WCMD,	#1	; 这里是对烧写命令的判断</span><br><span class="line">	bra		erase		; 不为 1 ,就不擦</span><br><span class="line"></span><br><span class="line">	; Else erase page</span><br><span class="line">	mov		#0xffff, DOERASE</span><br><span class="line">	bra Main</span><br></pre></td></tr></table></figure>
+<h3 id="烧写-Flash"><a href="#烧写-Flash" class="headerlink" title="烧写 Flash"></a>烧写 Flash</h3><p>这一部分, 就开始由 BL 实现对 Flash 的烧写了, 首先对flash 进行擦出.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">;----------------------------------------------------------------------		</span><br><span class="line">; Erase page</span><br><span class="line">;----------------------------------------------------------------------		</span><br><span class="line">erase:	btss	DOERASE, #0			;; DOERASE  标志位, 是否已经被擦出</span><br><span class="line">		bra		program		</span><br><span class="line">		tblwtl	WADDR, [WADDR]		;&quot;Set base address of erase block&quot;, equivalent to setting nvmadr/u in dsPIC30F?</span><br><span class="line">		; Erase</span><br><span class="line">		mov 	#0x4042, W0			; 这里的W0 是一个控制字, 绝对了,写函数是进行 写, 还是擦出.</span><br><span class="line">		rcall 	Write	</span><br><span class="line">		; Erase finished</span><br><span class="line">		clr DOERASE</span><br></pre></td></tr></table></figure>
+<p>对Flash 进行擦出之后, 就可以开始我们的烧写过程了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">;----------------------------------------------------------------------		</span><br><span class="line">; Write row</span><br><span class="line">;----------------------------------------------------------------------		</span><br><span class="line">program:mov 	#ROWSIZE, WCNT		; 寄存Row的空间</span><br><span class="line">		</span><br><span class="line">		; Load latches</span><br><span class="line">latlo:	tblwth.b 	[WBUFPTR++], [WADDR] 	;upper byte</span><br><span class="line">		tblwtl.b	[WBUFPTR++], [WADDR++] 	;low byte</span><br><span class="line">		tblwtl.b	[WBUFPTR++], [WADDR++] 	;high byte	</span><br><span class="line">		dec 	WCNT, WCNT</span><br><span class="line">		bra 	nz, latlo</span><br><span class="line"></span><br><span class="line">		; Write flash row</span><br><span class="line">		mov 	#0x4001, W0			; 这里的W0 是一个控制字</span><br><span class="line">		rcall 	Write</span><br></pre></td></tr></table></figure>
+<p>这里, 是写命令的实现部分, 突然发现,这里用的应该是一个硬件控制器,实现的对,flash的控制</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">; Write</span><br><span class="line">;------------------------------------------------------------------------------</span><br><span class="line">Write:	mov 	W0, NVMCON			; 这里是 控制器的配置部分</span><br><span class="line">		mov 	#0x55, W0</span><br><span class="line">		mov 	W0, NVMKEY</span><br><span class="line">		mov 	#0xAA, W0</span><br><span class="line">		mov 	W0, NVMKEY</span><br><span class="line"></span><br><span class="line">		bset 	NVMCON, #WR			; 置位状态字</span><br><span class="line">		nop</span><br><span class="line">		nop	</span><br><span class="line">		; Wait for erase/write to finish	</span><br><span class="line">compl:	btsc	NVMCON, #WR			; 循环等待,烧写完成</span><br><span class="line">		bra 	compl				</span><br><span class="line">		return</span><br></pre></td></tr></table></figure>
+<hr>
 <p>对于烧写部分的后续过程, 还有, 内容校验, 和错误处理的过程.</p>
 <pre><code>;----------------------------------------------------------------------        
 ; Verify row
@@ -1335,7 +992,7 @@ compl:    btsc    NVMCON, #WR            ; 循环等待,烧写完成
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">277k</span>
+    <span title="站点总字数">275k</span>
   
 
   
@@ -1344,7 +1001,7 @@ compl:    btsc    NVMCON, #WR            ; 循环等待,烧写完成
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读时长">7:41</span>
+    <span title="站点总阅读时长">7:39</span>
   
 </div>
 
