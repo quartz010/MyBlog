@@ -255,7 +255,7 @@
         
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">52</span>
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">53</span>
               </a>
         </li>
       
@@ -301,6 +301,220 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/06/25/HackWare_PC_loader/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="R4yd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="R4y's小窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/25/HackWare_PC_loader/" itemprop="url">HackWare Loader PC工作</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-25T00:00:00+08:00">2018-06-25</time>
+            
+
+            
+            
+              
+                
+              
+            
+
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-29T00:25:57+08:00">2018-06-29</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/HackSome/" itemprop="url" rel="index"><span itemprop="name">HackSome</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/25/HackWare_PC_loader/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/25/HackWare_PC_loader/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">17k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">0:29</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          HackWare Loader PC工作前前面的博文，差不多对 BP 所使用的 BL 做了个十分粗浅的理解了， 这一篇， 是对于其PC端上的和BootLoader 共同作用的一个软件（Pirate-loader）的一个源码的阅读笔记。对其原理进行学习。
+
+文件定位 ：Bootloaders/pirate-loader/pirate-loader.c
+源码 Src系统条件编译宏这个标题可能是不大准确，实现的是我们很长用的功能，我们使用 GCC 编译器的时候， 在不同的平台编译，使用平台的特定系统API，实现功能相同的底层函数。（linux下的就是linuxC，Win下的就是Winapi）。
+下面
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/25/HackWare_PC_loader/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+
+    <div> 
+      
+    </div>
+
+    
+
+
+    
+    
+    
+
+    
+    
+    <!--  这里用来添加以太reward -->
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1419,222 +1633,6 @@ DPoS机制简介很多人说，整个区块链就是个分布式的软件嘛。�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/05/28/EbookCoin_0x7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R4yd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's小窝">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/28/EbookCoin_0x7/" itemprop="url">EbookCoin 源码 0x7</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-28T00:00:00+08:00">2018-05-28</time>
-            
-
-            
-            
-              
-                
-              
-            
-
-            
-              
-              <span class="post-meta-divider">|</span>
-              
-
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-05-30T23:39:09+08:00">2018-05-30</time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/28/EbookCoin_0x7/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/05/28/EbookCoin_0x7/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">18k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">0:30</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          EbookCoin 源码 0x7前这次的一个period是基于《Nodejs区块链开发》这本书的的区块链项目–亿书，的源码学习笔记
-
-EbookCoin项目地址
-要把不。。
-
-区块链简介书中的这章实际上是一个狭义上的区块链，把区块链作为一个数据结构的，把它存储为一个文件形式的，不过大多数是存储在一个数据库中的。每个区块的记录都是时间上的上一个区块。所以作为一个链，可以直接回溯到第一个区块。一个区块的ID，可就是作为区块的检验和认证。
-与区块链对应的直接的关系的是交易表，在cryptoCurrency体系中存在着大量的交易，在区块中包含着我们的资产信息的交易表，这样就可以查到我们公信的交易记录。
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/28/EbookCoin_0x7/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-
-    <div> 
-      
-    </div>
-
-    
-
-
-    
-    
-    
-
-    
-    
-    <!--  这里用来添加以太reward -->
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/05/28/HackTool_HashCat/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1790,6 +1788,222 @@ PS C:\Us
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/28/HackTool_HashCat/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+
+    <div> 
+      
+    </div>
+
+    
+
+
+    
+    
+    
+
+    
+    
+    <!--  这里用来添加以太reward -->
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/05/28/EbookCoin_0x7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="R4yd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="R4y's小窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/28/EbookCoin_0x7/" itemprop="url">EbookCoin 源码 0x7</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-28T00:00:00+08:00">2018-05-28</time>
+            
+
+            
+            
+              
+                
+              
+            
+
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-30T23:39:09+08:00">2018-05-30</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/28/EbookCoin_0x7/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/28/EbookCoin_0x7/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">18k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">0:30</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          EbookCoin 源码 0x7前这次的一个period是基于《Nodejs区块链开发》这本书的的区块链项目–亿书，的源码学习笔记
+
+EbookCoin项目地址
+要把不。。
+
+区块链简介书中的这章实际上是一个狭义上的区块链，把区块链作为一个数据结构的，把它存储为一个文件形式的，不过大多数是存储在一个数据库中的。每个区块的记录都是时间上的上一个区块。所以作为一个链，可以直接回溯到第一个区块。一个区块的ID，可就是作为区块的检验和认证。
+与区块链对应的直接的关系的是交易表，在cryptoCurrency体系中存在着大量的交易，在区块中包含着我们的资产信息的交易表，这样就可以查到我们公信的交易记录。
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/28/EbookCoin_0x7/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2271,226 +2485,6 @@ EbookCoin项目地址
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/05/13/EbookCoin_0x4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R4yd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's小窝">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/13/EbookCoin_0x4/" itemprop="url">EbookCoin 源码 0x4</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-13T00:00:00+08:00">2018-05-13</time>
-            
-
-            
-            
-              
-                
-              
-            
-
-            
-              
-              <span class="post-meta-divider">|</span>
-              
-
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-05-30T23:39:32+08:00">2018-05-30</time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/13/EbookCoin_0x4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/05/13/EbookCoin_0x4/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">8.7k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">0:14</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          EbookCoin 源码 0x4前这次的一个period是基于《Nodejs区块链开发》这本书的的区块链项目–亿书，的源码学习笔记
-
-EbookCoin项目地址
-
-最近的拖延症严重到极致，我都是有点佩服自己了，应该一周前的是现在还没有解决。
-地址前：前面的部分，从篇幅都可以看出是个极简单的功能，一句话概括就是通过一个初始密码，生成一个密钥对，然后保存在account结构中。当然，我们的一个账户，将会实现一个 全面的api，用来显示账户的信息，像是余额，地址，私钥。。。
-
-文件包含
-./modules/accounts.js
-./logic/account.js
-./modules/contra
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/13/EbookCoin_0x4/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-
-    <div> 
-      
-    </div>
-
-    
-
-
-    
-    
-    
-
-    
-    
-    <!--  这里用来添加以太reward -->
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2542,7 +2536,7 @@ EbookCoin项目地址
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-count">53</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2712,7 +2706,7 @@ EbookCoin项目地址
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">288k</span>
+    <span title="站点总字数">292k</span>
   
 
   
@@ -2721,7 +2715,7 @@ EbookCoin项目地址
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读时长">8:01</span>
+    <span title="站点总阅读时长">8:07</span>
   
 </div>
 
