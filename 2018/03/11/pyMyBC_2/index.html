@@ -112,10 +112,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Py区块链源码笔记 （2）P2P网络">
 <meta property="og:url" content="blog.diglp.xyz/2018/03/11/pyMyBC_2/index.html">
-<meta property="og:site_name" content="R4y&#39;s小窝">
+<meta property="og:site_name" content="R4y&#39;s Blog">
 <meta property="og:description" content="Py区块链源码笔记 （2）P2P网络怎么学习区块链知识呢? 各种的资料看的头大，还是晕晕乎乎。所以那不如自己实现一个吧？？ 说是自己实现，实际上想先对源码进行解读。这里给出的源码，是一个基于Python实现的一个功能较为健全的区块链。下面给出项目地址  项目地址  P2P网络为什么使用P2P我们日常里用的磁链，迅雷之类的东西都是P2P技术实现的，所以P2P这个名词听起来不会太陌生。 其实在这里是对">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-01T08:48:52.497Z">
+<meta property="og:updated_time" content="2018-10-21T08:23:07.331Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Py区块链源码笔记 （2）P2P网络">
 <meta name="twitter:description" content="Py区块链源码笔记 （2）P2P网络怎么学习区块链知识呢? 各种的资料看的头大，还是晕晕乎乎。所以那不如自己实现一个吧？？ 说是自己实现，实际上想先对源码进行解读。这里给出的源码，是一个基于Python实现的一个功能较为健全的区块链。下面给出项目地址  项目地址  P2P网络为什么使用P2P我们日常里用的磁链，迅雷之类的东西都是P2P技术实现的，所以P2P这个名词听起来不会太陌生。 其实在这里是对">
@@ -134,7 +134,7 @@
     sidebar: "",
   };
 </script>
-  <title>Py区块链源码笔记 （2）P2P网络 | R4y's小窝</title>
+  <title>Py区块链源码笔记 （2）P2P网络 | R4y's Blog</title>
   
 
 
@@ -203,12 +203,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">R4y's小窝</span>
+        <span class="site-title">R4y's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description">个人技术站</h1>
+        <h1 class="site-subtitle" itemprop="description">个人回收站</h1>
       
   </div>
 
@@ -261,9 +261,9 @@
         </li>
       
         
-        <li class="menu-item menu-item-想读的书">
+        <li class="menu-item menu-item-图书馆">
           <a href="/books/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />想读的书</a>
+            <i class="menu-item-icon fa fa-fw fa-book"></i> <br />图书馆</a>
         </li>
       
 
@@ -327,7 +327,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's小窝">
+      <meta itemprop="name" content="R4y's Blog">
     </span>
 
     
@@ -352,23 +352,7 @@
 
             
             
-              
-                
-              
-            
 
-            
-              
-              <span class="post-meta-divider">|</span>
-              
-
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-01T16:48:52+08:00">2018-09-01</time>
             
           </span>
 
@@ -431,7 +415,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">6.1k</span>
+                <span title="字数统计">6k</span>
               
 
               
@@ -481,30 +465,28 @@
 <blockquote>
 <p>这个测试模块可以参考python的unittest这个module。</p>
 </blockquote>
-<p>这里的测试类是用于节点注册测试</p>
-<pre><code>class TestRegisterNodes(BlockchainTestCase):
+<p>这里的测试类是用于节点注册测试<br>​<br>    class TestRegisterNodes(BlockchainTestCase):</p>
+<pre><code>def test_valid_nodes(self):
+    blockchain = Blockchain()
 
-    def test_valid_nodes(self):
-        blockchain = Blockchain()
+    blockchain.register_node(&apos;http://192.168.0.1:5000&apos;)        # 可见该函数是实现节点注册
 
-        blockchain.register_node(&apos;http://192.168.0.1:5000&apos;)        # 可见该函数是实现节点注册
+    self.assertIn(&apos;192.168.0.1:5000&apos;, blockchain.nodes)
 
-        self.assertIn(&apos;192.168.0.1:5000&apos;, blockchain.nodes)
+def test_malformed_nodes(self):        # 畸形节点测试
+    blockchain = Blockchain()
 
-    def test_malformed_nodes(self):        # 畸形节点测试
-        blockchain = Blockchain()
+    blockchain.register_node(&apos;http//192.168.0.1:5000&apos;)        # 应该自行排除畸形节点
 
-        blockchain.register_node(&apos;http//192.168.0.1:5000&apos;)        # 应该自行排除畸形节点
+    self.assertNotIn(&apos;192.168.0.1:5000&apos;, blockchain.nodes)
 
-        self.assertNotIn(&apos;192.168.0.1:5000&apos;, blockchain.nodes)
+def test_idempotency(self):            # 对等性测试
+    blockchain = Blockchain()
 
-    def test_idempotency(self):            # 对等性测试
-        blockchain = Blockchain()
+    blockchain.register_node(&apos;http://192.168.0.1:5000&apos;)
+    blockchain.register_node(&apos;http://192.168.0.1:5000&apos;)
 
-        blockchain.register_node(&apos;http://192.168.0.1:5000&apos;)
-        blockchain.register_node(&apos;http://192.168.0.1:5000&apos;)
-
-        assert len(blockchain.nodes) == 1
+    assert len(blockchain.nodes) == 1
 </code></pre><h4 id="节点注册"><a href="#节点注册" class="headerlink" title="节点注册"></a>节点注册</h4><p>核心函数<code>blockchain.register_node()</code></p>
 <pre><code>def register_node(self, address):
     &quot;&quot;&quot;
@@ -533,8 +515,7 @@ ParseResult(scheme=&apos;http&apos;, netloc=&apos;www.cwi.nl:80&apos;, path=&apo
 &gt;&gt;&gt; o.geturl()
 &apos;http://www.cwi.nl:80/%7Eguido/Python.html&apos;
 </code></pre><p>可见这个方法可以很容易的解析url。所以在工程代码里。是对域名，和路径的提取。如果不是合法值，就直接Raise一个异常</p>
-<p><strong>添加node</strong></p>
-<p>在构造函数中有<code>self.nodes = set()</code>所以可见这个是一个集合。</p>
+<p><strong>添加node</strong><br>​<br>在构造函数中有<code>self.nodes = set()</code>所以可见这个是一个集合。</p>
 <pre><code>self.nodes.add(parsed_url.path)        # 这行代码就是添加节点的地址
 </code></pre><p>这里在这个项目里有些过度简化。只是实现了节点添加的功能。</p>
 <pre><code># Flask 的route修饰符
@@ -642,7 +623,7 @@ return jsonify(response), 200
 </code></pre><p>所以我们可以看到，区块链之所以安全，其内核基本就是靠这里所描述的功能保护的，虽然这里的代码是十分简易，不过大体上也是描述出了灵魂所在。可以使用hssh链，进行整个链的合法性校验，所以，使得链上的数据修改基本成为<strong>不可能！！！</strong></p>
 <hr>
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>这里的源码实现的P2P网络是比较简单，这里只是实现了节点的添加，并没有实现节点路由和拓展，及路由表的查询。所以后面打算自己可以实现一个</p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>这篇可能比较水，因为源码本身实在太过简化，后面考虑自己添加部分功能，可以及时PR</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>这篇可能比较水，因为源码本身实在太过简化，后面考虑自己添加部分功能，可以及时PR÷</p>
 
       
     </div>
@@ -821,7 +802,7 @@ return jsonify(response), 200
                 alt="R4yd" />
             
               <p class="site-author-name" itemprop="name">R4yd</p>
-              <p class="site-description motion-element" itemprop="description">个人技术站</p>
+              <p class="site-description motion-element" itemprop="description">Why join the navy, When you can be a PIRATE</p>
           </div>
 
           
@@ -1017,7 +998,7 @@ return jsonify(response), 200
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">292k</span>
+    <span title="站点总字数">293k</span>
   
 
   
@@ -1026,7 +1007,7 @@ return jsonify(response), 200
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读时长">8:07</span>
+    <span title="站点总阅读时长">8:09</span>
   
 </div>
 

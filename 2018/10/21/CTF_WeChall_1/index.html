@@ -112,10 +112,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="WeChell_WP">
 <meta property="og:url" content="blog.diglp.xyz/2018/10/21/CTF_WeChall_1/index.html">
-<meta property="og:site_name" content="R4y&#39;s小窝">
+<meta property="og:site_name" content="R4y&#39;s Blog">
 <meta property="og:description" content="WeChell WriteUp前偶遇了一个网站 wechall.net ，发现是CTF 的一个很好的入门之地。很多很经典的内容在这里学习， 还是不错的。这一篇，是这周的解题过程中的一个记录吧。  WeChall    14    145    yes        104    3.74%    Oct 21, 2018 - 05:43:34    **          题目同样的覆盖很广，这里">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-21T07:52:57.984Z">
+<meta property="og:updated_time" content="2018-10-21T08:23:00.456Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WeChell_WP">
 <meta name="twitter:description" content="WeChell WriteUp前偶遇了一个网站 wechall.net ，发现是CTF 的一个很好的入门之地。很多很经典的内容在这里学习， 还是不错的。这一篇，是这周的解题过程中的一个记录吧。  WeChall    14    145    yes        104    3.74%    Oct 21, 2018 - 05:43:34    **          题目同样的覆盖很广，这里">
@@ -134,7 +134,7 @@
     sidebar: "",
   };
 </script>
-  <title>WeChell_WP | R4y's小窝</title>
+  <title>WeChell_WP | R4y's Blog</title>
   
 
 
@@ -203,12 +203,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">R4y's小窝</span>
+        <span class="site-title">R4y's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description">个人技术站</h1>
+        <h1 class="site-subtitle" itemprop="description">个人回收站</h1>
       
   </div>
 
@@ -261,9 +261,9 @@
         </li>
       
         
-        <li class="menu-item menu-item-想读的书">
+        <li class="menu-item menu-item-图书馆">
           <a href="/books/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />想读的书</a>
+            <i class="menu-item-icon fa fa-fw fa-book"></i> <br />图书馆</a>
         </li>
       
 
@@ -327,7 +327,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's小窝">
+      <meta itemprop="name" content="R4y's Blog">
     </span>
 
     
@@ -352,23 +352,7 @@
 
             
             
-              
-                
-              
-            
 
-            
-              
-              <span class="post-meta-divider">|</span>
-              
-
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-21T15:52:57+08:00">2018-10-21</time>
             
           </span>
 
@@ -431,7 +415,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">3.9k</span>
+                <span title="字数统计">5.1k</span>
               
 
               
@@ -445,7 +429,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:06</span>
+                <span title="阅读时长">0:08</span>
               
             </div>
           
@@ -525,9 +509,9 @@
 </blockquote>
 <h3 id="PHP-全局变量覆盖"><a href="#PHP-全局变量覆盖" class="headerlink" title="PHP 全局变量覆盖"></a>PHP 全局变量覆盖</h3><p>这个也是在书中刚好看到了，很幸运。这个问题是 php 中的全局变量覆盖的问题。<code>REGISTER GLOBALS = ON</code> 导致，用户可以提交参数，覆盖了 php中的变量。导致很多问题。</p>
 <p>这个题目中，一样的是一个登陆的过程，不过，贴出了源代码，可以更清楚的看到问题：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_POST[<span class="string">'password'</span>]) &amp;&amp; <span class="keyword">isset</span>($_POST[<span class="string">'username'</span>]) &amp;&amp; is_string($_POST[<span class="string">'password'</span>]) &amp;&amp; is_string($_POST[<span class="string">'username'</span>]) )</span><br><span class="line">&#123;</span><br><span class="line">	$uname = GDO::escape($_POST[<span class="string">'username'</span>]);</span><br><span class="line">	$pass = md5($_POST[<span class="string">'password'</span>]);</span><br><span class="line">	$query = <span class="string">"SELECT level FROM "</span>.GWF_TABLE_PREFIX.<span class="string">"wc_chall_reg_glob WHERE username='$uname' AND password='$pass'"</span>;</span><br><span class="line">	$db = gdo_db();</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">false</span> === ($row = $db-&gt;queryFirst($query))) &#123;</span><br><span class="line">		<span class="keyword">echo</span> GWF_HTML::error(<span class="string">'Register Globals'</span>, $chall-&gt;lang(<span class="string">'err_failed'</span>));</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="comment"># Login success</span></span><br><span class="line">		$login = <span class="keyword">array</span>($_POST[<span class="string">'username'</span>], (int)$row[<span class="string">'level'</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($login))</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">echo</span> GWF_HTML::message(<span class="string">'Register Globals'</span>, $chall-&gt;lang(<span class="string">'msg_welcome_back'</span>, <span class="keyword">array</span>(htmlspecialchars($login[<span class="number">0</span>]), htmlspecialchars($login[<span class="number">1</span>]))));</span><br><span class="line">	<span class="keyword">if</span> (strtolower($login[<span class="number">0</span>]) === <span class="string">'admin'</span>) &#123;</span><br><span class="line">		$chall-&gt;onChallengeSolved(GWF_Session::getUserID());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>重点，就在下面的 login 的状态检测，直接使用了 login 的0，1 的参数。所以这里，我们就使用变量覆盖：构造：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($login))</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">echo</span> GWF_HTML::message(<span class="string">'Register Globals'</span>, $chall-&gt;lang(<span class="string">'msg_welcome_back'</span>, <span class="keyword">array</span>(htmlspecialchars($login[<span class="number">0</span>]), htmlspecialchars($login[<span class="number">1</span>]))));</span><br><span class="line">	<span class="keyword">if</span> (strtolower($login[<span class="number">0</span>]) === <span class="string">'admin'</span>) &#123;</span><br><span class="line">		$chall-&gt;onChallengeSolved(GWF_Session::getUserID());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>便很顺利的，绕过了前面的密码的检测。</p>
 <blockquote>
 <p><a href="https://blog.csdn.net/hitwangpeng/article/details/45972099" target="_blank" rel="noopener">[web安全] 变量覆盖漏洞</a></p>
@@ -640,8 +624,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/13/OP_Uwsgi 配置问题记录/" rel="next" title="Uwsgi 配置问题记录">
-                <i class="fa fa-chevron-left"></i> Uwsgi 配置问题记录
+              <a href="/2018/10/14/Book_白帽子web/" rel="next" title="读本好书 《白帽子讲WEB安全》">
+                <i class="fa fa-chevron-left"></i> 读本好书 《白帽子讲WEB安全》
               </a>
             
           </div>
@@ -649,10 +633,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/14/Book_白帽子web/" rel="prev" title="读本好书 《白帽子讲WEB安全》">
-                读本好书 《白帽子讲WEB安全》 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -730,7 +710,7 @@
                 alt="R4yd" />
             
               <p class="site-author-name" itemprop="name">R4yd</p>
-              <p class="site-description motion-element" itemprop="description">个人技术站</p>
+              <p class="site-description motion-element" itemprop="description">Why join the navy, When you can be a PIRATE</p>
           </div>
 
           
@@ -926,7 +906,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">292k</span>
+    <span title="站点总字数">293k</span>
   
 
   
@@ -935,7 +915,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读时长">8:07</span>
+    <span title="站点总阅读时长">8:09</span>
   
 </div>
 
