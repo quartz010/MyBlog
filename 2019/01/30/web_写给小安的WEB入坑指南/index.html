@@ -104,36 +104,28 @@
 
 
   
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="web," />
 
 
-<meta name="description" content="STM32 逆向初步背景终于难得闲暇和久违的激情 , 赶紧动手 , 这次也是初步的体验 , 所以目的就是简单的 dump 程序 , 和基本反汇编 工具集介绍软件部分 OpenOCD  Open On-Chip Debugger 著名的开源硬件调试器  支持多种的 调试器 (St-link)(jlink) 之类的符合JTAG标准的  支持多种 MPU 调试 只要是主流的都有(这次用到的 STM32F">
+<meta name="description" content="写给小安的WEB入坑指南什么是web web（World Wide Web）即全球广域网，也称为万维网，它是一种基于超文本和HTTP的、全球性的、动态交互的、跨平台的分布式图形信息系统。  这里引用自百科，这这里就粗浅的理解为我们的网站吧。 前端和后端WEB的结构是 B/S模式（Browser/Server，浏览器/服务器模式），这种模式区别于 C/S （Client/Server）模式。 （想想">
+<meta name="keywords" content="web">
 <meta property="og:type" content="article">
-<meta property="og:title" content="STM32 逆向初步">
-<meta property="og:url" content="blog.diglp.xyz/2017/11/17/STM32F1x/index.html">
+<meta property="og:title" content="写给小安的WEB入坑指南">
+<meta property="og:url" content="blog.diglp.xyz/2019/01/30/web_写给小安的WEB入坑指南/index.html">
 <meta property="og:site_name" content="R4y&#39;s Blog">
-<meta property="og:description" content="STM32 逆向初步背景终于难得闲暇和久违的激情 , 赶紧动手 , 这次也是初步的体验 , 所以目的就是简单的 dump 程序 , 和基本反汇编 工具集介绍软件部分 OpenOCD  Open On-Chip Debugger 著名的开源硬件调试器  支持多种的 调试器 (St-link)(jlink) 之类的符合JTAG标准的  支持多种 MPU 调试 只要是主流的都有(这次用到的 STM32F">
+<meta property="og:description" content="写给小安的WEB入坑指南什么是web web（World Wide Web）即全球广域网，也称为万维网，它是一种基于超文本和HTTP的、全球性的、动态交互的、跨平台的分布式图形信息系统。  这里引用自百科，这这里就粗浅的理解为我们的网站吧。 前端和后端WEB的结构是 B/S模式（Browser/Server，浏览器/服务器模式），这种模式区别于 C/S （Client/Server）模式。 （想想">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://img.blog.csdn.net/20171117171231646?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20171117171217647?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20171117173304085?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20171117174116753?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20171117174842069?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20171117175632250?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20171117180454679?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20171117180754767?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2018-03-27T14:14:21.893Z">
+<meta property="og:updated_time" content="2019-01-30T02:03:36.304Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="STM32 逆向初步">
-<meta name="twitter:description" content="STM32 逆向初步背景终于难得闲暇和久违的激情 , 赶紧动手 , 这次也是初步的体验 , 所以目的就是简单的 dump 程序 , 和基本反汇编 工具集介绍软件部分 OpenOCD  Open On-Chip Debugger 著名的开源硬件调试器  支持多种的 调试器 (St-link)(jlink) 之类的符合JTAG标准的  支持多种 MPU 调试 只要是主流的都有(这次用到的 STM32F">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20171117171231646?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:title" content="写给小安的WEB入坑指南">
+<meta name="twitter:description" content="写给小安的WEB入坑指南什么是web web（World Wide Web）即全球广域网，也称为万维网，它是一种基于超文本和HTTP的、全球性的、动态交互的、跨平台的分布式图形信息系统。  这里引用自百科，这这里就粗浅的理解为我们的网站吧。 前端和后端WEB的结构是 B/S模式（Browser/Server，浏览器/服务器模式），这种模式区别于 C/S （Client/Server）模式。 （想想">
 
 
 
 
 
 
-  <link rel="canonical" href="blog.diglp.xyz/2017/11/17/STM32F1x/"/>
+  <link rel="canonical" href="blog.diglp.xyz/2019/01/30/web_写给小安的WEB入坑指南/"/>
 
 
 
@@ -142,7 +134,7 @@
     sidebar: "",
   };
 </script>
-  <title>STM32 逆向初步 | R4y's Blog</title>
+  <title>写给小安的WEB入坑指南 | R4y's Blog</title>
   
 
 
@@ -326,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2017/11/17/STM32F1x/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2019/01/30/web_写给小安的WEB入坑指南/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="R4yd">
@@ -343,7 +335,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">STM32 逆向初步</h2>
+          <h2 class="post-title" itemprop="name headline">写给小安的WEB入坑指南</h2>
         
 
         <div class="post-meta">
@@ -355,7 +347,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-17T00:00:00+08:00">2017-11-17</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-30T00:00:00+08:00">2019-01-30</time>
             
 
             
@@ -376,7 +368,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Misc/" itemprop="url" rel="index"><span itemprop="name">Misc</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/WEB/" itemprop="url" rel="index"><span itemprop="name">WEB</span></a></span>
 
                 
                 
@@ -391,9 +383,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/11/17/STM32F1x/#comments" itemprop="discussionUrl">
+                <a href="/2019/01/30/web_写给小安的WEB入坑指南/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/17/STM32F1x/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2019/01/30/web_写给小安的WEB入坑指南/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -423,7 +415,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">1.9k</span>
+                <span title="字数统计">3.3k</span>
               
 
               
@@ -437,7 +429,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:03</span>
+                <span title="阅读时长">0:05</span>
               
             </div>
           
@@ -457,52 +449,88 @@
       
 
       
-        <h1 id="STM32-逆向初步"><a href="#STM32-逆向初步" class="headerlink" title="STM32 逆向初步"></a>STM32 逆向初步</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>终于难得闲暇和久违的激情 , 赶紧动手 , 这次也是初步的体验 , 所以目的就是简单的 dump 程序 , 和基本反汇编</p>
-<h2 id="工具集介绍"><a href="#工具集介绍" class="headerlink" title="工具集介绍"></a>工具集介绍</h2><h3 id="软件部分"><a href="#软件部分" class="headerlink" title="软件部分"></a>软件部分</h3><ul>
-<li><p>OpenOCD<br>  Open On-Chip Debugger 著名的开源硬件调试器<br>  支持多种的 调试器 (St-link)(jlink) 之类的符合JTAG标准的<br>  支持多种 MPU 调试 只要是主流的都有(这次用到的 STM32F1x 默认有了配置文件)</p>
-<blockquote>
-<p><a href="http://openocd.zylin.com/" target="_blank" rel="noopener">http://openocd.zylin.com/</a><br>  这里附上配置文件下载地址可以选择不同的 mpu</p>
+        <h1 id="写给小安的WEB入坑指南"><a href="#写给小安的WEB入坑指南" class="headerlink" title="写给小安的WEB入坑指南"></a>写给小安的WEB入坑指南</h1><h2 id="什么是web"><a href="#什么是web" class="headerlink" title="什么是web"></a>什么是web</h2><blockquote>
+<p>web（World Wide Web）即全球广域网，也称为万维网，它是一种基于超文本和HTTP的、全球性的、动态交互的、跨平台的分布式图形信息系统。</p>
 </blockquote>
-</li>
-<li><p>Arm-none-edbi-*<br>  ARM 裸机使用的工具链 (注意是 none 不是 linux)<br>  这里主要提供调试 的 RunTime</p>
-</li>
-<li><p>gdb<br>  GDB, the GNU Project debugger 著名开源调试器<br>  这里用于代替 OCD 的调试 , 毕竟还是专业许多<br>  我们需要的功能虽然 OCD 就可以实现 , 但是使用GDB 还是方便很多</p>
-</li>
-</ul>
-<h3 id="硬件部分"><a href="#硬件部分" class="headerlink" title="硬件部分"></a>硬件部分</h3><p>由于也是初步尝试 , 所以直接找了正点原子的 战舰开发板<br>(我们要使用的就是 JTAG 调试口, 当然开发板已经接好了)</p>
+<p>这里引用自百科，这这里就粗浅的理解为我们的网站吧。</p>
+<h2 id="前端和后端"><a href="#前端和后端" class="headerlink" title="前端和后端"></a>前端和后端</h2><p>WEB的结构是 <code>B/S</code>模式（Browser/Server，浏览器/服务器模式），这种模式区别于 <code>C/S</code> （Client/Server）模式。</p>
+<p>（想想CS模式，常见的是我们的桌面软件（QQ，etc）），所以 BS 的特点就是<strong>功能在服务器的高度集中</strong>，使用浏览器就可以和所需的不同服务进行交互。</p>
+<hr>
+<p>前端后端，是我们在web方面听到的较多的词汇，其实际上的功能是什么呢？</p>
+<h3 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h3><p><strong>提词：</strong></p>
 <ul>
-<li><p>战舰F1开发板 * 1<br>  <img src="http://img.blog.csdn.net/20171117171231646?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="办办办"><br>  采用的 STM32F1X 系列的 MPU  这个型号很重要 , 这个就决定了我们要dump的地址<br>  这样才能 找到flash 和sram 等</p>
-</li>
-<li><p>Jlink * 1<br>  (当然国产寨版)<br>  <img src="http://img.blog.csdn.net/20171117171217647?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="能用就行"><br>  这个就是淘宝货 , 简单暴力 , 久经沙场 , 人手一个 , 纵横江湖</p>
-</li>
+<li>HTML （How to meet lady）（页面的主体，可以理解为ppt的内容）</li>
+<li>CSS        （决定ppt内容的样子，方的圆的）</li>
+<li>JavaScript    （赋予了页面动态的效果）</li>
+<li>BootStrap    （用于设计界面的一个框架）</li>
+<li>JQuery        （用于更好的动态功能的组件）</li>
+<li>…</li>
 </ul>
-<h2 id="动手"><a href="#动手" class="headerlink" title="动手"></a>动手</h2><h3 id="该接的先都接上-电源-jlink-blah"><a href="#该接的先都接上-电源-jlink-blah" class="headerlink" title="该接的先都接上 (电源 jlink blah..)"></a>该接的先都接上 (电源 jlink blah..)</h3><h3 id="运行OCD"><a href="#运行OCD" class="headerlink" title="运行OCD"></a>运行OCD</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openocd -f interface/jlink.cfg -f target/stm32f1x.cfg</span><br><span class="line">#注意不要反了</span><br></pre></td></tr></table></figure>
-<p>这里的两个 f 是指定的配置文件, 大众器件 所以自带的都有,  要是没有的话就在上面给出的网址下载即可<br>    (这个不是全路径 是相对与 ocd 的安装目录 )</p>
-<p>运行之后 , 效果如图<br><img src="http://img.blog.csdn.net/20171117173304085?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="神奇耶"><br>    这样显示之后 , 说明调试器链接正常 , 且已经进入调试模式</p>
-<h3 id="OCD命令"><a href="#OCD命令" class="headerlink" title="OCD命令"></a>OCD命令</h3><p>OCD在 成功 介入JTAG之后 会返回一个  4444 的 tty控制台 我们直接 telnet上去</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">telnet localhost 4444 </span><br><span class="line">#或者万能 NC 也可以</span><br><span class="line">#nc -t localhost 4444</span><br></pre></td></tr></table></figure>
-<p><img src="http://img.blog.csdn.net/20171117174116753?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="ocd"><br>    这里就会返回一个 OCD 的调试会话<br>    现在已经控制CPU了(help 一大堆 不再赘述)<br>    <strong>由于我们是要对固件进行dump, 所以只要已经运行, 我们把内存, 和flash 的数据抓出来就好了</strong></p>
-<pre><code>halt
-#执行halt语句 (CPU 暂停)
-</code></pre><h3 id="GDB-Attach"><a href="#GDB-Attach" class="headerlink" title="GDB Attach"></a>GDB Attach</h3><p>实际上直接使用OCD 可以达到效果, 不过使用GDB 辅助, 使得操作容易方便(可以TAB)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gdb #先运行GDB</span><br><span class="line">(gdb) target remote localhost:3333</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://img.blog.csdn.net/20171117174842069?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="attach"><br>    执行完后 DGB attach  完成<br>    (现在已经拿到了 CPU 的shell 可以为所欲为了)</p>
-<h3 id="DUMP-重要"><a href="#DUMP-重要" class="headerlink" title="DUMP(重要)"></a>DUMP(重要)</h3><p>终于到了最为核心的一步,就是firmware的dump操作<br>首先我们需要的最重要的 的东西就是内存映射图<br>这个就相当于我们的 地图一样 告诉我们哪里有 什么数据 , 哪里是什么东西<br><strong>(这里就需要查看芯片<a href="www.baidu.com">手册</a>)</strong><br>在手册的第四节 Memory Mapping中<br><img src="http://img.blog.csdn.net/20171117175632250?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="mapping"><br>(图挺大 截取需要部分)<br>我们需要Dump的有 </p>
+<p>好，上面的名词看晕了，那么现在就来看看什么是前端。</p>
+<p>简单切不严谨的说，用户通过浏览器直接接触到的东西就是前端。那么怎么讲呢？简单！按一下 <code>F12</code>就看见了熙熙攘攘的代码堆起来了。</p>
+<hr>
+<p>鼠标在元素选项卡(Element)，选中 Html 中的不同标签，发现其是在页面中是一一对应的。所以说，页面的内容和我们 HTML 中的标签是一一对应的（不严谨），这样就可以得出结论，HTML 是页面的骨架对吧，构建出了整个页面的<strong>基本内容</strong>。</p>
+<blockquote>
+<p>HTML 就是PPT的内容，实现了基本的页面内容</p>
+</blockquote>
+<hr>
+<p>接下来，就是介绍 JavaScript 的时候了，JS 这个名号听着厉害，实际上一直在浏览器上跑着呢。这里继续 <code>F12</code> 在里面找到 <strong>控制台(Console)</strong>，在里面输入：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">'love ann!'</span>);</span><br><span class="line">confirm(<span class="string">'Would U like be With me?'</span>);</span><br></pre></td></tr></table></figure>
+<p>(如果看到这里，可以去跑一下晚上的神秘代码！)</p>
+<p>所以 JS 的功能呢，就是可以赋予网页动态的灵魂（类比给 ppt 加上了动画），这样就可以实现很多炫酷的效果。这些代码在浏览器里偷偷运行着。</p>
+<p>或者试试这个？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.map($(<span class="string">'div'</span>), <span class="function"><span class="keyword">function</span>(<span class="params">e,t,n</span>)</span>&#123;$(e).css(&#123;<span class="string">"background"</span>: <span class="string">"red"</span>&#125;);&#125;)</span><br></pre></td></tr></table></figure>
+<p>红彤彤的，是不是一下子就过年了？？？</p>
+<blockquote>
+<p>JS 就是 PPT 里面的动画，实现了动态效果，比如点击消失</p>
+</blockquote>
+<hr>
+<p>CSS （Cascading Style Sheets） 层叠样式表，是不是有些时候页面加载出来很奇怪？ 比如一堆内容堆在了屏幕的坐标，刷新几次就好了？ 这里就是这个CSS没有加载出来。</p>
+<p>简单的说呢？ 这个东西是来配置一个<strong>页面元素</strong> 长什么样子的，怎么说呢？我们还是看上面的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.map($(<span class="string">'div'</span>), <span class="function"><span class="keyword">function</span>(<span class="params">e,t,n</span>)</span>&#123;$(e).css(&#123;<span class="string">"background"</span>: <span class="string">"red"</span>&#125;);&#125;)</span><br></pre></td></tr></table></figure>
+<p>虽然有点晕晕的，不过我们看里面的部分 <code>css({&quot;background&quot;: &quot;red&quot;})</code> 是不是瞬间熟悉了，这里其实完成的就是对元素的样式进行了调整，把背景设置成了红彤彤。</p>
+<hr>
+<p>好的，前端我说完了 XD</p>
+<h2 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h2><p><strong>提词：</strong></p>
 <ul>
-<li>Flash (装代码的你说呢)</li>
-<li>SRAM (运行时候产生有趣的东西)</li>
+<li><p>Web服务器 Nginx Apache</p>
+</li>
+<li><p>数据库 Mysql， MongoDB，Redis …</p>
+</li>
+<li><p>PHP，Python，Java …</p>
+</li>
+<li><p>ThinkPHP，Django，Spring …</p>
+</li>
+<li><p>这里的词就有些模式了吧？ 慢慢来</p>
+</li>
 </ul>
-<p>这样我们查看映射图可以得到信息</p>
+<p>现在我们到了，后端了。这个又怎么说？一句话，用户摸不到的地方就是后端。怎么理解呢？</p>
+<p>看我们平时登陆一些服务的时候，这个过程一定熟悉。我们的账户就保存在 后端的 数据库之中，每每我们登陆的时候，把账号密码发送给目标服务器，服务器帮我验证，你的密码和注册的时候是不是一样的，从而判断是不是你。（不可能放在前端对吧？否则 你 F12 就看见密码了，吼吼吼）</p>
+<hr>
+<p>先从 WEB服务器来讲吧，这到底是个啥呢？ </p>
+<p>我们的Html文件，在本地磁盘上，我们直接双击打开，看已经打开了一个网页了对吧？</p>
+<p>那么 WEB服务器 的功能，<strong>就是帮你找东西</strong>。比如我要访问这个链接</p>
+<p><a href="https://blog.diglp.xyz/2019/01/20/Nginx%20log/index.html">https://blog.diglp.xyz/2019/01/20/Nginx%20log/index.html</a></p>
+<p>分段来看：</p>
 <ul>
-<li>flash的映射地址是 0x08000000 ~ 0x0807ffff (512KB)</li>
-<li>sram的映射地址是 0x20000000 ~ 0x2000ffff (64K)</li>
+<li><a href="https://blog.diglp.xyz">https://blog.diglp.xyz</a>                    这里就是访问了服务器对吧</li>
+<li>/2019/01/20/Nginx%20log/index.html      这里呢？就是在服务器里面找东西了</li>
 </ul>
-<p>所以下面我们在gdb 中 把他们dump出来就好</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dump  binary memory 32_sram.bin  0x20000000 0x2000ffff</span><br><span class="line">dump  binary memory 32_flash.bin  0x08000000 0x0807ffff</span><br></pre></td></tr></table></figure>
-<p>上述命令就是以二进制形式 Dump 内存 和 flash 的数据出来</p>
-<p><img src="http://img.blog.csdn.net/20171117180454679?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="Dump"></p>
-<p>查看文件 大小就是我们的存储空间<br>到这里 本次 DUMP 完毕</p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>这里 只是逆向的初步,分析才是关键<br>得到 flash 和 sram 数据后 使用 IDA 进行 操作 (这才是逆向)</p>
-<p><img src="http://img.blog.csdn.net/20171117180754767?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveno3MDkxOTY0ODQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>想想昨天的 <code>pwd</code> 是不是就好理解了？</p>
+<hr>
+<p>数据库，这里其实听名字就知道啦，存数据的地方。我们可以使用 <code>SQL</code> （Structured Query Language）语言，对数据进行查询。</p>
+<p>MongoDB 是一种新式数据库，基于文件的  NoSQL， 突破了结构化的限制 是  <strong>NoSQL</strong> （Not Only）</p>
+<p>Redis 实现在内存中实现数据存储，数据更快，一般用于请求量极大的数据，保持高命中率。</p>
+<hr>
+<p>编程语言，和编程框架，这里放在一起啦。上面的每一种语言 都可以轻松实现一个 hello world。</p>
+<ul>
+<li>PHP 本身是一种编程语言，是和 python 一个层级，.py 需要 python runtime 。.php 需要 php 的 runtime。两个东西都可以很简单的使用 <code>python x.py</code> 和 <code>php x.php</code> 的运行起来</li>
+<li>当 python 使用 flask/Django 开始 web 开发的时候了。和 PHP 的 web 框架 (ThinkPHP) 作用在一个层级了。<strong>不准确的讲</strong>每次访问，都会启动一个进程，对这个脚本内的内容进行运行， 这里的运行是在服务器端的。对我的的请求进行解析，比如 url 的路由路径， 请求方式等进行响应。</li>
+<li>这时候仍然是在服务器端， 进行数据库的增删查改。 把操作 (得到的数据，传递到前端) <code>index.php?category=x</code></li>
+<li>前端进行数据获取，由 js 脚本，实现静态 html 的显示刷新</li>
+</ul>
+<p>XD 这里我从之前的地方 Copy了，饿了！</p>
+<h2 id="后面的话"><a href="#后面的话" class="headerlink" title="后面的话"></a>后面的话</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span>(<span class="function"><span class="keyword">function</span>(<span class="params">p,a,c,k,e,d</span>)</span>&#123;e=<span class="function"><span class="keyword">function</span>(<span class="params">c</span>)</span>&#123;<span class="keyword">return</span>(c&lt;a?<span class="string">""</span>:e(<span class="built_in">parseInt</span>(c/a)))+((c=c%a)&gt;<span class="number">35</span>?<span class="built_in">String</span>.fromCharCode(c+<span class="number">29</span>):c.toString(<span class="number">36</span>))&#125;;<span class="keyword">if</span>(!<span class="string">''</span>.replace(<span class="regexp">/^/</span>,<span class="built_in">String</span>))&#123;<span class="keyword">while</span>(c--)d[e(c)]=k[c]||e(c);k=[<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">return</span> d[e]&#125;];e=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span><span class="string">'\\w+'</span>&#125;;c=<span class="number">1</span>;&#125;;<span class="keyword">while</span>(c--)<span class="keyword">if</span>(k[c])p=p.replace(<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'\\b'</span>+e(c)+<span class="string">'\\b'</span>,<span class="string">'g'</span>),k[c]);<span class="keyword">return</span> p;&#125;(<span class="string">'7["\\6\\8\\a\\9\\2"](\'\\1\\1\\5\\4\\3\\h\\g\\i\\k\\j\\c\\b\\0\\0\\d\\f\\e\');'</span>,<span class="number">21</span>,<span class="number">21</span>,<span class="string">'u661f|u563b|x74|u505a|uff01|u6bdb|x61|window|x6c|x72|x65|uff08|x7e|u773c|uff09|u2728|u5973|u6211|u670b|u5427|u53cb'</span>.split(<span class="string">'|'</span>),<span class="number">0</span>,&#123;&#125;))</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -564,7 +592,7 @@
     <strong>本文作者： </strong>R4yd</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="blog.diglp.xyz/2017/11/17/STM32F1x/" title="STM32 逆向初步">blog.diglp.xyz/2017/11/17/STM32F1x/</a>
+    <a href="blog.diglp.xyz/2019/01/30/web_写给小安的WEB入坑指南/" title="写给小安的WEB入坑指南">blog.diglp.xyz/2019/01/30/web_写给小安的WEB入坑指南/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -575,6 +603,13 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <!--  这里用来改变标签样式 -->
+            <a href="/tags/web/" rel="tag"><i class="fa fa-tag"></i> web</a>
+          
+        </div>
+      
 
       
       
@@ -584,15 +619,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/01/20/Nginx log/" rel="next" title="Nginx 折腾笔记（LB 和 Tunnel）">
+                <i class="fa fa-chevron-left"></i> Nginx 折腾笔记（LB 和 Tunnel）
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/01/想想未来/" rel="prev" title="未来已来">
-                未来已来 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -830,7 +865,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#STM32-逆向初步"><span class="nav-number">1.</span> <span class="nav-text">STM32 逆向初步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具集介绍"><span class="nav-number">1.2.</span> <span class="nav-text">工具集介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件部分"><span class="nav-number">1.2.1.</span> <span class="nav-text">软件部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#硬件部分"><span class="nav-number">1.2.2.</span> <span class="nav-text">硬件部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动手"><span class="nav-number">1.3.</span> <span class="nav-text">动手</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#该接的先都接上-电源-jlink-blah"><span class="nav-number">1.3.1.</span> <span class="nav-text">该接的先都接上 (电源 jlink blah..)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行OCD"><span class="nav-number">1.3.2.</span> <span class="nav-text">运行OCD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OCD命令"><span class="nav-number">1.3.3.</span> <span class="nav-text">OCD命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GDB-Attach"><span class="nav-number">1.3.4.</span> <span class="nav-text">GDB Attach</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DUMP-重要"><span class="nav-number">1.3.5.</span> <span class="nav-text">DUMP(重要)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">1.4.</span> <span class="nav-text">后记</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#写给小安的WEB入坑指南"><span class="nav-number">1.</span> <span class="nav-text">写给小安的WEB入坑指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是web"><span class="nav-number">1.1.</span> <span class="nav-text">什么是web</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端和后端"><span class="nav-number">1.2.</span> <span class="nav-text">前端和后端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端"><span class="nav-number">1.2.1.</span> <span class="nav-text">前端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后端"><span class="nav-number">1.3.</span> <span class="nav-text">后端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后面的话"><span class="nav-number">1.4.</span> <span class="nav-text">后面的话</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1033,9 +1068,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'blog.diglp.xyz/2017/11/17/STM32F1x/';
-        this.page.identifier = '2017/11/17/STM32F1x/';
-        this.page.title = 'STM32 逆向初步';
+        this.page.url = 'blog.diglp.xyz/2019/01/30/web_写给小安的WEB入坑指南/';
+        this.page.identifier = '2019/01/30/web_写给小安的WEB入坑指南/';
+        this.page.title = '写给小安的WEB入坑指南';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');
