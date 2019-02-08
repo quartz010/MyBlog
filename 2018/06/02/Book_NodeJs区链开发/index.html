@@ -2,18 +2,24 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
 
 
 
@@ -22,13 +28,7 @@
 
   
   
-  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="stylesheet" href="/lib/Han/dist/han.min.css?v=3.3"/>
 
 
 
@@ -50,23 +50,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.0.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.3">
+<link rel="stylesheet" href="/css/main.css?v=7.0.0"/>
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.3" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
 
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
 
 
 
@@ -74,13 +72,12 @@
 
 
 
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    version: '6.0.3',
+    version: '7.0.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
@@ -103,11 +100,7 @@
 
 
 
-  
-  <meta name="keywords" content="区块链原理," />
-
-
-<meta name="description" content="读本好书 《Node.js区块链开发》前 从现在开始填涂，实现最初的构想  简介 书名：Node.js 区块链开发 作者：朱志文 ISBN：9787111566953  源码和本书都是开源的,再次为 Open Free Share 呐喊  本书链接 《Node.js区块链开发》 项目链接 ebookcoin  这本是实践入手，实现了自己的区块链项目，不再是单从理论出发。通过这本书，去开始实践。 前">
+  <meta name="description" content="读本好书 《Node.js区块链开发》前 从现在开始填涂，实现最初的构想  简介 书名：Node.js 区块链开发 作者：朱志文 ISBN：9787111566953  源码和本书都是开源的,再次为 Open Free Share 呐喊  本书链接 《Node.js区块链开发》 项目链接 ebookcoin  这本是实践入手，实现了自己的区块链项目，不再是单从理论出发。通过这本书，去开始实践。 前">
 <meta name="keywords" content="区块链原理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="读本好书 《Node.js区块链开发》">
@@ -131,25 +124,28 @@
 
 
 
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
 </script>
+
   <title>读本好书 《Node.js区块链开发》 | R4y's Blog</title>
   
 
 
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118678642-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-118678642-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-118678642-1');
+  </script>
 
-  gtag('config', 'UA-118678642-1');
-</script>
+
+
 
 
 
@@ -157,29 +153,27 @@
 
 
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
@@ -194,28 +188,29 @@
 
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
-    
-    <!-- 这里是网页头带 -->
-    
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
-  <div class="site-meta ">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">R4y's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <h1 class="site-subtitle" itemprop="description">个人回收站</h1>
       
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -223,84 +218,146 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">24</span>
-              </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+
+  </li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">10</span>
-              </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">61</span>
-              </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-图书馆">
-          <a href="/books/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-book"></i> <br />图书馆</a>
-        </li>
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
       
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">24</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类<span class="badge">10</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">61</span></a>
+
+  </li>
 
       
+      
     </ul>
+  
+
   
 
   
 </nav>
 
 
+
   
 
 
 
- </div>
+</div>
     </header>
 
     
   
   
   
-    
-      
-    
-    <a href="https://github.com/quartz010" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
-    
-      </a>
-    
+  
+
+  
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1YXJ0ejAxMA==" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
 
 
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
+          
           <div id="content" class="content">
             
 
@@ -320,16 +377,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/06/02/Book_NodeJs区链开发/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/06/02/Book_NodeJs区链开发/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R4yd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Author"/>
+      <meta itemprop="description" content="Why join the navy, When you can be a PIRATE"/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's Blog">
+      <meta itemprop="name" content="R4y's Blog"/>
     </span>
 
     
@@ -337,11 +394,20 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">读本好书 《Node.js区块链开发》</h2>
+          <h2 class="post-title" itemprop="name headline">读本好书 《Node.js区块链开发》
+
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -349,17 +415,35 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-02T00:00:00+08:00">2018-06-02</time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-02 00:00:00" itemprop="dateCreated datePublished" datetime="2018-06-02T00:00:00+08:00">2018-06-02</time>
             
 
             
-            
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-13 15:38:11" itemprop="dateModified" datetime="2018-10-13T15:38:11+08:00">2018-10-13</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -380,16 +464,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/06/02/Book_NodeJs区链开发/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/06/02/Book_NodeJs区链开发/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -402,7 +476,7 @@
             >
             <i class="fa fa-eye"></i>
              阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
 
@@ -415,9 +489,9 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="字数统计">5.7k</span>
+                <span title="本文字数">5.7k</span>
               
 
               
@@ -461,8 +535,8 @@
 </ul>
 <p>源码和本书都是开源的,再次为 Open Free Share 呐喊</p>
 <blockquote>
-<p><a href="http://bitcoin-on-nodejs.ebookchain.org/1" target="_blank" rel="noopener">本书链接 《Node.js区块链开发》</a></p>
-<p><a href="https://github.com/Ebookcoin/ebookcoin" target="_blank" rel="noopener">项目链接 ebookcoin</a></p>
+<p><span class="exturl" data-url="aHR0cDovL2JpdGNvaW4tb24tbm9kZWpzLmVib29rY2hhaW4ub3JnLzE=" title="http://bitcoin-on-nodejs.ebookchain.org/1">本书链接 《Node.js区块链开发》<i class="fa fa-external-link"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0Vib29rY29pbi9lYm9va2NvaW4=" title="https://github.com/Ebookcoin/ebookcoin">项目链接 ebookcoin<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <p>这本是实践入手，实现了自己的区块链项目，不再是单从理论出发。通过这本书，去开始实践。</p>
 <h2 id="前-1"><a href="#前-1" class="headerlink" title="前"></a>前</h2><p>这本书是国内的 区链相关的一大经典的书籍了,不过综合讲,这本的知识是比较散的,对于其源码的分析,知识粗略的部分章节,跟随书本的源码阅读,也做了粗浅的笔记,见笑</p>
@@ -485,7 +559,7 @@
 <li>资料参考</li>
 </ul>
 <blockquote>
-<p><a href="http://ebookchain.org/ebookchain.pdf" target="_blank" rel="noopener">亿书白皮书</a></p>
+<p><span class="exturl" data-url="aHR0cDovL2Vib29rY2hhaW4ub3JnL2Vib29rY2hhaW4ucGRm" title="http://ebookchain.org/ebookchain.pdf">亿书白皮书<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <hr>
 <p>经典的段落,这里做大量的引用.说的实在是有深度和道理 :</p>
@@ -500,17 +574,17 @@
 <p>所以，我们不仅不用避讳谈利益，而且最好把利益作为我们分析和思考产品开发设计的根本因素。如此以来，对于理解人们为何对加密货币趋之若鹜就自然轻松多了。</p>
 <hr>
 <blockquote>
-<p><a href="http://bitcoin-on-nodejs.ebookchain.org/1-%E4%BA%86%E8%A7%A3%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/6-%E5%88%A9%E7%9B%8A%EF%BC%8C%E9%AD%94%E9%AC%BC%E4%B8%8E%E5%A4%A9%E4%BD%BF%E7%9A%84%E5%85%B1%E5%90%8C%E7%9B%AE%E6%A0%87.html" target="_blank" rel="noopener">原文链接</a></p>
-<p><a href="http://baike.baidu.com/link?url=oqF5zGQnFBXxf7ts-BF97FRrRo2rh5odLPIDQgZtMaDYmCKaE7kEw1OhSLqTRXk_2W-kGMztK3yz5mlYraT7TgeY2n5lm06BdsSQpCsPYN_" target="_blank" rel="noopener">利益，网络释义</a></p>
-<p><a href="http://www.tmtpost.com/2430265.html" target="_blank" rel="noopener">区块链到底有哪些场景和市场前景</a></p>
+<p><span class="exturl" data-url="aHR0cDovL2JpdGNvaW4tb24tbm9kZWpzLmVib29rY2hhaW4ub3JnLzEtJUU0JUJBJTg2JUU4JUE3JUEzJUU1JThBJUEwJUU1JUFGJTg2JUU4JUI0JUE3JUU1JUI4JTgxLzYtJUU1JTg4JUE5JUU3JTlCJThBJUVGJUJDJThDJUU5JUFEJTk0JUU5JUFDJUJDJUU0JUI4JThFJUU1JUE0JUE5JUU0JUJEJUJGJUU3JTlBJTg0JUU1JTg1JUIxJUU1JTkwJThDJUU3JTlCJUFFJUU2JUEwJTg3Lmh0bWw=" title="http://bitcoin-on-nodejs.ebookchain.org/1-%E4%BA%86%E8%A7%A3%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/6-%E5%88%A9%E7%9B%8A%EF%BC%8C%E9%AD%94%E9%AC%BC%E4%B8%8E%E5%A4%A9%E4%BD%BF%E7%9A%84%E5%85%B1%E5%90%8C%E7%9B%AE%E6%A0%87.html">原文链接<i class="fa fa-external-link"></i></span></p>
+<p><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS9saW5rP3VybD1vcUY1ekdRbkZCWHhmN3RzLUJGOTdGUnJSbzJyaDVvZExQSURRZ1p0TWFEWW1DS2FFN2tFdzFPaFNMcVRSWGtfMlcta0dNenRLM3l6NW1sWXJhVDdUZ2VZMm41bG0wNkJkc1NRcENzUFlOXw==" title="http://baike.baidu.com/link?url=oqF5zGQnFBXxf7ts-BF97FRrRo2rh5odLPIDQgZtMaDYmCKaE7kEw1OhSLqTRXk_2W-kGMztK3yz5mlYraT7TgeY2n5lm06BdsSQpCsPYN_">利益，网络释义<i class="fa fa-external-link"></i></span></p>
+<p><span class="exturl" data-url="aHR0cDovL3d3dy50bXRwb3N0LmNvbS8yNDMwMjY1Lmh0bWw=" title="http://www.tmtpost.com/2430265.html">区块链到底有哪些场景和市场前景<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <hr>
 <h3 id="共识"><a href="#共识" class="headerlink" title="共识"></a>共识</h3><p><strong>PoS(Proof of Stake)</strong> 股权证明机制,的机制的缺点:IPO发布,其持有的人群是部分人,所以其信用基础是不够牢固的.很难保证其不会大量的抛售.引起价值崩盘和恐慌.</p>
 <p><strong>DPoS(Delegated Proof of Stake)</strong> 授权股权证明机制,通过投票选出主节点,不过事实的问题是<strong>投票的积极性并不高.</strong></p>
 <hr>
 <blockquote>
-<p><a href="http://zl.yibite.com/point/2014/0206/14440.shtml" target="_blank" rel="noopener">为什么PoS与PoW不具有可比性</a></p>
-<p><a href="http://www.8btc.com/PoW-bitcoin-upgrade" target="_blank" rel="noopener">“去中心化的比特币：从自组织到专业化分工”读后感</a></p>
+<p><span class="exturl" data-url="aHR0cDovL3psLnlpYml0ZS5jb20vcG9pbnQvMjAxNC8wMjA2LzE0NDQwLnNodG1s" title="http://zl.yibite.com/point/2014/0206/14440.shtml">为什么PoS与PoW不具有可比性<i class="fa fa-external-link"></i></span></p>
+<p><span class="exturl" data-url="aHR0cDovL3d3dy44YnRjLmNvbS9Qb1ctYml0Y29pbi11cGdyYWRl" title="http://www.8btc.com/PoW-bitcoin-upgrade">“去中心化的比特币：从自组织到专业化分工”读后感<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <h3 id="区链架构"><a href="#区链架构" class="headerlink" title="区链架构"></a>区链架构</h3><blockquote>
 <p>区块链的概念最近很火，它来自于比特币等加密货币的实现，但是目前，这项技术已经逐步运用在各个领域。什么是区块链技术？为了感性认识这个问题，我们可以<strong>使用谷歌地球的例子做类比</strong>，ajax不是什么新技术，但组合在一起就成就了产品谷歌地球，与之类似，区块链也不是什么新技术，但与<strong>加密解密技术、P2P网络</strong>等组合在一起，就诞生了比特币。技术人员，特别是Web开发工程师，学习了解ajax技术最早是被谷歌地球酷炫的效果所吸引。而现在，历史再一次重演，很多人被比特币的疯狂发展所吸引，进而开始研究其背后的技术——区块链。</p>
@@ -536,7 +610,7 @@
 <hr>
 <p><strong>知识图谱</strong><br><img src="http://bitcoin-on-nodejs.ebookchain.org/styles/images/third/blockchain-lib.png" alt="知识图谱"></p>
 <h3 id="Node-js-入门"><a href="#Node-js-入门" class="headerlink" title="Node.js 入门"></a>Node.js 入门</h3><blockquote>
-<p><a href="https://octoverse.github.com/" target="_blank" rel="noopener">GitHub 官方报告</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9vY3RvdmVyc2UuZ2l0aHViLmNvbS8=" title="https://octoverse.github.com/">GitHub 官方报告<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <ul>
 <li>前10个应用简介(<strong>内容整理自原书</strong>)</li>
@@ -547,23 +621,23 @@
 <p>前10个应用如下：</p>
 <ol>
 <li><p>bitpay/bitcore　1656颗星，429个分支</p>
-<p> 源码网址: <a href="https://github.com/bitpay/bitcore" target="_blank" rel="noopener">https://github.com/bitpay/bitcore</a></p>
+<p> 源码网址: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JpdHBheS9iaXRjb3Jl" title="https://github.com/bitpay/bitcore">https://github.com/bitpay/bitcore<i class="fa fa-external-link"></i></span></p>
 <p> 第一位，这是bitpay团队的产品，号称下一代PayPal。这算是一个成功案例，足见Node.js开发加密货币的可行性。巴比特有专栏介绍。</p>
 </li>
 <li><p>startup-class/bitstarter-leaderboard 295颗星，386个分支</p>
-<p> 源码网址：<a href="https://github.com/startup-class/bitstarter-leaderboard" target="_blank" rel="noopener">https://github.com/startup-class/bitstarter-leaderboard</a></p>
+<p> 源码网址：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3N0YXJ0dXAtY2xhc3MvYml0c3RhcnRlci1sZWFkZXJib2FyZA==" title="https://github.com/startup-class/bitstarter-leaderboard">https://github.com/startup-class/bitstarter-leaderboard<i class="fa fa-external-link"></i></span></p>
 <p> 第二位，这是一个基于比特币开发众筹网站的模板程序。巴比特在做众筹，很多人也想进入这个领域，可以参考学习。</p>
 </li>
 <li><p>bitcoinjs/bitcoinjs-lib 980颗星，305个分支</p>
-<p> 源码网址：<a href="https://github.com/bitcoinjs/bitcoinjs-lib" target="_blank" rel="noopener">https://github.com/bitcoinjs/bitcoinjs-lib</a></p>
+<p> 源码网址：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JpdGNvaW5qcy9iaXRjb2luanMtbGli" title="https://github.com/bitcoinjs/bitcoinjs-lib">https://github.com/bitcoinjs/bitcoinjs-lib<i class="fa fa-external-link"></i></span></p>
 <p> 第三位，这是个比特币web钱包开发包，几乎当前市面上所有的基于网站的钱包都在用，牛x吧。</p>
 </li>
 <li><p>askmike/gekko 866颗星，300个分支</p>
-<p> 源码网址：<a href="https://github.com/askmike/gekko" target="_blank" rel="noopener">https://github.com/askmike/gekko</a></p>
+<p> 源码网址：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fza21pa2UvZ2Vra28=" title="https://github.com/askmike/gekko">https://github.com/askmike/gekko<i class="fa fa-external-link"></i></span></p>
 <p> 第四位，你也想推出一个像时代、okcoin那样的基于网页的交易市场吗，这个代码不容错过。不过，我个人觉得交易市场不仅仅是技术问题，Gekko也提醒您要自担风险。</p>
 </li>
 <li><p>bitpay/insight-ui 354颗星，267个分支</p>
-<p> 源码网址：<a href="https://github.com/bitpay/insight-ui" target="_blank" rel="noopener">https://github.com/bitpay/insight-ui</a></p>
+<p> 源码网址：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JpdHBheS9pbnNpZ2h0LXVp" title="https://github.com/bitpay/insight-ui">https://github.com/bitpay/insight-ui<i class="fa fa-external-link"></i></span></p>
 <p> 第五位，这是bitpay放出的一个开发web钱包的UI包（要基于bitcoin-node)，看来当前开发钱包的需求还是比较大的。可以与排行第７位的bitpay/insight-api配合开发。</p>
 </li>
 <li><p>kyledrake/coinpunk　733颗星，249个分支</p>
@@ -572,15 +646,15 @@
 <li><p>bitpay/insight-api（略）</p>
 </li>
 <li><p>cjb/GitTorrent 3065颗星，133个分支</p>
-<p> 源码网址：<a href="https://github.com/cjb/GitTorrent" target="_blank" rel="noopener">https://github.com/cjb/GitTorrent</a></p>
+<p> 源码网址：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2NqYi9HaXRUb3JyZW50" title="https://github.com/cjb/GitTorrent">https://github.com/cjb/GitTorrent<i class="fa fa-external-link"></i></span></p>
 <p> 第八位，不过它的好评3065颗星却是最高的。这是一个去中心化的Github，作者写了一篇博客详细解释了为什么Git也要去中心化。我本人觉得，这项目确实有意思，为我们开发去中心化的产品扩展了视野。基于这个项目思路，可以设想很多有价值的应用。</p>
 </li>
 <li><p>bitcoinjs/bitcoinjs-server</p>
-<p> 源码网址：<a href="https://github.com/bitcoinjs/bitcoinjs-server" target="_blank" rel="noopener">https://github.com/bitcoinjs/bitcoinjs-server</a></p>
+<p> 源码网址：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JpdGNvaW5qcy9iaXRjb2luanMtc2VydmVy" title="https://github.com/bitcoinjs/bitcoinjs-server">https://github.com/bitcoinjs/bitcoinjs-server<i class="fa fa-external-link"></i></span></p>
 <p> 第九位，已经放弃维护了。</p>
 </li>
 <li><p>untitled-dice/untitled-dice.github.io　26颗星，114个分支</p>
-<p>源码网址：<a href="https://github.com/untitled-dice/untitled-dice.github.io" target="_blank" rel="noopener">https://github.com/untitled-dice/untitled-dice.github.io</a> 　</p>
+<p>源码网址：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3VudGl0bGVkLWRpY2UvdW50aXRsZWQtZGljZS5naXRodWIuaW8=" title="https://github.com/untitled-dice/untitled-dice.github.io">https://github.com/untitled-dice/untitled-dice.github.io<i class="fa fa-external-link"></i></span> 　</p>
 <p>第十位，一个基于比特币的赌博网站源码。有意思的是，用户评价26颗星，很低，说明人们的价值观还是不喜欢赌博的。但是拷贝的分支却很多，对于开发者来说，这也算是比特币的一个落地应用。</p>
 </li>
 </ol>
@@ -639,41 +713,41 @@ var server = app.listen(3000, function () {
 </ul>
 <p>文中给出了一个很好的小栗子，阐明了PKI的加密，解密，签名及签名验证的细节和实现</p>
 <blockquote>
-<p><a href="http://bitcoin-on-nodejs.ebookchain.org/4-%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/0-%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/3-%E4%B8%89%E5%BC%A0%E5%9B%BE%E8%AE%A9%E4%BD%A0%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86%E6%8A%80%E6%9C%AF.html" target="_blank" rel="noopener">三张图让你全面掌握加密解密技术</a></p>
+<p><span class="exturl" data-url="aHR0cDovL2JpdGNvaW4tb24tbm9kZWpzLmVib29rY2hhaW4ub3JnLzQtJUU1JUJDJTgwJUU1JThGJTkxJUU1JUFFJTlFJUU4JUI3JUI1LzAtJUU1JThBJUEwJUU1JUFGJTg2JUU0JUI4JThFJUU4JUE3JUEzJUU1JUFGJTg2LzMtJUU0JUI4JTg5JUU1JUJDJUEwJUU1JTlCJUJFJUU4JUFFJUE5JUU0JUJEJUEwJUU1JTg1JUE4JUU5JTlEJUEyJUU2JThFJThDJUU2JThGJUExJUU1JThBJUEwJUU1JUFGJTg2JUU4JUE3JUEzJUU1JUFGJTg2JUU2JThBJTgwJUU2JTlDJUFGLmh0bWw=" title="http://bitcoin-on-nodejs.ebookchain.org/4-%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/0-%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/3-%E4%B8%89%E5%BC%A0%E5%9B%BE%E8%AE%A9%E4%BD%A0%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86%E6%8A%80%E6%9C%AF.html">三张图让你全面掌握加密解密技术<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <ul>
 <li>Commander 使用</li>
 </ul>
 <p>这个是一个命令行参数解析的模块，在py里面也是有类似的</p>
 <blockquote>
-<p><a href="http://bitcoin-on-nodejs.ebookchain.org/4-%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/1-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%AE%BE%E8%AE%A1/1-commander%E4%BB%8B%E7%BB%8D.html" target="_blank" rel="noopener">commander介绍</a></p>
+<p><span class="exturl" data-url="aHR0cDovL2JpdGNvaW4tb24tbm9kZWpzLmVib29rY2hhaW4ub3JnLzQtJUU1JUJDJTgwJUU1JThGJTkxJUU1JUFFJTlFJUU4JUI3JUI1LzEtJUU1JTkxJUJEJUU0JUJCJUE0JUU4JUExJThDJUU4JUFFJUJFJUU4JUFFJUExLzEtY29tbWFuZGVyJUU0JUJCJThCJUU3JUJCJThELmh0bWw=" title="http://bitcoin-on-nodejs.ebookchain.org/4-%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/1-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%AE%BE%E8%AE%A1/1-commander%E4%BB%8B%E7%BB%8D.html">commander介绍<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <h2 id="参考链接总汇"><a href="#参考链接总汇" class="headerlink" title="参考链接总汇"></a>参考链接总汇</h2><ul>
-<li><a href="http://bitcoin-on-nodejs.ebookchain.org/1" target="_blank" rel="noopener">本书链接 《Node.js区块链开发》</a></li>
-<li><a href="https://github.com/Ebookcoin/ebookcoin" target="_blank" rel="noopener">项目链接 ebookcoin</a></li>
+<li><span class="exturl" data-url="aHR0cDovL2JpdGNvaW4tb24tbm9kZWpzLmVib29rY2hhaW4ub3JnLzE=" title="http://bitcoin-on-nodejs.ebookchain.org/1">本书链接 《Node.js区块链开发》<i class="fa fa-external-link"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0Vib29rY29pbi9lYm9va2NvaW4=" title="https://github.com/Ebookcoin/ebookcoin">项目链接 ebookcoin<i class="fa fa-external-link"></i></span></li>
 <li><a href="https://blog.diglp.xyz/tags/EbookCoin/">EbookCoin 系列</a></li>
-<li><a href="http://ebookchain.org/ebookchain.pdf" target="_blank" rel="noopener">亿书白皮书</a></li>
-<li><a href="http://www.tmtpost.com/2430265.html" target="_blank" rel="noopener">区块链到底有哪些场景和市场前景</a></li>
-<li><a href="http://zl.yibite.com/point/2014/0206/14440.shtml" target="_blank" rel="noopener">为什么PoS与PoW不具有可比性</a></li>
-<li><a href="https://octoverse.github.com/" target="_blank" rel="noopener">GitHub 官方报告</a></li>
-<li><a href="http://bitcoin-on-nodejs.ebookchain.org/4-%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/0-%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/3-%E4%B8%89%E5%BC%A0%E5%9B%BE%E8%AE%A9%E4%BD%A0%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86%E6%8A%80%E6%9C%AF.html" target="_blank" rel="noopener">三张图让你全面掌握加密解密技术</a></li>
-<li><a href="http://bitcoin-on-nodejs.ebookchain.org/4-%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/1-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%AE%BE%E8%AE%A1/1-commander%E4%BB%8B%E7%BB%8D.html" target="_blank" rel="noopener">commander介绍</a></li>
+<li><span class="exturl" data-url="aHR0cDovL2Vib29rY2hhaW4ub3JnL2Vib29rY2hhaW4ucGRm" title="http://ebookchain.org/ebookchain.pdf">亿书白皮书<i class="fa fa-external-link"></i></span></li>
+<li><span class="exturl" data-url="aHR0cDovL3d3dy50bXRwb3N0LmNvbS8yNDMwMjY1Lmh0bWw=" title="http://www.tmtpost.com/2430265.html">区块链到底有哪些场景和市场前景<i class="fa fa-external-link"></i></span></li>
+<li><span class="exturl" data-url="aHR0cDovL3psLnlpYml0ZS5jb20vcG9pbnQvMjAxNC8wMjA2LzE0NDQwLnNodG1s" title="http://zl.yibite.com/point/2014/0206/14440.shtml">为什么PoS与PoW不具有可比性<i class="fa fa-external-link"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9vY3RvdmVyc2UuZ2l0aHViLmNvbS8=" title="https://octoverse.github.com/">GitHub 官方报告<i class="fa fa-external-link"></i></span></li>
+<li><span class="exturl" data-url="aHR0cDovL2JpdGNvaW4tb24tbm9kZWpzLmVib29rY2hhaW4ub3JnLzQtJUU1JUJDJTgwJUU1JThGJTkxJUU1JUFFJTlFJUU4JUI3JUI1LzAtJUU1JThBJUEwJUU1JUFGJTg2JUU0JUI4JThFJUU4JUE3JUEzJUU1JUFGJTg2LzMtJUU0JUI4JTg5JUU1JUJDJUEwJUU1JTlCJUJFJUU4JUFFJUE5JUU0JUJEJUEwJUU1JTg1JUE4JUU5JTlEJUEyJUU2JThFJThDJUU2JThGJUExJUU1JThBJUEwJUU1JUFGJTg2JUU4JUE3JUEzJUU1JUFGJTg2JUU2JThBJTgwJUU2JTlDJUFGLmh0bWw=" title="http://bitcoin-on-nodejs.ebookchain.org/4-%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/0-%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/3-%E4%B8%89%E5%BC%A0%E5%9B%BE%E8%AE%A9%E4%BD%A0%E5%85%A8%E9%9D%A2%E6%8E%8C%E6%8F%A1%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86%E6%8A%80%E6%9C%AF.html">三张图让你全面掌握加密解密技术<i class="fa fa-external-link"></i></span></li>
+<li><span class="exturl" data-url="aHR0cDovL2JpdGNvaW4tb24tbm9kZWpzLmVib29rY2hhaW4ub3JnLzQtJUU1JUJDJTgwJUU1JThGJTkxJUU1JUFFJTlFJUU4JUI3JUI1LzEtJUU1JTkxJUJEJUU0JUJCJUE0JUU4JUExJThDJUU4JUFFJUJFJUU4JUFFJUExLzEtY29tbWFuZGVyJUU0JUJCJThCJUU3JUJCJThELmh0bWw=" title="http://bitcoin-on-nodejs.ebookchain.org/4-%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/1-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%AE%BE%E8%AE%A1/1-commander%E4%BB%8B%E7%BB%8D.html">commander介绍<i class="fa fa-external-link"></i></span></li>
 </ul>
 <hr>
 <ul>
-<li><p><a href="https://github.com/imfly/bitcoinbook" target="_blank" rel="noopener">精通比特币（英文）</a></p>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2ltZmx5L2JpdGNvaW5ib29r" title="https://github.com/imfly/bitcoinbook">精通比特币（英文）<i class="fa fa-external-link"></i></span></p>
 </li>
-<li><p><a href="http://book.8btc.com/master_bitcoin" target="_blank" rel="noopener">精通比特币（中文）</a></p>
+<li><p><span class="exturl" data-url="aHR0cDovL2Jvb2suOGJ0Yy5jb20vbWFzdGVyX2JpdGNvaW4=" title="http://book.8btc.com/master_bitcoin">精通比特币（中文）<i class="fa fa-external-link"></i></span></p>
 </li>
-<li><p><a href="http://8btc.com/-thread-36622-1-1.html" target="_blank" rel="noopener">《精通加密货币》作者Andreas问答</a></p>
+<li><p><span class="exturl" data-url="aHR0cDovLzhidGMuY29tLy10aHJlYWQtMzY2MjItMS0xLmh0bWw=" title="http://8btc.com/-thread-36622-1-1.html">《精通加密货币》作者Andreas问答<i class="fa fa-external-link"></i></span></p>
 </li>
-<li><p><a href="http://www.8btc.com/what-is-blockchain" target="_blank" rel="noopener">区块链是什么</a></p>
+<li><p><span class="exturl" data-url="aHR0cDovL3d3dy44YnRjLmNvbS93aGF0LWlzLWJsb2NrY2hhaW4=" title="http://www.8btc.com/what-is-blockchain">区块链是什么<i class="fa fa-external-link"></i></span></p>
 </li>
-<li><p><a href="http://www.8btc.com/wiki/bitcoin-a-peer-to-peer-electronic-cash-system" target="_blank" rel="noopener">比特币白皮书：一种点对点的电子现金系统 (ZH)</a></p>
+<li><p><span class="exturl" data-url="aHR0cDovL3d3dy44YnRjLmNvbS93aWtpL2JpdGNvaW4tYS1wZWVyLXRvLXBlZXItZWxlY3Ryb25pYy1jYXNoLXN5c3RlbQ==" title="http://www.8btc.com/wiki/bitcoin-a-peer-to-peer-electronic-cash-system">比特币白皮书：一种点对点的电子现金系统 (ZH)<i class="fa fa-external-link"></i></span></p>
 </li>
-<li><p><a href="http://www.8btc.com/bit-gold" target="_blank" rel="noopener">尼克·萨博《比特金（BitGold）》白皮书</a></p>
+<li><p><span class="exturl" data-url="aHR0cDovL3d3dy44YnRjLmNvbS9iaXQtZ29sZA==" title="http://www.8btc.com/bit-gold">尼克·萨博《比特金（BitGold）》白皮书<i class="fa fa-external-link"></i></span></p>
 </li>
-<li><p><a href="http://www.8btc.com/baizhantingjiangjun" target="_blank" rel="noopener">拜占庭将军问题深入探讨 </a></p>
+<li><p><span class="exturl" data-url="aHR0cDovL3d3dy44YnRjLmNvbS9iYWl6aGFudGluZ2ppYW5nanVu" title="http://www.8btc.com/baizhantingjiangjun">拜占庭将军问题深入探讨 <i class="fa fa-external-link"></i></span></p>
 <h2 id="后"><a href="#后" class="headerlink" title="后"></a>后</h2></li>
 </ul>
 <p>《Node.js区块链开发》 这本是，从源码级的知识，实现了一个 亿书区块链的项目，知识是比较综合的，不过美中不足的是对于源码的讲解时不够深入，不够实际上还是我自己太菜了。。。</p>
@@ -682,33 +756,22 @@ var server = app.listen(3000, function () {
       
     </div>
 
+    
 
-    <div> 
+    
+    
+    
+
+    
+
+    
       
-        <!-- 这里是添加文章结束标记 -->
-        <div>
     
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    
-</div>
-      
-    </div>
-
-    
-
-
-    
-    
-    
-
-    
-    
-    <!--  这里用来添加以太reward -->
     
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>Thanks anyway!</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+  <div>可乐续命</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
     <span>打赏</span>
   </button>
   <div id="QR" style="display: none;">
@@ -719,11 +782,9 @@ var server = app.listen(3000, function () {
 
     
       <div id="bitcoin" style="display: inline-block">
-        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="R4yd 比特币"/>
+        <img id="bitcoin_qr" src="/images/bitcoin.jpg" alt="Author 比特币"/>
         <p>比特币</p>
       </div>
-    
-
     
 
   </div>
@@ -734,15 +795,24 @@ var server = app.listen(3000, function () {
 
     
       <div>
-        <ul class="post-copyright">
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>R4yd</li>
+    <strong>本文作者： </strong>Author</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="blog.diglp.xyz/2018/06/02/Book_NodeJs区链开发/" title="读本好书 《Node.js区块链开发》">blog.diglp.xyz/2018/06/02/Book_NodeJs区链开发/</a>
+    
+    <a href="/blog.diglp.xyz/2018/06/02/Book_NodeJs区链开发/" title="读本好书 《Node.js区块链开发》">blog.diglp.xyz/2018/06/02/Book_NodeJs区链开发/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
 </ul>
 
       </div>
@@ -752,8 +822,7 @@ var server = app.listen(3000, function () {
       
         <div class="post-tags">
           
-            <!--  这里用来改变标签样式 -->
-            <a href="/tags/区块链原理/" rel="tag"><i class="fa fa-tag"></i> 区块链原理</a>
+            <a href="/tags/区块链原理/" rel="tag"># 区块链原理</a>
           
         </div>
       
@@ -794,25 +863,11 @@ var server = app.listen(3000, function () {
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    </div>
 
   
 
@@ -847,15 +902,11 @@ var server = app.listen(3000, function () {
         </ul>
       
 
-      <section class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="R4yd" />
-            
-              <p class="site-author-name" itemprop="name">R4yd</p>
+              <p class="site-author-name" itemprop="name">Author</p>
               <p class="site-description motion-element" itemprop="description">Why join the navy, When you can be a PIRATE</p>
           </div>
 
@@ -974,25 +1025,39 @@ var server = app.listen(3000, function () {
             <div class="links-of-author motion-element">
               
                 <span class="links-of-author-item">
-                  <a href="https://github.com/quartz010" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1YXJ0ejAxMA==" title="GitHub &rarr; https://github.com/quartz010"><i class="fa fa-fw fa-github"></i>GitHub</span>
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="mailto:r4y.root@gmail.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="bWFpbHRvOnF1YXJ0ejAxMEBvdXRsb29rLmNvbQ==" title="E-Mail &rarr; mailto:quartz010@outlook.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</span>
                 </span>
               
             </div>
           
 
           
-          
-            <div class="cc-license motion-element" itemprop="license">
-              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
-              </a>
-            </div>
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"/></span>
+             </div>
           
 
           
@@ -1005,11 +1070,11 @@ var server = app.listen(3000, function () {
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                    <span class="exturl" data-url="aHR0cDovL3d3dy5ydW5vb2IuY29tLw==" title="http://www.runoob.com/">菜鸟教程</span>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://chierqj.github.io/" title="chierqj's blog" target="_blank">chierqj's blog</a>
+                    <span class="exturl" data-url="aHR0cHM6Ly9jaGllcnFqLmdpdGh1Yi5pby8=" title="https://chierqj.github.io/">Chierqj's Blog</span>
                   </li>
                 
               </ul>
@@ -1022,15 +1087,16 @@ var server = app.listen(3000, function () {
           
 
         </div>
-      </section>
+      </div>
 
       
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
             
-              
+            
+            
             
 
             
@@ -1038,7 +1104,7 @@ var server = app.listen(3000, function () {
             
 
           </div>
-        </section>
+        </div>
       <!--/noindex-->
       
 
@@ -1061,15 +1127,12 @@ var server = app.listen(3000, function () {
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <!-- 站长统计的插件 -->
-<!-- <script async src="https:/busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-
-<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">R4yd</span>
-  
+  <span class="author" itemprop="copyrightHolder">Author</span>
+
   
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
@@ -1085,19 +1148,12 @@ var server = app.listen(3000, function () {
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读时长">9:38</span>
+    <span title="站点阅读时长">9:38</span>
   
 </div>
 
 
-  
-
-
-
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动</div>
 
 
 
@@ -1105,12 +1161,11 @@ var server = app.listen(3000, function () {
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a></div>
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span></div>
 
 
 
   <div class="footer-custom">Hosted by <a target="_blank" rel="external nofollow" href="https://pages.github.com"><b>GitHub Pages</b></a> <span class="post-meta-divider">|</span> <span id="busuanzi_container_site_uv">本站访客数:<span id="busuanzi_value_site_uv"></span></span></div>
-
 
 
         
@@ -1118,7 +1173,25 @@ var server = app.listen(3000, function () {
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
 
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
   
 </div>
 
@@ -1138,11 +1211,14 @@ var server = app.listen(3000, function () {
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -1162,6 +1238,10 @@ var server = app.listen(3000, function () {
 
 
   
+    
+    
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
 
@@ -1176,32 +1256,21 @@ var server = app.listen(3000, function () {
 
 
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.3"></script>
+  <script src="/js/src/utils.js?v=7.0.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.3"></script>
+  <script src="/js/src/motion.js?v=7.0.0"></script>
 
 
 
@@ -1209,94 +1278,36 @@ var server = app.listen(3000, function () {
   
 
 
-  <script type="text/javascript" src="/js/src/affix.js?v=6.0.3"></script>
+  <script src="/js/src/affix.js?v=7.0.0"></script>
 
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.3"></script>
+  <script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+
 
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.0.3"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.3"></script>
-
-
-
-  
-
-  
-    <script id="dsq-count-scr" src="https://diglp.disqus.com/count.js" async></script>
-  
-
-  
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'blog.diglp.xyz/2018/06/02/Book_NodeJs区链开发/';
-        this.page.identifier = '2018/06/02/Book_NodeJs区链开发/';
-        this.page.title = '读本好书 《Node.js区块链开发》';
-      };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://diglp.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      }
-      
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
-      
-    </script>
-  
-
-
-
-
-
-	
-
-
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
 
 
 
   
 
 
-
-
-
-
-
-
-
+  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
 
 
 
   
 
 
-
+  
 
 
   
+
+
+
 
   
 
@@ -1312,31 +1323,33 @@ var server = app.listen(3000, function () {
 
 
   
+
+  
+
+  
+
+  
+
   
 
   
   
   
   <script src="/lib/pangu/dist/pangu.min.js?v=3.3"></script>
-  <script type="text/javascript">pangu.spacingPage();</script>
+  <script>pangu.spacingPage();</script>
 
 
   
-  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.0.3"></script>
-  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.0.3"></script>
+  <script src="/js/src/js.cookie.js?v=7.0.0"></script>
+  <script src="/js/src/scroll-cookie.js?v=7.0.0"></script>
+
+
+  
+  <script src="/js/src/exturl.js?v=7.0.0"></script>
 
 
   
 
-  
-
-  
-  <!-- 点击烟花 -->
-  
-
-  <!-- 点击桃心 -->
-  
-   <script type="text/javascript" src="/js/src/aceheart.js"></script>
   
 
 </body>

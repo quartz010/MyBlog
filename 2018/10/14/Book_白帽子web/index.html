@@ -2,18 +2,24 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
 
 
 
@@ -22,13 +28,7 @@
 
   
   
-  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="stylesheet" href="/lib/Han/dist/han.min.css?v=3.3"/>
 
 
 
@@ -50,23 +50,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.0.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.3">
+<link rel="stylesheet" href="/css/main.css?v=7.0.0"/>
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.3" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
 
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
 
 
 
@@ -74,13 +72,12 @@
 
 
 
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    version: '6.0.3',
+    version: '7.0.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
@@ -103,11 +100,7 @@
 
 
 
-  
-  <meta name="keywords" content="读书笔记,安全," />
-
-
-<meta name="description" content="读本好书 《白帽子讲WEB安全》前 喜欢就去追寻 互联网本来是安全的。自从有了研究安全的人之后，互联网就变得不安全了。  简介 书名：白帽子讲WEB安全 作者：吴翰清 ISBN：9787121160721  WEB 安全相关的入门书籍，范围很广，每个类型的威胁，都有相应的案例。 作为一本较为系统的拾遗书籍，加深自己对 WEB 安全的理解 浏览器（用户）安全浏览器的同源策略如果两个页面的协议，端口（">
+  <meta name="description" content="读本好书 《白帽子讲WEB安全》前 喜欢就去追寻 互联网本来是安全的。自从有了研究安全的人之后，互联网就变得不安全了。  简介 书名：白帽子讲WEB安全 作者：吴翰清 ISBN：9787121160721  WEB 安全相关的入门书籍，范围很广，每个类型的威胁，都有相应的案例。 作为一本较为系统的拾遗书籍，加深自己对 WEB 安全的理解 浏览器（用户）安全浏览器的同源策略如果两个页面的协议，端口（">
 <meta name="keywords" content="读书笔记,安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="读本好书 《白帽子讲WEB安全》">
@@ -129,25 +122,28 @@
 
 
 
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
 </script>
+
   <title>读本好书 《白帽子讲WEB安全》 | R4y's Blog</title>
   
 
 
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118678642-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-118678642-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-118678642-1');
+  </script>
 
-  gtag('config', 'UA-118678642-1');
-</script>
+
+
 
 
 
@@ -155,29 +151,27 @@
 
 
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
@@ -192,28 +186,29 @@
 
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
-    
-    <!-- 这里是网页头带 -->
-    
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
-  <div class="site-meta ">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">R4y's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <h1 class="site-subtitle" itemprop="description">个人回收站</h1>
       
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -221,84 +216,146 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">24</span>
-              </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+
+  </li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">10</span>
-              </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">61</span>
-              </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-图书馆">
-          <a href="/books/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-book"></i> <br />图书馆</a>
-        </li>
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
       
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">24</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类<span class="badge">10</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">61</span></a>
+
+  </li>
 
       
+      
     </ul>
+  
+
   
 
   
 </nav>
 
 
+
   
 
 
 
- </div>
+</div>
     </header>
 
     
   
   
   
-    
-      
-    
-    <a href="https://github.com/quartz010" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
-    
-      </a>
-    
+  
+
+  
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1YXJ0ejAxMA==" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
 
 
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
+          
           <div id="content" class="content">
             
 
@@ -318,16 +375,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/10/14/Book_白帽子web/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/10/14/Book_白帽子web/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R4yd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Author"/>
+      <meta itemprop="description" content="Why join the navy, When you can be a PIRATE"/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's Blog">
+      <meta itemprop="name" content="R4y's Blog"/>
     </span>
 
     
@@ -335,11 +392,20 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">读本好书 《白帽子讲WEB安全》</h2>
+          <h2 class="post-title" itemprop="name headline">读本好书 《白帽子讲WEB安全》
+
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -347,17 +413,35 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-14T00:00:00+08:00">2018-10-14</time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-14 00:00:00" itemprop="dateCreated datePublished" datetime="2018-10-14T00:00:00+08:00">2018-10-14</time>
             
 
             
-            
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-21 16:24:16" itemprop="dateModified" datetime="2018-10-21T16:24:16+08:00">2018-10-21</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -378,16 +462,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/14/Book_白帽子web/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/14/Book_白帽子web/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -400,7 +474,7 @@
             >
             <i class="fa fa-eye"></i>
              阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
 
@@ -413,9 +487,9 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="字数统计">3.8k</span>
+                <span title="本文字数">3.8k</span>
               
 
               
@@ -464,8 +538,8 @@
 <p>浏览器自身用于保证安全的策略</p>
 <blockquote>
 <ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy" target="_blank" rel="noopener">浏览器的同源策略 - MDN</a> </li>
-<li><a href="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html" target="_blank" rel="noopener">浏览器同源政策及其规避方法 - ruanyf</a></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvemgtQ04vZG9jcy9XZWIvU2VjdXJpdHkvU2FtZS1vcmlnaW5fcG9saWN5" title="https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy">浏览器的同源策略 - MDN<i class="fa fa-external-link"></i></span> </li>
+<li><span class="exturl" data-url="aHR0cDovL3d3dy5ydWFueWlmZW5nLmNvbS9ibG9nLzIwMTYvMDQvc2FtZS1vcmlnaW4tcG9saWN5Lmh0bWw=" title="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html">浏览器同源政策及其规避方法 - ruanyf<i class="fa fa-external-link"></i></span></li>
 </ul>
 </blockquote>
 <h3 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h3><p>Cross-site request forgery,</p>
@@ -477,7 +551,7 @@
 <p>Cookie 保持：使用一个慢速的固定请求保持 cookie 的过期时间。</p>
 <blockquote>
 <ul>
-<li><a href="https://zhuanlan.zhihu.com/p/26184730" target="_blank" rel="noopener">常见WEB漏洞</a></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8yNjE4NDczMA==" title="https://zhuanlan.zhihu.com/p/26184730">常见WEB漏洞<i class="fa fa-external-link"></i></span></li>
 </ul>
 </blockquote>
 <h2 id="WEB服务器安全"><a href="#WEB服务器安全" class="headerlink" title="WEB服务器安全"></a>WEB服务器安全</h2><h3 id="SQL-Injection"><a href="#SQL-Injection" class="headerlink" title="SQL Injection"></a>SQL Injection</h3><p>这个注入老问题了，后面补充把</p>
@@ -549,7 +623,7 @@
 <p>这里提到了一个很有意思的<strong>远程文件包含</strong>的方法，WEB 服务器的日志注入。基于 SessionID 的注入。我们本地进行的恶意 Session内容 的构建 （如果可以），之后提交请求，服务器会将我们的 Session的内容进行保存。所以我们可以远程的 include 包含我们注入代码的 session 文件，从而导致了远程的代码包含的复现。</p>
 <blockquote>
 <ul>
-<li><a href="http://www.freebuf.com/articles/web/182280.html" target="_blank" rel="noopener">Web安全实战系列：文件包含漏洞</a></li>
+<li><span class="exturl" data-url="aHR0cDovL3d3dy5mcmVlYnVmLmNvbS9hcnRpY2xlcy93ZWIvMTgyMjgwLmh0bWw=" title="http://www.freebuf.com/articles/web/182280.html">Web安全实战系列：文件包含漏洞<i class="fa fa-external-link"></i></span></li>
 </ul>
 </blockquote>
 <hr>
@@ -558,7 +632,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl "http://localhost:8000/test.php?test=&lt;?php phpinfo();?&gt;“ -v</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ul>
-<li><a href="http://www.freebuf.com/articles/web/9396.html" target="_blank" rel="noopener">那些强悍的PHP一句话后门</a></li>
+<li><span class="exturl" data-url="aHR0cDovL3d3dy5mcmVlYnVmLmNvbS9hcnRpY2xlcy93ZWIvOTM5Ni5odG1s" title="http://www.freebuf.com/articles/web/9396.html">那些强悍的PHP一句话后门<i class="fa fa-external-link"></i></span></li>
 </ul>
 </blockquote>
 <h2 id="Web-Server-安全"><a href="#Web-Server-安全" class="headerlink" title="Web Server 安全"></a>Web Server 安全</h2><p>这部分的问题，出在Web 服务器的 漏洞 ， 或者说 ummmmm  特性。</p>
@@ -566,7 +640,7 @@
 <h2 id="后"><a href="#后" class="headerlink" title="后"></a>后</h2><p>发现了同样的一篇 WEB 安全的，</p>
 <blockquote>
 <ul>
-<li><a href="https://www.jianshu.com/p/12385b84c37b" target="_blank" rel="noopener">读白帽子讲WEB安全</a> </li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC8xMjM4NWI4NGMzN2I=" title="https://www.jianshu.com/p/12385b84c37b">读白帽子讲WEB安全<i class="fa fa-external-link"></i></span> </li>
 </ul>
 </blockquote>
 <p>随手 PICK 一下</p>
@@ -574,33 +648,22 @@
       
     </div>
 
+    
 
-    <div> 
+    
+    
+    
+
+    
+
+    
       
-        <!-- 这里是添加文章结束标记 -->
-        <div>
     
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    
-</div>
-      
-    </div>
-
-    
-
-
-    
-    
-    
-
-    
-    
-    <!--  这里用来添加以太reward -->
     
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>Thanks anyway!</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+  <div>可乐续命</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
     <span>打赏</span>
   </button>
   <div id="QR" style="display: none;">
@@ -611,11 +674,9 @@
 
     
       <div id="bitcoin" style="display: inline-block">
-        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="R4yd 比特币"/>
+        <img id="bitcoin_qr" src="/images/bitcoin.jpg" alt="Author 比特币"/>
         <p>比特币</p>
       </div>
-    
-
     
 
   </div>
@@ -626,15 +687,24 @@
 
     
       <div>
-        <ul class="post-copyright">
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>R4yd</li>
+    <strong>本文作者： </strong>Author</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="blog.diglp.xyz/2018/10/14/Book_白帽子web/" title="读本好书 《白帽子讲WEB安全》">blog.diglp.xyz/2018/10/14/Book_白帽子web/</a>
+    
+    <a href="/blog.diglp.xyz/2018/10/14/Book_白帽子web/" title="读本好书 《白帽子讲WEB安全》">blog.diglp.xyz/2018/10/14/Book_白帽子web/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
 </ul>
 
       </div>
@@ -644,11 +714,9 @@
       
         <div class="post-tags">
           
-            <!--  这里用来改变标签样式 -->
-            <a href="/tags/读书笔记/" rel="tag"><i class="fa fa-tag"></i> 读书笔记</a>
+            <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
           
-            <!--  这里用来改变标签样式 -->
-            <a href="/tags/安全/" rel="tag"><i class="fa fa-tag"></i> 安全</a>
+            <a href="/tags/安全/" rel="tag"># 安全</a>
           
         </div>
       
@@ -689,25 +757,11 @@
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    </div>
 
   
 
@@ -742,15 +796,11 @@
         </ul>
       
 
-      <section class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="R4yd" />
-            
-              <p class="site-author-name" itemprop="name">R4yd</p>
+              <p class="site-author-name" itemprop="name">Author</p>
               <p class="site-description motion-element" itemprop="description">Why join the navy, When you can be a PIRATE</p>
           </div>
 
@@ -869,25 +919,39 @@
             <div class="links-of-author motion-element">
               
                 <span class="links-of-author-item">
-                  <a href="https://github.com/quartz010" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1YXJ0ejAxMA==" title="GitHub &rarr; https://github.com/quartz010"><i class="fa fa-fw fa-github"></i>GitHub</span>
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="mailto:r4y.root@gmail.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="bWFpbHRvOnF1YXJ0ejAxMEBvdXRsb29rLmNvbQ==" title="E-Mail &rarr; mailto:quartz010@outlook.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</span>
                 </span>
               
             </div>
           
 
           
-          
-            <div class="cc-license motion-element" itemprop="license">
-              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
-              </a>
-            </div>
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"/></span>
+             </div>
           
 
           
@@ -900,11 +964,11 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                    <span class="exturl" data-url="aHR0cDovL3d3dy5ydW5vb2IuY29tLw==" title="http://www.runoob.com/">菜鸟教程</span>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://chierqj.github.io/" title="chierqj's blog" target="_blank">chierqj's blog</a>
+                    <span class="exturl" data-url="aHR0cHM6Ly9jaGllcnFqLmdpdGh1Yi5pby8=" title="https://chierqj.github.io/">Chierqj's Blog</span>
                   </li>
                 
               </ul>
@@ -917,15 +981,16 @@
           
 
         </div>
-      </section>
+      </div>
 
       
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
             
-              
+            
+            
             
 
             
@@ -933,7 +998,7 @@
             
 
           </div>
-        </section>
+        </div>
       <!--/noindex-->
       
 
@@ -956,15 +1021,12 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <!-- 站长统计的插件 -->
-<!-- <script async src="https:/busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-
-<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">R4yd</span>
-  
+  <span class="author" itemprop="copyrightHolder">Author</span>
+
   
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
@@ -980,19 +1042,12 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读时长">9:38</span>
+    <span title="站点阅读时长">9:38</span>
   
 </div>
 
 
-  
-
-
-
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动</div>
 
 
 
@@ -1000,12 +1055,11 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a></div>
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span></div>
 
 
 
   <div class="footer-custom">Hosted by <a target="_blank" rel="external nofollow" href="https://pages.github.com"><b>GitHub Pages</b></a> <span class="post-meta-divider">|</span> <span id="busuanzi_container_site_uv">本站访客数:<span id="busuanzi_value_site_uv"></span></span></div>
-
 
 
         
@@ -1013,7 +1067,25 @@
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
 
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
   
 </div>
 
@@ -1033,11 +1105,14 @@
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -1057,6 +1132,10 @@
 
 
   
+    
+    
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
 
@@ -1071,32 +1150,21 @@
 
 
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.3"></script>
+  <script src="/js/src/utils.js?v=7.0.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.3"></script>
+  <script src="/js/src/motion.js?v=7.0.0"></script>
 
 
 
@@ -1104,94 +1172,36 @@
   
 
 
-  <script type="text/javascript" src="/js/src/affix.js?v=6.0.3"></script>
+  <script src="/js/src/affix.js?v=7.0.0"></script>
 
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.3"></script>
+  <script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+
 
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.0.3"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.3"></script>
-
-
-
-  
-
-  
-    <script id="dsq-count-scr" src="https://diglp.disqus.com/count.js" async></script>
-  
-
-  
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'blog.diglp.xyz/2018/10/14/Book_白帽子web/';
-        this.page.identifier = '2018/10/14/Book_白帽子web/';
-        this.page.title = '读本好书 《白帽子讲WEB安全》';
-      };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://diglp.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      }
-      
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
-      
-    </script>
-  
-
-
-
-
-
-	
-
-
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
 
 
 
   
 
 
-
-
-
-
-
-
-
+  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
 
 
 
   
 
 
-
+  
 
 
   
+
+
+
 
   
 
@@ -1207,31 +1217,33 @@
 
 
   
+
+  
+
+  
+
+  
+
   
 
   
   
   
   <script src="/lib/pangu/dist/pangu.min.js?v=3.3"></script>
-  <script type="text/javascript">pangu.spacingPage();</script>
+  <script>pangu.spacingPage();</script>
 
 
   
-  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.0.3"></script>
-  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.0.3"></script>
+  <script src="/js/src/js.cookie.js?v=7.0.0"></script>
+  <script src="/js/src/scroll-cookie.js?v=7.0.0"></script>
+
+
+  
+  <script src="/js/src/exturl.js?v=7.0.0"></script>
 
 
   
 
-  
-
-  
-  <!-- 点击烟花 -->
-  
-
-  <!-- 点击桃心 -->
-  
-   <script type="text/javascript" src="/js/src/aceheart.js"></script>
   
 
 </body>

@@ -2,18 +2,24 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
 
 
 
@@ -22,13 +28,7 @@
 
   
   
-  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="stylesheet" href="/lib/Han/dist/han.min.css?v=3.3"/>
 
 
 
@@ -50,23 +50,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.0.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.3">
+<link rel="stylesheet" href="/css/main.css?v=7.0.0"/>
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.3" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
 
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
 
 
 
@@ -74,13 +72,12 @@
 
 
 
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    version: '6.0.3',
+    version: '7.0.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
@@ -103,11 +100,7 @@
 
 
 
-  
-  <meta name="keywords" content="以太坊,区块链," />
-
-
-<meta name="description" content="TeaHour 笔记听了Terry Tai 和 Jan Xie 两位大神的 TeaHour 电台里谈到ethereum, 受益良多.这篇文章算是自己的笔记, 边听边记吧. 再自行整理的 :-) 下面把内容的链接放出来 这次我们聊聊超酷的Ethereum 语录:  ruby - 参差多态才是幸福的本源 有屠龙刀, 没有龙 大神做的事情,不一定适合众生  区块链杂谈自从比特币掀起了区块链的浪潮, 也得">
+  <meta name="description" content="TeaHour 笔记听了Terry Tai 和 Jan Xie 两位大神的 TeaHour 电台里谈到ethereum, 受益良多.这篇文章算是自己的笔记, 边听边记吧. 再自行整理的 :-) 下面把内容的链接放出来 这次我们聊聊超酷的Ethereum 语录:  ruby - 参差多态才是幸福的本源 有屠龙刀, 没有龙 大神做的事情,不一定适合众生  区块链杂谈自从比特币掀起了区块链的浪潮, 也得">
 <meta name="keywords" content="以太坊,区块链">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TeaHour_ETH笔记">
@@ -131,25 +124,28 @@
 
 
 
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
 </script>
+
   <title>TeaHour_ETH笔记 | R4y's Blog</title>
   
 
 
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118678642-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-118678642-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-118678642-1');
+  </script>
 
-  gtag('config', 'UA-118678642-1');
-</script>
+
+
 
 
 
@@ -157,29 +153,27 @@
 
 
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
@@ -194,28 +188,29 @@
 
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
-    
-    <!-- 这里是网页头带 -->
-    
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
-  <div class="site-meta ">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">R4y's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <h1 class="site-subtitle" itemprop="description">个人回收站</h1>
       
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -223,84 +218,146 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">24</span>
-              </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+
+  </li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">10</span>
-              </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">61</span>
-              </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-图书馆">
-          <a href="/books/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-book"></i> <br />图书馆</a>
-        </li>
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
       
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">24</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类<span class="badge">10</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">61</span></a>
+
+  </li>
 
       
+      
     </ul>
+  
+
   
 
   
 </nav>
 
 
+
   
 
 
 
- </div>
+</div>
     </header>
 
     
   
   
   
-    
-      
-    
-    <a href="https://github.com/quartz010" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
-    
-      </a>
-    
+  
+
+  
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1YXJ0ejAxMA==" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
 
 
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
+          
           <div id="content" class="content">
             
 
@@ -320,16 +377,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/02/05/teatime语录/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/02/05/teatime语录/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R4yd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Author"/>
+      <meta itemprop="description" content="Why join the navy, When you can be a PIRATE"/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's Blog">
+      <meta itemprop="name" content="R4y's Blog"/>
     </span>
 
     
@@ -337,11 +394,20 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">TeaHour_ETH笔记</h2>
+          <h2 class="post-title" itemprop="name headline">TeaHour_ETH笔记
+
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -349,17 +415,35 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-05T00:00:00+08:00">2018-02-05</time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-02-05 00:00:00" itemprop="dateCreated datePublished" datetime="2018-02-05T00:00:00+08:00">2018-02-05</time>
             
 
             
-            
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-01 16:47:34" itemprop="dateModified" datetime="2018-09-01T16:47:34+08:00">2018-09-01</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -380,16 +464,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/02/05/teatime语录/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/02/05/teatime语录/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -402,7 +476,7 @@
             >
             <i class="fa fa-eye"></i>
              阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
 
@@ -415,9 +489,9 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="字数统计">6.8k</span>
+                <span title="本文字数">6.8k</span>
               
 
               
@@ -453,7 +527,7 @@
       
         <h1 id="TeaHour-笔记"><a href="#TeaHour-笔记" class="headerlink" title="TeaHour 笔记"></a>TeaHour 笔记</h1><p>听了Terry Tai 和 Jan Xie 两位大神的 <a href="teahour.fm">TeaHour</a> 电台里谈到ethereum, 受益良多.<br>这篇文章算是自己的笔记, 边听边记吧. 再自行整理的 :-)</p>
 <p>下面把内容的链接放出来</p>
-<p><a href="http://teahour.fm/2016/01/19/talk-with-jan-about-ehtereum.html" target="_blank" rel="noopener">这次我们聊聊超酷的Ethereum</a></p>
+<p><span class="exturl" data-url="aHR0cDovL3RlYWhvdXIuZm0vMjAxNi8wMS8xOS90YWxrLXdpdGgtamFuLWFib3V0LWVodGVyZXVtLmh0bWw=" title="http://teahour.fm/2016/01/19/talk-with-jan-about-ehtereum.html">这次我们聊聊超酷的Ethereum<i class="fa fa-external-link"></i></span></p>
 <p>语录:</p>
 <blockquote>
 <p>ruby - 参差多态才是幸福的本源</p>
@@ -468,7 +542,7 @@
 <li>etc….</li>
 </ul>
 <p>这一类基于比特币思想, 再加上特定的其他特性(feature)的币 , 就统统称为Copycat coin (山寨币)<br>但是, 实际上这些种类的数字货币是不具有图灵完备.<br>以上就是我们的区块链1.0时代</p>
-<h2 id="现在的Ethereum"><a href="#现在的Ethereum" class="headerlink" title="现在的Ethereum"></a>现在的Ethereum</h2><h3 id="Ethereum的横空出世"><a href="#Ethereum的横空出世" class="headerlink" title="Ethereum的横空出世"></a>Ethereum的横空出世</h3><p>以太坊是 <a href="https://en.wikipedia.org/wiki/Vitalik_Buterin" target="_blank" rel="noopener"><code>Vitalik</code></a> (当时才18岁, 天才骚年!) 提出, 并设计架构的一个区块链系统, 这个系统具有准图灵完备性(最近才支持循环).</p>
+<h2 id="现在的Ethereum"><a href="#现在的Ethereum" class="headerlink" title="现在的Ethereum"></a>现在的Ethereum</h2><h3 id="Ethereum的横空出世"><a href="#Ethereum的横空出世" class="headerlink" title="Ethereum的横空出世"></a>Ethereum的横空出世</h3><p>以太坊是 <span class="exturl" data-url="aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVml0YWxpa19CdXRlcmlu" title="https://en.wikipedia.org/wiki/Vitalik_Buterin"><code>Vitalik</code><i class="fa fa-external-link"></i></span> (当时才18岁, 天才骚年!) 提出, 并设计架构的一个区块链系统, 这个系统具有准图灵完备性(最近才支持循环).</p>
 <p>这个项目也是个众筹项目, 众筹当时是众筹了30K个BTC, 折合成当时的币价的话大约 有一千八百万刀, 也正是这个项目的亮眼之处吸引了众多的投资者, 因为它力在搭建一个 platform 而不是基于BTC进行fork的另外的一种币而已. </p>
 <p><img src="https://t10.baidu.com/it/u=1423318392,3346721005&amp;fm=173&amp;s=0A83834D5C269B1F8A84FCFF03005023&amp;w=320&amp;h=223&amp;img.JPEG" alt="Vitalik Buterin"></p>
 <blockquote>
@@ -482,7 +556,7 @@
 </blockquote>
 <p>参考文章:</p>
 <blockquote>
-<p><a href="https://www.zhihu.com/question/20081359" target="_blank" rel="noopener">如何通俗地解释停机问题</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3F1ZXN0aW9uLzIwMDgxMzU5" title="https://www.zhihu.com/question/20081359">如何通俗地解释停机问题<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <p>所以在以太坊这个平台上,为了防止恶意行为阻塞网络, 比如一个死循环. </p>
 <blockquote>
@@ -513,7 +587,7 @@
 </ul>
 <p>参考文章:</p>
 <blockquote>
-<p><a href="http://blog.csdn.net/superswords/article/details/76445278" target="_blank" rel="noopener">以太坊中的叔块(Uncle Block)</a></p>
+<p><span class="exturl" data-url="aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VwZXJzd29yZHMvYXJ0aWNsZS9kZXRhaWxzLzc2NDQ1Mjc4" title="http://blog.csdn.net/superswords/article/details/76445278">以太坊中的叔块(Uncle Block)<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <h2 id="ETH目前面临的问题"><a href="#ETH目前面临的问题" class="headerlink" title="ETH目前面临的问题"></a>ETH目前面临的问题</h2><h3 id="共识机制"><a href="#共识机制" class="headerlink" title="共识机制"></a>共识机制</h3><p>dapp都是运行在EVM虚拟机上的, <code>使用pow</code> , 虽然确认时间缩短 , 可是还是需要几分钟才能得到若干个确认,因为在POW的机制下的电脑一起做运算, 采取谁解出了这个块, 那么就采用谁的, 其他的全部从新开始, 其实这样就是单台电脑的计算能力了,</p>
 <blockquote>
@@ -535,7 +609,7 @@
 </blockquote>
 <p>参考文章:</p>
 <blockquote>
-<p><a href="https://www.zhihu.com/question/27645858" target="_blank" rel="noopener">同态加密的实现原理</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3F1ZXN0aW9uLzI3NjQ1ODU4" title="https://www.zhihu.com/question/27645858">同态加密的实现原理<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <h3 id="伸缩性问题"><a href="#伸缩性问题" class="headerlink" title="伸缩性问题"></a>伸缩性问题</h3><p>早期的比特币是没有区块容量限制的, (一个区块就是十分钟里的所有链上数据的打包), 这样导致了一个交易被恶意的加入了大量的无用数据, 这样会白白牺牲节点的硬盘空间.  所以后面中本聪(Satoshi Nakamoto), 加入了1MB的区块大小限制, 并且也制订了后面的增长.</p>
 <p>这1MB的区块容量也决定了, 区块的最大交易处理速度. 关联过程如下:</p>
@@ -546,20 +620,20 @@
 <p>还有一件引人注意的事情, </p>
 <blockquote>
 <p>比特币核心开发者Mike Hearn发表文章称比特币实验失败了，指出它被中国控制了，他宣布退出比特币项目，卖掉所有的币。Mike Hearn说，他很早就告诫其他人，比特币是一个实验，和所有实验一样，都可能会失败，如果不能承担损失不要去投资。但得出比特币已经失败的结论时，他仍然很伤感。比特币的基础已经破坏，不管短期的价格如何变化，它的长期趋势将是下滑。</p>
-<p>以下来自博客翻译：<br>为什么比特币失败了？因为社区垮掉了。这个所谓的去中心化数字货币系统被少数人掌控，更糟糕的是，整个网络正处于技术崩溃的边缘。比特币不再好于现有的商业支付系统，它的手续费甚至超过了信用卡的交易费。他说，最根本的原因是中国的矿工控制了比特币，仅仅两个矿池的算力就超过整个比特币网络的50%。超过95%的算力控制在上面这幅图中的人手中。这些矿工不再允许块链增长。他们拒绝对比特币软件进行必要的修改，他们担心如果比特币太流行的话会被防火长城盯上，屏蔽掉比特币网络，导致他们失去收入。为了改进交易速度，增加区块大小，比特币社区去年就创建新分支举行投票，投票的方式是运行名为比特币XT的挖矿软件。比特币XT与现在的比特币核心挖矿软件没有区别，但是当有75%的节点运行XT，分支将会正式创建。但比特币XT引发了控制者们的强烈反对，比特币最大论坛<a href="http://bitcoin.org的管理员以缺乏民主为由封杀了比特币XT的讨论。更恶劣的是，当比特币XT节点占到总节点的15%时，XT用户遭到了大规模DDoS攻击，大到足以瘫痪矿工所在ISP的整个网络。这一信息很明确，任何支持大区块的人都会遭到攻击。攻击还在继续，创业公司Coinbase宣布支持XT时他们被攻击而下线了一段时间。他声称，比特币航行到了一个极端危险的水域，与" target="_blank" rel="noopener">http://bitcoin.org的管理员以缺乏民主为由封杀了比特币XT的讨论。更恶劣的是，当比特币XT节点占到总节点的15%时，XT用户遭到了大规模DDoS攻击，大到足以瘫痪矿工所在ISP的整个网络。这一信息很明确，任何支持大区块的人都会遭到攻击。攻击还在继续，创业公司Coinbase宣布支持XT时他们被攻击而下线了一段时间。他声称，比特币航行到了一个极端危险的水域，与</a> Mt Gox破产危机不同，这一次的危机发生在核心系统。他最后祝所有的人好运</p>
+<p>以下来自博客翻译：<br>为什么比特币失败了？因为社区垮掉了。这个所谓的去中心化数字货币系统被少数人掌控，更糟糕的是，整个网络正处于技术崩溃的边缘。比特币不再好于现有的商业支付系统，它的手续费甚至超过了信用卡的交易费。他说，最根本的原因是中国的矿工控制了比特币，仅仅两个矿池的算力就超过整个比特币网络的50%。超过95%的算力控制在上面这幅图中的人手中。这些矿工不再允许块链增长。他们拒绝对比特币软件进行必要的修改，他们担心如果比特币太流行的话会被防火长城盯上，屏蔽掉比特币网络，导致他们失去收入。为了改进交易速度，增加区块大小，比特币社区去年就创建新分支举行投票，投票的方式是运行名为比特币XT的挖矿软件。比特币XT与现在的比特币核心挖矿软件没有区别，但是当有75%的节点运行XT，分支将会正式创建。但比特币XT引发了控制者们的强烈反对，比特币最大论坛<span class="exturl" data-url="aHR0cDovL2JpdGNvaW4ub3Jn55qE566h55CG5ZGY5Lul57y65LmP5rCR5Li75Li655Sx5bCB5p2A5LqG5q+U54m55biBWFTnmoTorqjorrrjgILmm7TmgbbliqPnmoTmmK/vvIzlvZPmr5TnibnluIFYVOiKgueCueWNoOWIsOaAu+iKgueCueeahDE1JeaXtu+8jFhU55So5oi36YGt5Yiw5LqG5aSn6KeE5qihRERvU+aUu+WHu++8jOWkp+WIsOi2s+S7peeYq+eXquefv+W3peaJgOWcqElTUOeahOaVtOS4que9kee7nOOAgui/meS4gOS/oeaBr+W+iOaYjuehru+8jOS7u+S9leaUr+aMgeWkp+WMuuWdl+eahOS6uumDveS8mumBreWIsOaUu+WHu+OAguaUu+WHu+i/mOWcqOe7p+e7re+8jOWIm+S4muWFrOWPuENvaW5iYXNl5a6j5biD5pSv5oyBWFTml7bku5bku6zooqvmlLvlh7vogIzkuIvnur/kuobkuIDmrrXml7bpl7TjgILku5blo7Dnp7DvvIzmr5TnibnluIHoiKrooYzliLDkuobkuIDkuKrmnoHnq6/ljbHpmannmoTmsLTln5/vvIzkuI4=" title="http://bitcoin.org的管理员以缺乏民主为由封杀了比特币XT的讨论。更恶劣的是，当比特币XT节点占到总节点的15%时，XT用户遭到了大规模DDoS攻击，大到足以瘫痪矿工所在ISP的整个网络。这一信息很明确，任何支持大区块的人都会遭到攻击。攻击还在继续，创业公司Coinbase宣布支持XT时他们被攻击而下线了一段时间。他声称，比特币航行到了一个极端危险的水域，与">http://bitcoin.org的管理员以缺乏民主为由封杀了比特币XT的讨论。更恶劣的是，当比特币XT节点占到总节点的15%时，XT用户遭到了大规模DDoS攻击，大到足以瘫痪矿工所在ISP的整个网络。这一信息很明确，任何支持大区块的人都会遭到攻击。攻击还在继续，创业公司Coinbase宣布支持XT时他们被攻击而下线了一段时间。他声称，比特币航行到了一个极端危险的水域，与<i class="fa fa-external-link"></i></span> Mt Gox破产危机不同，这一次的危机发生在核心系统。他最后祝所有的人好运</p>
 </blockquote>
 <p>参考文章:</p>
 <blockquote>
-<p><a href="http://www.jpm.cn/article-29224-1.html" target="_blank" rel="noopener">比特币扩容之战</a></p>
-<p><a href="http://www.jpm.cn/article-29224-1.html" target="_blank" rel="noopener">为什么比特币硬分叉不会分裂成两个币</a></p>
-<p><a href="https://www.zhihu.com/question/39523821/answer/81824307" target="_blank" rel="noopener">比特币实验失败了?</a></p>
+<p><span class="exturl" data-url="aHR0cDovL3d3dy5qcG0uY24vYXJ0aWNsZS0yOTIyNC0xLmh0bWw=" title="http://www.jpm.cn/article-29224-1.html">比特币扩容之战<i class="fa fa-external-link"></i></span></p>
+<p><span class="exturl" data-url="aHR0cDovL3d3dy5qcG0uY24vYXJ0aWNsZS0yOTIyNC0xLmh0bWw=" title="http://www.jpm.cn/article-29224-1.html">为什么比特币硬分叉不会分裂成两个币<i class="fa fa-external-link"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3F1ZXN0aW9uLzM5NTIzODIxL2Fuc3dlci84MTgyNDMwNw==" title="https://www.zhihu.com/question/39523821/answer/81824307">比特币实验失败了?<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <h3 id="存储问题"><a href="#存储问题" class="headerlink" title="存储问题"></a>存储问题</h3><p>区块链在现在的阶段, 智能存储小量数据, 如果打算在上面存一部电影,当前还是无法实现的. 所以现在的发展趋势之一就是添加区块链的存储层的解决方案</p>
 <p>在当前的众多区块链项目中, 不乏分布式存储的项目, 如下有:</p>
 <ul>
-<li><a href="https://ipfs.io" target="_blank" rel="noopener">IPFS</a> (没有经济激励)<br>   Swarm    (添加了IPFS的经济激励)</li>
-<li><a href="https://sia.tech" target="_blank" rel="noopener">Sia</a> </li>
-<li><a href="https://storj.io" target="_blank" rel="noopener">storJ</a></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9pcGZzLmlv" title="https://ipfs.io">IPFS<i class="fa fa-external-link"></i></span> (没有经济激励)<br>   Swarm    (添加了IPFS的经济激励)</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9zaWEudGVjaA==" title="https://sia.tech">Sia<i class="fa fa-external-link"></i></span> </li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9zdG9yai5pbw==" title="https://storj.io">storJ<i class="fa fa-external-link"></i></span></li>
 </ul>
 <p>上面这几项, 经过几年的发展基本上是可以用的程度了</p>
 <h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>过度依赖于经济激励, 而不是算法上解决的, 经济激励不是最logic的方式. 但是呢, 这些项目又是不具有图灵完整的,所以与ETH整合才是王道</p>
@@ -583,8 +657,8 @@
 <p>与其类似的还有一个叫做基石的国外项目,(国人在币交易市场上叱咤, 导致现在这个项目是需要KYC(know your customer)了, 结果现在国人连公募资格都批不了了!!!ƒk), 这个项目几个小时就筹齐了!!</p>
 <p>项目地址:</p>
 <blockquote>
-<p><a href="https://www.arcblock.io" target="_blank" rel="noopener">基石项目</a></p>
-<p><a href="https://www.elastos.org" target="_blank" rel="noopener">亦来云项目</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuYXJjYmxvY2suaW8=" title="https://www.arcblock.io">基石项目<i class="fa fa-external-link"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuZWxhc3Rvcy5vcmc=" title="https://www.elastos.org">亦来云项目<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <h3 id="区块链和分布式数据库的区别"><a href="#区块链和分布式数据库的区别" class="headerlink" title="区块链和分布式数据库的区别"></a>区块链和分布式数据库的区别</h3><p>传统的分布式数据库, 如何可以并行的写?</p>
 <p>由交易方发起交易请求,BC 可以做到选择交易和交易排序, 这样就在节点可以解决数据冲突,和消除错误虚假数据.<br>这样就不是, 由用户直接操作数据, 重要的达到可信.</p>
@@ -603,14 +677,14 @@
 <p>这个其实也是POW 的博弈原理, POW的挖矿</p>
 <p>如何使用公有知识, 实现可信的链外输入. </p>
 <p>博弈原理: 例子: 如果有 1000 个人, 每个人写下币价, 如果在25%-75% 范围以外的人, 会有惩罚, 人们互相是不知道别人的价格, 所以最后,会靠近最正确的,(这就是common knowledge), 也就是囚徒问题的变种. </p>
-<h4 id="物联网应用"><a href="#物联网应用" class="headerlink" title="物联网应用"></a>物联网应用</h4><p>区块链在物联网方向是有很美好前景的, 之前就有过 IBM和Sumsung 的合作, 曾经使用基于以太坊的demo, (Adept)<br><a href="http://www.8btc.com/ibm-adept" target="_blank" rel="noopener">Adept项目地址</a></p>
+<h4 id="物联网应用"><a href="#物联网应用" class="headerlink" title="物联网应用"></a>物联网应用</h4><p>区块链在物联网方向是有很美好前景的, 之前就有过 IBM和Sumsung 的合作, 曾经使用基于以太坊的demo, (Adept)<br><span class="exturl" data-url="aHR0cDovL3d3dy44YnRjLmNvbS9pYm0tYWRlcHQ=" title="http://www.8btc.com/ibm-adept">Adept项目地址<i class="fa fa-external-link"></i></span></p>
 <p>因为区块链上很自然的有价值和所有权的转移, 所有可以很好的保证物品之间的经济行为. 使用区块链登记物品所有权换转移, 比如出租.  </p>
-<p>有个项目, Slock是基于以太坊的行为, 把物联网,共享经济和区块链相结合起来, 就是把物联网抽象为一把锁(真实世界的锁), 锁的所有权可以在区块链上面进行转移. 这样就可以通过合约实现一个 临时的所有权转让,<br><a href="https://slock.it" target="_blank" rel="noopener">Slock项目地址</a></p>
+<p>有个项目, Slock是基于以太坊的行为, 把物联网,共享经济和区块链相结合起来, 就是把物联网抽象为一把锁(真实世界的锁), 锁的所有权可以在区块链上面进行转移. 这样就可以通过合约实现一个 临时的所有权转让,<br><span class="exturl" data-url="aHR0cHM6Ly9zbG9jay5pdA==" title="https://slock.it">Slock项目地址<i class="fa fa-external-link"></i></span></p>
 <p>现在已经有物联网的锁了, 但是这样通过中心化的第三方, 这样就不能确认是不作恶的. 所有如果放在区块链上就得到了很好的信任解决</p>
 <p>很多人并不介意 中心化的架构, 区块链的引用不能破坏 当前的中心化体验</p>
 <p>现在比如基于BC的物理 和 产品溯源</p>
 <h2 id="有趣的应用"><a href="#有趣的应用" class="headerlink" title="有趣的应用"></a>有趣的应用</h2><h3 id="庞氏骗局网站"><a href="#庞氏骗局网站" class="headerlink" title="庞氏骗局网站"></a>庞氏骗局网站</h3><p>这个就厉害了, 项目名就是庞氏骗局, 而且就是一个庞氏骗局…明文写着, 把后面人的钱分给前面加入的人, 很多人参入的!<br>其实我想通了一个事情, 传销的人知道这是传销, 但是总是幻想自己不是那个最底层的韭菜, 大家其实知道这是传销, 无所谓~</p>
-<h3 id="百万格子"><a href="#百万格子" class="headerlink" title="百万格子"></a>百万格子</h3><p>传奇项目<a href="http://www.milliondollarhomepage.com" target="_blank" rel="noopener">百万格子</a></p>
+<h3 id="百万格子"><a href="#百万格子" class="headerlink" title="百万格子"></a>百万格子</h3><p>传奇项目<span class="exturl" data-url="aHR0cDovL3d3dy5taWxsaW9uZG9sbGFyaG9tZXBhZ2UuY29t" title="http://www.milliondollarhomepage.com">百万格子<i class="fa fa-external-link"></i></span></p>
 <p>这些人不得不服, 实话</p>
 <h3 id="区块链随机数"><a href="#区块链随机数" class="headerlink" title="区块链随机数"></a>区块链随机数</h3><p>区块链上很难产生一个随机数, 如果我们使用POW的X ,<br>RANDAO</p>
 <h3 id="区块链定时问题"><a href="#区块链定时问题" class="headerlink" title="区块链定时问题"></a>区块链定时问题</h3><p>定时任务以太坊网络其实是一个, 是一个状态机, 给了event 然后做出反应, 所有区块链上需要一个合约, 或者DAO<br>Aalarm Clock     现在区块链相当于上世纪的互联网(九十年代)</p>
@@ -620,33 +694,22 @@
       
     </div>
 
+    
 
-    <div> 
+    
+    
+    
+
+    
+
+    
       
-        <!-- 这里是添加文章结束标记 -->
-        <div>
     
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    
-</div>
-      
-    </div>
-
-    
-
-
-    
-    
-    
-
-    
-    
-    <!--  这里用来添加以太reward -->
     
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>Thanks anyway!</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+  <div>可乐续命</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
     <span>打赏</span>
   </button>
   <div id="QR" style="display: none;">
@@ -657,11 +720,9 @@
 
     
       <div id="bitcoin" style="display: inline-block">
-        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="R4yd 比特币"/>
+        <img id="bitcoin_qr" src="/images/bitcoin.jpg" alt="Author 比特币"/>
         <p>比特币</p>
       </div>
-    
-
     
 
   </div>
@@ -672,15 +733,24 @@
 
     
       <div>
-        <ul class="post-copyright">
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>R4yd</li>
+    <strong>本文作者： </strong>Author</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="blog.diglp.xyz/2018/02/05/teatime语录/" title="TeaHour_ETH笔记">blog.diglp.xyz/2018/02/05/teatime语录/</a>
+    
+    <a href="/blog.diglp.xyz/2018/02/05/teatime语录/" title="TeaHour_ETH笔记">blog.diglp.xyz/2018/02/05/teatime语录/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
 </ul>
 
       </div>
@@ -690,11 +760,9 @@
       
         <div class="post-tags">
           
-            <!--  这里用来改变标签样式 -->
-            <a href="/tags/以太坊/" rel="tag"><i class="fa fa-tag"></i> 以太坊</a>
+            <a href="/tags/以太坊/" rel="tag"># 以太坊</a>
           
-            <!--  这里用来改变标签样式 -->
-            <a href="/tags/区块链/" rel="tag"><i class="fa fa-tag"></i> 区块链</a>
+            <a href="/tags/区块链/" rel="tag"># 区块链</a>
           
         </div>
       
@@ -735,25 +803,11 @@
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    </div>
 
   
 
@@ -788,15 +842,11 @@
         </ul>
       
 
-      <section class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="R4yd" />
-            
-              <p class="site-author-name" itemprop="name">R4yd</p>
+              <p class="site-author-name" itemprop="name">Author</p>
               <p class="site-description motion-element" itemprop="description">Why join the navy, When you can be a PIRATE</p>
           </div>
 
@@ -915,25 +965,39 @@
             <div class="links-of-author motion-element">
               
                 <span class="links-of-author-item">
-                  <a href="https://github.com/quartz010" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1YXJ0ejAxMA==" title="GitHub &rarr; https://github.com/quartz010"><i class="fa fa-fw fa-github"></i>GitHub</span>
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="mailto:r4y.root@gmail.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="bWFpbHRvOnF1YXJ0ejAxMEBvdXRsb29rLmNvbQ==" title="E-Mail &rarr; mailto:quartz010@outlook.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</span>
                 </span>
               
             </div>
           
 
           
-          
-            <div class="cc-license motion-element" itemprop="license">
-              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
-              </a>
-            </div>
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"/></span>
+             </div>
           
 
           
@@ -946,11 +1010,11 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                    <span class="exturl" data-url="aHR0cDovL3d3dy5ydW5vb2IuY29tLw==" title="http://www.runoob.com/">菜鸟教程</span>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://chierqj.github.io/" title="chierqj's blog" target="_blank">chierqj's blog</a>
+                    <span class="exturl" data-url="aHR0cHM6Ly9jaGllcnFqLmdpdGh1Yi5pby8=" title="https://chierqj.github.io/">Chierqj's Blog</span>
                   </li>
                 
               </ul>
@@ -963,15 +1027,16 @@
           
 
         </div>
-      </section>
+      </div>
 
       
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
             
-              
+            
+            
             
 
             
@@ -979,7 +1044,7 @@
             
 
           </div>
-        </section>
+        </div>
       <!--/noindex-->
       
 
@@ -1002,15 +1067,12 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <!-- 站长统计的插件 -->
-<!-- <script async src="https:/busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-
-<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">R4yd</span>
-  
+  <span class="author" itemprop="copyrightHolder">Author</span>
+
   
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
@@ -1026,19 +1088,12 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读时长">9:38</span>
+    <span title="站点阅读时长">9:38</span>
   
 </div>
 
 
-  
-
-
-
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动</div>
 
 
 
@@ -1046,12 +1101,11 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a></div>
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span></div>
 
 
 
   <div class="footer-custom">Hosted by <a target="_blank" rel="external nofollow" href="https://pages.github.com"><b>GitHub Pages</b></a> <span class="post-meta-divider">|</span> <span id="busuanzi_container_site_uv">本站访客数:<span id="busuanzi_value_site_uv"></span></span></div>
-
 
 
         
@@ -1059,7 +1113,25 @@
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
 
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
   
 </div>
 
@@ -1079,11 +1151,14 @@
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -1103,6 +1178,10 @@
 
 
   
+    
+    
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
 
@@ -1117,32 +1196,21 @@
 
 
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.3"></script>
+  <script src="/js/src/utils.js?v=7.0.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.3"></script>
+  <script src="/js/src/motion.js?v=7.0.0"></script>
 
 
 
@@ -1150,94 +1218,36 @@
   
 
 
-  <script type="text/javascript" src="/js/src/affix.js?v=6.0.3"></script>
+  <script src="/js/src/affix.js?v=7.0.0"></script>
 
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.3"></script>
+  <script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+
 
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.0.3"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.3"></script>
-
-
-
-  
-
-  
-    <script id="dsq-count-scr" src="https://diglp.disqus.com/count.js" async></script>
-  
-
-  
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'blog.diglp.xyz/2018/02/05/teatime语录/';
-        this.page.identifier = '2018/02/05/teatime语录/';
-        this.page.title = 'TeaHour_ETH笔记';
-      };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://diglp.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      }
-      
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
-      
-    </script>
-  
-
-
-
-
-
-	
-
-
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
 
 
 
   
 
 
-
-
-
-
-
-
-
+  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
 
 
 
   
 
 
-
+  
 
 
   
+
+
+
 
   
 
@@ -1253,31 +1263,33 @@
 
 
   
+
+  
+
+  
+
+  
+
   
 
   
   
   
   <script src="/lib/pangu/dist/pangu.min.js?v=3.3"></script>
-  <script type="text/javascript">pangu.spacingPage();</script>
+  <script>pangu.spacingPage();</script>
 
 
   
-  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.0.3"></script>
-  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.0.3"></script>
+  <script src="/js/src/js.cookie.js?v=7.0.0"></script>
+  <script src="/js/src/scroll-cookie.js?v=7.0.0"></script>
+
+
+  
+  <script src="/js/src/exturl.js?v=7.0.0"></script>
 
 
   
 
-  
-
-  
-  <!-- 点击烟花 -->
-  
-
-  <!-- 点击桃心 -->
-  
-   <script type="text/javascript" src="/js/src/aceheart.js"></script>
   
 
 </body>

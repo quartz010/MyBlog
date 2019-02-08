@@ -2,18 +2,24 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
 
 
 
@@ -22,13 +28,7 @@
 
   
   
-  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="stylesheet" href="/lib/Han/dist/han.min.css?v=3.3"/>
 
 
 
@@ -50,23 +50,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.0.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.3">
+<link rel="stylesheet" href="/css/main.css?v=7.0.0"/>
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.3" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
 
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
 
 
 
@@ -74,13 +72,12 @@
 
 
 
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    version: '6.0.3',
+    version: '7.0.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
@@ -103,11 +100,7 @@
 
 
 
-  
-  <meta name="keywords" content="安全,CTF," />
-
-
-<meta name="description" content="CTF WriteUp前得找到自己的一点点爱好吧，不然闲暇真是 boring 。  晚上突然的心血来潮，找了个CTF 的网站，手头没什么工具，所以就怎么简单怎么来啦。  amigos2001在2018-10-01 01:51:08解出了misc-4  amigos2001在2018-10-01 01:45:53解出了misc-2  amigos2001在2018-10-01 01:36:43解出了">
+  <meta name="description" content="CTF WriteUp前得找到自己的一点点爱好吧，不然闲暇真是 boring 。  晚上突然的心血来潮，找了个CTF 的网站，手头没什么工具，所以就怎么简单怎么来啦。  amigos2001在2018-10-01 01:51:08解出了misc-4  amigos2001在2018-10-01 01:45:53解出了misc-2  amigos2001在2018-10-01 01:36:43解出了">
 <meta name="keywords" content="安全,CTF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="某个简单CTF的WP">
@@ -129,25 +122,28 @@
 
 
 
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
 </script>
+
   <title>某个简单CTF的WP | R4y's Blog</title>
   
 
 
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118678642-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-118678642-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-118678642-1');
+  </script>
 
-  gtag('config', 'UA-118678642-1');
-</script>
+
+
 
 
 
@@ -155,29 +151,27 @@
 
 
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
@@ -192,28 +186,29 @@
 
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
-    
-    <!-- 这里是网页头带 -->
-    
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
-  <div class="site-meta ">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">R4y's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <h1 class="site-subtitle" itemprop="description">个人回收站</h1>
       
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -221,84 +216,146 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">24</span>
-              </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+
+  </li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">10</span>
-              </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">61</span>
-              </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-图书馆">
-          <a href="/books/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-book"></i> <br />图书馆</a>
-        </li>
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
       
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">24</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类<span class="badge">10</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">61</span></a>
+
+  </li>
 
       
+      
     </ul>
+  
+
   
 
   
 </nav>
 
 
+
   
 
 
 
- </div>
+</div>
     </header>
 
     
   
   
   
-    
-      
-    
-    <a href="https://github.com/quartz010" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
-    
-      </a>
-    
+  
+
+  
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1YXJ0ejAxMA==" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
 
 
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
+          
           <div id="content" class="content">
             
 
@@ -318,16 +375,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/10/03/CTF_Writeup/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/10/03/CTF_Writeup/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R4yd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Author"/>
+      <meta itemprop="description" content="Why join the navy, When you can be a PIRATE"/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's Blog">
+      <meta itemprop="name" content="R4y's Blog"/>
     </span>
 
     
@@ -335,11 +392,20 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">某个简单CTF的WP</h2>
+          <h2 class="post-title" itemprop="name headline">某个简单CTF的WP
+
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -347,17 +413,35 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-03T00:00:00+08:00">2018-10-03</time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-03 00:00:00" itemprop="dateCreated datePublished" datetime="2018-10-03T00:00:00+08:00">2018-10-03</time>
             
 
             
-            
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-21 15:52:18" itemprop="dateModified" datetime="2018-10-21T15:52:18+08:00">2018-10-21</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -378,16 +462,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/03/CTF_Writeup/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/03/CTF_Writeup/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -400,7 +474,7 @@
             >
             <i class="fa fa-eye"></i>
              阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
 
@@ -413,9 +487,9 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="字数统计">7.2k</span>
+                <span title="本文字数">7.2k</span>
               
 
               
@@ -501,7 +575,7 @@
 <p>前面的内容不同没有改变，后面的hash 相等，从 === 变成了 == 。</p>
 <p>wiki 之    </p>
 <blockquote>
-<p><a href="https://blog.csdn.net/ithomer/article/details/5855240" target="_blank" rel="noopener">浅析JavaScript和PHP中三个等号（===）和两个等号（==）的区别</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l0aG9tZXIvYXJ0aWNsZS9kZXRhaWxzLzU4NTUyNDA=" title="https://blog.csdn.net/ithomer/article/details/5855240">浅析JavaScript和PHP中三个等号（===）和两个等号（==）的区别<i class="fa fa-external-link"></i></span></p>
 <ul>
 <li><p>==  两边值类型不同的时候，要先进行类型转换，再比较。 </p>
 </li>
@@ -523,7 +597,7 @@
 <hr>
 <p>最后，的方案当然是求助Google了，这里找到了 magic Hashs。里面列举了，多个满足 <code>0e\d{38}</code>的这个条件。</p>
 <blockquote>
-<p><a href="https://www.whitehatsec.com/blog/magic-hashes/" target="_blank" rel="noopener">Magic Hashs</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cud2hpdGVoYXRzZWMuY29tL2Jsb2cvbWFnaWMtaGFzaGVzLw==" title="https://www.whitehatsec.com/blog/magic-hashes/">Magic Hashs<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <p>这里找到了这样的两个符合要求的输入</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10932435112</span></span><br><span class="line">aaroZmOk</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>hashlib.sha1(<span class="string">'10932435112'</span>).hexdigest()</span><br><span class="line"><span class="string">'0e07766915004133176347055865026311692244'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>hashlib.sha1(<span class="string">'aaroZmOk'</span>).hexdigest()</span><br><span class="line"><span class="string">'0e66507019969427134894567494305185566735'</span></span><br></pre></td></tr></table></figure>
@@ -532,7 +606,7 @@
 <p>感觉这次，是真的真的要进行碰撞了，在网上进行搜索</p>
 <blockquote>
 <ul>
-<li><a href="https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html" target="_blank" rel="noopener">Announcing the first SHA1 collision  – Google Security Blog</a></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9zZWN1cml0eS5nb29nbGVibG9nLmNvbS8yMDE3LzAyL2Fubm91bmNpbmctZmlyc3Qtc2hhMS1jb2xsaXNpb24uaHRtbA==" title="https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html">Announcing the first SHA1 collision  – Google Security Blog<i class="fa fa-external-link"></i></span></li>
 </ul>
 </blockquote>
 <p>可见，Google 的确已经发现了第一个的 sha1 哈希碰撞</p>
@@ -540,7 +614,7 @@
 <p>对，后面的内容进行继续的探索，也很容易的发现了类似的 ctf 题目，有说是站姿巨人的肩膀上，所以这里学习，和记录了，链接在此 。</p>
 <blockquote>
 <ul>
-<li><a href="https://blog.csdn.net/caiqiiqi/article/details/68953730" target="_blank" rel="noopener">关于SHA1碰撞——比较两个binary的不同之处</a></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NhaXFpaXFpL2FydGljbGUvZGV0YWlscy82ODk1MzczMA==" title="https://blog.csdn.net/caiqiiqi/article/details/68953730">关于SHA1碰撞——比较两个binary的不同之处<i class="fa fa-external-link"></i></span></li>
 </ul>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a=%25PDF-1.3%0A%25%E2%E3%CF%D3%0A%0A%0A1%200%20obj%0A%3C%3C/Width%202%200%20R/Height%203%200%20R/Type%204%200%20R/Subtype%205%200%20R/Filter%206%200%20R/ColorSpace%207%200%20R/Length%208%200%20R/BitsPerComponent%208%3E%3E%0Astream%0A%FF%D8%FF%FE%00%24SHA-1%20is%20dead%21%21%21%21%21%85/%EC%09%239u%9C9%B1%A1%C6%3CL%97%E1%FF%FE%01sF%DC%91f%B6%7E%11%8F%02%9A%B6%21%B2V%0F%F9%CAg%CC%A8%C7%F8%5B%A8Ly%03%0C%2B%3D%E2%18%F8m%B3%A9%09%01%D5%DFE%C1O%26%FE%DF%B3%DC8%E9j%C2/%E7%BDr%8F%0EE%BC%E0F%D2%3CW%0F%EB%14%13%98%BBU.%F5%A0%A8%2B%E31%FE%A4%807%B8%B5%D7%1F%0E3.%DF%93%AC5%00%EBM%DC%0D%EC%C1%A8dy%0Cx%2Cv%21V%60%DD0%97%91%D0k%D0%AF%3F%98%CD%A4%BCF%29%B1&amp;</span><br><span class="line">b=%25PDF-1.3%0A%25%E2%E3%CF%D3%0A%0A%0A1%200%20obj%0A%3C%3C/Width%202%200%20R/Height%203%200%20R/Type%204%200%20R/Subtype%205%200%20R/Filter%206%200%20R/ColorSpace%207%200%20R/Length%208%200%20R/BitsPerComponent%208%3E%3E%0Astream%0A%FF%D8%FF%FE%00%24SHA-1%20is%20dead%21%21%21%21%21%85/%EC%09%239u%9C9%B1%A1%C6%3CL%97%E1%FF%FE%01%7FF%DC%93%A6%B6%7E%01%3B%02%9A%AA%1D%B2V%0BE%CAg%D6%88%C7%F8K%8CLy%1F%E0%2B%3D%F6%14%F8m%B1i%09%01%C5kE%C1S%0A%FE%DF%B7%608%E9rr/%E7%ADr%8F%0EI%04%E0F%C20W%0F%E9%D4%13%98%AB%E1.%F5%BC%94%2B%E35B%A4%80-%98%B5%D7%0F%2A3.%C3%7F%AC5%14%E7M%DC%0F%2C%C1%A8t%CD%0Cx0Z%21Vda0%97%89%60k%D0%BF%3F%98%CD%A8%04F%29%A1</span><br></pre></td></tr></table></figure>
@@ -550,7 +624,7 @@
 <p>题目给出了明确的暗示，是位移加上 base64 , b64 这个加密的特点就是末尾的 == </p>
 <blockquote>
 <p>关于 == 的来源，这里 pick 一个好的文章</p>
-<p><a href="http://www.ruanyifeng.com/blog/2008/06/base64.html" target="_blank" rel="noopener">Base64 笔记 – 阮一峰</a></p>
+<p><span class="exturl" data-url="aHR0cDovL3d3dy5ydWFueWlmZW5nLmNvbS9ibG9nLzIwMDgvMDYvYmFzZTY0Lmh0bWw=" title="http://www.ruanyifeng.com/blog/2008/06/base64.html">Base64 笔记 – 阮一峰<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <p>那么位移的思路，就是把 AA 移成 ==， 看一看 ascii 的顺序</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>ord(<span class="string">'A'</span>)</span><br><span class="line"><span class="number">65</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ord(<span class="string">'='</span>)</span><br><span class="line"><span class="number">61</span></span><br></pre></td></tr></table></figure>
@@ -571,45 +645,34 @@
 <h2 id="后"><a href="#后" class="headerlink" title="后"></a>后</h2><p>难得闲暇的时间，可以去玩一下，自己喜欢的东西，希望以后，坚持一下这个爱好吧，不然每天过的太空洞。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
 <ul>
-<li><a href="https://www.itcodemonkey.com/article/2185.html" target="_blank" rel="noopener">https://www.itcodemonkey.com/article/2185.html</a></li>
-<li><a href="https://blog.csdn.net/u013943420/article/details/75733175" target="_blank" rel="noopener">https://blog.csdn.net/u013943420/article/details/75733175</a></li>
-<li><a href="https://www.ctftools.com/down/" target="_blank" rel="noopener">https://www.ctftools.com/down/</a></li>
-<li><a href="http://www.freebuf.com/articles/web/129607.html" target="_blank" rel="noopener">http://www.freebuf.com/articles/web/129607.html</a></li>
-<li><a href="https://ask.helplib.com/php/post_1218190" target="_blank" rel="noopener">https://ask.helplib.com/php/post_1218190</a></li>
-<li><a href="https://getpocket.com/a/read/1904045592" target="_blank" rel="noopener">https://getpocket.com/a/read/1904045592</a></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuaXRjb2RlbW9ua2V5LmNvbS9hcnRpY2xlLzIxODUuaHRtbA==" title="https://www.itcodemonkey.com/article/2185.html">https://www.itcodemonkey.com/article/2185.html<i class="fa fa-external-link"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM5NDM0MjAvYXJ0aWNsZS9kZXRhaWxzLzc1NzMzMTc1" title="https://blog.csdn.net/u013943420/article/details/75733175">https://blog.csdn.net/u013943420/article/details/75733175<i class="fa fa-external-link"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuY3RmdG9vbHMuY29tL2Rvd24v" title="https://www.ctftools.com/down/">https://www.ctftools.com/down/<i class="fa fa-external-link"></i></span></li>
+<li><span class="exturl" data-url="aHR0cDovL3d3dy5mcmVlYnVmLmNvbS9hcnRpY2xlcy93ZWIvMTI5NjA3Lmh0bWw=" title="http://www.freebuf.com/articles/web/129607.html">http://www.freebuf.com/articles/web/129607.html<i class="fa fa-external-link"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9hc2suaGVscGxpYi5jb20vcGhwL3Bvc3RfMTIxODE5MA==" title="https://ask.helplib.com/php/post_1218190">https://ask.helplib.com/php/post_1218190<i class="fa fa-external-link"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9nZXRwb2NrZXQuY29tL2EvcmVhZC8xOTA0MDQ1NTky" title="https://getpocket.com/a/read/1904045592">https://getpocket.com/a/read/1904045592<i class="fa fa-external-link"></i></span></li>
 </ul>
 </blockquote>
 
       
     </div>
 
+    
 
-    <div> 
+    
+    
+    
+
+    
+
+    
       
-        <!-- 这里是添加文章结束标记 -->
-        <div>
     
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    
-</div>
-      
-    </div>
-
-    
-
-
-    
-    
-    
-
-    
-    
-    <!--  这里用来添加以太reward -->
     
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>Thanks anyway!</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+  <div>可乐续命</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
     <span>打赏</span>
   </button>
   <div id="QR" style="display: none;">
@@ -620,11 +683,9 @@
 
     
       <div id="bitcoin" style="display: inline-block">
-        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="R4yd 比特币"/>
+        <img id="bitcoin_qr" src="/images/bitcoin.jpg" alt="Author 比特币"/>
         <p>比特币</p>
       </div>
-    
-
     
 
   </div>
@@ -635,15 +696,24 @@
 
     
       <div>
-        <ul class="post-copyright">
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>R4yd</li>
+    <strong>本文作者： </strong>Author</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="blog.diglp.xyz/2018/10/03/CTF_Writeup/" title="某个简单CTF的WP">blog.diglp.xyz/2018/10/03/CTF_Writeup/</a>
+    
+    <a href="/blog.diglp.xyz/2018/10/03/CTF_Writeup/" title="某个简单CTF的WP">blog.diglp.xyz/2018/10/03/CTF_Writeup/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
 </ul>
 
       </div>
@@ -653,11 +723,9 @@
       
         <div class="post-tags">
           
-            <!--  这里用来改变标签样式 -->
-            <a href="/tags/安全/" rel="tag"><i class="fa fa-tag"></i> 安全</a>
+            <a href="/tags/安全/" rel="tag"># 安全</a>
           
-            <!--  这里用来改变标签样式 -->
-            <a href="/tags/CTF/" rel="tag"><i class="fa fa-tag"></i> CTF</a>
+            <a href="/tags/CTF/" rel="tag"># CTF</a>
           
         </div>
       
@@ -698,25 +766,11 @@
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    </div>
 
   
 
@@ -751,15 +805,11 @@
         </ul>
       
 
-      <section class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="R4yd" />
-            
-              <p class="site-author-name" itemprop="name">R4yd</p>
+              <p class="site-author-name" itemprop="name">Author</p>
               <p class="site-description motion-element" itemprop="description">Why join the navy, When you can be a PIRATE</p>
           </div>
 
@@ -878,25 +928,39 @@
             <div class="links-of-author motion-element">
               
                 <span class="links-of-author-item">
-                  <a href="https://github.com/quartz010" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1YXJ0ejAxMA==" title="GitHub &rarr; https://github.com/quartz010"><i class="fa fa-fw fa-github"></i>GitHub</span>
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="mailto:r4y.root@gmail.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="bWFpbHRvOnF1YXJ0ejAxMEBvdXRsb29rLmNvbQ==" title="E-Mail &rarr; mailto:quartz010@outlook.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</span>
                 </span>
               
             </div>
           
 
           
-          
-            <div class="cc-license motion-element" itemprop="license">
-              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
-              </a>
-            </div>
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"/></span>
+             </div>
           
 
           
@@ -909,11 +973,11 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                    <span class="exturl" data-url="aHR0cDovL3d3dy5ydW5vb2IuY29tLw==" title="http://www.runoob.com/">菜鸟教程</span>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://chierqj.github.io/" title="chierqj's blog" target="_blank">chierqj's blog</a>
+                    <span class="exturl" data-url="aHR0cHM6Ly9jaGllcnFqLmdpdGh1Yi5pby8=" title="https://chierqj.github.io/">Chierqj's Blog</span>
                   </li>
                 
               </ul>
@@ -926,15 +990,16 @@
           
 
         </div>
-      </section>
+      </div>
 
       
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
             
-              
+            
+            
             
 
             
@@ -942,7 +1007,7 @@
             
 
           </div>
-        </section>
+        </div>
       <!--/noindex-->
       
 
@@ -965,15 +1030,12 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <!-- 站长统计的插件 -->
-<!-- <script async src="https:/busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-
-<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">R4yd</span>
-  
+  <span class="author" itemprop="copyrightHolder">Author</span>
+
   
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
@@ -989,19 +1051,12 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读时长">9:38</span>
+    <span title="站点阅读时长">9:38</span>
   
 </div>
 
 
-  
-
-
-
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动</div>
 
 
 
@@ -1009,12 +1064,11 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a></div>
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span></div>
 
 
 
   <div class="footer-custom">Hosted by <a target="_blank" rel="external nofollow" href="https://pages.github.com"><b>GitHub Pages</b></a> <span class="post-meta-divider">|</span> <span id="busuanzi_container_site_uv">本站访客数:<span id="busuanzi_value_site_uv"></span></span></div>
-
 
 
         
@@ -1022,7 +1076,25 @@
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
 
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
   
 </div>
 
@@ -1042,11 +1114,14 @@
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -1066,6 +1141,10 @@
 
 
   
+    
+    
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
 
@@ -1080,32 +1159,21 @@
 
 
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.3"></script>
+  <script src="/js/src/utils.js?v=7.0.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.3"></script>
+  <script src="/js/src/motion.js?v=7.0.0"></script>
 
 
 
@@ -1113,94 +1181,36 @@
   
 
 
-  <script type="text/javascript" src="/js/src/affix.js?v=6.0.3"></script>
+  <script src="/js/src/affix.js?v=7.0.0"></script>
 
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.3"></script>
+  <script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+
 
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.0.3"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.3"></script>
-
-
-
-  
-
-  
-    <script id="dsq-count-scr" src="https://diglp.disqus.com/count.js" async></script>
-  
-
-  
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'blog.diglp.xyz/2018/10/03/CTF_Writeup/';
-        this.page.identifier = '2018/10/03/CTF_Writeup/';
-        this.page.title = '某个简单CTF的WP';
-      };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://diglp.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      }
-      
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
-      
-    </script>
-  
-
-
-
-
-
-	
-
-
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
 
 
 
   
 
 
-
-
-
-
-
-
-
+  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
 
 
 
   
 
 
-
+  
 
 
   
+
+
+
 
   
 
@@ -1216,31 +1226,33 @@
 
 
   
+
+  
+
+  
+
+  
+
   
 
   
   
   
   <script src="/lib/pangu/dist/pangu.min.js?v=3.3"></script>
-  <script type="text/javascript">pangu.spacingPage();</script>
+  <script>pangu.spacingPage();</script>
 
 
   
-  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.0.3"></script>
-  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.0.3"></script>
+  <script src="/js/src/js.cookie.js?v=7.0.0"></script>
+  <script src="/js/src/scroll-cookie.js?v=7.0.0"></script>
+
+
+  
+  <script src="/js/src/exturl.js?v=7.0.0"></script>
 
 
   
 
-  
-
-  
-  <!-- 点击烟花 -->
-  
-
-  <!-- 点击桃心 -->
-  
-   <script type="text/javascript" src="/js/src/aceheart.js"></script>
   
 
 </body>

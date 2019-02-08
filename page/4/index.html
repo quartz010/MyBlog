@@ -2,18 +2,24 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
 
 
 
@@ -22,13 +28,7 @@
 
   
   
-  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="stylesheet" href="/lib/Han/dist/han.min.css?v=3.3"/>
 
 
 
@@ -50,23 +50,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.0.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.3">
+<link rel="stylesheet" href="/css/main.css?v=7.0.0"/>
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.3" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
 
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
 
 
 
@@ -74,13 +72,12 @@
 
 
 
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    version: '6.0.3',
+    version: '7.0.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
@@ -103,11 +100,7 @@
 
 
 
-  
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-<meta name="description" content="Why join the navy, When you can be a PIRATE">
+  <meta name="description" content="Why join the navy, When you can be a PIRATE">
 <meta property="og:type" content="website">
 <meta property="og:title" content="R4y&#39;s Blog">
 <meta property="og:url" content="blog.diglp.xyz/page/4/index.html">
@@ -127,25 +120,28 @@
 
 
 
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
 </script>
+
   <title>R4y's Blog</title>
   
 
 
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118678642-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-118678642-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-118678642-1');
+  </script>
 
-  gtag('config', 'UA-118678642-1');
-</script>
+
+
 
 
 
@@ -153,29 +149,27 @@
 
 
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
@@ -191,28 +185,29 @@
   <div class="container sidebar-position-left 
   page-home">
     <div class="headband"></div>
-    
-    <!-- 这里是网页头带 -->
-    
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
-  <div class="site-meta ">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">R4y's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <h1 class="site-subtitle" itemprop="description">个人回收站</h1>
       
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -220,84 +215,146 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">24</span>
-              </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+
+  </li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">10</span>
-              </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">61</span>
-              </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-图书馆">
-          <a href="/books/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-book"></i> <br />图书馆</a>
-        </li>
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
       
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">24</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类<span class="badge">10</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">61</span></a>
+
+  </li>
 
       
+      
     </ul>
+  
+
   
 
   
 </nav>
 
 
+
   
 
 
 
- </div>
+</div>
     </header>
 
     
   
   
   
-    
-      
-    
-    <a href="https://github.com/quartz010" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
-    
-      </a>
-    
+  
+
+  
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1YXJ0ejAxMA==" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
 
 
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -317,16 +374,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/05/03/EbookCoin_0x2/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/05/03/EbookCoin_0x2/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R4yd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Author"/>
+      <meta itemprop="description" content="Why join the navy, When you can be a PIRATE"/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's Blog">
+      <meta itemprop="name" content="R4y's Blog"/>
     </span>
 
     
@@ -336,11 +393,20 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/EbookCoin_0x2/" itemprop="url">EbookCoin 源码 0x2</a></h2>
+                
+                <a href="/2018/05/03/EbookCoin_0x2/" class="post-title-link" itemprop="url">EbookCoin 源码 0x2</a>
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -348,17 +414,35 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T00:00:00+08:00">2018-05-03</time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-03 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-03T00:00:00+08:00">2018-05-03</time>
             
 
             
-            
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-30 23:39:41" itemprop="dateModified" datetime="2018-05-30T23:39:41+08:00">2018-05-30</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -379,16 +463,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/03/EbookCoin_0x2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/05/03/EbookCoin_0x2/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -406,9 +480,9 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="字数统计">13k</span>
+                <span title="本文字数">13k</span>
               
 
               
@@ -444,7 +518,8 @@
       
         
           
-          EbookCoin 源码 0x2前这次的一个period是基于《Nodejs区块链开发》这本书的的区块链项目–亿书，的源码学习笔记
+            <p>
+              EbookCoin 源码 0x2前这次的一个period是基于《Nodejs区块链开发》这本书的的区块链项目–亿书，的源码学习笔记
 
 EbookCoin项目地址
 
@@ -457,33 +532,32 @@ P2P网络在书中的标题是一个精巧的P2P网络的实现.
 
 transport 和 router 作为 peer 的两个辅助模块，一起实现了一个p2p网络上的独立节点。
 route
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/03/EbookCoin_0x2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/05/03/EbookCoin_0x2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
+    
 
-    <div> 
+    
+    
+    
+
+    
+
+    
       
-    </div>
-
     
-
-
-    
-    
-    
-
-    
-    
-    <!--  这里用来添加以太reward -->
     
 
     
@@ -523,16 +597,16 @@ route
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/05/02/EbookCoin_0x1/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/05/02/EbookCoin_0x1/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R4yd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Author"/>
+      <meta itemprop="description" content="Why join the navy, When you can be a PIRATE"/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's Blog">
+      <meta itemprop="name" content="R4y's Blog"/>
     </span>
 
     
@@ -542,11 +616,20 @@ route
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/02/EbookCoin_0x1/" itemprop="url">EbookCoin 源码 0x1</a></h2>
+                
+                <a href="/2018/05/02/EbookCoin_0x1/" class="post-title-link" itemprop="url">EbookCoin 源码 0x1</a>
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -554,17 +637,35 @@ route
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T00:00:00+08:00">2018-05-02</time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-02 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-02T00:00:00+08:00">2018-05-02</time>
             
 
             
-            
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-30 23:39:47" itemprop="dateModified" datetime="2018-05-30T23:39:47+08:00">2018-05-30</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -585,16 +686,6 @@ route
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/02/EbookCoin_0x1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/05/02/EbookCoin_0x1/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -612,9 +703,9 @@ route
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="字数统计">7.1k</span>
+                <span title="本文字数">7.1k</span>
               
 
               
@@ -650,40 +741,40 @@ route
       
         
           
-          EbookCoin 源码 0x1前这次的一个period是基于《Nodejs区块链开发》这本书的的区块链项目–亿书，的源码学习笔记
+            <p>
+              EbookCoin 源码 0x1前这次的一个period是基于《Nodejs区块链开发》这本书的的区块链项目–亿书，的源码学习笔记
 
 EbookCoin项目地址
 app.js
 这个 app.js 是在node.js 中的入口程序文件，在其他情况下也可能是 server.js 。类似以python的顺序执行的模式。没有(可以用)一个main。
 模块依赖下面的代码是 app.js 1~15 主要的是导入的模块。这里，一个个的search这些模块的功能
 var program = require(&apos;commander&apos;);                // 命令行框架开源包 c
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/02/EbookCoin_0x1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/05/02/EbookCoin_0x1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
+    
 
-    <div> 
+    
+    
+    
+
+    
+
+    
       
-    </div>
-
     
-
-
-    
-    
-    
-
-    
-    
-    <!--  这里用来添加以太reward -->
     
 
     
@@ -723,16 +814,16 @@ var program = require(&apos;commander&apos;);                // 命令行框架�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/05/01/Book_区块链原理设计与应用/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/05/01/Book_区块链原理设计与应用/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R4yd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Author"/>
+      <meta itemprop="description" content="Why join the navy, When you can be a PIRATE"/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's Blog">
+      <meta itemprop="name" content="R4y's Blog"/>
     </span>
 
     
@@ -742,11 +833,20 @@ var program = require(&apos;commander&apos;);                // 命令行框架�
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/01/Book_区块链原理设计与应用/" itemprop="url">读本好书 《区块链原理设计及应用》</a></h2>
+                
+                <a href="/2018/05/01/Book_区块链原理设计与应用/" class="post-title-link" itemprop="url">读本好书 《区块链原理设计及应用》</a>
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -754,17 +854,35 @@ var program = require(&apos;commander&apos;);                // 命令行框架�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T00:00:00+08:00">2018-05-01</time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-01 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-01T00:00:00+08:00">2018-05-01</time>
             
 
             
-            
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-01 16:52:02" itemprop="dateModified" datetime="2018-09-01T16:52:02+08:00">2018-09-01</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -785,16 +903,6 @@ var program = require(&apos;commander&apos;);                // 命令行框架�
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/01/Book_区块链原理设计与应用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/05/01/Book_区块链原理设计与应用/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -812,9 +920,9 @@ var program = require(&apos;commander&apos;);                // 命令行框架�
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="字数统计">7.9k</span>
+                <span title="本文字数">7.9k</span>
               
 
               
@@ -850,7 +958,8 @@ var program = require(&apos;commander&apos;);                // 命令行框架�
       
         
           
-          读本好书 《区块链原理设计及应用》前
+            <p>
+              读本好书 《区块链原理设计及应用》前
 可能自己渴望一个更高知的环境
 
 简介
@@ -871,33 +980,32 @@ BitCoin 解决了现有的数组货币的以下问题
 
 运用之心夺造化，存乎一心胜天工。
 
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/01/Book_区块链原理设计与应用/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/05/01/Book_区块链原理设计与应用/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
+    
 
-    <div> 
+    
+    
+    
+
+    
+
+    
       
-    </div>
-
     
-
-
-    
-    
-    
-
-    
-    
-    <!--  这里用来添加以太reward -->
     
 
     
@@ -937,16 +1045,16 @@ BitCoin 解决了现有的数组货币的以下问题
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/04/27/Book_路由0Day/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/04/27/Book_路由0Day/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R4yd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Author"/>
+      <meta itemprop="description" content="Why join the navy, When you can be a PIRATE"/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's Blog">
+      <meta itemprop="name" content="R4y's Blog"/>
     </span>
 
     
@@ -956,11 +1064,20 @@ BitCoin 解决了现有的数组货币的以下问题
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/27/Book_路由0Day/" itemprop="url">读本好书 《揭秘家用路由器0Day挖掘技术》</a></h2>
+                
+                <a href="/2018/04/27/Book_路由0Day/" class="post-title-link" itemprop="url">读本好书 《揭秘家用路由器0Day挖掘技术》</a>
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -968,17 +1085,35 @@ BitCoin 解决了现有的数组货币的以下问题
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-27T00:00:00+08:00">2018-04-27</time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-04-27 00:00:00" itemprop="dateCreated datePublished" datetime="2018-04-27T00:00:00+08:00">2018-04-27</time>
             
 
             
-            
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-01 16:51:52" itemprop="dateModified" datetime="2018-09-01T16:51:52+08:00">2018-09-01</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -999,16 +1134,6 @@ BitCoin 解决了现有的数组货币的以下问题
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/04/27/Book_路由0Day/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/27/Book_路由0Day/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1026,9 +1151,9 @@ BitCoin 解决了现有的数组货币的以下问题
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="字数统计">6.1k</span>
+                <span title="本文字数">6.1k</span>
               
 
               
@@ -1064,7 +1189,8 @@ BitCoin 解决了现有的数组货币的以下问题
       
         
           
-          读本好书 《揭秘家用路由器0Day挖掘技术》前我想未来对安全方面的需求会越来越大，随着这个体系的越发庞大，其潜在的安全威胁，可能愈发的丰富。
+            <p>
+              读本好书 《揭秘家用路由器0Day挖掘技术》前我想未来对安全方面的需求会越来越大，随着这个体系的越发庞大，其潜在的安全威胁，可能愈发的丰富。
 简介
 书名：揭秘家用路由器0Day挖掘技术
 作者：吴少华
@@ -1086,33 +1212,32 @@ WEB漏洞 SQL注入/远程命令执行/跨站脚本
 溢出漏洞 这个算是系统级别的
 
 路由的web安全和服务器w
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/27/Book_路由0Day/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/04/27/Book_路由0Day/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
+    
 
-    <div> 
+    
+    
+    
+
+    
+
+    
       
-    </div>
-
     
-
-
-    
-    
-    
-
-    
-    
-    <!--  这里用来添加以太reward -->
     
 
     
@@ -1152,16 +1277,16 @@ WEB漏洞 SQL注入/远程命令执行/跨站脚本
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/04/25/book_无线安全/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/04/25/book_无线安全/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R4yd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Author"/>
+      <meta itemprop="description" content="Why join the navy, When you can be a PIRATE"/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's Blog">
+      <meta itemprop="name" content="R4y's Blog"/>
     </span>
 
     
@@ -1171,11 +1296,20 @@ WEB漏洞 SQL注入/远程命令执行/跨站脚本
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/25/book_无线安全/" itemprop="url">读本好书《黑客大曝光——无线网络安全》</a></h2>
+                
+                <a href="/2018/04/25/book_无线安全/" class="post-title-link" itemprop="url">读本好书《黑客大曝光——无线网络安全》</a>
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1183,17 +1317,23 @@ WEB漏洞 SQL注入/远程命令执行/跨站脚本
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-25T00:00:00+08:00">2018-04-25</time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-04-25 00:00:00 / 修改时间：16:08:39" itemprop="dateCreated datePublished" datetime="2018-04-25T00:00:00+08:00">2018-04-25</time>
             
 
             
-            
+              
 
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -1214,16 +1354,6 @@ WEB漏洞 SQL注入/远程命令执行/跨站脚本
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/04/25/book_无线安全/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/25/book_无线安全/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1241,9 +1371,9 @@ WEB漏洞 SQL注入/远程命令执行/跨站脚本
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="字数统计">3.8k</span>
+                <span title="本文字数">3.8k</span>
               
 
               
@@ -1279,7 +1409,8 @@ WEB漏洞 SQL注入/远程命令执行/跨站脚本
       
         
           
-          读本好书 《黑客大曝光——无线网络安全》前这本书其实早都有开始看了，只是时间太过于碎片化了，规格也在 500p，这里只是对书中的内容做极简要的总结。
+            <p>
+              读本好书 《黑客大曝光——无线网络安全》前这本书其实早都有开始看了，只是时间太过于碎片化了，规格也在 500p，这里只是对书中的内容做极简要的总结。
 简介
 书名：黑客大曝光——无线网络安全
 作者：Joshua Wright/Johnny Cache
@@ -1291,33 +1422,32 @@ Wifi部分
 802.11协议安全
 
 这里是Airodump/AirCrack-NG 之类的工具，可能对802.11协议中的漏洞的利用。有 解除认证攻击 (Deauth) ,这里可以使用 Comm
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/25/book_无线安全/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/04/25/book_无线安全/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
+    
 
-    <div> 
+    
+    
+    
+
+    
+
+    
       
-    </div>
-
     
-
-
-    
-    
-    
-
-    
-    
-    <!--  这里用来添加以太reward -->
     
 
     
@@ -1357,16 +1487,16 @@ Wifi部分
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/04/06/剑指offer_4/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/04/06/剑指offer_4/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R4yd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Author"/>
+      <meta itemprop="description" content="Why join the navy, When you can be a PIRATE"/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's Blog">
+      <meta itemprop="name" content="R4y's Blog"/>
     </span>
 
     
@@ -1376,11 +1506,20 @@ Wifi部分
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/06/剑指offer_4/" itemprop="url">剑指offer (4)</a></h2>
+                
+                <a href="/2018/04/06/剑指offer_4/" class="post-title-link" itemprop="url">剑指offer (4)</a>
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1388,17 +1527,35 @@ Wifi部分
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-06T00:00:00+08:00">2018-04-06</time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-04-06 00:00:00" itemprop="dateCreated datePublished" datetime="2018-04-06T00:00:00+08:00">2018-04-06</time>
             
 
             
-            
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-04-16 17:43:12" itemprop="dateModified" datetime="2018-04-16T17:43:12+08:00">2018-04-16</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -1419,16 +1576,6 @@ Wifi部分
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/04/06/剑指offer_4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/06/剑指offer_4/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1446,9 +1593,9 @@ Wifi部分
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="字数统计">1.1k</span>
+                <span title="本文字数">1.1k</span>
               
 
               
@@ -1484,7 +1631,8 @@ Wifi部分
       
         
           
-          剑指offer （4）前网络方面的问题离不开 TCP/IP这玩意，所以这次做个详尽的总结
+            <p>
+              剑指offer （4）前网络方面的问题离不开 TCP/IP这玩意，所以这次做个详尽的总结
 网络OSI模型经典的协议栈模型，当属OSI和TCP/IP 这两种。这里的一幅图，很好的展示了这个协议的层次
 
 
@@ -1494,33 +1642,32 @@ OSI模型分为7层， TCP/IP协议是4层，其中对应的关系也在途中�
 协议栈之所以为栈，因为其工作过程中的自顶而下的逐层封装的特性，这种逐层封装在传输终端也会逐层的解析。所以这种协议模式也成为对等协议，IP(Internet Protocol)
 在我们的TCP/IP的协议栈中。具体的情况如下
 应用层    http请求               
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/06/剑指offer_4/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/04/06/剑指offer_4/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
+    
 
-    <div> 
+    
+    
+    
+
+    
+
+    
       
-    </div>
-
     
-
-
-    
-    
-    
-
-    
-    
-    <!--  这里用来添加以太reward -->
     
 
     
@@ -1560,16 +1707,16 @@ OSI模型分为7层， TCP/IP协议是4层，其中对应的关系也在途中�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/04/05/剑指offer_3/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/04/05/剑指offer_3/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R4yd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Author"/>
+      <meta itemprop="description" content="Why join the navy, When you can be a PIRATE"/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's Blog">
+      <meta itemprop="name" content="R4y's Blog"/>
     </span>
 
     
@@ -1579,11 +1726,20 @@ OSI模型分为7层， TCP/IP协议是4层，其中对应的关系也在途中�
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/05/剑指offer_3/" itemprop="url">剑指offer (3)</a></h2>
+                
+                <a href="/2018/04/05/剑指offer_3/" class="post-title-link" itemprop="url">剑指offer (3)</a>
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1591,17 +1747,35 @@ OSI模型分为7层， TCP/IP协议是4层，其中对应的关系也在途中�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-05T00:00:00+08:00">2018-04-05</time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-04-05 00:00:00" itemprop="dateCreated datePublished" datetime="2018-04-05T00:00:00+08:00">2018-04-05</time>
             
 
             
-            
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-04-16 17:42:31" itemprop="dateModified" datetime="2018-04-16T17:42:31+08:00">2018-04-16</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -1622,16 +1796,6 @@ OSI模型分为7层， TCP/IP协议是4层，其中对应的关系也在途中�
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/04/05/剑指offer_3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/05/剑指offer_3/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1649,9 +1813,9 @@ OSI模型分为7层， TCP/IP协议是4层，其中对应的关系也在途中�
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="字数统计">2.6k</span>
+                <span title="本文字数">2.6k</span>
               
 
               
@@ -1687,7 +1851,8 @@ OSI模型分为7层， TCP/IP协议是4层，其中对应的关系也在途中�
       
         
           
-          剑指offer (3)前有幸的划水了第一波腾讯的笔试。虽说整体过程的题目还是算容易，不过实际上还是由不少的困难。这次是自己的一点总结帖。
+            <p>
+              剑指offer (3)前有幸的划水了第一波腾讯的笔试。虽说整体过程的题目还是算容易，不过实际上还是由不少的困难。这次是自己的一点总结帖。
 
 离线开锁 声波锁 和 2FA 技术。
 
@@ -1697,33 +1862,32 @@ OSI模型分为7层， TCP/IP协议是4层，其中对应的关系也在途中�
 
 二叉树中每个节点都是他的左右字数的前驱，左右子树也是器根节点的后继。
 名词:word
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/05/剑指offer_3/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/04/05/剑指offer_3/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
+    
 
-    <div> 
+    
+    
+    
+
+    
+
+    
       
-    </div>
-
     
-
-
-    
-    
-    
-
-    
-    
-    <!--  这里用来添加以太reward -->
     
 
     
@@ -1763,16 +1927,16 @@ OSI模型分为7层， TCP/IP协议是4层，其中对应的关系也在途中�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/04/01/剑指offer_2/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/04/01/剑指offer_2/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R4yd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Author"/>
+      <meta itemprop="description" content="Why join the navy, When you can be a PIRATE"/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's Blog">
+      <meta itemprop="name" content="R4y's Blog"/>
     </span>
 
     
@@ -1782,11 +1946,20 @@ OSI模型分为7层， TCP/IP协议是4层，其中对应的关系也在途中�
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/01/剑指offer_2/" itemprop="url">剑指offer (2)</a></h2>
+                
+                <a href="/2018/04/01/剑指offer_2/" class="post-title-link" itemprop="url">剑指offer (2)</a>
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1794,17 +1967,23 @@ OSI模型分为7层， TCP/IP协议是4层，其中对应的关系也在途中�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-01T00:00:00+08:00">2018-04-01</time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-04-01 00:00:00 / 修改时间：13:42:10" itemprop="dateCreated datePublished" datetime="2018-04-01T00:00:00+08:00">2018-04-01</time>
             
 
             
-            
+              
 
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -1825,16 +2004,6 @@ OSI模型分为7层， TCP/IP协议是4层，其中对应的关系也在途中�
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/04/01/剑指offer_2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/01/剑指offer_2/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1852,9 +2021,9 @@ OSI模型分为7层， TCP/IP协议是4层，其中对应的关系也在途中�
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="字数统计">3.3k</span>
+                <span title="本文字数">3.3k</span>
               
 
               
@@ -1890,7 +2059,8 @@ OSI模型分为7层， TCP/IP协议是4层，其中对应的关系也在途中�
       
         
           
-          剑指offer （2）前西西弗斯一般的生活，loop，loop，感觉良好，卒
+            <p>
+              剑指offer （2）前西西弗斯一般的生活，loop，loop，感觉良好，卒
 For A While空循环体for 和 while哪个效率高？自古也是成了圣战的话题。这里自己做一个简单分析。
 int main()
 {
@@ -1905,33 +2075,32 @@ int main()
 g++ *.c -S [-O1/-O2/-O3]
 发现在这种情况下，编译器给出的汇编内容实际上都是一样的，两种循环一样，三种优化也是一样。下面是其汇编代码。
         .file   &quot;whi
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/01/剑指offer_2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/04/01/剑指offer_2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
+    
 
-    <div> 
+    
+    
+    
+
+    
+
+    
       
-    </div>
-
     
-
-
-    
-    
-    
-
-    
-    
-    <!--  这里用来添加以太reward -->
     
 
     
@@ -1971,16 +2140,16 @@ g++ *.c -S [-O1/-O2/-O3]
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/03/30/剑指offer_1/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/03/30/剑指offer_1/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R4yd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Author"/>
+      <meta itemprop="description" content="Why join the navy, When you can be a PIRATE"/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's Blog">
+      <meta itemprop="name" content="R4y's Blog"/>
     </span>
 
     
@@ -1990,11 +2159,20 @@ g++ *.c -S [-O1/-O2/-O3]
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/30/剑指offer_1/" itemprop="url">剑指offer (1)</a></h2>
+                
+                <a href="/2018/03/30/剑指offer_1/" class="post-title-link" itemprop="url">剑指offer (1)</a>
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -2002,17 +2180,35 @@ g++ *.c -S [-O1/-O2/-O3]
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-30T00:00:00+08:00">2018-03-30</time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-30 00:00:00" itemprop="dateCreated datePublished" datetime="2018-03-30T00:00:00+08:00">2018-03-30</time>
             
 
             
-            
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-01 13:15:03" itemprop="dateModified" datetime="2018-05-01T13:15:03+08:00">2018-05-01</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -2033,16 +2229,6 @@ g++ *.c -S [-O1/-O2/-O3]
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/30/剑指offer_1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/03/30/剑指offer_1/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -2060,9 +2246,9 @@ g++ *.c -S [-O1/-O2/-O3]
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="字数统计">2.8k</span>
+                <span title="本文字数">2.8k</span>
               
 
               
@@ -2098,7 +2284,8 @@ g++ *.c -S [-O1/-O2/-O3]
       
         
           
-          剑指offer (1)前
+            <p>
+              剑指offer (1)前
 Let it known，don’t let it go.
 
 操场上，看见一个在练习滑板的女孩，不小心摔倒。婉然微笑，撑起身来。是如此的优雅(graceful)。
@@ -2108,33 +2295,32 @@ int printf ( const char * format, ... );
 int scanf ( const char * format, ... );
 
 extern istream cin;
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/30/剑指offer_1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/03/30/剑指offer_1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
+    
 
-    <div> 
+    
+    
+    
+
+    
+
+    
       
-    </div>
-
     
-
-
-    
-    
-    
-
-    
-    
-    <!--  这里用来添加以太reward -->
     
 
     
@@ -2174,16 +2360,16 @@ extern istream cin;
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/03/29/misc_一周杂记_5/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/03/29/misc_一周杂记_5/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R4yd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Author"/>
+      <meta itemprop="description" content="Why join the navy, When you can be a PIRATE"/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's Blog">
+      <meta itemprop="name" content="R4y's Blog"/>
     </span>
 
     
@@ -2193,11 +2379,20 @@ extern istream cin;
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/29/misc_一周杂记_5/" itemprop="url">日常励志</a></h2>
+                
+                <a href="/2018/03/29/misc_一周杂记_5/" class="post-title-link" itemprop="url">日常励志</a>
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -2205,17 +2400,35 @@ extern istream cin;
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-29T00:00:00+08:00">2018-03-29</time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-29 00:00:00" itemprop="dateCreated datePublished" datetime="2018-03-29T00:00:00+08:00">2018-03-29</time>
             
 
             
-            
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-13 15:28:13" itemprop="dateModified" datetime="2018-10-13T15:28:13+08:00">2018-10-13</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -2236,16 +2449,6 @@ extern istream cin;
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/29/misc_一周杂记_5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/03/29/misc_一周杂记_5/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -2263,9 +2466,9 @@ extern istream cin;
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="字数统计">1k</span>
+                <span title="本文字数">1k</span>
               
 
               
@@ -2301,37 +2504,37 @@ extern istream cin;
       
         
           
-          一周杂记 (5)前现在已经是19年的第9周了，十分的苍白的一周。游手好闲，无所事事。自己在不写点东西，怕是心都要凉了。
+            <p>
+              一周杂记 (5)前现在已经是19年的第9周了，十分的苍白的一周。游手好闲，无所事事。自己在不写点东西，怕是心都要凉了。
 心很乱，自己很难选择一条自己认为坚定的路。一个上午，在校园踱步，各种杂乱的想法在心头反翻滚。数十种声音在耳畔，鸟语，轰鸣，清风。千百种声音在心头，向左，向右，东进，西行。
 很羡慕，那些可以果敢的实现自己想法的人，(或许他们有所思无所思)，大家可能会对他另眼，可是最终，他的目的是证明自己，那些另眼的人，也只有羡慕的机会了对吧？的确。明明很多时候是我们自己无法做到，我们有什么理由，凭着自己的臆断来另眼他人？
 勇敢的改变，是艰难的一步，也将是最光辉的一步。勇敢的改变吧。向前方，向高
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/29/misc_一周杂记_5/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/03/29/misc_一周杂记_5/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
 
+    
 
-    <div> 
+    
+    
+    
+
+    
+
+    
       
-    </div>
-
     
-
-
-    
-    
-    
-
-    
-    
-    <!--  这里用来添加以太reward -->
     
 
     
@@ -2360,7 +2563,7 @@ extern istream cin;
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2388,15 +2591,11 @@ extern istream cin;
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="R4yd" />
-            
-              <p class="site-author-name" itemprop="name">R4yd</p>
+              <p class="site-author-name" itemprop="name">Author</p>
               <p class="site-description motion-element" itemprop="description">Why join the navy, When you can be a PIRATE</p>
           </div>
 
@@ -2515,25 +2714,39 @@ extern istream cin;
             <div class="links-of-author motion-element">
               
                 <span class="links-of-author-item">
-                  <a href="https://github.com/quartz010" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1YXJ0ejAxMA==" title="GitHub &rarr; https://github.com/quartz010"><i class="fa fa-fw fa-github"></i>GitHub</span>
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="mailto:r4y.root@gmail.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="bWFpbHRvOnF1YXJ0ejAxMEBvdXRsb29rLmNvbQ==" title="E-Mail &rarr; mailto:quartz010@outlook.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</span>
                 </span>
               
             </div>
           
 
           
-          
-            <div class="cc-license motion-element" itemprop="license">
-              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
-              </a>
-            </div>
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"/></span>
+             </div>
           
 
           
@@ -2546,11 +2759,11 @@ extern istream cin;
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                    <span class="exturl" data-url="aHR0cDovL3d3dy5ydW5vb2IuY29tLw==" title="http://www.runoob.com/">菜鸟教程</span>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://chierqj.github.io/" title="chierqj's blog" target="_blank">chierqj's blog</a>
+                    <span class="exturl" data-url="aHR0cHM6Ly9jaGllcnFqLmdpdGh1Yi5pby8=" title="https://chierqj.github.io/">Chierqj's Blog</span>
                   </li>
                 
               </ul>
@@ -2563,7 +2776,7 @@ extern istream cin;
           
 
         </div>
-      </section>
+      </div>
 
       
 
@@ -2586,15 +2799,12 @@ extern istream cin;
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <!-- 站长统计的插件 -->
-<!-- <script async src="https:/busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-
-<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">R4yd</span>
-  
+  <span class="author" itemprop="copyrightHolder">Author</span>
+
   
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
@@ -2610,19 +2820,12 @@ extern istream cin;
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读时长">9:38</span>
+    <span title="站点阅读时长">9:38</span>
   
 </div>
 
 
-  
-
-
-
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动</div>
 
 
 
@@ -2630,12 +2833,11 @@ extern istream cin;
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a></div>
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span></div>
 
 
 
   <div class="footer-custom">Hosted by <a target="_blank" rel="external nofollow" href="https://pages.github.com"><b>GitHub Pages</b></a> <span class="post-meta-divider">|</span> <span id="busuanzi_container_site_uv">本站访客数:<span id="busuanzi_value_site_uv"></span></span></div>
-
 
 
         
@@ -2643,7 +2845,25 @@ extern istream cin;
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
 
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
   
 </div>
 
@@ -2663,11 +2883,14 @@ extern istream cin;
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -2687,6 +2910,10 @@ extern istream cin;
 
 
   
+    
+    
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
 
@@ -2701,32 +2928,21 @@ extern istream cin;
 
 
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.3"></script>
+  <script src="/js/src/utils.js?v=7.0.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.3"></script>
+  <script src="/js/src/motion.js?v=7.0.0"></script>
 
 
 
@@ -2734,9 +2950,10 @@ extern istream cin;
   
 
 
-  <script type="text/javascript" src="/js/src/affix.js?v=6.0.3"></script>
+  <script src="/js/src/affix.js?v=7.0.0"></script>
 
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.3"></script>
+  <script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+
 
 
 
@@ -2745,25 +2962,7 @@ extern istream cin;
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.3"></script>
-
-
-
-  
-
-  
-    <script id="dsq-count-scr" src="https://diglp.disqus.com/count.js" async></script>
-  
-
-  
-
-
-
-
-
-	
-
-
+  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
 
 
 
@@ -2771,22 +2970,10 @@ extern istream cin;
 
 
 
-
-
-
-
-
-
-
-
-
   
 
 
 
-
-
-  
 
   
 
@@ -2824,31 +3011,33 @@ extern istream cin;
 
 
   
+
+  
+
+  
+
+  
+
   
 
   
   
   
   <script src="/lib/pangu/dist/pangu.min.js?v=3.3"></script>
-  <script type="text/javascript">pangu.spacingPage();</script>
+  <script>pangu.spacingPage();</script>
 
 
   
-  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.0.3"></script>
-  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.0.3"></script>
+  <script src="/js/src/js.cookie.js?v=7.0.0"></script>
+  <script src="/js/src/scroll-cookie.js?v=7.0.0"></script>
+
+
+  
+  <script src="/js/src/exturl.js?v=7.0.0"></script>
 
 
   
 
-  
-
-  
-  <!-- 点击烟花 -->
-  
-
-  <!-- 点击桃心 -->
-  
-   <script type="text/javascript" src="/js/src/aceheart.js"></script>
   
 
 </body>

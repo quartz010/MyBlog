@@ -2,18 +2,24 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
 
 
 
@@ -22,13 +28,7 @@
 
   
   
-  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="stylesheet" href="/lib/Han/dist/han.min.css?v=3.3"/>
 
 
 
@@ -50,23 +50,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.0.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.3">
+<link rel="stylesheet" href="/css/main.css?v=7.0.0"/>
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.3" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
 
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
 
 
 
@@ -74,13 +72,12 @@
 
 
 
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    version: '6.0.3',
+    version: '7.0.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
@@ -103,11 +100,7 @@
 
 
 
-  
-  <meta name="keywords" content="读书笔记,安全," />
-
-
-<meta name="description" content="读本好书 《黑客大曝光——无线网络安全》前这本书其实早都有开始看了，只是时间太过于碎片化了，规格也在 500p，这里只是对书中的内容做极简要的总结。 简介 书名：黑客大曝光——无线网络安全 作者：Joshua Wright/Johnny Cache ISBN：9787111526292  对目前的无线安全领域的一个很广泛的描述。从 wifi 到 蓝牙，再到其他的安全，像是移动数据 和 Zigbee">
+  <meta name="description" content="读本好书 《黑客大曝光——无线网络安全》前这本书其实早都有开始看了，只是时间太过于碎片化了，规格也在 500p，这里只是对书中的内容做极简要的总结。 简介 书名：黑客大曝光——无线网络安全 作者：Joshua Wright/Johnny Cache ISBN：9787111526292  对目前的无线安全领域的一个很广泛的描述。从 wifi 到 蓝牙，再到其他的安全，像是移动数据 和 Zigbee">
 <meta name="keywords" content="读书笔记,安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="读本好书《黑客大曝光——无线网络安全》">
@@ -132,25 +125,28 @@
 
 
 
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
 </script>
+
   <title>读本好书《黑客大曝光——无线网络安全》 | R4y's Blog</title>
   
 
 
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118678642-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-118678642-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-118678642-1');
+  </script>
 
-  gtag('config', 'UA-118678642-1');
-</script>
+
+
 
 
 
@@ -158,29 +154,27 @@
 
 
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
@@ -195,28 +189,29 @@
 
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
-    
-    <!-- 这里是网页头带 -->
-    
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
-  <div class="site-meta ">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">R4y's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <h1 class="site-subtitle" itemprop="description">个人回收站</h1>
       
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -224,84 +219,146 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">24</span>
-              </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+
+  </li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">10</span>
-              </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">61</span>
-              </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-图书馆">
-          <a href="/books/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-book"></i> <br />图书馆</a>
-        </li>
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
       
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">24</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类<span class="badge">10</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">61</span></a>
+
+  </li>
 
       
+      
     </ul>
+  
+
   
 
   
 </nav>
 
 
+
   
 
 
 
- </div>
+</div>
     </header>
 
     
   
   
   
-    
-      
-    
-    <a href="https://github.com/quartz010" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
-    
-      </a>
-    
+  
+
+  
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1YXJ0ejAxMA==" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
 
 
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
+          
           <div id="content" class="content">
             
 
@@ -321,16 +378,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/04/25/book_无线安全/">
+    <link itemprop="mainEntityOfPage" href="blog.diglp.xyz/2018/04/25/book_无线安全/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="R4yd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Author"/>
+      <meta itemprop="description" content="Why join the navy, When you can be a PIRATE"/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="R4y's Blog">
+      <meta itemprop="name" content="R4y's Blog"/>
     </span>
 
     
@@ -338,11 +395,20 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">读本好书《黑客大曝光——无线网络安全》</h2>
+          <h2 class="post-title" itemprop="name headline">读本好书《黑客大曝光——无线网络安全》
+
+              
+            
+          </h2>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -350,17 +416,23 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-25T00:00:00+08:00">2018-04-25</time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-04-25 00:00:00 / 修改时间：16:08:39" itemprop="dateCreated datePublished" datetime="2018-04-25T00:00:00+08:00">2018-04-25</time>
             
 
             
-            
+              
 
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -381,16 +453,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/04/25/book_无线安全/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/25/book_无线安全/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -403,7 +465,7 @@
             >
             <i class="fa fa-eye"></i>
              阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
 
@@ -416,9 +478,9 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="字数统计">3.8k</span>
+                <span title="本文字数">3.8k</span>
               
 
               
@@ -465,7 +527,7 @@
 </ul>
 <p>这里是Airodump/AirCrack-NG 之类的工具，可能对802.11协议中的漏洞的利用。有 <strong>解除认证攻击</strong> (Deauth) ,这里可以使用 CommView 自带的工具既可以实现一次接触认证攻击</p>
 <blockquote>
-<p><a href="http://www.360doc.com/content/16/0416/18/29346473_551163156.shtml" target="_blank" rel="noopener">解除认证攻击( Deauth )的原理</a></p>
+<p><span class="exturl" data-url="aHR0cDovL3d3dy4zNjBkb2MuY29tL2NvbnRlbnQvMTYvMDQxNi8xOC8yOTM0NjQ3M181NTExNjMxNTYuc2h0bWw=" title="http://www.360doc.com/content/16/0416/18/29346473_551163156.shtml">解除认证攻击( Deauth )的原理<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <p>在每个硬件中都有其对应的MAC地址，这个mac的设计本想用来对不同的设备进行区分，结果没有考虑到，含有mac的数据是通过软件发出来的。所以 <strong>MAC修改</strong> 也是一个利用用的地方</p>
 <pre><code>LINUX:
@@ -481,14 +543,14 @@ OSx:
 </ul>
 <p>常见的加密方式 <code>WEP</code>(有限对等保密) 和 <code>WAP</code> (Wi-Fi网络安全接入).</p>
 <blockquote>
-<p><a href="https://baike.baidu.com/item/WEP/612151" target="_blank" rel="noopener">WEP</a> (Wired Equivalent Privacy)</p>
-<p><a href="https://baike.baidu.com/item/WPA/33467" target="_blank" rel="noopener">WPA </a> (Wi-Fi Protected Access)</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9XRVAvNjEyMTUx" title="https://baike.baidu.com/item/WEP/612151">WEP<i class="fa fa-external-link"></i></span> (Wired Equivalent Privacy)</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9XUEEvMzM0Njc=" title="https://baike.baidu.com/item/WPA/33467">WPA <i class="fa fa-external-link"></i></span> (Wi-Fi Protected Access)</p>
 </blockquote>
 <p>前者已经被证明有重大的安全漏洞，已经于本世纪初期停用。对于WEP加密讲，只有有持续的连接，我们可以嗅探到足够的IV(Initial Vector)破解概率是100%。使用工具可是wifite/aircrack-ng， 具体细节网上有大量资源</p>
 <p>AP 和 Client在连接之前是两个并不相关的个体，其中如果需要进行连接，那么必须是需要有个协商密钥的过程。</p>
 <p>在非安全信道进行加密通信，这个很容易使我们相到，非对称加密体系。比如我们极为常用的RSA，不过这里就出现了一个问题，公钥的认知，通俗讲，我怎么知道，你是不是他？ 我们常见的体系中的，会有CA/RA这种角色，进行对证书的验证和颁发。可是在我们的WIFI连接过程中是没办法再介入第三方的。</p>
 <p>所以，综上我们的密钥协商过程是存在被嗅探的风险。</p>
-<p><a href="http://www.pc6.com/infoview/Article_53811.html" target="_blank" rel="noopener">无线网络密码破解WPA/WPA2教程</a></p>
+<p><span class="exturl" data-url="aHR0cDovL3d3dy5wYzYuY29tL2luZm92aWV3L0FydGljbGVfNTM4MTEuaHRtbA==" title="http://www.pc6.com/infoview/Article_53811.html">无线网络密码破解WPA/WPA2教程<i class="fa fa-external-link"></i></span></p>
 <p>不过。还是不用担心，现在只是过程的漏洞，其加密协议本身，是安全的。目前对其进行破解的方法，只有碰撞，使用 <code>HashCat</code> 类的工具，进行俗称的<strong>跑包</strong>。</p>
 <hr>
 <ul>
@@ -538,7 +600,7 @@ auxiliary/server/capture/http    #
 <p>IBeacon(灯塔) 正如名字一样，这刚是蓝牙的灯塔协议，这里不需要进行蓝牙的连接。可以通过特定的ID，进而得到特定的位置信息。</p>
 <h2 id="其他网络"><a href="#其他网络" class="headerlink" title="其他网络"></a>其他网络</h2><p>小时候听到的猫的拨号音，实在是怀念。</p>
 <blockquote>
-<p>Modem<a href="https://www.bilibili.com/video/av10225080/" target="_blank" rel="noopener">拨号音</a></p>
+<p>Modem<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL2F2MTAyMjUwODAv" title="https://www.bilibili.com/video/av10225080/">拨号音<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <ul>
 <li>SDR</li>
@@ -563,8 +625,8 @@ auxiliary/server/capture/http    #
 </ul>
 <p><img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=f850136fd7ca7bcb6976cf7ddf600006/b2de9c82d158ccbfe6df9f9619d8bc3eb135413e.jpg" alt=""></p>
 <blockquote>
-<p><a href="https://baike.baidu.com/item/%E5%85%A8%E7%90%83%E7%A7%BB%E5%8A%A8%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/2108410?fr=aladdin" target="_blank" rel="noopener">全球移动通信</a></p>
-<p><a href="https://baike.baidu.com/item/%E9%95%BF%E6%9C%9F%E6%BC%94%E8%BF%9B%E6%8A%80%E6%9C%AF/3200919?fromtitle=LTE&amp;fromid=6439078" target="_blank" rel="noopener">4G长期演进</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTUlODUlQTglRTclOTAlODMlRTclQTclQkIlRTUlOEElQTglRTklODAlOUElRTQlQkYlQTElRTclQjMlQkIlRTclQkIlOUYvMjEwODQxMD9mcj1hbGFkZGlu" title="https://baike.baidu.com/item/%E5%85%A8%E7%90%83%E7%A7%BB%E5%8A%A8%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/2108410?fr=aladdin">全球移动通信<i class="fa fa-external-link"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTklOTUlQkYlRTYlOUMlOUYlRTYlQkMlOTQlRTglQkYlOUIlRTYlOEElODAlRTYlOUMlQUYvMzIwMDkxOT9mcm9tdGl0bGU9TFRFJmFtcDtmcm9taWQ9NjQzOTA3OA==" title="https://baike.baidu.com/item/%E9%95%BF%E6%9C%9F%E6%BC%94%E8%BF%9B%E6%8A%80%E6%9C%AF/3200919?fromtitle=LTE&amp;fromid=6439078">4G长期演进<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <hr>
 <ul>
@@ -593,40 +655,29 @@ auxiliary/server/capture/http    #
 </ul>
 <p>特定硬件,KillerBee工具包,可能的方法有网络发现,重放攻击,数据伪造</p>
 <blockquote>
-<p><a href="https://github.com/riverloopsec/killerbee" target="_blank" rel="noopener">KillerBee</a> Proj</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JpdmVybG9vcHNlYy9raWxsZXJiZWU=" title="https://github.com/riverloopsec/killerbee">KillerBee<i class="fa fa-external-link"></i></span> Proj</p>
 </blockquote>
 <h2 id="后"><a href="#后" class="headerlink" title="后"></a>后</h2><p>这本书对无线的应用安全做了很好的汇总,十分广泛的层面,也是对自己零散的知识的总结,和部分的深入</p>
 
       
     </div>
 
+    
 
-    <div> 
+    
+    
+    
+
+    
+
+    
       
-        <!-- 这里是添加文章结束标记 -->
-        <div>
     
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    
-</div>
-      
-    </div>
-
-    
-
-
-    
-    
-    
-
-    
-    
-    <!--  这里用来添加以太reward -->
     
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>Thanks anyway!</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+  <div>可乐续命</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
     <span>打赏</span>
   </button>
   <div id="QR" style="display: none;">
@@ -637,11 +688,9 @@ auxiliary/server/capture/http    #
 
     
       <div id="bitcoin" style="display: inline-block">
-        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="R4yd 比特币"/>
+        <img id="bitcoin_qr" src="/images/bitcoin.jpg" alt="Author 比特币"/>
         <p>比特币</p>
       </div>
-    
-
     
 
   </div>
@@ -652,15 +701,24 @@ auxiliary/server/capture/http    #
 
     
       <div>
-        <ul class="post-copyright">
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>R4yd</li>
+    <strong>本文作者： </strong>Author</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="blog.diglp.xyz/2018/04/25/book_无线安全/" title="读本好书《黑客大曝光——无线网络安全》">blog.diglp.xyz/2018/04/25/book_无线安全/</a>
+    
+    <a href="/blog.diglp.xyz/2018/04/25/book_无线安全/" title="读本好书《黑客大曝光——无线网络安全》">blog.diglp.xyz/2018/04/25/book_无线安全/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
 </ul>
 
       </div>
@@ -670,11 +728,9 @@ auxiliary/server/capture/http    #
       
         <div class="post-tags">
           
-            <!--  这里用来改变标签样式 -->
-            <a href="/tags/读书笔记/" rel="tag"><i class="fa fa-tag"></i> 读书笔记</a>
+            <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
           
-            <!--  这里用来改变标签样式 -->
-            <a href="/tags/安全/" rel="tag"><i class="fa fa-tag"></i> 安全</a>
+            <a href="/tags/安全/" rel="tag"># 安全</a>
           
         </div>
       
@@ -715,25 +771,11 @@ auxiliary/server/capture/http    #
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    </div>
 
   
 
@@ -768,15 +810,11 @@ auxiliary/server/capture/http    #
         </ul>
       
 
-      <section class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="R4yd" />
-            
-              <p class="site-author-name" itemprop="name">R4yd</p>
+              <p class="site-author-name" itemprop="name">Author</p>
               <p class="site-description motion-element" itemprop="description">Why join the navy, When you can be a PIRATE</p>
           </div>
 
@@ -895,25 +933,39 @@ auxiliary/server/capture/http    #
             <div class="links-of-author motion-element">
               
                 <span class="links-of-author-item">
-                  <a href="https://github.com/quartz010" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1YXJ0ejAxMA==" title="GitHub &rarr; https://github.com/quartz010"><i class="fa fa-fw fa-github"></i>GitHub</span>
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="mailto:r4y.root@gmail.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="bWFpbHRvOnF1YXJ0ejAxMEBvdXRsb29rLmNvbQ==" title="E-Mail &rarr; mailto:quartz010@outlook.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</span>
                 </span>
               
             </div>
           
 
           
-          
-            <div class="cc-license motion-element" itemprop="license">
-              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
-              </a>
-            </div>
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"/></span>
+             </div>
           
 
           
@@ -926,11 +978,11 @@ auxiliary/server/capture/http    #
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                    <span class="exturl" data-url="aHR0cDovL3d3dy5ydW5vb2IuY29tLw==" title="http://www.runoob.com/">菜鸟教程</span>
                   </li>
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://chierqj.github.io/" title="chierqj's blog" target="_blank">chierqj's blog</a>
+                    <span class="exturl" data-url="aHR0cHM6Ly9jaGllcnFqLmdpdGh1Yi5pby8=" title="https://chierqj.github.io/">Chierqj's Blog</span>
                   </li>
                 
               </ul>
@@ -943,15 +995,16 @@ auxiliary/server/capture/http    #
           
 
         </div>
-      </section>
+      </div>
 
       
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
             
-              
+            
+            
             
 
             
@@ -959,7 +1012,7 @@ auxiliary/server/capture/http    #
             
 
           </div>
-        </section>
+        </div>
       <!--/noindex-->
       
 
@@ -982,15 +1035,12 @@ auxiliary/server/capture/http    #
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <!-- 站长统计的插件 -->
-<!-- <script async src="https:/busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-
-<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">R4yd</span>
-  
+  <span class="author" itemprop="copyrightHolder">Author</span>
+
   
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
@@ -1006,19 +1056,12 @@ auxiliary/server/capture/http    #
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读时长">9:38</span>
+    <span title="站点阅读时长">9:38</span>
   
 </div>
 
 
-  
-
-
-
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动</div>
 
 
 
@@ -1026,12 +1069,11 @@ auxiliary/server/capture/http    #
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a></div>
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span></div>
 
 
 
   <div class="footer-custom">Hosted by <a target="_blank" rel="external nofollow" href="https://pages.github.com"><b>GitHub Pages</b></a> <span class="post-meta-divider">|</span> <span id="busuanzi_container_site_uv">本站访客数:<span id="busuanzi_value_site_uv"></span></span></div>
-
 
 
         
@@ -1039,7 +1081,25 @@ auxiliary/server/capture/http    #
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
 
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
   
 </div>
 
@@ -1059,11 +1119,14 @@ auxiliary/server/capture/http    #
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -1083,6 +1146,10 @@ auxiliary/server/capture/http    #
 
 
   
+    
+    
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
 
@@ -1097,32 +1164,21 @@ auxiliary/server/capture/http    #
 
 
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.3"></script>
+  <script src="/js/src/utils.js?v=7.0.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.3"></script>
+  <script src="/js/src/motion.js?v=7.0.0"></script>
 
 
 
@@ -1130,94 +1186,36 @@ auxiliary/server/capture/http    #
   
 
 
-  <script type="text/javascript" src="/js/src/affix.js?v=6.0.3"></script>
+  <script src="/js/src/affix.js?v=7.0.0"></script>
 
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.3"></script>
+  <script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+
 
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.0.3"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.3"></script>
-
-
-
-  
-
-  
-    <script id="dsq-count-scr" src="https://diglp.disqus.com/count.js" async></script>
-  
-
-  
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'blog.diglp.xyz/2018/04/25/book_无线安全/';
-        this.page.identifier = '2018/04/25/book_无线安全/';
-        this.page.title = '读本好书《黑客大曝光——无线网络安全》';
-      };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://diglp.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      }
-      
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
-      
-    </script>
-  
-
-
-
-
-
-	
-
-
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
 
 
 
   
 
 
-
-
-
-
-
-
-
+  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
 
 
 
   
 
 
-
+  
 
 
   
+
+
+
 
   
 
@@ -1233,31 +1231,33 @@ auxiliary/server/capture/http    #
 
 
   
+
+  
+
+  
+
+  
+
   
 
   
   
   
   <script src="/lib/pangu/dist/pangu.min.js?v=3.3"></script>
-  <script type="text/javascript">pangu.spacingPage();</script>
+  <script>pangu.spacingPage();</script>
 
 
   
-  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.0.3"></script>
-  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.0.3"></script>
+  <script src="/js/src/js.cookie.js?v=7.0.0"></script>
+  <script src="/js/src/scroll-cookie.js?v=7.0.0"></script>
+
+
+  
+  <script src="/js/src/exturl.js?v=7.0.0"></script>
 
 
   
 
-  
-
-  
-  <!-- 点击烟花 -->
-  
-
-  <!-- 点击桃心 -->
-  
-   <script type="text/javascript" src="/js/src/aceheart.js"></script>
   
 
 </body>
