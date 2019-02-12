@@ -100,25 +100,25 @@
 
 
 
-  <meta name="description" content="Nginx 折腾笔记（LB 和 Tunnel）前面的话突然又是折腾了一波nginx，其中一点点的配置和过程在这里记录一下。 下午又把 《社交网络》这部片看了一遍，又是一种熟悉的热血沸腾的感觉。 思考自己仿佛也是在同样的年龄，但是，为什么却是那种的遥不可及的的感觉， 也许这个就是文化吧。一定去西海岸！   drop the The, just Facebook    这世道，绅士做不了。海盗才是王。">
+  <meta name="description" content="Nginx折腾笔记（SSL配置以及路由重写）前面的话需求分析，由于 搭好了日志平台，本想着把Blog迁移到主机上，最后想想，算了 这里的博客的域名，本来是通过 在解析配置里面使用了一个 CNAME到 quartz010.github.io 实现一次访问，这里对架构进行一次调整。原 blog的二级先解析到服务器，留下日志之后，进行一次隐式跳转，实现一次访问。不过，这样会受限于服务器的带宽。但是也算是">
 <meta name="keywords" content="Nginx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nginx 折腾笔记（LB 和 Tunnel）">
-<meta property="og:url" content="https://blog.diglp.xyz/2019/01/20/OP_Nginx 折腾笔记（LB 和 Tunnel）/index.html">
+<meta property="og:title" content="Nginx 折腾笔记（SSL配置以及路由重写）">
+<meta property="og:url" content="https://blog.diglp.xyz/2019/02/08/OP_Nginx折腾笔记（SSL配置以及路由重写）/index.html">
 <meta property="og:site_name" content="R4y&#39;s Blog">
-<meta property="og:description" content="Nginx 折腾笔记（LB 和 Tunnel）前面的话突然又是折腾了一波nginx，其中一点点的配置和过程在这里记录一下。 下午又把 《社交网络》这部片看了一遍，又是一种熟悉的热血沸腾的感觉。 思考自己仿佛也是在同样的年龄，但是，为什么却是那种的遥不可及的的感觉， 也许这个就是文化吧。一定去西海岸！   drop the The, just Facebook    这世道，绅士做不了。海盗才是王。">
+<meta property="og:description" content="Nginx折腾笔记（SSL配置以及路由重写）前面的话需求分析，由于 搭好了日志平台，本想着把Blog迁移到主机上，最后想想，算了 这里的博客的域名，本来是通过 在解析配置里面使用了一个 CNAME到 quartz010.github.io 实现一次访问，这里对架构进行一次调整。原 blog的二级先解析到服务器，留下日志之后，进行一次隐式跳转，实现一次访问。不过，这样会受限于服务器的带宽。但是也算是">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-29T07:40:14.840Z">
+<meta property="og:updated_time" content="2019-02-12T16:37:46.379Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nginx 折腾笔记（LB 和 Tunnel）">
-<meta name="twitter:description" content="Nginx 折腾笔记（LB 和 Tunnel）前面的话突然又是折腾了一波nginx，其中一点点的配置和过程在这里记录一下。 下午又把 《社交网络》这部片看了一遍，又是一种熟悉的热血沸腾的感觉。 思考自己仿佛也是在同样的年龄，但是，为什么却是那种的遥不可及的的感觉， 也许这个就是文化吧。一定去西海岸！   drop the The, just Facebook    这世道，绅士做不了。海盗才是王。">
+<meta name="twitter:title" content="Nginx 折腾笔记（SSL配置以及路由重写）">
+<meta name="twitter:description" content="Nginx折腾笔记（SSL配置以及路由重写）前面的话需求分析，由于 搭好了日志平台，本想着把Blog迁移到主机上，最后想想，算了 这里的博客的域名，本来是通过 在解析配置里面使用了一个 CNAME到 quartz010.github.io 实现一次访问，这里对架构进行一次调整。原 blog的二级先解析到服务器，留下日志之后，进行一次隐式跳转，实现一次访问。不过，这样会受限于服务器的带宽。但是也算是">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.diglp.xyz/2019/01/20/OP_Nginx 折腾笔记（LB 和 Tunnel）/"/>
+  <link rel="canonical" href="https://blog.diglp.xyz/2019/02/08/OP_Nginx折腾笔记（SSL配置以及路由重写）/"/>
 
 
 
@@ -128,7 +128,7 @@
   };
 </script>
 
-  <title>Nginx 折腾笔记（LB 和 Tunnel） | R4y's Blog</title>
+  <title>Nginx 折腾笔记（SSL配置以及路由重写） | R4y's Blog</title>
   
 
 
@@ -375,7 +375,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.diglp.xyz/2019/01/20/OP_Nginx 折腾笔记（LB 和 Tunnel）/"/>
+    <link itemprop="mainEntityOfPage" href="https://blog.diglp.xyz/2019/02/08/OP_Nginx折腾笔记（SSL配置以及路由重写）/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Author"/>
@@ -392,7 +392,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Nginx 折腾笔记（LB 和 Tunnel）
+          <h2 class="post-title" itemprop="name headline">Nginx 折腾笔记（SSL配置以及路由重写）
 
               
             
@@ -418,7 +418,7 @@
                 
               
 
-              <time title="创建时间：2019-01-20 00:00:00" itemprop="dateCreated datePublished" datetime="2019-01-20T00:00:00+08:00">2019-01-20</time>
+              <time title="创建时间：2019-02-08 00:00:00" itemprop="dateCreated datePublished" datetime="2019-02-08T00:00:00+08:00">2019-02-08</time>
             
 
             
@@ -435,7 +435,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-29 15:40:14" itemprop="dateModified" datetime="2019-01-29T15:40:14+08:00">2019-01-29</time>
+                <time title="修改时间：2019-02-13 00:37:46" itemprop="dateModified" datetime="2019-02-13T00:37:46+08:00">2019-02-13</time>
               
             
           </span>
@@ -471,8 +471,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/01/20/OP_Nginx 折腾笔记（LB 和 Tunnel）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/20/OP_Nginx 折腾笔记（LB 和 Tunnel）/" itemprop="commentCount"></span>
+                <a href="/2019/02/08/OP_Nginx折腾笔记（SSL配置以及路由重写）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/08/OP_Nginx折腾笔记（SSL配置以及路由重写）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -502,7 +502,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.4k</span>
+                <span title="本文字数">3.7k</span>
               
 
               
@@ -536,114 +536,58 @@
       
 
       
-        <h1 id="Nginx-折腾笔记（LB-和-Tunnel）"><a href="#Nginx-折腾笔记（LB-和-Tunnel）" class="headerlink" title="Nginx 折腾笔记（LB 和 Tunnel）"></a>Nginx 折腾笔记（LB 和 Tunnel）</h1><h2 id="前面的话"><a href="#前面的话" class="headerlink" title="前面的话"></a>前面的话</h2><p>突然又是折腾了一波nginx，其中一点点的配置和过程在这里记录一下。</p>
-<p>下午又把 《社交网络》这部片看了一遍，又是一种熟悉的热血沸腾的感觉。</p>
-<p>思考自己仿佛也是在同样的年龄，但是，为什么却是那种的遥不可及的的感觉，</p>
-<p>也许这个就是文化吧。一定去西海岸！</p>
-<blockquote>
-<p> drop the The, just Facebook</p>
-</blockquote>
+        <h1 id="Nginx折腾笔记（SSL配置以及路由重写）"><a href="#Nginx折腾笔记（SSL配置以及路由重写）" class="headerlink" title="Nginx折腾笔记（SSL配置以及路由重写）"></a>Nginx折腾笔记（SSL配置以及路由重写）</h1><h2 id="前面的话"><a href="#前面的话" class="headerlink" title="前面的话"></a>前面的话</h2><p>需求分析，由于 搭好了日志平台，本想着把Blog迁移到主机上，最后想想，算了</p>
+<p>这里的博客的域名，本来是通过 在解析配置里面使用了一个 <code>CNAME</code>到 <a href="quartz010.github.io">quartz010.github.io</a> 实现一次访问，这里对架构进行一次调整。原 <code>blog</code>的二级先解析到服务器，留下日志之后，进行一次隐式跳转，实现一次访问。不过，这样会受限于服务器的带宽。但是也算是接入了日志平台。所以这里需要使用 Nginx  实现重定向。</p>
 <hr>
-<ol>
-<li><p>这世道，绅士做不了。海盗才是王。</p>
-</li>
-<li><p>签任何协议之前至少看3遍以上。 </p>
-</li>
-<li>出卖你的往往是你最好的朋友</li>
-</ol>
-<h2 id="之前的场景"><a href="#之前的场景" class="headerlink" title="之前的场景"></a>之前的场景</h2><p>内网不通，怎么打洞，使得外网可以访问。内网打洞。</p>
-<p>原始方案，两次端口转发，加上 VPN。这样实现协议栈倒是没有加其他的东西，都团原生的。</p>
-<p>后面 想想，使用 <code>frp</code> 或者 <code>ngrok</code>  直接实现内网的转发，到还是一个更好的方法了。之前的只是赞成做了个理论性的尝试，没想到，ei？还真是能用。</p>
-<hr>
-<p>方案的两次转发，主要在于，不同网段之间的转发。</p>
-<ol>
-<li>由服务器 外网的网段， 转发到 VPN 的子网网段的内网主机 IP</li>
-<li>在内网主机上，由VPN的子网网段，转发到内网网卡</li>
-<li>并且设置内网的网卡路由走内网网关</li>
-</ol>
-<hr>
-<h2 id="Nginx-Port-forwarding-and-Load-Balance"><a href="#Nginx-Port-forwarding-and-Load-Balance" class="headerlink" title="Nginx Port forwarding and Load Balance"></a>Nginx Port forwarding and Load Balance</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">stream</span> &#123;</span><br><span class="line">    <span class="section">server</span> &#123;</span><br><span class="line">        <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">        <span class="attribute">proxy_pass</span> <span class="number">127.0.0.1:7000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>配置文件很容易的实现了 <strong>80到7000端口</strong> 的转发，</p>
-<p>下面的配置很容易实现转发的 <strong>LB</strong> 这里就会有很好的用处</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">stream</span> &#123;</span><br><span class="line">    <span class="section">server</span> &#123;</span><br><span class="line">        <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">        <span class="attribute">proxy_pass</span> frp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="attribute">upstream</span> frp&#123;</span><br><span class="line">        <span class="attribute">server</span> <span class="number">127.0.0.1:7000</span>;</span><br><span class="line">        <span class="attribute">server</span> <span class="number">127.0.0.1:8000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>这里一个point 是 <strong>七层均衡</strong> 还是 <strong>四层均衡</strong>。这里的层指的是在协议栈中的层级 ，OSI 的七层结构，其中的七层均衡指的就是在应用层实现的（HTTP），四层就是在传输层（tcp）。</p>
-<p>这里的配置段是存在于 stream 的不是在 Http中。</p>
-<hr>
-<p>这里本来有个突然很荒谬的想法：能不能使用 server_name 用来对不同的 <strong>referer</strong> 进行都不同端口的转发。</p>
-<p>（事实上，当然可以通过虚拟主机，在同一个端口上，通过 server_name 字段来解析到不同的端口，配置如下）</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">upstream</span> baidu&#123; </span><br><span class="line">    <span class="attribute">server</span> <span class="number">127.0.0.1:8081</span>; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="attribute">upstream</span> google &#123; </span><br><span class="line">    <span class="attribute">server</span> <span class="number">127.0.0.1:8082</span>; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="section">server</span> &#123; </span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>; </span><br><span class="line">    <span class="attribute">server_name</span> www.baidu.cn baidu.cn;</span><br><span class="line">    <span class="attribute">proxy_set_header</span>   Host             <span class="variable">$host</span>;</span><br><span class="line">    <span class="attribute">proxy_set_header</span>   X-Real-IP        <span class="variable">$remote_addr</span>;</span><br><span class="line">    <span class="attribute">proxy_set_header</span>   X-Forwarded-For  <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">    <span class="attribute">location</span> / &#123; </span><br><span class="line">        <span class="attribute">proxy_pass</span> http://baidu; </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="section">server</span> &#123; </span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>; </span><br><span class="line">    <span class="attribute">server_name</span> www.google.cn google.cn;</span><br><span class="line">    <span class="attribute">proxy_set_header</span>   Host             <span class="variable">$host</span>;</span><br><span class="line">    <span class="attribute">proxy_set_header</span>   X-Real-IP        <span class="variable">$remote_addr</span>;</span><br><span class="line">    <span class="attribute">proxy_set_header</span>   X-Forwarded-For  <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://google; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这样就可以，实现在同一端口的来自已不同站点的请求，分配到各自不同的 server。</p>
-<hr>
-<p>当时就想，能不能 我的 Frp 连接也可以实现这样的域名绑定呢？当时有点懵，显然回答是不行的。</p>
-<p>回到<strong>Domain Name</strong> 的解析原理，最终是在 Dns server 解析成为真实的 IP 。在进行 HTTP 的forward 的时候，其源站实际上是包含在 HTTP 的请求包里面的，所以，Nginx 可以对其不同的源站解析的不同的端口。</p>
-<p>那么这里回到前面 的情况，如果是使用了nginx 来对一个 tcp 连接进行分发。可能实现吗？</p>
-<p>不可能，因为，根本无法获得源站的地址呀。这里就是问题所在了。</p>
-<h2 id="关于-Nginx-LB-的配置"><a href="#关于-Nginx-LB-的配置" class="headerlink" title="关于 Nginx LB 的配置"></a>关于 Nginx LB 的配置</h2><p>这里就顺便，巩固一下 LB 的相关配置：</p>
-<h3 id="Nginx-的-LB-类型"><a href="#Nginx-的-LB-类型" class="headerlink" title="Nginx 的 LB 类型"></a>Nginx 的 LB 类型</h3><p><strong>nginx 的 upstream目前支持 4 种方式的分配</strong> 引用自（<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vbWljcm90aWdlci9wLzc2MjM4NTguaHRtbO+8iQ==" title="https://www.cnblogs.com/microtiger/p/7623858.html）">https://www.cnblogs.com/microtiger/p/7623858.html）<i class="fa fa-external-link"></i></span></p>
-<ol>
-<li>轮询（默认） </li>
-</ol>
-<p>　　每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，<strong>能自动剔除</strong>。 </p>
-<ol>
-<li>weight </li>
-</ol>
-<p>　　指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。 </p>
-<ol>
-<li>ip_hash </li>
-</ol>
-<p>　　每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session的问题。  </p>
-<ol>
-<li>fair（第三方） </li>
-</ol>
-<p>　　按后端服务器的响应时间来分配请求，响应时间短的优先分配。  <strong>这个感觉不错，后面可以试试</strong></p>
-<ol>
-<li>url_hash（第三方）</li>
-</ol>
-<hr>
-<p>ip_hash是容易理解的，但是因为仅仅能用ip这个因子来分配后端，因此ip_hash是有缺陷的，不能在一些情况下使用：</p>
-<p>nginx不是最前端的服务器。ip_hash要求nginx一定是最前端的服务器，否则nginx得不到正确ip，就不能根据ip作hash。譬如使用的是squid为最前端，那么nginx取ip时只能得到squid的服务器ip地址，用这个地址来作分流是肯定错乱的。</p>
-<p>这里就最好使用 Url_hash 的方式，根据 不同的 Url 进行分流。</p>
-<hr>
-<p>不过这里又有了一个严重的问题 ：<strong>Session 和 Cookie</strong>，这里直接贴出文章。本来想总结一下 ， 已经有写好的了，自己也学习一下</p>
-<blockquote>
-<p> <span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vc2hpeWFuZ3h0L2FydGljbGVzLzEzMDU1MDYuaHRtbA==" title="https://www.cnblogs.com/shiyangxt/articles/1305506.html">cookie 和session 的区别详解<i class="fa fa-external-link"></i></span></p>
-</blockquote>
-<p>cookie 和session 的区别：</p>
-<ol>
-<li><p><strong>cookie数据存放在客户的浏览器上，session数据放在服务器上</strong></p>
-</li>
-<li><p>cookie不是很安全，<strong>别人可以分析存放在本地的COOKIE</strong>并进行COOKIE欺骗考虑到安全应当使用session。</p>
-<p>httpOnly ：JS 无法读取到 cookie</p>
-</li>
-<li><p>session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能考虑到减轻服务器性能方面，应当使用COOKIE。</p>
-</li>
-<li><p>单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。</p>
-<p><strong>这里比较好玩， 可以将 Cookie 设置为 大于 4096 的kv，这样的话，将会直接导致 客户端的 Deny</strong></p>
-</li>
-<li><p>所以个人建议：</p>
-<p>将登陆信息等重要信息存放为SESSION （存在 Session 注入的问题？）<br>其他信息如果需要保留，可以放在COOKIE中</p>
-</li>
-</ol>
-<h2 id="知识树"><a href="#知识树" class="headerlink" title="知识树"></a>知识树</h2><p>这个比较好玩， 以后每次类似的 blog 的时候就加上 吧，做个自己的思路方向的记录：</p>
+<p>其二，域名不备案，web一起来，就被工信部给 ban 了。可是备案太麻烦了，真的是懒。所以这里跑 HTTPS ，做一个短期的检测绕过。因为 HTTPS 其报文内容是加密的，所以流量只要不是很大，应该也不至于单独去做侧信道的分析。所以这里顺便给部署全站的  HTTPS 访问暂时的撑着。</p>
+<h2 id="显式重定向-和-隐式重定向"><a href="#显式重定向-和-隐式重定向" class="headerlink" title="显式重定向 和 隐式重定向"></a>显式重定向 和 隐式重定向</h2><p>这里的一点调整在于 Github page 的命名</p>
+<p>当repo 命名为 <code>quartz010.github.io</code> 可以直接通过 其进行访问，如果其他命名的话，需要进行 quartz010.github.io/xxx 进行访问，所以修改之后导致了其找不到静态文件。导致样式消失以及一大堆404 的问题。</p>
+<p>这里给出 基本配置：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">	<span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">listen</span>       [::]:<span class="number">80</span>;</span><br><span class="line">   </span><br><span class="line">   	<span class="attribute">server_name</span> blog1.diglp.xyz;</span><br><span class="line">   </span><br><span class="line">   	<span class="comment"># Load configuration files for the default server block.</span></span><br><span class="line">   	<span class="attribute">include</span> /etc/nginx/default.d/<span class="regexp">*.conf</span>;</span><br><span class="line">   </span><br><span class="line">   	<span class="attribute">location</span> / &#123;</span><br><span class="line">   		<span class="comment">#rewrite  ^/(.*)$  /$1 break;</span></span><br><span class="line">   		<span class="attribute">proxy_pass</span> https://quartz010.github.io;</span><br><span class="line">   	&#125;</span><br><span class="line">   	<span class="comment"># rewrite "^/(.*)$" https://quartz010.github.io/$1 last;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里的重点在 Location 的这一段：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">location</span> / &#123;</span><br><span class="line">	<span class="comment">#1# rewrite  ^/(.*)$  /$1 break;				# 隐式重定向</span></span><br><span class="line">	<span class="comment">#2# proxy_pass https://quartz010.github.io;		# 显式重定向</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里的重定向方式有两种，不过严格意义上讲，通过<code>proxy_pass</code>实现的只能叫做反向代理。不过这里用到了实现 Url不改变的重定向，也权且这样叫吧。 后面讲路由重写，这里先看这个正则表达式 <code>^/(.*)$</code> 代表以 <code>/</code> 开头中间匹配 <code>.*</code> (也就是任意个单字符)，之后再进行结尾。综上是匹配所有的路由。</p>
+<h2 id="路由重写"><a href="#路由重写" class="headerlink" title="路由重写"></a>路由重写</h2><p>路由的重写，这里算得上是很重要的一个模块了。一般 Nginx 默认编译需要 加上 Pcre 的正则的库，其基本语法如下：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">rewrite</span> 规则 定向路径 重写类型;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>nginx 的 LB<ul>
-<li>通过 域名 的TCP 转发可行性</li>
-<li>nginx 的 LB 的种类<ul>
-<li>IP_hash 的问题</li>
-<li>URL_hash 的 session问题<ul>
-<li>session和Cookie<ul>
-<li>httpOnly</li>
+<li>规则：用于匹配的 URL 或者是正则表达式。</li>
+<li>重定向之后的链接，可以带参数</li>
+<li><p>重写类型：</p>
+<ul>
+<li>last ：表示完成rewrite，浏览器地址栏URL地址不变</li>
+<li>break：本条规则匹配完成后，终止匹配，不再匹配后面的规则，浏览器地址栏URL地址不变</li>
+<li>redirect：返回302临时重定向，浏览器地址会显示跳转后的URL地址</li>
+<li>permanent：返回301永久重定向，浏览器地址栏会显示跳转后的URL地址</li>
 </ul>
 </li>
-</ul>
+<li><p><strong>作用域:</strong> <em>server, location, if</em></p>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">rewrite</span><span class="regexp"> ^(.*)$</span>  https://<span class="variable">$host</span><span class="variable">$1</span> <span class="literal">permanent</span></span><br></pre></td></tr></table></figure>
+<p>这里的重写类型是可选项，也可以不进行指定。这里值得注意的是，last 和 break 类型的区别。last 可以理解为，对url改变之后，继续对url进行重写匹配，知道最后没有相关规则时候便停止。break 在完成本次的重写之后，就不进行后继的匹配重写。eg</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">        <span class="attribute">rewrite</span> /<span class="number">111</span>/ /<span class="number">555</span>/ <span class="literal">last</span>;</span><br><span class="line">        <span class="attribute">rewrite</span> /<span class="number">222</span>/ /<span class="number">555</span>/ <span class="literal">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="attribute">location</span><span class="regexp"> ^~</span> /<span class="number">555</span>/ &#123;</span><br><span class="line">        internal;</span><br><span class="line">        empty_gif;</span><br><span class="line">        <span class="attribute">return</span> <span class="number">403</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这样的配置下。得到的结果是 访问 <code>/111/</code> 的时候，直接返回了403的页面。而访问 <code>/222/</code> 的时候，得到了404的返回。不过，值得注意的是， <code>111</code> 返回了 403 的内容，但是实际上的 URL 并没有发生改变。即：</p>
+<p><strong>xxx/111/ 的 URL 实际上是返回了 /555/ 的内容</strong>  </p>
+<h2 id="SSL-配置"><a href="#SSL-配置" class="headerlink" title="SSL 配置"></a>SSL 配置</h2><h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><p>SSL 在http的具体应用就是 HTTPS （<strong>HTTP over TLS</strong>）。</p>
+<blockquote>
+<p>HTTPS的主要思想是在不安全的网络上创建一安全信道，并可在使用适当的加密包和<em>服务器证书可被验证且可被信任时</em>，对<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU3JUFCJThBJUU4JTgxJUJE" title="https://zh.wikipedia.org/wiki/%E7%AB%8A%E8%81%BD">窃听<i class="fa fa-external-link"></i></span>和<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU0JUI4JUFEJUU5JTk3JUI0JUU0JUJBJUJBJUU2JTk0JUJCJUU1JTg3JUJC" title="https://zh.wikipedia.org/wiki/%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB">中间人攻击<i class="fa fa-external-link"></i></span>提供合理的防护。</p>
+</blockquote>
+<p>一样回到PKI（Public Key Instruction）的体系里面，其中一个重要的概念就是 HTTPS 的证书。</p>
+<p>在普通的点对点加密里面，另个客户端可以直接进行秘钥的商定。</p>
+<p>但是在 BS 里面，服务器将面临多个客户端的请求，如果使用自签发证书，会出现证书可能会被伪造。可能会有其他的客户端使用伪造的证书进行HTTPS通信。</p>
+<p>常见的应用在于使用 <strong>SSLstrip</strong> 进行证书伪造攻击，以实现把HTTPS流量降级到HTTP。</p>
+<p>为了<strong>避免</strong>这样的情况出现，这里就出现了 CA机构（Certificate Authority）用于进行一个可信的第三方证书保管。证书由可信第三方提供，不是直接从服务器获得，所以保护了证书被伪造的可能。</p>
+<h3 id="证书配置"><a href="#证书配置" class="headerlink" title="证书配置"></a>证书配置</h3><p>直接在云服务商的website上面申请域名证书，这里申请的是针对 <a href="">mine.diglp.xyz</a> 的单域名证书。可以免费申请。不过 CA 机构是 <strong>TrustAsia</strong> 据说这个真的不值得Trust。。。这就另说了。</p>
+<p>这里了解一下文件分布：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">|-- Apache</span><br><span class="line">|   |-- 1_root_bundle.crt</span><br><span class="line">|   |-- 2_mine.diglp.xyz.crt</span><br><span class="line">|   `-- 3_mine.diglp.xyz.key</span><br><span class="line">|-- IIS</span><br><span class="line">|   `-- mine.diglp.xyz.pfx</span><br><span class="line">|-- Nginx</span><br><span class="line">|   |-- 1_mine.diglp.xyz_bundle.crt</span><br><span class="line">|   `-- 2_mine.diglp.xyz.key</span><br><span class="line">`-- Tomcat</span><br><span class="line">    `-- mine.diglp.xyz.jks</span><br></pre></td></tr></table></figure>
+<p>tree 一下目录，可见已经根据不同的Server给分成了不同的类型。内容都是一样，进行了一定程度的合并和拆分而已</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssl_certificate</span> <span class="string">"/xxx/1_mine.diglp.xyz_bundle.crt"</span>;                    </span><br><span class="line"><span class="attribute">ssl_certificate_key</span> <span class="string">"/xxx/2_mine.diglp.xyz.key"</span>;           </span><br><span class="line"><span class="attribute">ssl_session_cache</span> shared:SSL:<span class="number">1m</span>;                                             </span><br><span class="line"><span class="attribute">ssl_session_timeout</span>  <span class="number">10m</span>;                                                    </span><br><span class="line"><span class="attribute">ssl_ciphers</span> HIGH:!aNULL:!MD5;                                                </span><br><span class="line"><span class="attribute">ssl_prefer_server_ciphers</span> <span class="literal">on</span>;</span><br></pre></td></tr></table></figure>
+<p>这样就很轻松的完成了Https的配置。</p>
+<h2 id="全站使用-HTTPS-的实现"><a href="#全站使用-HTTPS-的实现" class="headerlink" title="全站使用 HTTPS 的实现"></a>全站使用 HTTPS 的实现</h2><p>这里很巧妙的使用了重定向，实现了全站的HTTPS。通过对HTTP流量进行重定向实现</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">	<span class="attribute">listen</span> <span class="number">80</span> default_server;</span><br><span class="line">    <span class="comment">#listen [::]:80;</span></span><br><span class="line">    <span class="attribute">return</span> <span class="number">301</span> https://<span class="variable">$host</span>:9943<span class="variable">$request_uri</span>;</span><br><span class="line">    <span class="comment">#rewrite ^(.*)$  https://$host$1 permanent;</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>这里对所有的请求，直接重定向到HTTPS。很是巧妙</p>
+<h2 id="后面的话"><a href="#后面的话" class="headerlink" title="后面的话"></a>后面的话</h2><p>很多事，很多事，面对审判吧。</p>
+<p>用的就记录下来</p>
 
       
     </div>
@@ -701,7 +645,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://blog.diglp.xyz/2019/01/20/OP_Nginx 折腾笔记（LB 和 Tunnel）/" title="Nginx 折腾笔记（LB 和 Tunnel）">https://blog.diglp.xyz/2019/01/20/OP_Nginx 折腾笔记（LB 和 Tunnel）/</a>
+    <a href="https://blog.diglp.xyz/2019/02/08/OP_Nginx折腾笔记（SSL配置以及路由重写）/" title="Nginx 折腾笔记（SSL配置以及路由重写）">https://blog.diglp.xyz/2019/02/08/OP_Nginx折腾笔记（SSL配置以及路由重写）/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
@@ -727,8 +671,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/31/Book_Docker进阶与实践/" rel="next" title="读本好书 《Docker 进阶与实践》">
-                <i class="fa fa-chevron-left"></i> 读本好书 《Docker 进阶与实践》
+              <a href="/2019/02/07/OP_Nginx 折腾笔记 （路由配置以及认证）/" rel="next" title="Nginx 折腾笔记 （路由配置以及认证）">
+                <i class="fa fa-chevron-left"></i> Nginx 折腾笔记 （路由配置以及认证）
               </a>
             
           </div>
@@ -736,10 +680,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/30/web_写给小安的WEB入坑指南/" rel="prev" title="写给小安的WEB入坑指南">
-                写给小安的WEB入坑指南 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1003,7 +943,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Nginx-折腾笔记（LB-和-Tunnel）"><span class="nav-number">1.</span> <span class="nav-text">Nginx 折腾笔记（LB 和 Tunnel）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前面的话"><span class="nav-number">1.1.</span> <span class="nav-text">前面的话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#之前的场景"><span class="nav-number">1.2.</span> <span class="nav-text">之前的场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-Port-forwarding-and-Load-Balance"><span class="nav-number">1.3.</span> <span class="nav-text">Nginx Port forwarding and Load Balance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于-Nginx-LB-的配置"><span class="nav-number">1.4.</span> <span class="nav-text">关于 Nginx LB 的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx-的-LB-类型"><span class="nav-number">1.4.1.</span> <span class="nav-text">Nginx 的 LB 类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识树"><span class="nav-number">1.5.</span> <span class="nav-text">知识树</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Nginx折腾笔记（SSL配置以及路由重写）"><span class="nav-number">1.</span> <span class="nav-text">Nginx折腾笔记（SSL配置以及路由重写）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前面的话"><span class="nav-number">1.1.</span> <span class="nav-text">前面的话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显式重定向-和-隐式重定向"><span class="nav-number">1.2.</span> <span class="nav-text">显式重定向 和 隐式重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由重写"><span class="nav-number">1.3.</span> <span class="nav-text">路由重写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSL-配置"><span class="nav-number">1.4.</span> <span class="nav-text">SSL 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础知识"><span class="nav-number">1.4.1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#证书配置"><span class="nav-number">1.4.2.</span> <span class="nav-text">证书配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全站使用-HTTPS-的实现"><span class="nav-number">1.5.</span> <span class="nav-text">全站使用 HTTPS 的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后面的话"><span class="nav-number">1.6.</span> <span class="nav-text">后面的话</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1192,9 +1132,9 @@
 
 <script>
   var disqus_config = function() {
-    this.page.url = "https://blog.diglp.xyz/2019/01/20/OP_Nginx 折腾笔记（LB 和 Tunnel）/";
-    this.page.identifier = "2019/01/20/OP_Nginx 折腾笔记（LB 和 Tunnel）/";
-    this.page.title = 'Nginx 折腾笔记（LB 和 Tunnel）';
+    this.page.url = "https://blog.diglp.xyz/2019/02/08/OP_Nginx折腾笔记（SSL配置以及路由重写）/";
+    this.page.identifier = "2019/02/08/OP_Nginx折腾笔记（SSL配置以及路由重写）/";
+    this.page.title = 'Nginx 折腾笔记（SSL配置以及路由重写）';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
