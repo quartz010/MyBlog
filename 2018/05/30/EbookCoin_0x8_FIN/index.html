@@ -926,8 +926,8 @@ return Math.floor(epochTime / constants.slots.interval);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/28/EbookCoin_0x7/" rel="next" title="EbookCoin 源码 0x7">
-                <i class="fa fa-chevron-left"></i> EbookCoin 源码 0x7
+              <a href="/2018/05/28/HackTool_HashCat/" rel="next" title="HackTool HashCat">
+                <i class="fa fa-chevron-left"></i> HackTool HashCat
               </a>
             
           </div>
@@ -1398,7 +1398,25 @@ return Math.floor(epochTime / constants.slots.interval);
     (d.head || d.body).appendChild(s);
   }
   
-    loadComments();
+    $(function() {
+      var offsetTop = $('#comments').offset().top - $(window).height();
+      if (offsetTop <= 0) {
+        // load directly when there's no a scrollbar
+        loadComments();
+      } else {
+        $(window).on('scroll.disqus_scroll', function() {
+          // offsetTop may changes because of manually resizing browser window or lazy loading images.
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          var scrollTop = $(window).scrollTop();
+
+          // pre-load comments a bit? (margin or anything else)
+          if (offsetTop - scrollTop < 60) {
+            $(window).off('.disqus_scroll');
+            loadComments();
+          }
+        });
+      }
+    });
   
 </script>
 
