@@ -100,27 +100,25 @@
 
 
 
-  <meta name="description" content="MerkleTree与零知识证明前默克尔树这个数据结构，至于区块链就是他的骨架了。 之前的文章对默克尔树是什么做了个十分十分简单的介绍。最近啃书，又看见了这个MerklerTree结构的介绍。对于其精妙之处再一次的感到。所以记录之。 默克尔树简介默克尔树，又名是哈希树。关于其较详细的简介可以看看之前的文章  什么是默克尔树  现在简单讲是一个哈希构成的二叉树了。 其主要的特性有  最下面的叶子节点">
-<meta name="keywords" content="区块链原理">
+  <meta name="description" content="ELK 日志可视化平台 搭建架构选型这里使用ELK 平台主要是实现了单主机的日至手机以及可视化，吞吐量比较小，所以直接进行单点部署。由以下几个组件组成：  FileBeat Elasticsearch Kibana  Filebeat 这里实现日志文件的手机以及格式化，并且通过管道直接存入ES ES 作为主体，实现对索引条目进行保存 Kibana 实现了ELK系统的整体监控，通过 API与ES交互">
+<meta name="keywords" content="ELK">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MerkleTree与零知识证明">
-<meta property="og:url" content="https://blog.diglp.xyz/2018/03/15/MerkleTree_2/index.html">
+<meta property="og:title" content="ELK 日志可视化平台 搭建">
+<meta property="og:url" content="https://blog.diglp.xyz/2019/02/14/OP_ELK 日志可视化 搭建笔记/index.html">
 <meta property="og:site_name" content="R4y&#39;s Blog">
-<meta property="og:description" content="MerkleTree与零知识证明前默克尔树这个数据结构，至于区块链就是他的骨架了。 之前的文章对默克尔树是什么做了个十分十分简单的介绍。最近啃书，又看见了这个MerklerTree结构的介绍。对于其精妙之处再一次的感到。所以记录之。 默克尔树简介默克尔树，又名是哈希树。关于其较详细的简介可以看看之前的文章  什么是默克尔树  现在简单讲是一个哈希构成的二叉树了。 其主要的特性有  最下面的叶子节点">
+<meta property="og:description" content="ELK 日志可视化平台 搭建架构选型这里使用ELK 平台主要是实现了单主机的日至手机以及可视化，吞吐量比较小，所以直接进行单点部署。由以下几个组件组成：  FileBeat Elasticsearch Kibana  Filebeat 这里实现日志文件的手机以及格式化，并且通过管道直接存入ES ES 作为主体，实现对索引条目进行保存 Kibana 实现了ELK系统的整体监控，通过 API与ES交互">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://blog.diglp.xyz/images/BC_MK.jpeg">
-<meta property="og:updated_time" content="2018-09-01T08:49:23.311Z">
+<meta property="og:updated_time" content="2019-02-13T15:44:04.677Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MerkleTree与零知识证明">
-<meta name="twitter:description" content="MerkleTree与零知识证明前默克尔树这个数据结构，至于区块链就是他的骨架了。 之前的文章对默克尔树是什么做了个十分十分简单的介绍。最近啃书，又看见了这个MerklerTree结构的介绍。对于其精妙之处再一次的感到。所以记录之。 默克尔树简介默克尔树，又名是哈希树。关于其较详细的简介可以看看之前的文章  什么是默克尔树  现在简单讲是一个哈希构成的二叉树了。 其主要的特性有  最下面的叶子节点">
-<meta name="twitter:image" content="http://blog.diglp.xyz/images/BC_MK.jpeg">
+<meta name="twitter:title" content="ELK 日志可视化平台 搭建">
+<meta name="twitter:description" content="ELK 日志可视化平台 搭建架构选型这里使用ELK 平台主要是实现了单主机的日至手机以及可视化，吞吐量比较小，所以直接进行单点部署。由以下几个组件组成：  FileBeat Elasticsearch Kibana  Filebeat 这里实现日志文件的手机以及格式化，并且通过管道直接存入ES ES 作为主体，实现对索引条目进行保存 Kibana 实现了ELK系统的整体监控，通过 API与ES交互">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.diglp.xyz/2018/03/15/MerkleTree_2/"/>
+  <link rel="canonical" href="https://blog.diglp.xyz/2019/02/14/OP_ELK 日志可视化 搭建笔记/"/>
 
 
 
@@ -130,7 +128,7 @@
   };
 </script>
 
-  <title>MerkleTree与零知识证明 | R4y's Blog</title>
+  <title>ELK 日志可视化平台 搭建 | R4y's Blog</title>
   
 
 
@@ -377,7 +375,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.diglp.xyz/2018/03/15/MerkleTree_2/"/>
+    <link itemprop="mainEntityOfPage" href="https://blog.diglp.xyz/2019/02/14/OP_ELK 日志可视化 搭建笔记/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Author"/>
@@ -394,7 +392,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">MerkleTree与零知识证明
+          <h2 class="post-title" itemprop="name headline">ELK 日志可视化平台 搭建
 
               
             
@@ -420,7 +418,7 @@
                 
               
 
-              <time title="创建时间：2018-03-15 00:00:00" itemprop="dateCreated datePublished" datetime="2018-03-15T00:00:00+08:00">2018-03-15</time>
+              <time title="创建时间：2019-02-14 00:00:00" itemprop="dateCreated datePublished" datetime="2019-02-14T00:00:00+08:00">2019-02-14</time>
             
 
             
@@ -437,7 +435,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-01 16:49:23" itemprop="dateModified" datetime="2018-09-01T16:49:23+08:00">2018-09-01</time>
+                <time title="修改时间：2019-02-13 23:44:04" itemprop="dateModified" datetime="2019-02-13T23:44:04+08:00">2019-02-13</time>
               
             
           </span>
@@ -454,7 +452,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/OP之路/" itemprop="url" rel="index"><span itemprop="name">OP之路</span></a></span>
 
                 
                 
@@ -473,8 +471,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/15/MerkleTree_2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/15/MerkleTree_2/" itemprop="commentCount"></span>
+                <a href="/2019/02/14/OP_ELK 日志可视化 搭建笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/14/OP_ELK 日志可视化 搭建笔记/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -504,7 +502,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.4k</span>
+                <span title="本文字数">2.9k</span>
               
 
               
@@ -518,7 +516,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:02</span>
+                <span title="阅读时长">0:05</span>
               
             </div>
           
@@ -538,48 +536,52 @@
       
 
       
-        <h1 id="MerkleTree与零知识证明"><a href="#MerkleTree与零知识证明" class="headerlink" title="MerkleTree与零知识证明"></a>MerkleTree与零知识证明</h1><h2 id="前"><a href="#前" class="headerlink" title="前"></a>前</h2><p>默克尔树这个数据结构，至于区块链就是他的骨架了。 之前的文章对默克尔树是什么做了个十分十分简单的介绍。最近啃书，又看见了这个MerklerTree结构的介绍。对于其精妙之处再一次的感到。所以记录之。</p>
-<h2 id="默克尔树简介"><a href="#默克尔树简介" class="headerlink" title="默克尔树简介"></a>默克尔树简介</h2><p>默克尔树，又名是哈希树。关于其较详细的简介可以看看之前的文章</p>
-<blockquote>
-<p><a href="http://blog.diglp.xyz/2018/02/28/MerkleTree_1/">什么是默克尔树</a></p>
-</blockquote>
-<p>现在简单讲是一个哈希构成的二叉树了。</p>
-<p>其主要的特性有</p>
+        <h1 id="ELK-日志可视化平台-搭建"><a href="#ELK-日志可视化平台-搭建" class="headerlink" title="ELK 日志可视化平台 搭建"></a>ELK 日志可视化平台 搭建</h1><h2 id="架构选型"><a href="#架构选型" class="headerlink" title="架构选型"></a>架构选型</h2><p>这里使用ELK 平台主要是实现了单主机的日至手机以及可视化，吞吐量比较小，所以直接进行单点部署。由以下几个组件组成：</p>
 <ul>
-<li>最下面的叶子节点时包含的时存储数据和其哈希值</li>
-<li>非叶子节点的值是他的两个孩子节点的内容的Hash</li>
+<li>FileBeat</li>
+<li>Elasticsearch</li>
+<li>Kibana</li>
 </ul>
-<p>在逻辑上讲，他们的父节点就是子节点的摘要。任何的数据改变将会最终的传递到根节点上。也正是这种性质成就了精巧的区块链体系。</p>
+<p>Filebeat 这里实现日志文件的手机以及格式化，并且通过管道直接存入ES</p>
+<p>ES 作为主体，实现对索引条目进行保存</p>
+<p>Kibana 实现了ELK系统的整体监控，通过 API与ES交互，实现数据可视化，以及设置。</p>
+<ul>
+<li>logstash</li>
+</ul>
+<p>logstash 作为一个对数据进行流处理的module，这里由于不需要对日志进行进一步处理，所以并没有使用此组件。<strong>关键是内存真的不够了，跑不起来了是真的Q</strong></p>
+<h2 id="安装及部署"><a href="#安装及部署" class="headerlink" title="安装及部署"></a>安装及部署</h2><p>安装以及部署的过程实际上并不是十分复杂，在<span class="exturl" data-url="aHR0cHM6Ly93d3cuZWxhc3RpYy5jby8=" title="https://www.elastic.co/">ELK项目官网<i class="fa fa-external-link"></i></span>上实际上已经给出了相关的 <code>rpm包</code>，所以直接使用 rpm 进行安装即可：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-rw-r--r-- 1 root root  12M Jan 29 19:31 filebeat-6.6.0-x86_64.rpm</span><br><span class="line">-rw-r--r-- 1 root root 177M Jan 29 19:34 kibana-6.6.0-x86_64.rpm</span><br><span class="line">-rw-r--r-- 1 root root 163M Jan 29 19:35 logstash-6.6.0.rpm</span><br><span class="line">rpm -ivh xxx.rpm</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="默克尔树的作用"><a href="#默克尔树的作用" class="headerlink" title="默克尔树的作用"></a>默克尔树的作用</h2><h3 id="大量数据比较"><a href="#大量数据比较" class="headerlink" title="大量数据比较"></a>大量数据比较</h3><p>由于默克尔树的所有的存储数据都是存在于其叶子节点上，所有的非叶子节点是孩子节点的哈希。所以我们进行大文件比较时候。我们从根节点依次递归。每次找到当前的高度的存在hash差异节点。并且进入下一个高度。周而复始便可以找到我们存在差异的叶子节点。</p>
-<p>所以根据这样的方法可以很快的找到差异数据块。如果只是进行文件的本身的对比，那么只需要对比根哈希即可。</p>
-<h3 id="快速定位修改"><a href="#快速定位修改" class="headerlink" title="快速定位修改"></a>快速定位修改</h3><p>其实和上面的对比，这个差不多。我们的文件发生了根哈希改变，那么我们根据深度依次递归，找到了我们的最终变化的叶子节点就好了</p>
-<hr>
-<h2 id="零知识证明-zero-knowledge-proof"><a href="#零知识证明-zero-knowledge-proof" class="headerlink" title="零知识证明 (zero-knowledge proof)"></a>零知识证明 (zero-knowledge proof)</h2><p>这里是一个比较重要的点，所以把他放在最后。这个技术已经被很多的加密货币所采用比如较为有名的<strong>ZCash</strong>(零币)。在零币体系中就是使用了merkleTree的零知识证明的这一应用特性，实现了其招牌的匿名性。</p>
+<p>这里涉及到的一个 point 是<code>systemV init</code> 还是 <code>systemd</code> 下面给出一篇相关文章，(IBM Developer 还真是个好地方。)</p>
 <blockquote>
-<p>“零知识证明”－zero-knowledge proof，是由S.Goldwasser、S.Micali及C.Rackoff在20世纪80年代初提出的。它指的是证明者能够在不向验证者提供任何有用的信息的情况下，使验证者相信某个论断是正确的。</p>
+<p> <span class="exturl" data-url="aHR0cHM6Ly93d3cuaWJtLmNvbS9kZXZlbG9wZXJ3b3Jrcy9jbi9saW51eC8xNDA3X2xpdW1pbmdfaW5pdDMvaW5kZXguaHRtbA==" title="https://www.ibm.com/developerworks/cn/linux/1407_liuming_init3/index.html">浅析 Linux 初始化 init 系统，第 3 部分<i class="fa fa-external-link"></i></span></p>
 </blockquote>
-<p>这个是不是听着比较玄乎?不告诉你这个内容，又使你相信这个是真的。怎么做到呢?我们从下图入手。</p>
-<p><img src="http://blog.diglp.xyz/images/BC_MK.jpeg" alt="MKT"></p>
-<p>这个图所绘制的是一个十分简单的实现的默克尔树。</p>
-<p>如果我要向其他人证明我是数据A的拥有者，却不可向其他人公布任何关于A的信息，那么要怎么做呢？</p>
-<p>证明如下：我们可以公布Habcd，Hcd，Hb的值。我作为拥有者只需要提高我的数据的Hash即可。作为验证者只需要进行验证</p>
-<pre><code>Habcd == H(H(a,b),Hcd);
-</code></pre><p>这样的一个等式即可，如果返回是True ，那么可以说明，你就是这个数据的 拥有者了，整个的过程是不需要涉及到数据A的数据信息的。</p>
+<p>这里提到的是Linux里最重要的启动进程，作为<strong>第一个用户态进程</strong> 其PID为1 <code>ps 1</code> 可以看到进程的运行。他负责在内核启动之后，完成余下的引导过程，比如加载加载服务，启动Shell/图形化界面等等。在 CentOS 7 之后，使用 Systemd 风格取代了原来的 init的风格。（使得启动速度有的提升）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ ps 1</span><br><span class="line">  PID TTY      STAT   TIME COMMAND</span><br><span class="line">    1 ?        Ss     2:50 /usr/lib/systemd/systemd --switched-root --system --deserialize 21</span><br></pre></td></tr></table></figure>
+<p>可以看到，这里的 ps1 已经是 systemd 了。</p>
+<p>所以这里又涉及到了，Ubuntu 和 CentOS 的一大差别，自己也是用了才发现，之前Ubuntu的服务启动与管理使用 <code>service</code> 命令，并且在 <code>/etc/inittab</code> 里面可以对初始化进行一系列的配置。在Cent里面写着一句话：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># inittab is no longer used when using systemd.</span><br></pre></td></tr></table></figure>
 <hr>
-<p>我们进一步把这个证明贴近我们的生活中去,举个简单的例子：</p>
-<p>A要向B证明自己拥有某个房间的钥匙，假设该房间只能用钥匙打开锁，而其他任何方法都打不开。这时有2个方法：</p>
-<ol>
-<li><p>A把钥匙出示给B，B用这把钥匙打开该房间的锁，从而证明A拥有该房间的正确的钥匙。</p>
-</li>
-<li><p>B确定该房间内有某一物体，A用自己拥有的钥匙打开该房间的门，然后把物体拿出来出示给B，从而证明自己确实拥有该房间的钥匙 。</p>
-</li>
-</ol>
-<p>后面这个方法属于零知识证明。好处在于在整个证明的过程中，B始终不能看到钥匙的样子，从而避免了钥匙的泄露。</p>
-<blockquote>
-<p><span class="exturl" data-url="aHR0cDovL3d3dy5zb2h1LmNvbS9hLzEyMTg0Nzk0Ml80NzUzODQ=" title="http://www.sohu.com/a/121847942_475384">详细的ZCash的匿名转账的实现原理<i class="fa fa-external-link"></i></span></p>
-</blockquote>
-<h2 id="后面的话"><a href="#后面的话" class="headerlink" title="后面的话"></a>后面的话</h2><p>此文其实只是对以区块链技术的加密体系的初探。对新的知识做了粗浅的了解，不看也罢</p>
+<p>总之在目前的环境中，使用 <code>systemctl</code> 命令对服务进行控制。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ systemctl status elasticsearch.service</span><br><span class="line">● elasticsearch.service - Elasticsearch</span><br><span class="line">   Loaded: loaded (/usr/lib/systemd/system/elasticsearch.service; disabled; vendor preset: disabled)</span><br><span class="line">   Active: active (running) since Tue 2019-02-05 02:39:39 CST; 1 weeks 1 days ago</span><br><span class="line">     Docs: http://www.elastic.co</span><br><span class="line"> Main PID: 27965 (java)</span><br><span class="line">   CGroup: /system.slice/elasticsearch.service</span><br><span class="line">           ├─27965 /bin/java -Xms256m -Xmx256m -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -Des.networkaddress.cache.ttl=6...</span><br><span class="line">           └─28026 /usr/share/elasticsearch/modules/x-pack-ml/platform/linux-x86_64/bin/controller</span><br></pre></td></tr></table></figure>
+<hr>
+<p>之后修改各自的配置文件，使得其端口对应，一般就可以跑起来了。</p>
+<p>为了安全起见，这里使用 Nginx 做了一个 Web 的认证，对路由进行一个转发。</p>
+<h2 id="环境调整"><a href="#环境调整" class="headerlink" title="环境调整"></a>环境调整</h2><h3 id="ES的JVM-的堆大小调整-（heap）"><a href="#ES的JVM-的堆大小调整-（heap）" class="headerlink" title="ES的JVM 的堆大小调整 （heap）"></a>ES的JVM 的堆大小调整 （heap）</h3><p>启ES的时候，直接报错 <code>unable to alloca</code> ，一想应该是内存太小了导致的问题。查看配置文件 <code>/etc/elasticsearch/jvm.options</code> 并且进行参数调整</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Xms represents the initial size of total heap space</span><br><span class="line"># Xmx represents the maximum size of total heap space</span><br><span class="line"></span><br><span class="line">-Xms256m	# 这里缺省为 1g</span><br><span class="line">-Xmx256m</span><br></pre></td></tr></table></figure>
+<p>由于本机的RAM也只有 <strong>1G</strong> 还得跑其他的奇怪的东西，所以这里只能非常的乞丐设置。分出一点宝贵内存。</p>
+<h3 id="虚拟内存-Swap-的设置"><a href="#虚拟内存-Swap-的设置" class="headerlink" title="虚拟内存 Swap 的设置"></a>虚拟内存 Swap 的设置</h3><p>由于VM的机能，所以1G的内存显然是不够用的。只能改变参数。使得<code>JVM</code>分配的内存只有 256M。且，启用虚拟内存，即swap。</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RpYW5sZXNvZnR3YXJlL2FydGljbGUvZGV0YWlscy84NzQxODcz" title="https://blog.csdn.net/tianlesoftware/article/details/8741873">Linux SWAP 交换分区配置说明 - CSDN<i class="fa fa-external-link"></i></span></p>
+<hr>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dd if=/dev/zero of=/swap-file bs=1M count=1024	# 新建白文件 1G</span><br><span class="line">mkswap /swap-file	# 格式化</span><br><span class="line">swapon /swap-file	# 启用swap</span><br></pre></td></tr></table></figure>
+<p>为了使swap自动挂载使用 <code>/etc/fstab</code> 里面进行配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UUID=653bbeb5-4abb-4295-b110-5847e073140d	swap	swap	defaults	0	0</span><br><span class="line">/swap-file 									swap    swap    defaults	0	0</span><br></pre></td></tr></table></figure>
+<hr>
+<p>顺便调整了 <code>swappiness</code> 使得机器更加积极的使用 虚拟内存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ sysctl vm/swappiness=60</span><br></pre></td></tr></table></figure>
+<h3 id="设置副本数-0"><a href="#设置副本数-0" class="headerlink" title="设置副本数 0"></a>设置副本数 0</h3><p>由于只是单点，且性能受限，这里发现的问题es的节点状态一直是 <code>yellow</code>。归根发现就是性能问题，所以这里进行配置，<strong>设置其分片副本为 0</strong>。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">curl -H "Content-Type: application/json" -XPUT 'http://localhost:9202/_settings' -d '</span><br><span class="line">&#123;</span><br><span class="line">    "index" : &#123;</span><br><span class="line">        "number_of_replicas" : 0</span><br><span class="line">    &#125;</span><br><span class="line">&#125;'</span><br></pre></td></tr></table></figure>
+<h2 id="后面的话"><a href="#后面的话" class="headerlink" title="后面的话"></a>后面的话</h2><p><strong>Happy Valentine’s Day</strong></p>
 
       
     </div>
@@ -637,7 +639,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://blog.diglp.xyz/2018/03/15/MerkleTree_2/" title="MerkleTree与零知识证明">https://blog.diglp.xyz/2018/03/15/MerkleTree_2/</a>
+    <a href="https://blog.diglp.xyz/2019/02/14/OP_ELK 日志可视化 搭建笔记/" title="ELK 日志可视化平台 搭建">https://blog.diglp.xyz/2019/02/14/OP_ELK 日志可视化 搭建笔记/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
@@ -650,7 +652,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/区块链原理/" rel="tag"># 区块链原理</a>
+            <a href="/tags/ELK/" rel="tag"># ELK</a>
           
         </div>
       
@@ -663,8 +665,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/14/Byzantium/" rel="next" title="拜占庭将军与共识算法">
-                <i class="fa fa-chevron-left"></i> 拜占庭将军与共识算法
+              <a href="/2019/02/08/OP_Nginx折腾笔记（SSL配置以及路由重写）/" rel="next" title="Nginx 折腾笔记（SSL配置以及路由重写）">
+                <i class="fa fa-chevron-left"></i> Nginx 折腾笔记（SSL配置以及路由重写）
               </a>
             
           </div>
@@ -672,10 +674,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/29/misc_一周杂记_5/" rel="prev" title="日常励志">
-                日常励志 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -941,7 +939,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MerkleTree与零知识证明"><span class="nav-number">1.</span> <span class="nav-text">MerkleTree与零知识证明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前"><span class="nav-number">1.1.</span> <span class="nav-text">前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#默克尔树简介"><span class="nav-number">1.2.</span> <span class="nav-text">默克尔树简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#默克尔树的作用"><span class="nav-number">1.3.</span> <span class="nav-text">默克尔树的作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#大量数据比较"><span class="nav-number">1.3.1.</span> <span class="nav-text">大量数据比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速定位修改"><span class="nav-number">1.3.2.</span> <span class="nav-text">快速定位修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#零知识证明-zero-knowledge-proof"><span class="nav-number">1.4.</span> <span class="nav-text">零知识证明 (zero-knowledge proof)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后面的话"><span class="nav-number">1.5.</span> <span class="nav-text">后面的话</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ELK-日志可视化平台-搭建"><span class="nav-number">1.</span> <span class="nav-text">ELK 日志可视化平台 搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#架构选型"><span class="nav-number">1.1.</span> <span class="nav-text">架构选型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装及部署"><span class="nav-number">1.2.</span> <span class="nav-text">安装及部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境调整"><span class="nav-number">1.3.</span> <span class="nav-text">环境调整</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ES的JVM-的堆大小调整-（heap）"><span class="nav-number">1.3.1.</span> <span class="nav-text">ES的JVM 的堆大小调整 （heap）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟内存-Swap-的设置"><span class="nav-number">1.3.2.</span> <span class="nav-text">虚拟内存 Swap 的设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置副本数-0"><span class="nav-number">1.3.3.</span> <span class="nav-text">设置副本数 0</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后面的话"><span class="nav-number">1.4.</span> <span class="nav-text">后面的话</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1130,9 +1128,9 @@
 
 <script>
   var disqus_config = function() {
-    this.page.url = "https://blog.diglp.xyz/2018/03/15/MerkleTree_2/";
-    this.page.identifier = "2018/03/15/MerkleTree_2/";
-    this.page.title = 'MerkleTree与零知识证明';
+    this.page.url = "https://blog.diglp.xyz/2019/02/14/OP_ELK 日志可视化 搭建笔记/";
+    this.page.identifier = "2019/02/14/OP_ELK 日志可视化 搭建笔记/";
+    this.page.title = 'ELK 日志可视化平台 搭建';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
