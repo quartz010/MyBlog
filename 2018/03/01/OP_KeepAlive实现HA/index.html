@@ -100,25 +100,25 @@
 
 
 
-  <meta name="description" content="Web 杂记Foreword这个计划叫做 TC 计划， 没错，叫做 Tab Closing。 每周的的现象是什么？ 浏览器的标签爆炸。 总是有些好的内容，舍不得关闭。可是有没有再去看，所以，借机整理一下了~ Context关于 BootStrap这个东西算是贯串了整个的开发周期的东西。什么是 BootStrap ？简单来讲就是一个前端的 UI 框架。  Bootstrap是一组用于网站和网络应用程">
-<meta name="keywords" content="web">
+  <meta name="description" content="Keepalive 实现 HA前HA(High Availability) 高可用，是衡量一个系统的重要指标。所以双机热备，成为一个好的和通用的选择。前面的的方案直接使用了nginx 的Upstream，来实现了 双机 的过程。虽然是可以实现在单节点down掉之后系统依旧可用，不过显得不是那么专业。这里就使用 KeepAlive 来实现系统的 双机过程。    nginx进程基于Master+Sl">
+<meta name="keywords" content="Nginx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Web 杂记">
-<meta property="og:url" content="https://blog.diglp.xyz/2018/08/20/web_2/index.html">
+<meta property="og:title" content="Keepalive 实现 HA">
+<meta property="og:url" content="https://blog.diglp.xyz/2018/03/01/OP_KeepAlive实现HA/index.html">
 <meta property="og:site_name" content="R4y&#39;s Blog">
-<meta property="og:description" content="Web 杂记Foreword这个计划叫做 TC 计划， 没错，叫做 Tab Closing。 每周的的现象是什么？ 浏览器的标签爆炸。 总是有些好的内容，舍不得关闭。可是有没有再去看，所以，借机整理一下了~ Context关于 BootStrap这个东西算是贯串了整个的开发周期的东西。什么是 BootStrap ？简单来讲就是一个前端的 UI 框架。  Bootstrap是一组用于网站和网络应用程">
+<meta property="og:description" content="Keepalive 实现 HA前HA(High Availability) 高可用，是衡量一个系统的重要指标。所以双机热备，成为一个好的和通用的选择。前面的的方案直接使用了nginx 的Upstream，来实现了 双机 的过程。虽然是可以实现在单节点down掉之后系统依旧可用，不过显得不是那么专业。这里就使用 KeepAlive 来实现系统的 双机过程。    nginx进程基于Master+Sl">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-19T17:27:31.366Z">
+<meta property="og:updated_time" content="2019-03-01T13:56:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Web 杂记">
-<meta name="twitter:description" content="Web 杂记Foreword这个计划叫做 TC 计划， 没错，叫做 Tab Closing。 每周的的现象是什么？ 浏览器的标签爆炸。 总是有些好的内容，舍不得关闭。可是有没有再去看，所以，借机整理一下了~ Context关于 BootStrap这个东西算是贯串了整个的开发周期的东西。什么是 BootStrap ？简单来讲就是一个前端的 UI 框架。  Bootstrap是一组用于网站和网络应用程">
+<meta name="twitter:title" content="Keepalive 实现 HA">
+<meta name="twitter:description" content="Keepalive 实现 HA前HA(High Availability) 高可用，是衡量一个系统的重要指标。所以双机热备，成为一个好的和通用的选择。前面的的方案直接使用了nginx 的Upstream，来实现了 双机 的过程。虽然是可以实现在单节点down掉之后系统依旧可用，不过显得不是那么专业。这里就使用 KeepAlive 来实现系统的 双机过程。    nginx进程基于Master+Sl">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.diglp.xyz/2018/08/20/web_2/"/>
+  <link rel="canonical" href="https://blog.diglp.xyz/2018/03/01/OP_KeepAlive实现HA/"/>
 
 
 
@@ -128,7 +128,7 @@
   };
 </script>
 
-  <title>Web 杂记 | R4y's Blog</title>
+  <title>Keepalive 实现 HA | R4y's Blog</title>
   
 
 
@@ -375,7 +375,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.diglp.xyz/2018/08/20/web_2/"/>
+    <link itemprop="mainEntityOfPage" href="https://blog.diglp.xyz/2018/03/01/OP_KeepAlive实现HA/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Author"/>
@@ -392,7 +392,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Web 杂记
+          <h2 class="post-title" itemprop="name headline">Keepalive 实现 HA
 
               
             
@@ -418,12 +418,24 @@
                 
               
 
-              <time title="创建时间：2018-08-20 00:00:00 / 修改时间：01:27:31" itemprop="dateCreated datePublished" datetime="2018-08-20T00:00:00+08:00">2018-08-20</time>
+              <time title="创建时间：2018-03-01 00:00:00" itemprop="dateCreated datePublished" datetime="2018-03-01T00:00:00+08:00">2018-03-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-01 21:56:36" itemprop="dateModified" datetime="2019-03-01T21:56:36+08:00">2019-03-01</time>
               
             
           </span>
@@ -440,7 +452,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/WEB/" itemprop="url" rel="index"><span itemprop="name">WEB</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/OP之路/" itemprop="url" rel="index"><span itemprop="name">OP之路</span></a></span>
 
                 
                 
@@ -459,8 +471,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/08/20/web_2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/20/web_2/" itemprop="commentCount"></span>
+                <a href="/2018/03/01/OP_KeepAlive实现HA/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/01/OP_KeepAlive实现HA/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -490,7 +502,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.3k</span>
+                <span title="本文字数">797</span>
               
 
               
@@ -504,7 +516,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:06</span>
+                <span title="阅读时长">0:01</span>
               
             </div>
           
@@ -524,74 +536,25 @@
       
 
       
-        <h1 id="Web-杂记"><a href="#Web-杂记" class="headerlink" title="Web 杂记"></a>Web 杂记</h1><h2 id="Foreword"><a href="#Foreword" class="headerlink" title="Foreword"></a>Foreword</h2><p>这个计划叫做 TC 计划， 没错，叫做 Tab Closing。</p>
-<p>每周的的现象是什么？ 浏览器的标签爆炸。</p>
-<p>总是有些好的内容，舍不得关闭。可是有没有再去看，所以，借机整理一下了~</p>
-<h3 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h3><h3 id="关于-BootStrap"><a href="#关于-BootStrap" class="headerlink" title="关于 BootStrap"></a>关于 BootStrap</h3><p>这个东西算是贯串了整个的开发周期的东西。什么是 BootStrap ？简单来讲就是一个前端的 UI 框架。</p>
-<blockquote>
-<p>Bootstrap是一组用于网站和网络应用程序开发的开源前端框架，包括HTML、CSS及JavaScript的框架，提供字体排印、窗体、按钮、导航及其他各种组件及Javascript扩展，旨在使动态网页和Web应用的开发更加容易。 </p>
-</blockquote>
-<p>简单来讲，其实就是可以很容易的是的我们的页面变得更加 的好看。我们的 html 的基本组件，显得十分单一啦。通过bootstrap的框架，使得我们可以使用其中预设的一些组件和样式，这样使得我们的ui的设计显得更加的容易和美观。使用期预设的组件，显得都是那么美观了。</p>
+        <h1 id="Keepalive-实现-HA"><a href="#Keepalive-实现-HA" class="headerlink" title="Keepalive 实现 HA"></a>Keepalive 实现 HA</h1><h2 id="前"><a href="#前" class="headerlink" title="前"></a>前</h2><p><code>HA(High Availability)</code> 高可用，是衡量一个系统的重要指标。所以双机热备，成为一个好的和通用的选择。前面的的方案直接使用了nginx 的Upstream，来实现了 <strong>双机</strong> 的过程。<br>虽然是可以实现在单节点down掉之后系统依旧可用，不过显得不是那么专业。这里就使用 KeepAlive 来实现系统的 <strong>双机过程</strong>。</p>
 <hr>
-<p>这里 对资料进行一些整理。</p>
-<ul>
-<li><p><span class="exturl" data-url="aHR0cDovL3d3dy5ydW5vb2IuY29tL2Jvb3RzdHJhcC9ib290c3RyYXAtdHV0b3JpYWwuaHRtbA==" title="http://www.runoob.com/bootstrap/bootstrap-tutorial.html">bootstrap - runboo<i class="fa fa-external-link"></i></span></p>
-</li>
-<li><p><span class="exturl" data-url="aHR0cHM6Ly93d3cubnBtanMuY29tL3BhY2thZ2UvYm9vdHN0cmFwLXNsaWRlcg==" title="https://www.npmjs.com/package/bootstrap-slider">bootstrap-slider<i class="fa fa-external-link"></i></span></p>
-</li>
-<li><span class="exturl" data-url="aHR0cHM6Ly93d3cubnBtanMuY29tL3BhY2thZ2UvYm9vdHN0cmFwLXRhYmxl" title="https://www.npmjs.com/package/bootstrap-table">bootstrap-table<i class="fa fa-external-link"></i></span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly93d3cubnBtanMuY29tL3BhY2thZ2UvYm9vdHN0cmFwLXN3aXRjaA==" title="https://www.npmjs.com/package/bootstrap-switch">bootstrap-switch<i class="fa fa-external-link"></i></span></li>
-</ul>
-<h3 id="关于-JQuery"><a href="#关于-JQuery" class="headerlink" title="关于 JQuery"></a>关于 JQuery</h3><p>很久之前， 有在图书馆 见到一本书 《锋利的jquery》，当时因为不清楚，也没有被 好奇心驱使 。所以，最近在知道这个 是什么东西。(笑， 看到 query 之前一直以为和数据库有关系) </p>
-<p>这里搬出 百科内容。</p>
 <blockquote>
-<p>jQuery是一套跨浏览器的JavaScript库，简化HTML与JavaScript之间的操作。 </p>
+<ol>
+<li>nginx进程基于Master+Slave(worker)多进程模型，自身具有非常稳定的子进程管理功能。在Master进程分配模式下，Master进程永远不进行业务处理，只是进行任务分发，从而达到Master进程的存活高可靠性，Slave(worker)进程所有的业务信号都 由主进程发出，Slave(worker)进程所有的超时任务都会被Master中止，属于非阻塞式任务模型。</li>
+<li>Keepalived是Linux下面实现VRRP备份路由的高可靠性运行件。基于Keepalived设计的服务模式能够真正做到主服务器和备份服务器故障时IP瞬间无缝交接。二者结合，可以构架出比较稳定的软件LB方案。</li>
+</ol>
+<p>引用自 <span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20va2V2aW5ncmFjZS9wLzYxMzgxODUuaHRtbA==" title="https://www.cnblogs.com/kevingrace/p/6138185.html">Nginx+keepalived 双机热备（主从模式）<i class="fa fa-external-link"></i></span></p>
 </blockquote>
-<ul>
-<li><span class="exturl" data-url="aHR0cDovL3d3dy53M3NjaG9vbC5jb20uY24vanMvaW5kZXguYXNw" title="http://www.w3school.com.cn/js/index.asp">JavaScript - W3School<i class="fa fa-external-link"></i></span></li>
-<li><span class="exturl" data-url="aHR0cDovL3d3dy53M3NjaG9vbC5jb20uY24vanF1ZXJ5L2luZGV4LmFzcA==" title="http://www.w3school.com.cn/jquery/index.asp">Jquery - W3School<i class="fa fa-external-link"></i></span></li>
-<li><span class="exturl" data-url="aHR0cDovL3d3dy53M3NjaG9vbC5jb20uY24vYWpheC9pbmRleC5hc3A=" title="http://www.w3school.com.cn/ajax/index.asp">AJAX - W3School<i class="fa fa-external-link"></i></span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly93d3cudzNzY2hvb2xzLmNvbS8=" title="https://www.w3schools.com/">世界上最大的WEB开发者网站 - W3schools<i class="fa fa-external-link"></i></span></li>
-</ul>
-<h3 id="Js-里的-异步-回调"><a href="#Js-里的-异步-回调" class="headerlink" title="Js 里的 (异步)回调"></a>Js 里的 (异步)回调</h3><p>感觉 js 这种函数式 编程的精妙的结构，在下面的简简单单的三行代码，就体现出来。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#profileTab"</span>).append(<span class="function"><span class="keyword">function</span> (<span class="params">index, html</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> $(<span class="string">'#tab_profile'</span>).html().replaceAll(<span class="string">'tmpvar'</span>, id);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <hr>
-<p>JS 里面实现一个回调的结构：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">arg1, arg2, callback</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> num = arg1 + arg2;</span><br><span class="line">    callback(num);　　<span class="comment">//传递结果</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add(<span class="number">10</span>, <span class="number">20</span>, <span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">"Callback called! Num: "</span> + num); </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>之前，对这些东西，并不是十分理解，深圳觉得这样的结构是不是有些多余。这样的东西，完全可以使用一个顺序的正常的结构实现啊</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">arg1, arg2, callback</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> num = arg1 + arg2;</span><br><span class="line">    print(num);　　<span class="comment">//传递结果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这样就可以实现上面的功能了，而且简单很多，然而实际上，并不是这样的了。</p>
-<p>回想起来，如果在之前的应用程序开发的过程中。如果把一个冗长的过程放在主线程里，会怎样？</p>
-<p>比如在主线程里面进行网络请求，常常这个过程，会有一段响应时间，这样就直接导致了我们的主线程的阻塞。所以，Android 的 sdk 里面，已经禁止了在主线程里面进行网络请求。否则直接导致了 app 的卡顿了。所以这时候，要是传统的应用，理应会打开了一个 线程，来进行网络操作。</p>
-<p>不过这个问题，在JS 里面有了另外一种的优雅的解决方案，就是这里括号里面的字，异步。在我们使用了回调结构之后。会发现，add 函数并不会阻塞原运行的过程。而是继续的向下运行。</p>
-<blockquote>
-<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vbW9sdGJveS9hcmNoaXZlLzIwMTMvMDQvMjQvMzA0MDIxMy5odG1s" title="https://www.cnblogs.com/moltboy/archive/2013/04/24/3040213.html">彻底理解javascript的回调函数<i class="fa fa-external-link"></i></span></p>
-</blockquote>
-<h3 id="JS-的事件绑定"><a href="#JS-的事件绑定" class="headerlink" title="JS 的事件绑定"></a>JS 的事件绑定</h3><p>关于 JS 里面的页面事件 绑定，用其来，的确是很直观</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"p"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="keyword">this</span>).hide();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>这样的很简单的语句，就是实现了在文中的所有的 <code>&lt;p&gt;</code> 元素绑定了点击事件。</p>
-<p>可心中有了个疑问，这个事件是怎么进行绑定的呢？直到遇到了这样的问题：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tab_trOnclick</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> trs=$(<span class="string">"#block_set_table tbody tr"</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;trs.length;i++)&#123;</span><br><span class="line">        $(trs[i]).on(<span class="string">"dblclick"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(i);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里的代码，之前的我是这样理解的：</p>
-<p>首先这段代码<strong>得到运行</strong>，得到每一行的标签<code>&lt;tr&gt;</code> ， 之后对每个元素的对于的 点击事件函数进行初始化。然后，对每一行的点击，之后控制台里会打印出对应的行的行号。第一行<strong>里面的 i 是 1</strong>，那么点击第一行就输出 1。以此类推。</p>
-<p>不过事实上运行的 结果是：点击每一行都只是输出一个相同的数字。而且其数字等于 tr 的个数，也就是我们的行数。</p>
-<p>why? 这里就出现问题了。前面的内容讲到：回调？异步？所以事实上的过程就清楚了。是这样的：</p>
-<p>for 循环执行了 $(x).on() ,  这个函数是个回调函数。事实上是一个有实践进行触发的函数。当没有时间的时候，这个回调，不会继续的执行下去。然而在主线程里面，这个 for 还在不断的给其他的 tr 来绑定事件。这个 <strong>i</strong> 的值还在不断<strong>加1</strong>  直到所有绑定全部完成。 (注意！这里的回单函数没有返回，所以这里的函数的作用域中的变量值一样的没有被释放)。 当我们进行点击的时候，<strong>那时的 i 就是 tr 的个数</strong> 没错了。</p>
-<p>所以，这种情况下，需要在回调中获得原元素中的 id 信息，从而得到序号。最终得到的代码如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tab_trOnclick</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">var</span> trs=$(<span class="string">"#block_set_table tbody tr"</span>);</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;trs.length;i++)&#123;</span><br><span class="line">          $(trs[i]).on(<span class="string">"dblclick"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">              <span class="keyword">var</span> tr=$(<span class="keyword">this</span>);</span><br><span class="line">              <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"^[0-9]*$"</span>);</span><br><span class="line">              rowNum = (tr.context.id).match(<span class="string">"[0-9]*$"</span>)[<span class="number">0</span>]</span><br><span class="line">              <span class="built_in">console</span>.log(rowNum)</span><br><span class="line">          &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="元素复用列表追加"><a href="#元素复用列表追加" class="headerlink" title="元素复用列表追加"></a>元素复用列表追加</h3><p>有个需要用到多次的元素， 如果直接使用 html</p>
-<p>进行硬编码，得到 n*xx 的代码体验的确是不怎么优雅。 这里使用 JS 对空标签进行 append ：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;test&quot;&gt; &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"> for(var i=1;i&lt;trs.length;i++)&#123;</span><br><span class="line"> 	$(&apos;#test&apos;).append(&apos;&lt;h4&gt;hello&lt;/h4&gt;&apos;);</span><br><span class="line"> &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><ul>
-<li><p>动态添加元素的事件绑定</p>
-<blockquote>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTEyNzcxMjMvYXJ0aWNsZS9kZXRhaWxzLzUzMzMwODg3" title="https://blog.csdn.net/u011277123/article/details/53330887">jquery动态添加元素无法触发绑定事件的解决方案<i class="fa fa-external-link"></i></span></p>
-</blockquote>
-</li>
-<li><p>元素重复初始化</p>
-</li>
-</ul>
-<h2 id="后"><a href="#后" class="headerlink" title="后"></a>后</h2><p>慢慢的对 web 开发的整体结构有了了解，现在有了基础，就要开始高速适用了。</p>
+<h2 id="Keepalive-基本概念"><a href="#Keepalive-基本概念" class="headerlink" title="Keepalive 基本概念"></a>Keepalive 基本概念</h2><p>KeepAlived 使用了 <code>VRRP</code> 来避免IP的单点故障。VRRP全称 Virtual Router Redundancy Protocol，即 虚拟路由冗余协议。简单的说，在一个子网IP，后面其实对应了 N 台主机。这些主机再构成一个路由器组。这个单独的虚拟ip，复杂对数据包的转发。这里也就有了传说中的 <strong>VIP （virtual IP）</strong>。</p>
+<p>简单的一句话来讲：多个IP被放在一个路由组，虚拟成一个 IP。</p>
+<h2 id="网络拓扑"><a href="#网络拓扑" class="headerlink" title="网络拓扑"></a>网络拓扑</h2><p>这里直接嵌入 SVG试试</p>
+<svg id="SvgjsSvg1006" width="769" height="304" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"><defs id="SvgjsDefs1007"><marker id="SvgjsMarker1026" markerwidth="16" markerheight="12" refx="16" refy="6" viewbox="0 0 16 12" orient="auto" markerunits="userSpaceOnUse"><path id="SvgjsPath1027" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/></marker><marker id="SvgjsMarker1031" markerwidth="16" markerheight="12" refx="16" refy="6" viewbox="0 0 16 12" orient="auto" markerunits="userSpaceOnUse"><path id="SvgjsPath1032" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/></marker><marker id="SvgjsMarker1040" markerwidth="16" markerheight="12" refx="16" refy="6" viewbox="0 0 16 12" orient="auto" markerunits="userSpaceOnUse"><path id="SvgjsPath1041" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/></marker><marker id="SvgjsMarker1045" markerwidth="16" markerheight="12" refx="16" refy="6" viewbox="0 0 16 12" orient="auto" markerunits="userSpaceOnUse"><path id="SvgjsPath1046" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/></marker><marker id="SvgjsMarker1054" markerwidth="16" markerheight="12" refx="16" refy="6" viewbox="0 0 16 12" orient="auto" markerunits="userSpaceOnUse"><path id="SvgjsPath1055" d="M0,2 L14,6 L0,11 L0,2" fill="#323232" stroke="#323232" stroke-width="2"/></marker></defs><g id="SvgjsG1008" transform="translate(287,25)"><path id="SvgjsPath1009" d="M 0 0L 457 0L 457 254L 0 254Z" stroke="#323232" stroke-width="2" fill="#ccffff"/><g id="SvgjsG1010"><foreignobject id="SvgjsForeignObject1011" width="437" height="16" x="10" style="overflow:visible;" y="119"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 微软雅黑; text-align: center; font-size: 13px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 400; line-height: 16px; width: 437px; word-break: break-word; border: 0px;"/></foreignobject></g></g><g id="SvgjsG1012" transform="translate(645,57)"><image id="SvgjsImage1013" xlink:href="https://www.processon.com//assets/images/designer/network_azure/Website_Generic.svg" width="78" height="68" preserveaspectratio="none"><g id="SvgjsG1014"><foreignobject id="SvgjsForeignObject1015" width="118" height="25" x="-20" style="overflow:visible;" y="70.5"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 微软雅黑; text-align: center; font-size: 20px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 700; line-height: 25px; width: 118px; word-break: break-word; border: 0px;">内网主机</div></foreignobject></g></image></g><g id="SvgjsG1016" transform="translate(323,54)"><image id="SvgjsImage1017" xlink:href="https://www.processon.com//assets/images/designer/network_azure/Computer.svg" width="80" height="74" preserveaspectratio="none"><g id="SvgjsG1018"><foreignobject id="SvgjsForeignObject1019" width="120" height="16" x="-20" style="overflow:visible;" y="81"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 微软雅黑; text-align: center; font-size: 13px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 400; line-height: 16px; width: 120px; word-break: break-word; border: 0px;"/></foreignobject></g></image></g><g id="SvgjsG1020" transform="translate(323,173)"><image id="SvgjsImage1021" xlink:href="https://www.processon.com//assets/images/designer/network_azure/Computer.svg" width="80" height="74" preserveaspectratio="none"><g id="SvgjsG1022"><foreignobject id="SvgjsForeignObject1023" width="120" height="16" x="-20" style="overflow:visible;" y="81"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 微软雅黑; text-align: center; font-size: 13px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 400; line-height: 16px; width: 120px; word-break: break-word; border: 0px;"/></foreignobject></g></image></g><g id="SvgjsG1024"><path id="SvgjsPath1025" d="M403 91L524 91L524 91L645 91" stroke="#323232" stroke-width="2" fill="none" marker-end="url(#SvgjsMarker1026)"/><foreignobject id="SvgjsForeignObject1028" width="105" height="25" x="471.5" y="78.5"><div xmlns="http://www.w3.org/1999/xhtml" style="vertical-align: top; text-align: center; color: rgb(50, 50, 50); line-height: 25px; font-size: 20px; font-family: 微软雅黑; white-space: nowrap; display: inline-block; background: rgb(255, 255, 255);">Proxy_pass</div></foreignobject></g><g id="SvgjsG1029"><path id="SvgjsPath1030" d="M403 210L684 210L684 125" stroke="#323232" stroke-width="2" fill="none" marker-end="url(#SvgjsMarker1031)"/><foreignobject id="SvgjsForeignObject1033" width="105" height="25" x="533.5" y="197.5"><div xmlns="http://www.w3.org/1999/xhtml" style="vertical-align: top; text-align: center; color: rgb(50, 50, 50); line-height: 25px; font-size: 20px; font-family: 微软雅黑; white-space: nowrap; display: inline-block; background: rgb(255, 255, 255);">Proxy_pass</div></foreignobject></g><g id="SvgjsG1034" transform="translate(25,67.5)"><image id="SvgjsImage1035" xlink:href="https://www.processon.com//assets/images/designer/network_azure/Cloud.svg" width="76" height="47" preserveaspectratio="none"><g id="SvgjsG1036"><foreignobject id="SvgjsForeignObject1037" width="116" height="24" x="-20" style="overflow:visible;" y="50"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 微软雅黑; text-align: center; font-size: 19px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 700; line-height: 24px; width: 116px; word-break: break-word; border: 0px;">公网主机</div></foreignobject></g></image></g><g id="SvgjsG1038"><path id="SvgjsPath1039" d="M101 91L212 91L212 91L323 91" stroke="#323232" stroke-width="2" fill="none" marker-end="url(#SvgjsMarker1040)"/><foreignobject id="SvgjsForeignObject1042" width="36" height="25" x="194" y="78.5"><div xmlns="http://www.w3.org/1999/xhtml" style="vertical-align: top; text-align: center; color: rgb(50, 50, 50); line-height: 25px; font-size: 20px; font-family: 微软雅黑; white-space: nowrap; display: inline-block; background: rgb(255, 255, 255);">FRP</div></foreignobject></g><g id="SvgjsG1043"><path id="SvgjsPath1044" d="M101 91L150 91L150 210L323 210" stroke="#323232" stroke-width="2" fill="none" marker-end="url(#SvgjsMarker1045)"/><foreignobject id="SvgjsForeignObject1047" width="36" height="25" x="134.5" y="197.5"><div xmlns="http://www.w3.org/1999/xhtml" style="vertical-align: top; text-align: center; color: rgb(50, 50, 50); line-height: 25px; font-size: 20px; font-family: 微软雅黑; white-space: nowrap; display: inline-block; background: rgb(255, 255, 255);">FRP</div></foreignobject></g><g id="SvgjsG1048" transform="translate(25.5,204)"><image id="SvgjsImage1049" xlink:href="https://www.processon.com//assets/images/designer/network_azure/User.svg" width="75" height="75" preserveaspectratio="none"><g id="SvgjsG1050"><foreignobject id="SvgjsForeignObject1051" width="115" height="24" x="-20" style="overflow:visible;" y="78"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 微软雅黑; text-align: center; font-size: 19px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 700; line-height: 24px; width: 115px; word-break: break-word; border: 0px;">用户</div></foreignobject></g></image></g><g id="SvgjsG1052"><path id="SvgjsPath1053" d="M63 204L63 159.25L63 159.25L63 114.5" stroke="#323232" stroke-width="2" fill="none" marker-end="url(#SvgjsMarker1054)"/></g><g id="SvgjsG1056" transform="translate(584,235)"><path id="SvgjsPath1057" d="M 0 0L 160 0L 160 40L 0 40Z" stroke="none" fill="none"/><g id="SvgjsG1058"><foreignobject id="SvgjsForeignObject1059" width="160" height="25" x="0" style="overflow:visible;" y="7.5"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 微软雅黑; text-align: center; font-size: 20px; vertical-align: middle; color: rgb(50, 50, 50); font-weight: 700; line-height: 25px; width: 160px; word-break: break-word; border: 0px;">内网域</div></foreignobject></g></g></svg>
+
+
+
+
+
 
       
     </div>
@@ -649,7 +612,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://blog.diglp.xyz/2018/08/20/web_2/" title="Web 杂记">https://blog.diglp.xyz/2018/08/20/web_2/</a>
+    <a href="https://blog.diglp.xyz/2018/03/01/OP_KeepAlive实现HA/" title="Keepalive 实现 HA">https://blog.diglp.xyz/2018/03/01/OP_KeepAlive实现HA/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
@@ -662,7 +625,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/web/" rel="tag"># web</a>
+            <a href="/tags/Nginx/" rel="tag"># Nginx</a>
           
         </div>
       
@@ -675,8 +638,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/10/web_1/" rel="next" title="Django WEB 开发入门">
-                <i class="fa fa-chevron-left"></i> Django WEB 开发入门
+              <a href="/2018/02/28/MerkleTree_1/" rel="next" title="什么是默克尔树">
+                <i class="fa fa-chevron-left"></i> 什么是默克尔树
               </a>
             
           </div>
@@ -685,8 +648,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/06/OP_Nginx 的入门笔记/" rel="prev" title="Nginx 简明入门">
-                Nginx 简明入门 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/03/Book_智能硬件安全/" rel="prev" title="读本好书《智能硬件安全》">
+                读本好书《智能硬件安全》 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -969,7 +932,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Web-杂记"><span class="nav-number">1.</span> <span class="nav-text">Web 杂记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Foreword"><span class="nav-number">1.1.</span> <span class="nav-text">Foreword</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Context"><span class="nav-number">1.1.1.</span> <span class="nav-text">Context</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于-BootStrap"><span class="nav-number">1.1.2.</span> <span class="nav-text">关于 BootStrap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于-JQuery"><span class="nav-number">1.1.3.</span> <span class="nav-text">关于 JQuery</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Js-里的-异步-回调"><span class="nav-number">1.1.4.</span> <span class="nav-text">Js 里的 (异步)回调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS-的事件绑定"><span class="nav-number">1.1.5.</span> <span class="nav-text">JS 的事件绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元素复用列表追加"><span class="nav-number">1.1.6.</span> <span class="nav-text">元素复用列表追加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遇到的问题"><span class="nav-number">1.1.7.</span> <span class="nav-text">遇到的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后"><span class="nav-number">1.2.</span> <span class="nav-text">后</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Keepalive-实现-HA"><span class="nav-number">1.</span> <span class="nav-text">Keepalive 实现 HA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前"><span class="nav-number">1.1.</span> <span class="nav-text">前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Keepalive-基本概念"><span class="nav-number">1.2.</span> <span class="nav-text">Keepalive 基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络拓扑"><span class="nav-number">1.3.</span> <span class="nav-text">网络拓扑</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1158,9 +1121,9 @@
 
 <script>
   var disqus_config = function() {
-    this.page.url = "https://blog.diglp.xyz/2018/08/20/web_2/";
-    this.page.identifier = "2018/08/20/web_2/";
-    this.page.title = 'Web 杂记';
+    this.page.url = "https://blog.diglp.xyz/2018/03/01/OP_KeepAlive实现HA/";
+    this.page.identifier = "2018/03/01/OP_KeepAlive实现HA/";
+    this.page.title = 'Keepalive 实现 HA';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
