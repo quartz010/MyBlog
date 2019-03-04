@@ -100,18 +100,18 @@
 
 
 
-  <meta name="description" content="Nginx折腾笔记（SSL配置以及路由重写）前面的话需求分析，由于 搭好了日志平台，本想着把Blog迁移到主机上，最后想想，算了 这里的博客的域名，本来是通过 在解析配置里面使用了一个 CNAME到 quartz010.github.io 实现一次访问，这里对架构进行一次调整。原 blog的二级先解析到服务器，留下日志之后，进行一次隐式跳转，实现一次访问。不过，这样会受限于服务器的带宽。但是也算是">
+  <meta name="description" content="前面的话需求分析，由于 搭好了日志平台，本想着把Blog迁移到主机上，最后想想，算了 这里的博客的域名，本来是通过 在解析配置里面使用了一个 CNAME到 quartz010.github.io 实现一次访问，这里对架构进行一次调整。原 blog的二级先解析到服务器，留下日志之后，进行一次隐式跳转，实现一次访问。不过，这样会受限于服务器的带宽。但是也算是接入了日志平台。所以这里需要使用 Nginx">
 <meta name="keywords" content="Nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nginx 折腾笔记（SSL配置以及路由重写）">
 <meta property="og:url" content="https://blog.diglp.xyz/2019/02/08/OP_Nginx折腾笔记（SSL配置以及路由重写）/index.html">
 <meta property="og:site_name" content="R4y&#39;s Blog">
-<meta property="og:description" content="Nginx折腾笔记（SSL配置以及路由重写）前面的话需求分析，由于 搭好了日志平台，本想着把Blog迁移到主机上，最后想想，算了 这里的博客的域名，本来是通过 在解析配置里面使用了一个 CNAME到 quartz010.github.io 实现一次访问，这里对架构进行一次调整。原 blog的二级先解析到服务器，留下日志之后，进行一次隐式跳转，实现一次访问。不过，这样会受限于服务器的带宽。但是也算是">
+<meta property="og:description" content="前面的话需求分析，由于 搭好了日志平台，本想着把Blog迁移到主机上，最后想想，算了 这里的博客的域名，本来是通过 在解析配置里面使用了一个 CNAME到 quartz010.github.io 实现一次访问，这里对架构进行一次调整。原 blog的二级先解析到服务器，留下日志之后，进行一次隐式跳转，实现一次访问。不过，这样会受限于服务器的带宽。但是也算是接入了日志平台。所以这里需要使用 Nginx">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-24T06:19:27.000Z">
+<meta property="og:updated_time" content="2019-03-04T11:57:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx 折腾笔记（SSL配置以及路由重写）">
-<meta name="twitter:description" content="Nginx折腾笔记（SSL配置以及路由重写）前面的话需求分析，由于 搭好了日志平台，本想着把Blog迁移到主机上，最后想想，算了 这里的博客的域名，本来是通过 在解析配置里面使用了一个 CNAME到 quartz010.github.io 实现一次访问，这里对架构进行一次调整。原 blog的二级先解析到服务器，留下日志之后，进行一次隐式跳转，实现一次访问。不过，这样会受限于服务器的带宽。但是也算是">
+<meta name="twitter:description" content="前面的话需求分析，由于 搭好了日志平台，本想着把Blog迁移到主机上，最后想想，算了 这里的博客的域名，本来是通过 在解析配置里面使用了一个 CNAME到 quartz010.github.io 实现一次访问，这里对架构进行一次调整。原 blog的二级先解析到服务器，留下日志之后，进行一次隐式跳转，实现一次访问。不过，这样会受限于服务器的带宽。但是也算是接入了日志平台。所以这里需要使用 Nginx">
 
 
 
@@ -435,7 +435,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-24 14:19:27" itemprop="dateModified" datetime="2019-02-24T14:19:27+08:00">2019-02-24</time>
+                <time title="修改时间：2019-03-04 19:57:26" itemprop="dateModified" datetime="2019-03-04T19:57:26+08:00">2019-03-04</time>
               
             
           </span>
@@ -536,7 +536,7 @@
       
 
       
-        <h1 id="Nginx折腾笔记（SSL配置以及路由重写）"><a href="#Nginx折腾笔记（SSL配置以及路由重写）" class="headerlink" title="Nginx折腾笔记（SSL配置以及路由重写）"></a>Nginx折腾笔记（SSL配置以及路由重写）</h1><h2 id="前面的话"><a href="#前面的话" class="headerlink" title="前面的话"></a>前面的话</h2><p>需求分析，由于 搭好了日志平台，本想着把Blog迁移到主机上，最后想想，算了</p>
+        <h2 id="前面的话"><a href="#前面的话" class="headerlink" title="前面的话"></a>前面的话</h2><p>需求分析，由于 搭好了日志平台，本想着把Blog迁移到主机上，最后想想，算了</p>
 <p>这里的博客的域名，本来是通过 在解析配置里面使用了一个 <code>CNAME</code>到 <a href="quartz010.github.io">quartz010.github.io</a> 实现一次访问，这里对架构进行一次调整。原 <code>blog</code>的二级先解析到服务器，留下日志之后，进行一次隐式跳转，实现一次访问。不过，这样会受限于服务器的带宽。但是也算是接入了日志平台。所以这里需要使用 Nginx  实现重定向。</p>
 <hr>
 <p>其二，域名不备案，web一起来，就被工信部给 ban 了。可是备案太麻烦了，真的是懒。所以这里跑 HTTPS ，做一个短期的检测绕过。因为 HTTPS 其报文内容是加密的，所以流量只要不是很大，应该也不至于单独去做侧信道的分析。所以这里顺便给部署全站的  HTTPS 访问暂时的撑着。</p>
@@ -965,7 +965,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Nginx折腾笔记（SSL配置以及路由重写）"><span class="nav-number">1.</span> <span class="nav-text">Nginx折腾笔记（SSL配置以及路由重写）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前面的话"><span class="nav-number">1.1.</span> <span class="nav-text">前面的话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显式重定向-和-隐式重定向"><span class="nav-number">1.2.</span> <span class="nav-text">显式重定向 和 隐式重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由重写"><span class="nav-number">1.3.</span> <span class="nav-text">路由重写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSL-配置"><span class="nav-number">1.4.</span> <span class="nav-text">SSL 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础知识"><span class="nav-number">1.4.1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#证书配置"><span class="nav-number">1.4.2.</span> <span class="nav-text">证书配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全站使用-HTTPS-的实现"><span class="nav-number">1.5.</span> <span class="nav-text">全站使用 HTTPS 的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后面的话"><span class="nav-number">1.6.</span> <span class="nav-text">后面的话</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前面的话"><span class="nav-number">1.</span> <span class="nav-text">前面的话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显式重定向-和-隐式重定向"><span class="nav-number">2.</span> <span class="nav-text">显式重定向 和 隐式重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由重写"><span class="nav-number">3.</span> <span class="nav-text">路由重写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSL-配置"><span class="nav-number">4.</span> <span class="nav-text">SSL 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础知识"><span class="nav-number">4.1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#证书配置"><span class="nav-number">4.2.</span> <span class="nav-text">证书配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全站使用-HTTPS-的实现"><span class="nav-number">5.</span> <span class="nav-text">全站使用 HTTPS 的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后面的话"><span class="nav-number">6.</span> <span class="nav-text">后面的话</span></a></li></ol></div>
             
 
           </div>
@@ -1004,7 +1004,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">378k</span>
+    <span title="站点总字数">375k</span>
   
 
   
@@ -1013,7 +1013,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">10:31</span>
+    <span title="站点阅读时长">10:25</span>
   
 </div>
 

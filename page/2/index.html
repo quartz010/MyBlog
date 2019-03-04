@@ -436,7 +436,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-24 14:17:37" itemprop="dateModified" datetime="2019-02-24T14:17:37+08:00">2019-02-24</time>
+                <time title="修改时间：2019-03-04 19:57:26" itemprop="dateModified" datetime="2019-03-04T19:57:26+08:00">2019-03-04</time>
               
             
           </span>
@@ -532,7 +532,7 @@
         
           
             <p>
-              Nginx 折腾笔记（LB 和 Tunnel）前面的话突然又是折腾了一波nginx，其中一点点的配置和过程在这里记录一下。
+              前面的话突然又是折腾了一波nginx，其中一点点的配置和过程在这里记录一下。
 下午又把 《社交网络》这部片看了一遍，又是一种熟悉的热血沸腾的感觉。
 思考自己仿佛也是在同样的年龄，但是，为什么却是那种的遥不可及的的感觉，
 也许这个就是文化吧。一定去西海岸！
@@ -548,7 +548,8 @@
 出卖你的往往是你最好的朋友
 
 之前的场景内网不通，怎么打洞，使得外网可以访问。内网打洞。
-原始方案，两次端口转发，加上 VPN。这样实现协议栈倒是没有加其他的东
+原始方案，两次端口转发，加上 VPN。这样实现协议栈倒是没有加其他的东西，都团原生的。
+后面 想想，使用 frp 或
               ...
             </p>
           <!--noindex-->
@@ -676,7 +677,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-24 14:16:57" itemprop="dateModified" datetime="2019-02-24T14:16:57+08:00">2019-02-24</time>
+                <time title="修改时间：2019-03-04 19:57:26" itemprop="dateModified" datetime="2019-03-04T19:57:26+08:00">2019-03-04</time>
               
             
           </span>
@@ -735,7 +736,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4.1k</span>
+                <span title="本文字数">3.8k</span>
               
 
               
@@ -749,7 +750,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:07</span>
+                <span title="阅读时长">0:06</span>
               
             </div>
           
@@ -772,14 +773,14 @@
         
           
             <p>
-              Docker 初步前这篇，是一个Docker 的实战篇，使用Docker实现一个文件上传的web页面。ps：本来是要实现上传后自动编译并且允许返回结果的。因为各种原因就烂尾了，就这样吧先。
+              前这篇，是一个Docker 的实战篇，使用Docker实现一个文件上传的web页面。ps：本来是要实现上传后自动编译并且允许返回结果的。因为各种原因就烂尾了，就这样吧先。
 因为这篇，是比较基础的操作，很多东西还是有悖了Docker的 Build，ship，and run 的思想。这里还需要进行手动，所以显得比较有悖初衷。不过做一个过程的记录还是可以的。
 
 后面就打算实现一个标标准准的Docker 的工程，体现出 微服务 的思想。
 
 Docker 的一个容器理应是只跑一个进程（服务）的。
 
-Basic先从Dockerhub上拉镜像，这里需要 Nginx 和 Uwsgi，这里选取
+Basic先从Dockerhub上拉镜像，这里需要 Nginx 和 Uwsgi，这里选取了tiangolo
               ...
             </p>
           <!--noindex-->
@@ -907,7 +908,7 @@ Basic先从Dockerhub上拉镜像，这里需要 Nginx 和 Uwsgi，这里选取
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-29 15:41:03" itemprop="dateModified" datetime="2019-01-29T15:41:03+08:00">2019-01-29</time>
+                <time title="修改时间：2019-03-04 19:57:26" itemprop="dateModified" datetime="2019-03-04T19:57:26+08:00">2019-03-04</time>
               
             
           </span>
@@ -966,7 +967,7 @@ Basic先从Dockerhub上拉镜像，这里需要 Nginx 和 Uwsgi，这里选取
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">7.7k</span>
+                <span title="本文字数">7.5k</span>
               
 
               
@@ -980,7 +981,7 @@ Basic先从Dockerhub上拉镜像，这里需要 Nginx 和 Uwsgi，这里选取
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:13</span>
+                <span title="阅读时长">0:12</span>
               
             </div>
           
@@ -1003,7 +1004,7 @@ Basic先从Dockerhub上拉镜像，这里需要 Nginx 和 Uwsgi，这里选取
         
           
             <p>
-              读本好书 《Docker 进阶与实践》前简介
+              前简介
 书名：Docker 进阶与实践
 作者：华为Docker实践小组
 ISBN：9787111523390
@@ -1016,7 +1017,11 @@ Docker 简介其核心的思想是 ： Build Ship and Run。
 
 Docker 之于传统的虚拟化技术是没有 Hypervisor 层。
 
-Docker 使用了层级镜像的应用，可
+Docker 使用了层级镜像的应用，可以实现存储空间的复用。
+
+
+
+基础概念
               ...
             </p>
           <!--noindex-->
@@ -1144,7 +1149,7 @@ Docker 使用了层级镜像的应用，可
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-29 15:38:27" itemprop="dateModified" datetime="2019-01-29T15:38:27+08:00">2019-01-29</time>
+                <time title="修改时间：2019-03-04 19:57:26" itemprop="dateModified" datetime="2019-03-04T19:57:26+08:00">2019-03-04</time>
               
             
           </span>
@@ -1240,7 +1245,7 @@ Docker 使用了层级镜像的应用，可
         
           
             <p>
-              读本好书 《XSS 蠕虫 &amp; 病毒》前突然一个状态的转变,总是需要好解的转变的时间。
+              前突然一个状态的转变,总是需要好解的转变的时间。
 事前比较多，感觉自己在知识的荒野上已经漫步了好久。时而有着恐慌的感觉。
 简介
 书名：XSS 蠕虫 &amp; 病毒
@@ -1250,7 +1255,7 @@ Docker 使用了层级镜像的应用，可
 来源：GitBook
 
 一本篇幅短小的书，主要是将关于 XSS蠕虫 的书籍， 这个蠕虫其实都不陌生，一年前，记得qq空间里面的自动转发，这个就是和书里的主角有关系了。
-简单来说，XSS 在用户的浏览器端注入了目标代码，用于伪造
+简单来说，XSS 在用户的浏览器端注入了目标代码，用于伪造了用户的操作，然而使用 XSS 的蠕虫，可以
               ...
             </p>
           <!--noindex-->
@@ -1378,7 +1383,7 @@ Docker 使用了层级镜像的应用，可
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-25 23:29:41" itemprop="dateModified" datetime="2018-11-25T23:29:41+08:00">2018-11-25</time>
+                <time title="修改时间：2019-03-04 19:57:26" itemprop="dateModified" datetime="2019-03-04T19:57:26+08:00">2019-03-04</time>
               
             
           </span>
@@ -1474,7 +1479,7 @@ Docker 使用了层级镜像的应用，可
         
           
             <p>
-              读本好书 《操作系统思考》中间有事情折腾来回飘，其中也是抽了抽时间看了看书。
+              中间有事情折腾来回飘，其中也是抽了抽时间看了看书。
 
 这里放上一幅偶遇的图，自己现在在哪里呢~
 
@@ -1482,7 +1487,9 @@ Docker 使用了层级镜像的应用，可
 身为互联网人，也难免不惊叹于互联网的发展，很久以前，一直在思考，明明有那么好的，先进的易用的科技产品，那么在平常百姓的家里怎么就这么难见到呢？一直在想，有一个怕平台，可以把这些东西推到人们身边。实则不然，哪里这么简单，更快，更方便，就是人们的选择吗？年龄，思维，甚至性格，都会去决定这些东西存在的可能。真正的拿了就走的自动售货机。。。
 简介
 书名：操作系统思考 中文版
-原文：Think OS: A Brief Introduction to Operating Syste
+原文：Think OS: A Brief Introduction to Operating Systems
+译者：飞龙
+来源：A
               ...
             </p>
           <!--noindex-->
@@ -1610,7 +1617,7 @@ Docker 使用了层级镜像的应用，可
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-25 23:28:57" itemprop="dateModified" datetime="2018-11-25T23:28:57+08:00">2018-11-25</time>
+                <time title="修改时间：2019-03-04 19:57:26" itemprop="dateModified" datetime="2019-03-04T19:57:26+08:00">2019-03-04</time>
               
             
           </span>
@@ -1669,7 +1676,7 @@ Docker 使用了层级镜像的应用，可
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4.2k</span>
+                <span title="本文字数">4k</span>
               
 
               
@@ -1706,7 +1713,7 @@ Docker 使用了层级镜像的应用，可
         
           
             <p>
-              《读本好书》Python 安全编程教程已经地几本了，鼓励一下自己啦。这本主要是讲 python 用于安全相关的编程内容。本书的篇幅比较的短，这篇总结一下主要的内容。
+              已经地几本了，鼓励一下自己啦。这本主要是讲 python 用于安全相关的编程内容。本书的篇幅比较的短，这篇总结一下主要的内容。
 
 我们是愚者，我们是一只蜂 1.6*10^9 &gt; 1.6*10^9 ，我们自己根据蓝图所画出的东西，超乎我们自己的想象。
 简介
@@ -1721,7 +1728,7 @@ Docker 使用了层级镜像的应用，可
 入门
 使用 help 函数，可以很方便的查看函数的相关说明
 
-端口扫
+端口扫描简单的端口扫描功能，使用 socke
               ...
             </p>
           <!--noindex-->
@@ -1832,12 +1839,24 @@ Docker 使用了层级镜像的应用，可
                 
               
 
-              <time title="创建时间：2018-10-28 00:00:00 / 修改时间：01:50:44" itemprop="dateCreated datePublished" datetime="2018-10-28T00:00:00+08:00">2018-10-28</time>
+              <time title="创建时间：2018-10-28 00:00:00" itemprop="dateCreated datePublished" datetime="2018-10-28T00:00:00+08:00">2018-10-28</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-04 19:57:26" itemprop="dateModified" datetime="2019-03-04T19:57:26+08:00">2019-03-04</time>
               
             
           </span>
@@ -1896,7 +1915,7 @@ Docker 使用了层级镜像的应用，可
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">10k</span>
+                <span title="本文字数">9.9k</span>
               
 
               
@@ -1910,7 +1929,7 @@ Docker 使用了层级镜像的应用，可
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:17</span>
+                <span title="阅读时长">0:16</span>
               
             </div>
           
@@ -1933,7 +1952,7 @@ Docker 使用了层级镜像的应用，可
         
           
             <p>
-              读本好书 《Python 进阶》前坚持自己的读书计划吧，不断地学习新知识和历练自己的能力水平。来填充自己平时的空白，的确是一件很舒服的事情不是吗。
+              前坚持自己的读书计划吧，不断地学习新知识和历练自己的能力水平。来填充自己平时的空白，的确是一件很舒服的事情不是吗。
 没必要去羡慕，静下心来做好自己的东西就好了。很多东西一旦拥有了，也许就不会珍惜了，得不到的永远在骚动，被偏爱的却有恃无恐。
 
 平时总是有很多想法，偶尔的写写 XD。这次的书，篇幅很短，所以也很顺利的在一周之内读的差不多了。正值周末，来写写笔记，和一些使用的demo 。不然就忘得差不多了。
@@ -1943,7 +1962,7 @@ Docker 使用了层级镜像的应用，可
 ISBN：N/A
 开源书籍
 
-本书是一本开源书籍，开源的精神真的感染了我们每个人，我写书
+本书是一本开源书籍，开源的精神真的感染了我们每个人，我写书，大家来翻译，来排版，来查错。大
               ...
             </p>
           <!--noindex-->
@@ -2071,7 +2090,7 @@ ISBN：N/A
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-10-28 01:52:05" itemprop="dateModified" datetime="2018-10-28T01:52:05+08:00">2018-10-28</time>
+                <time title="修改时间：2019-03-04 19:57:26" itemprop="dateModified" datetime="2019-03-04T19:57:26+08:00">2019-03-04</time>
               
             
           </span>
@@ -2167,7 +2186,7 @@ ISBN：N/A
         
           
             <p>
-              WeChell WriteUp前偶遇了一个网站 wechall.net ，发现是CTF 的一个很好的入门之地。很多很经典的内容在这里学习， 还是不错的。这一篇，是这周的解题过程中的一个记录吧。
+              前偶遇了一个网站 wechall.net ，发现是CTF 的一个很好的入门之地。很多很经典的内容在这里学习， 还是不错的。这一篇，是这周的解题过程中的一个记录吧。
 
 WeChall    14    145    yes        104    3.74%    Oct 21, 2018 - 05:43:34    **        
 
@@ -2179,7 +2198,9 @@ view source        F12/c+o+i
 
 Stegano            hexedit
 
-Caesar 1            C
+Caesar 1            Caesar 移位
+
+WWW-R
               ...
             </p>
           <!--noindex-->
@@ -2307,7 +2328,7 @@ Caesar 1            C
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-10-21 16:24:16" itemprop="dateModified" datetime="2018-10-21T16:24:16+08:00">2018-10-21</time>
+                <time title="修改时间：2019-03-04 19:57:26" itemprop="dateModified" datetime="2019-03-04T19:57:26+08:00">2019-03-04</time>
               
             
           </span>
@@ -2366,7 +2387,7 @@ Caesar 1            C
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.8k</span>
+                <span title="本文字数">3.7k</span>
               
 
               
@@ -2403,7 +2424,7 @@ Caesar 1            C
         
           
             <p>
-              读本好书 《白帽子讲WEB安全》前
+              前
 喜欢就去追寻
 互联网本来是安全的。自从有了研究安全的人之后，互联网就变得不安全了。
 
@@ -2422,7 +2443,8 @@ WEB 安全相关的入门书籍，范围很广，每个类型的威胁，都有�
 浏览器同源政策及其规避方法 - ruanyf
 
 
-CSRFCross-site r
+CSRFCross-site request forgery,
+
               ...
             </p>
           <!--noindex-->
@@ -2550,7 +2572,7 @@ CSRFCross-site r
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-24 14:19:55" itemprop="dateModified" datetime="2019-02-24T14:19:55+08:00">2019-02-24</time>
+                <time title="修改时间：2019-03-04 19:57:26" itemprop="dateModified" datetime="2019-03-04T19:57:26+08:00">2019-03-04</time>
               
             
           </span>
@@ -2609,7 +2631,7 @@ CSRFCross-site r
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.4k</span>
+                <span title="本文字数">2.3k</span>
               
 
               
@@ -2646,9 +2668,9 @@ CSRFCross-site r
         
           
             <p>
-              Uwsgi 配置问题记录前使用 Nginx 和 uwsgi 一起搭建提供 CGI 服务。本来时很顺利的搭建完成了环境。发现到另一台主机上就出现了葛总问题，这里记录一下
+              前使用 Nginx 和 uwsgi 一起搭建提供 CGI 服务。本来时很顺利的搭建完成了环境。发现到另一台主机上就出现了葛总问题，这里记录一下
 Nginx在 Nginx 的配置文件中的配置如下 ，在官方的模板配置里面也已经给出。
-location ^/CGI &#123;	rewrite ^ /cgi-bin/x.py last;&#125;location /cgi-bin &#123;    # internal;    include $nginx_root/nginx/conf/uwsgi_params;    uwsgi_modifier1 9;    uws
+location ^/CGI &#123;	rewrite ^ /cgi-bin/x.py last;&#125;location /cgi-bin &#123;    # internal;    include $nginx_root/nginx/conf/uwsgi_params;    uwsgi_modifier1 9;    uwsgi_pass 127.
               ...
             </p>
           <!--noindex-->
@@ -2973,7 +2995,7 @@ location ^/CGI &#123;	rewrite ^ /cgi-bin/x.py last;&#125;location /cgi-bin &#123
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">378k</span>
+    <span title="站点总字数">375k</span>
   
 
   
@@ -2982,7 +3004,7 @@ location ^/CGI &#123;	rewrite ^ /cgi-bin/x.py last;&#125;location /cgi-bin &#123
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">10:31</span>
+    <span title="站点阅读时长">10:25</span>
   
 </div>
 

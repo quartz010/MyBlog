@@ -100,18 +100,18 @@
 
 
 
-  <meta name="description" content="Nginx 简明入门前Nginx 是个好东西。。。 Nginx 的wiki 定义  Nginx（发音同engine x）是一个异步框架的 Web服务器，也可以用作反向代理，负载平衡器 和 HTTP缓存。该软件由 Igor Sysoev 创建，并于2004年首次公开发布。[6] 同名公司成立于2011年，以提供支持。[7]   平时或多或少的在使用 Nginx 这个服务，但是很少系统的去学习它。作为">
+  <meta name="description" content="前Nginx 是个好东西。。。 Nginx 的wiki 定义  Nginx（发音同engine x）是一个异步框架的 Web服务器，也可以用作反向代理，负载平衡器 和 HTTP缓存。该软件由 Igor Sysoev 创建，并于2004年首次公开发布。[6] 同名公司成立于2011年，以提供支持。[7]   平时或多或少的在使用 Nginx 这个服务，但是很少系统的去学习它。作为OP这个东西肯定是十">
 <meta name="keywords" content="简明入门,Nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nginx 简明入门">
 <meta property="og:url" content="https://blog.diglp.xyz/2018/09/06/OP_Nginx 的入门笔记/index.html">
 <meta property="og:site_name" content="R4y&#39;s Blog">
-<meta property="og:description" content="Nginx 简明入门前Nginx 是个好东西。。。 Nginx 的wiki 定义  Nginx（发音同engine x）是一个异步框架的 Web服务器，也可以用作反向代理，负载平衡器 和 HTTP缓存。该软件由 Igor Sysoev 创建，并于2004年首次公开发布。[6] 同名公司成立于2011年，以提供支持。[7]   平时或多或少的在使用 Nginx 这个服务，但是很少系统的去学习它。作为">
+<meta property="og:description" content="前Nginx 是个好东西。。。 Nginx 的wiki 定义  Nginx（发音同engine x）是一个异步框架的 Web服务器，也可以用作反向代理，负载平衡器 和 HTTP缓存。该软件由 Igor Sysoev 创建，并于2004年首次公开发布。[6] 同名公司成立于2011年，以提供支持。[7]   平时或多或少的在使用 Nginx 这个服务，但是很少系统的去学习它。作为OP这个东西肯定是十">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-24T06:19:01.000Z">
+<meta property="og:updated_time" content="2019-03-04T11:57:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx 简明入门">
-<meta name="twitter:description" content="Nginx 简明入门前Nginx 是个好东西。。。 Nginx 的wiki 定义  Nginx（发音同engine x）是一个异步框架的 Web服务器，也可以用作反向代理，负载平衡器 和 HTTP缓存。该软件由 Igor Sysoev 创建，并于2004年首次公开发布。[6] 同名公司成立于2011年，以提供支持。[7]   平时或多或少的在使用 Nginx 这个服务，但是很少系统的去学习它。作为">
+<meta name="twitter:description" content="前Nginx 是个好东西。。。 Nginx 的wiki 定义  Nginx（发音同engine x）是一个异步框架的 Web服务器，也可以用作反向代理，负载平衡器 和 HTTP缓存。该软件由 Igor Sysoev 创建，并于2004年首次公开发布。[6] 同名公司成立于2011年，以提供支持。[7]   平时或多或少的在使用 Nginx 这个服务，但是很少系统的去学习它。作为OP这个东西肯定是十">
 
 
 
@@ -435,7 +435,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-24 14:19:01" itemprop="dateModified" datetime="2019-02-24T14:19:01+08:00">2019-02-24</time>
+                <time title="修改时间：2019-03-04 19:57:26" itemprop="dateModified" datetime="2019-03-04T19:57:26+08:00">2019-03-04</time>
               
             
           </span>
@@ -536,7 +536,7 @@
       
 
       
-        <h1 id="Nginx-简明入门"><a href="#Nginx-简明入门" class="headerlink" title="Nginx 简明入门"></a>Nginx 简明入门</h1><h2 id="前"><a href="#前" class="headerlink" title="前"></a>前</h2><p>Nginx 是个好东西。。。</p>
+        <h2 id="前"><a href="#前" class="headerlink" title="前"></a>前</h2><p>Nginx 是个好东西。。。</p>
 <p>Nginx 的wiki 定义</p>
 <blockquote>
 <p><strong>Nginx</strong>（发音同engine x）是一个异步框架的 <span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU3JUI2JUIyJUU5JUEwJTgxJUU0JUJDJUJBJUU2JTlDJThEJUU1JTk5JUE4" title="https://zh.wikipedia.org/wiki/%E7%B6%B2%E9%A0%81%E4%BC%BA%E6%9C%8D%E5%99%A8">Web服务器<i class="fa fa-external-link"></i></span>，也可以用作<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU1JThGJThEJUU1JTkwJTkxJUU0JUJCJUEzJUU3JTkwJTg2" title="https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86">反向代理<i class="fa fa-external-link"></i></span>，<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU4JUI0JTlGJUU4JUJEJUJEJUU1JTlEJTg3JUU4JUExJUEx" title="https://zh.wikipedia.org/wiki/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1">负载平衡器<i class="fa fa-external-link"></i></span> 和 <span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvSFRUUCVFNyVCQyU5MyVFNSVBRCU5OA==" title="https://zh.wikipedia.org/wiki/HTTP%E7%BC%93%E5%AD%98">HTTP缓存<i class="fa fa-external-link"></i></span>。该软件由 <span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU0JUJDJThBJUU2JTg4JTg4JUU3JTg4JUJFJUMyJUI3JUU4JUIzJUJEJUU3JUI0JUEyJUU4JTgwJUI2JUU1JUE0JUFC" title="https://zh.wikipedia.org/wiki/%E4%BC%8A%E6%88%88%E7%88%BE%C2%B7%E8%B3%BD%E7%B4%A2%E8%80%B6%E5%A4%AB">Igor Sysoev<i class="fa fa-external-link"></i></span> 创建，并于2004年首次公开发布。<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvTmdpbngjY2l0ZV9ub3RlLU1vYmlseS02" title="https://zh.wikipedia.org/wiki/Nginx#cite_note-Mobily-6">[6]<i class="fa fa-external-link"></i></span> 同名公司成立于2011年，以提供支持。<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvTmdpbngjY2l0ZV9ub3RlLUQtNw==" title="https://zh.wikipedia.org/wiki/Nginx#cite_note-D-7">[7]<i class="fa fa-external-link"></i></span> </p>
@@ -787,8 +787,8 @@ HttpCoreModule    Http服务器的基础配置模块
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/09/MangoDB/" rel="prev" title="MongoDB 简明入门">
-                MongoDB 简明入门 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/09/OP_Nginx_CGI/" rel="prev" title="Nginx 基础杂记">
+                Nginx 基础杂记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1071,7 +1071,7 @@ HttpCoreModule    Http服务器的基础配置模块
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Nginx-简明入门"><span class="nav-number">1.</span> <span class="nav-text">Nginx 简明入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前"><span class="nav-number">1.1.</span> <span class="nav-text">前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NginX"><span class="nav-number">1.2.</span> <span class="nav-text">NginX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx-的作用-HTTP-svr"><span class="nav-number">1.2.1.</span> <span class="nav-text">nginx 的作用: HTTP svr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx-的基本模块"><span class="nav-number">1.2.2.</span> <span class="nav-text">Nginx 的基本模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Master-与-Worker"><span class="nav-number">1.2.3.</span> <span class="nav-text">Master 与 Worker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx-与-PHP"><span class="nav-number">1.2.4.</span> <span class="nav-text">nginx 与 PHP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些值得注意的地方"><span class="nav-number">1.2.5.</span> <span class="nav-text">一些值得注意的地方</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#master-process-这个配置项"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">master_process 这个配置项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PID-文件的作用"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">PID 文件的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#root-和-alias"><span class="nav-number">1.2.5.3.</span> <span class="nav-text">root 和 alias</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IPv4-到-IPv6"><span class="nav-number">1.2.5.4.</span> <span class="nav-text">IPv4 到 IPv6</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.3.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">1.4.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前"><span class="nav-number">1.</span> <span class="nav-text">前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NginX"><span class="nav-number">2.</span> <span class="nav-text">NginX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx-的作用-HTTP-svr"><span class="nav-number">2.1.</span> <span class="nav-text">nginx 的作用: HTTP svr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx-的基本模块"><span class="nav-number">2.2.</span> <span class="nav-text">Nginx 的基本模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Master-与-Worker"><span class="nav-number">2.3.</span> <span class="nav-text">Master 与 Worker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx-与-PHP"><span class="nav-number">2.4.</span> <span class="nav-text">nginx 与 PHP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些值得注意的地方"><span class="nav-number">2.5.</span> <span class="nav-text">一些值得注意的地方</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#master-process-这个配置项"><span class="nav-number">2.5.1.</span> <span class="nav-text">master_process 这个配置项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PID-文件的作用"><span class="nav-number">2.5.2.</span> <span class="nav-text">PID 文件的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#root-和-alias"><span class="nav-number">2.5.3.</span> <span class="nav-text">root 和 alias</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IPv4-到-IPv6"><span class="nav-number">2.5.4.</span> <span class="nav-text">IPv4 到 IPv6</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">3.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -1110,7 +1110,7 @@ HttpCoreModule    Http服务器的基础配置模块
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">378k</span>
+    <span title="站点总字数">375k</span>
   
 
   
@@ -1119,7 +1119,7 @@ HttpCoreModule    Http服务器的基础配置模块
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">10:31</span>
+    <span title="站点阅读时长">10:25</span>
   
 </div>
 
