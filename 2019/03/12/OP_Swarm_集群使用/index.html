@@ -100,18 +100,18 @@
 
 
 
-  <meta name="description" content="truffle 可以算是一个超级强大的 Ethereum 开发工具集, 集各种的功能集一身, 今天, 照着官方的文档, 和 手把手的教程, 完成了其中提供的一个demo. truffle的目录结构目录树demo ├── build │   └── contracts │       ├── Migrations.json │       └──  Adoption.json ├── contrac">
-<meta name="keywords" content="区块链,以太坊,Dapp">
+  <meta name="description" content="前面的话上一篇简单快速的进行swarm集群的部署，这可以开始使用了。这里试着部署一个 Nginx 的服务，并且一步步实现前面的高可用的服务架构。  Nginx image 地址  这里推荐一个博客：  散尽浮华 - 安寻安放，不卑不亢；重剑无锋，大巧不工！  里面很多很多的干活，实用型的文章 概念 多个容器的统一为服务  多个服务的统一为栈  服务内自动有VIP机制，VIP 为各个节点的IP">
+<meta name="keywords" content="Docker,Swarm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="宠物商店Dapp 学习笔记">
-<meta property="og:url" content="https://blog.diglp.xyz/2018/02/11/宠物商店(pet-shop) 学习笔记/index.html">
+<meta property="og:title" content="Swarm的服务">
+<meta property="og:url" content="https://blog.diglp.xyz/2019/03/12/OP_Swarm_集群使用/index.html">
 <meta property="og:site_name" content="R4y&#39;s Blog">
-<meta property="og:description" content="truffle 可以算是一个超级强大的 Ethereum 开发工具集, 集各种的功能集一身, 今天, 照着官方的文档, 和 手把手的教程, 完成了其中提供的一个demo. truffle的目录结构目录树demo ├── build │   └── contracts │       ├── Migrations.json │       └──  Adoption.json ├── contrac">
+<meta property="og:description" content="前面的话上一篇简单快速的进行swarm集群的部署，这可以开始使用了。这里试着部署一个 Nginx 的服务，并且一步步实现前面的高可用的服务架构。  Nginx image 地址  这里推荐一个博客：  散尽浮华 - 安寻安放，不卑不亢；重剑无锋，大巧不工！  里面很多很多的干活，实用型的文章 概念 多个容器的统一为服务  多个服务的统一为栈  服务内自动有VIP机制，VIP 为各个节点的IP">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-04T11:57:26.000Z">
+<meta property="og:updated_time" content="2019-03-12T14:22:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="宠物商店Dapp 学习笔记">
-<meta name="twitter:description" content="truffle 可以算是一个超级强大的 Ethereum 开发工具集, 集各种的功能集一身, 今天, 照着官方的文档, 和 手把手的教程, 完成了其中提供的一个demo. truffle的目录结构目录树demo ├── build │   └── contracts │       ├── Migrations.json │       └──  Adoption.json ├── contrac">
+<meta name="twitter:title" content="Swarm的服务">
+<meta name="twitter:description" content="前面的话上一篇简单快速的进行swarm集群的部署，这可以开始使用了。这里试着部署一个 Nginx 的服务，并且一步步实现前面的高可用的服务架构。  Nginx image 地址  这里推荐一个博客：  散尽浮华 - 安寻安放，不卑不亢；重剑无锋，大巧不工！  里面很多很多的干活，实用型的文章 概念 多个容器的统一为服务  多个服务的统一为栈  服务内自动有VIP机制，VIP 为各个节点的IP">
 
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="https://blog.diglp.xyz/2018/02/11/宠物商店(pet-shop) 学习笔记/"/>
+  <link rel="canonical" href="https://blog.diglp.xyz/2019/03/12/OP_Swarm_集群使用/"/>
 
 
 
@@ -130,7 +130,7 @@
   };
 </script>
 
-  <title>宠物商店Dapp 学习笔记 | R4y's Blog</title>
+  <title>Swarm的服务 | R4y's Blog</title>
   
 
 
@@ -377,7 +377,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.diglp.xyz/2018/02/11/宠物商店(pet-shop) 学习笔记/"/>
+    <link itemprop="mainEntityOfPage" href="https://blog.diglp.xyz/2019/03/12/OP_Swarm_集群使用/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Author"/>
@@ -394,7 +394,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">宠物商店Dapp 学习笔记
+          <h2 class="post-title" itemprop="name headline">Swarm的服务
 
               
             
@@ -420,24 +420,12 @@
                 
               
 
-              <time title="创建时间：2018-02-11 00:00:00" itemprop="dateCreated datePublished" datetime="2018-02-11T00:00:00+08:00">2018-02-11</time>
+              <time title="创建时间：2019-03-12 00:00:00 / 修改时间：22:22:19" itemprop="dateCreated datePublished" datetime="2019-03-12T00:00:00+08:00">2019-03-12</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-04 19:57:26" itemprop="dateModified" datetime="2019-03-04T19:57:26+08:00">2019-03-04</time>
               
             
           </span>
@@ -454,7 +442,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/OP之路/" itemprop="url" rel="index"><span itemprop="name">OP之路</span></a></span>
 
                 
                 
@@ -473,8 +461,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/02/11/宠物商店(pet-shop) 学习笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/02/11/宠物商店(pet-shop) 学习笔记/" itemprop="commentCount"></span>
+                <a href="/2019/03/12/OP_Swarm_集群使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/12/OP_Swarm_集群使用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -504,7 +492,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">6.4k</span>
+                <span title="本文字数">1.5k</span>
               
 
               
@@ -518,7 +506,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:11</span>
+                <span title="阅读时长">0:02</span>
               
             </div>
           
@@ -538,226 +526,54 @@
       
 
       
-        <p>truffle 可以算是一个超级强大的 Ethereum 开发工具集, 集各种的功能集一身, 今天, 照着官方的文档, 和 手把手的教程, 完成了其中提供的一个demo.</p>
-<h2 id="truffle的目录结构"><a href="#truffle的目录结构" class="headerlink" title="truffle的目录结构"></a>truffle的目录结构</h2><h3 id="目录树"><a href="#目录树" class="headerlink" title="目录树"></a>目录树</h3><pre><code>demo
-├── build
-│   └── contracts
-│       ├── Migrations.json
-│       └──  Adoption.json
-├── contracts
-│   ├── Migrations.sol
-│   └── Adoption.sol
-├── migrations
-│   └── 1_initial_migration.js
-├── truffle-config.js
-├── truffle.js
-├── test
-│   └──1_initial_migration.js
-└── src
-    └── ...
-</code></pre><p>​    </p>
-<ul>
-<li>contract  此目录就是我们的编写的智能合约所存在的目录, 使用solidity语言编写</li>
-<li>migrations 此目录下是用于迁移部署合约的JS的脚本</li>
-<li>test 测试合约时所用的测试脚本</li>
-<li>src 一个前端的实现, 主要是调用 wed3 的库, 与节点服务器进行RPC</li>
-</ul>
-<h2 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h2><h3 id="合约代码"><a href="#合约代码" class="headerlink" title="合约代码"></a>合约代码</h3><pre><code>pragma solidity ^0.4.17;
-
-contract Adoption {
-  address[16] public adopters;  // 保存领养者的地址
-  /**func: 领养宠物 para: 领养宠物ID */
-  function adopt(uint petId) public returns (uint) {  
-    require(petId &gt;= 0 &amp;&amp; petId &lt;= 15);  // 确保id在数组长度内
-    adopters[petId] = msg.sender;        // 保存调用这地址 
-    return petId; //返回当前宠物ID
-
-  }
-  // 返回领养者
-  function getAdopters() public view returns (address[16]) {
-    return adopters;
-  }
-
-}
-</code></pre><p>以上是实现宠物领养的合约代码.</p>
-<ul>
-<li>指定编译器版本</li>
-<li><p>定义 Adoption 的合约结构</p>
-<pre><code>contract {...}
-</code></pre></li>
-<li>定义一个存放地址的定长数组</li>
-<li>定义合约函数 adopt<ul>
-<li>Public类型, 可以被外部访问, uint参数 为调用时传入的要领养的宠物的ID, 返回值就是当前领养的宠物id</li>
-<li><code>require()</code> 用于检查变量值是否满足当前条件,  不满足条件则立即抛出异常, 并且对所有的已做修改进行回滚(revert)</li>
-<li>使用数组的对应的 ID index 来保存领养者的地址</li>
-</ul>
-</li>
-<li>定义合约函数 <code>getAdopters()</code> <ul>
-<li>直接返回 存储领养者的定长数组</li>
-</ul>
-</li>
-</ul>
-<h3 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h3><p>truffle 作为一个集成的环境, 也是很好的提供了合约测试的功能 </p>
-<pre><code>pragma solidity ^0.4.17;
-
-import &quot;truffle/Assert.sol&quot;;   // 引入的断言文件
-import &quot;truffle/DeployedAddresses.sol&quot;;  // 用来获取被测试合约的地址
-// 上面两个文件是Truffle框架提供, 本身并没有
-
-import &quot;../contracts/Adoption.sol&quot;;      // 被测试合约, 这样才能调用它
-
-//这个合约是用来测试合约的, 每个用例都会被执行, 通过断言判断是否有问题
-
-contract TestAdoption {
-  Adoption adoption = Adoption(DeployedAddresses.Adoption());
-
-  // 领养测试用例
-  function testUserCanAdoptPet() public {
-    uint returnedId = adoption.adopt(8);
-    // 这里传入是8 返回也应该是8
-    uint expected = 8;
-    Assert.equal(returnedId, expected, &quot;Adoption of pet ID 8 should be recorded.&quot;);
-  }
-
-  // 宠物所有者测试用例
-  function testGetAdopterAddressByPetId() public {
-    // 期望领养者的地址就是本合约地址，因为交易是由测试合约发起交易，
-    address expected = this;
-    address adopter = adoption.adopters(8);
-    // 当前地址和返回地址的判断, adopters明明是Array啊, 还能这样?
-    Assert.equal(adopter, expected, &quot;Owner of pet ID 8 should be recorded.&quot;);
-  }
-
-    // 测试所有领养者
-  function testGetAdopterAddressByPetIdInArray() public {
-  // 领养者的地址就是本合约地址
-    address expected = this;
-    address[16] memory adopters = adoption.getAdopters(); // 内存分配,不是storage
-    Assert.equal(adopters[8], expected, &quot;Owner of pet ID 8 should be recorded.&quot;);
-  }
-}
-
-// 关于 this的使用, this代表当前合约, 也是ADDRESS
-</code></pre><p>代码分析写在了注释里面 , 下面是执行结果</p>
-<pre><code>&gt; truffle test
-
-Using network &apos;development&apos;.
-
-Compiling ./contracts/Adoption.sol...
-Compiling ./test/TestAdoption.sol...
-Compiling truffle/Assert.sol...
-Compiling truffle/DeployedAddresses.sol...
-</code></pre><p>​<br>      TestAdoption<br>        ✓ testUserCanAdoptPet (113ms)<br>        ✓ testGetAdopterAddressByPetId (110ms)<br>        ✓ testGetAdopterAddressByPetIdInArray (196ms)</p>
-<p>​<br>      3 passing (1s)</p>
-<p>可见, 通过测试命令, Truffle 对每个函数进行自动的 测试, 对运行结果进行assert(断言)分析, 如果合约代码存在问题, 测试过程会把错误显示出. 这里是全部测试通过的情况.</p>
-<h3 id="前端应用代码"><a href="#前端应用代码" class="headerlink" title="前端应用代码"></a>前端应用代码</h3><p>奈何 没接触过JS 所以看起来有些吃力, 也算是借这个学习一下了!</p>
-<p>代码主体存在于 <code>src/js/app.js</code> , 从功能上讲就是对 我们的合约进行调用, 把我们领养的宠物这个信息记录在区块里.</p>
-<h4 id="InitWeb3"><a href="#InitWeb3" class="headerlink" title="InitWeb3"></a>InitWeb3</h4><pre><code>initWeb3: function () {
-  // 是否当前浏览器提供web3(如 metaMask)?
-  if (typeof web3 !== &apos;undefined&apos;) {
-    App.web3Provider = web3.currentProvider;    //如果是就直接使用当前的
-  } else {
-    // 如果没有插件提供的web3, 就向本地的节点要一个
-    App.web3Provider = new Web3.providers.HttpProvider(&apos;http://localhost:7545&apos;);
-  }
-
-  web3 = new Web3(App.web3Provider);
-
-  return App.initContract();    // 调用后续
-},
-</code></pre><p>这个是web3这个JS包的初始化代码,代码中优先使用Mist 或 MetaMask提供的web3实例，如果没有则从本地环境创建一个。</p>
-<h4 id="InitContract"><a href="#InitContract" class="headerlink" title="InitContract"></a>InitContract</h4><pre><code>initContract: function () {
-
-  $.getJSON(&apos;Adoption.json&apos;, function (data) {
-    // 用Adoption.json数据创建一个可交互的TruffleContract合约实例。
-    var AdoptionArtifact = data;
-    App.contracts.Adoption = TruffleContract(AdoptionArtifact);
-
-    // Set the provider for our contract
-    App.contracts.Adoption.setProvider(App.web3Provider);
-
-    // Use our contract to retrieve and mark the adopted pets
-    return App.markAdopted();    //进行回调,所以先执行这个
-  });
-
-  return App.bindEvents();
-},
-</code></pre><p>这里实现了合约的初始化, 这里加载了Adoption.json，保存了Adoption的ABI（接口说明）信息及部署后的网络(地址)信息，它在编译合约的时候生成ABI，在部署的时候追加网络信息. </p>
+        <h2 id="前面的话"><a href="#前面的话" class="headerlink" title="前面的话"></a>前面的话</h2><p>上一篇简单快速的进行swarm集群的部署，这可以开始使用了。这里试着部署一个 Nginx 的服务，并且一步步实现前面的高可用的服务架构。</p>
 <blockquote>
-<p>画外音: 这里也是展现了NodeJs的一切皆回调的 异步属性 , 中间部分的代码就是我们执行GetJson的 回调代码.(不同于同步(顺序)编程)</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9odWIuZG9ja2VyLmNvbS9fL25naW54" title="https://hub.docker.com/_/nginx">Nginx image 地址<i class="fa fa-external-link"></i></span></p>
 </blockquote>
-<h4 id="MarkAdopted"><a href="#MarkAdopted" class="headerlink" title="MarkAdopted"></a>MarkAdopted</h4><pre><code>markAdopted: function(adopters, account) {
-var adoptionInstance;
-App.contracts.Adoption.deployed().then(function(instance) {
-  adoptionInstance = instance;
-      // 这里部署了合约, 并且保存该合约的实例
-      // 调用合约的getAdopters(), 用call读取信息不用消耗gas, 返回领养者的array
-  return adoptionInstance.getAdopters.call();
-}).then(function(adopters) {
-    // 得到领养者列表之后, 这里进行遍历, 如果发现有存在合理的领养者(if), 改变前端的按钮样式吧(应该)
-  for (i = 0; i &lt; adopters.length; i++) {
-    if (adopters[i] !== &apos;0x0000000000000000000000000000000000000000&apos;) {
-      $(&apos;.panel-pet&apos;).eq(i).find(&apos;button&apos;).text(&apos;Success&apos;).attr(&apos;disabled&apos;, true);
-    }
-  }
-}).catch(function(err) {
-  console.log(err.message);
-      //这里捕获异常, 并且log出来
-});
-},
-</code></pre><blockquote>
-<p>画外音 : then 也是一种回调用法, 在前一函数执行完之后, 才会进行 then 内的函数, 这样就确保了数据的完整获得</p>
-</blockquote>
-<p>这里实现了 合约的部署, 和对已经领养的dog进行标记, 遍历数组得到, 这个判断方式值得学习.</p>
-<h4 id="绑定事件"><a href="#绑定事件" class="headerlink" title="绑定事件"></a>绑定事件</h4><pre><code>bindEvents: function() {
-   $(document).on(&apos;click&apos;, &apos;.btn-adopt&apos;, App.handleAdopt);
- },
-</code></pre><p>这个地方就是通俗易懂了,把按钮点击的事件, 和它的服务函数(handle), 绑定起来.</p>
+<p>这里推荐一个博客：</p>
 <blockquote>
-<p>画外音: JavaScript 是一种事件驱动的语言, 所以, 这里和QT很相似, 也是事件驱动, 用户的点击, 产生事件, 之后调用事件的处理函数,区别于 消息驱动(如MFC)</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20va2V2aW5ncmFjZS8=" title="https://www.cnblogs.com/kevingrace/">散尽浮华 - 安寻安放，不卑不亢；重剑无锋，大巧不工！<i class="fa fa-external-link"></i></span></p>
 </blockquote>
-<h4 id="服务函数"><a href="#服务函数" class="headerlink" title="服务函数"></a>服务函数</h4><pre><code>handleAdopt: function(event) {
-
-   event.preventDefault();
-   var petId = parseInt($(event.target).data(&apos;id&apos;));
-   var adoptionInstance;
-
-   // 获取用户账号.调用Web3
-   web3.eth.getAccounts(function(error, accounts) {
-     // 出常的回调
-     if (error) {
-       console.log(error);
-     }
-
-     var account = accounts[0];
-   // 创建合约实例        
-     App.contracts.Adoption.deployed().then(function(instance) {
-       adoptionInstance = instance;
-
-       // 发送交易领养宠物
-       return adoptionInstance.adopt(petId, {from: account});    执行领养函数
-     }).then(function(result) {
-       return App.markAdopted();    // 标记所领养宠物
-     }).catch(function(err) {
-       console.log(err.message);
-     });
-   });
- }
-</code></pre><p>这里就是, 鼠标点击事件的服务函数.  当鼠标点击Button的时候事件触发, 服务函数被回调.<br>&gt;<br>&gt;<br>&gt;</p>
-<blockquote>
-<ul>
-<li><p>event.preventDefault()    </p>
-<p> 该方法将通知 Web 浏览器不要执行与事件关联的默认动作（如果存在这样的动作）。避免服务函数被中断</p>
+<p>里面很多很多的干活，实用型的文章</p>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li><p>多个容器的统一为服务</p>
 </li>
-<li><p>parseInt()</p>
-<p> 该方法将通知 Web 浏览器不要执行与事件关联的默认动作（如果存在这样的动作）</p>
+<li><p>多个服务的统一为栈</p>
+</li>
+<li><p>服务内自动有VIP机制，VIP 为各个节点的IP</p>
+</li>
+<li><blockquote>
+<p>docker service其实不仅仅是批量启动服务这么简单，而是在集群中定义了一种状态。Cluster会持续检测服务的健康状态并维护集群的高可用性。</p>
+</blockquote>
 </li>
 </ul>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>Swarm 作为 Docker 的原生功能，其主要的工具有以下：</p>
+<ul>
+<li>docker swarm 用于集群管理</li>
+<li>docker service 用于服务创建</li>
+<li>docker node 用于节点管理</li>
+</ul>
+<h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><h3 id="部署服务"><a href="#部署服务" class="headerlink" title="部署服务"></a>部署服务</h3><p>这里简单的基于 Swarm 部署一个 Nginx 的服务。（其实这里本来应该有详细的说明的，留在下篇吧）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">docker network create -d overlay ngx_net</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看docker网络</span></span><br><span class="line">docker network ls</span><br><span class="line"></span><br><span class="line">docker service create \</span><br><span class="line">--replicas 2 \	# 两个副本（一共）</span><br><span class="line">--network ngx_net \ 	# 虚拟网络</span><br><span class="line">--name my-test \		# 服务名</span><br><span class="line">-p 80:80 nginx			# 端口映射（本地到容器）</span><br><span class="line"></span><br><span class="line">docker service ps	# 查看运行的所有的服务</span><br><span class="line"></span><br><span class="line">docker ps			# 查看节点的运行的容器</span><br></pre></td></tr></table></figure>
+<h3 id="服务扩缩容"><a href="#服务扩缩容" class="headerlink" title="服务扩缩容"></a>服务扩缩容</h3><p>Swarm 的一大亮点，就是可以很灵活的进行服务的扩缩容。可以很方便的调整服务的对应的容器的数量。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker service scale my-test=1</span><br><span class="line">docker service scale my-test=5</span><br></pre></td></tr></table></figure>
+<h3 id="数据的持久化"><a href="#数据的持久化" class="headerlink" title="数据的持久化"></a>数据的持久化</h3><p>容器和镜像的区别在与其可读性，镜像可以理解为只读的容器。为了数据的持久化，数据应该挂在在硬盘之上，而不是容器智能，否则容器销毁，数据将会消失。</p>
+<p>这里主要有两种办法：</p>
+<ul>
+<li>bind        这里是直接绑定硬盘上的目录和容器内的目录。</li>
+<li>volumes    在主机上建立相应的目录，可以进行统一的管理。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建一个挂载卷</span></span><br><span class="line">docker volume create --name myvolume</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在容器内挂载卷</span></span><br><span class="line">docker service create \</span><br><span class="line">--replicas 2 \</span><br><span class="line">--network ngx_net \</span><br><span class="line">--mount type=volume,src=myvolume,dst=/wangshibo \</span><br><span class="line">--name test-nginx nginx</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 这里在容器内执行shell，可以看到文件已经同步</span></span><br><span class="line">docker exec -ti 3618e3d1b966 /bin/bash</span><br></pre></td></tr></table></figure>
+<hr>
+<p>这里再折腾的时候，遇到了很大的问题，后面看到发现是swarm 的特性。当服务有多个副本的时候，在创建的时候，的确会在manager界面对目录进行拷贝。但是，后续再对manager上的文件进行修改，这些修改将不会被同步到各个节点上。需要一个个的进行修改很是麻烦，后面可以试着使用 <strong>NFS</strong> 实现多个镜像的配置文件的统一。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20va2V2aW5ncmFjZS9wLzY4NzAzNTkuaHRtbA==" title="https://www.cnblogs.com/kevingrace/p/6870359.html">Docker管理工具-Swarm部署记录<i class="fa fa-external-link"></i></span></li>
+</ul>
 </blockquote>
-<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>这次是个简单的demo的实现和分析,也得上是第一个Dapp的实现 </p>
-<p>这个Demo 的实现参照博文</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9sZWFybmJsb2NrY2hhaW4uY24vMjAxOC8wMS8xMi9maXJzdC1kYXBwLw==" title="https://learnblockchain.cn/2018/01/12/first-dapp/">一步步教你开发、部署第一个去中心化应用(Dapp) - 宠物商店<i class="fa fa-external-link"></i></span></p>
-<p>也感谢博主的OFS的开源精神!(保留版权声明)</p>
+<h2 id="后面的话"><a href="#后面的话" class="headerlink" title="后面的话"></a>后面的话</h2><blockquote>
+<p>当你发现自己的才华撑不起野心时，就请安静下来学习吧</p>
+</blockquote>
 
       
     </div>
@@ -815,7 +631,7 @@ App.contracts.Adoption.deployed().then(function(instance) {
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://blog.diglp.xyz/2018/02/11/宠物商店(pet-shop) 学习笔记/" title="宠物商店Dapp 学习笔记">https://blog.diglp.xyz/2018/02/11/宠物商店(pet-shop) 学习笔记/</a>
+    <a href="https://blog.diglp.xyz/2019/03/12/OP_Swarm_集群使用/" title="Swarm的服务">https://blog.diglp.xyz/2019/03/12/OP_Swarm_集群使用/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
@@ -828,11 +644,9 @@ App.contracts.Adoption.deployed().then(function(instance) {
       
         <div class="post-tags">
           
-            <a href="/tags/区块链/" rel="tag"># 区块链</a>
+            <a href="/tags/Docker/" rel="tag"># Docker</a>
           
-            <a href="/tags/以太坊/" rel="tag"># 以太坊</a>
-          
-            <a href="/tags/Dapp/" rel="tag"># Dapp</a>
+            <a href="/tags/Swarm/" rel="tag"># Swarm</a>
           
         </div>
       
@@ -845,8 +659,8 @@ App.contracts.Adoption.deployed().then(function(instance) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/09/ETH 开发环境搭建及智能合约 helloworld/" rel="next" title="智能合约 HelloWorld">
-                <i class="fa fa-chevron-left"></i> 智能合约 HelloWorld
+              <a href="/2019/03/05/OP_Docker_Swarm/" rel="next" title="Docker集群搭建">
+                <i class="fa fa-chevron-left"></i> Docker集群搭建
               </a>
             
           </div>
@@ -854,10 +668,6 @@ App.contracts.Adoption.deployed().then(function(instance) {
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/12/发行自己的ERC20 Token/" rel="prev" title="发行自己的ERC20 Token">
-                发行自己的ERC20 Token <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1148,7 +958,7 @@ App.contracts.Adoption.deployed().then(function(instance) {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#truffle的目录结构"><span class="nav-number">1.</span> <span class="nav-text">truffle的目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录树"><span class="nav-number">1.1.</span> <span class="nav-text">目录树</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码分析"><span class="nav-number">2.</span> <span class="nav-text">代码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#合约代码"><span class="nav-number">2.1.</span> <span class="nav-text">合约代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试代码"><span class="nav-number">2.2.</span> <span class="nav-text">测试代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端应用代码"><span class="nav-number">2.3.</span> <span class="nav-text">前端应用代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#InitWeb3"><span class="nav-number">2.3.1.</span> <span class="nav-text">InitWeb3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#InitContract"><span class="nav-number">2.3.2.</span> <span class="nav-text">InitContract</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MarkAdopted"><span class="nav-number">2.3.3.</span> <span class="nav-text">MarkAdopted</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绑定事件"><span class="nav-number">2.3.4.</span> <span class="nav-text">绑定事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务函数"><span class="nav-number">2.3.5.</span> <span class="nav-text">服务函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在后面"><span class="nav-number">3.</span> <span class="nav-text">写在后面</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前面的话"><span class="nav-number">1.</span> <span class="nav-text">前面的话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">2.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">3.</span> <span class="nav-text">基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实践"><span class="nav-number">4.</span> <span class="nav-text">实践</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#部署服务"><span class="nav-number">4.1.</span> <span class="nav-text">部署服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务扩缩容"><span class="nav-number">4.2.</span> <span class="nav-text">服务扩缩容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据的持久化"><span class="nav-number">4.3.</span> <span class="nav-text">数据的持久化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后面的话"><span class="nav-number">6.</span> <span class="nav-text">后面的话</span></a></li></ol></div>
             
 
           </div>
@@ -1337,9 +1147,9 @@ App.contracts.Adoption.deployed().then(function(instance) {
 
 <script>
   var disqus_config = function() {
-    this.page.url = "https://blog.diglp.xyz/2018/02/11/宠物商店(pet-shop) 学习笔记/";
-    this.page.identifier = "2018/02/11/宠物商店(pet-shop) 学习笔记/";
-    this.page.title = '宠物商店Dapp 学习笔记';
+    this.page.url = "https://blog.diglp.xyz/2019/03/12/OP_Swarm_集群使用/";
+    this.page.identifier = "2019/03/12/OP_Swarm_集群使用/";
+    this.page.title = 'Swarm的服务';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
