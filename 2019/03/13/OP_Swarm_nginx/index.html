@@ -100,17 +100,18 @@
 
 
 
-  <meta name="description" content="前登陆在现在的网络生活中是少不了, 登陆的本质就是认证(authentication) 通过认证, 来证明你是就你, 不是别人冒充,顶替的(知道密码的委托人除外) 昨天注册了一个网站, 和正常一样, 账号密码, 可是最后, 有了一项 2FA 绑定, 需要谷歌验证器. 打开后, 一种似曾相识的感觉飘来, 没错,就是很久很久以前的qq令牌,依稀记得这个是S40的jar了. 小时候就像过, 这个怎么这么">
+  <meta name="description" content="前这个题目可能显得比较不严谨，但是也想不到什么好的名字。这篇主要就是实现，在一个 Swarm 集群里面的 Nginx 的服务部署。且实现可以很快的进行 文件变更以及配置变更的统一提交。 这里至于之前的对于Swarm 的服务功能的测试不同了，更加偏向应用。再往后一部分，将会使用stack 来实现一个真正可用的服务架构。 正文使用Swarm 很容易的实现了一个服务： 12345docker servi">
+<meta name="keywords" content="Docker,Swarm,Nginx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2FA 双因素认证">
-<meta property="og:url" content="https://blog.diglp.xyz/2018/02/01/2FA/index.html">
+<meta property="og:title" content="Nginx 的 Swarm 化">
+<meta property="og:url" content="https://blog.diglp.xyz/2019/03/13/OP_Swarm_nginx/index.html">
 <meta property="og:site_name" content="R4y&#39;s Blog">
-<meta property="og:description" content="前登陆在现在的网络生活中是少不了, 登陆的本质就是认证(authentication) 通过认证, 来证明你是就你, 不是别人冒充,顶替的(知道密码的委托人除外) 昨天注册了一个网站, 和正常一样, 账号密码, 可是最后, 有了一项 2FA 绑定, 需要谷歌验证器. 打开后, 一种似曾相识的感觉飘来, 没错,就是很久很久以前的qq令牌,依稀记得这个是S40的jar了. 小时候就像过, 这个怎么这么">
+<meta property="og:description" content="前这个题目可能显得比较不严谨，但是也想不到什么好的名字。这篇主要就是实现，在一个 Swarm 集群里面的 Nginx 的服务部署。且实现可以很快的进行 文件变更以及配置变更的统一提交。 这里至于之前的对于Swarm 的服务功能的测试不同了，更加偏向应用。再往后一部分，将会使用stack 来实现一个真正可用的服务架构。 正文使用Swarm 很容易的实现了一个服务： 12345docker servi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-04T11:57:26.000Z">
+<meta property="og:updated_time" content="2019-03-13T14:52:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2FA 双因素认证">
-<meta name="twitter:description" content="前登陆在现在的网络生活中是少不了, 登陆的本质就是认证(authentication) 通过认证, 来证明你是就你, 不是别人冒充,顶替的(知道密码的委托人除外) 昨天注册了一个网站, 和正常一样, 账号密码, 可是最后, 有了一项 2FA 绑定, 需要谷歌验证器. 打开后, 一种似曾相识的感觉飘来, 没错,就是很久很久以前的qq令牌,依稀记得这个是S40的jar了. 小时候就像过, 这个怎么这么">
+<meta name="twitter:title" content="Nginx 的 Swarm 化">
+<meta name="twitter:description" content="前这个题目可能显得比较不严谨，但是也想不到什么好的名字。这篇主要就是实现，在一个 Swarm 集群里面的 Nginx 的服务部署。且实现可以很快的进行 文件变更以及配置变更的统一提交。 这里至于之前的对于Swarm 的服务功能的测试不同了，更加偏向应用。再往后一部分，将会使用stack 来实现一个真正可用的服务架构。 正文使用Swarm 很容易的实现了一个服务： 12345docker servi">
 
 
 
@@ -119,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="https://blog.diglp.xyz/2018/02/01/2FA/"/>
+  <link rel="canonical" href="https://blog.diglp.xyz/2019/03/13/OP_Swarm_nginx/"/>
 
 
 
@@ -129,7 +130,7 @@
   };
 </script>
 
-  <title>2FA 双因素认证 | R4y's Blog</title>
+  <title>Nginx 的 Swarm 化 | R4y's Blog</title>
   
 
 
@@ -376,7 +377,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.diglp.xyz/2018/02/01/2FA/"/>
+    <link itemprop="mainEntityOfPage" href="https://blog.diglp.xyz/2019/03/13/OP_Swarm_nginx/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Author"/>
@@ -393,7 +394,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">2FA 双因素认证
+          <h2 class="post-title" itemprop="name headline">Nginx 的 Swarm 化
 
               
             
@@ -419,24 +420,12 @@
                 
               
 
-              <time title="创建时间：2018-02-01 00:00:00" itemprop="dateCreated datePublished" datetime="2018-02-01T00:00:00+08:00">2018-02-01</time>
+              <time title="创建时间：2019-03-13 00:00:00 / 修改时间：22:52:33" itemprop="dateCreated datePublished" datetime="2019-03-13T00:00:00+08:00">2019-03-13</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-04 19:57:26" itemprop="dateModified" datetime="2019-03-04T19:57:26+08:00">2019-03-04</time>
               
             
           </span>
@@ -453,7 +442,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术杂文/" itemprop="url" rel="index"><span itemprop="name">技术杂文</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/OP之路/" itemprop="url" rel="index"><span itemprop="name">OP之路</span></a></span>
 
                 
                 
@@ -472,8 +461,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/02/01/2FA/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/02/01/2FA/" itemprop="commentCount"></span>
+                <a href="/2019/03/13/OP_Swarm_nginx/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/13/OP_Swarm_nginx/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -503,7 +492,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.3k</span>
+                <span title="本文字数">2.6k</span>
               
 
               
@@ -517,7 +506,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:02</span>
+                <span title="阅读时长">0:04</span>
               
             </div>
           
@@ -537,36 +526,53 @@
       
 
       
-        <h2 id="前"><a href="#前" class="headerlink" title="前"></a>前</h2><p>登陆在现在的网络生活中是少不了, 登陆的本质就是认证(authentication)</p>
-<p>通过认证, 来证明你是就你, 不是别人冒充,顶替的(知道密码的委托人除外)</p>
-<p>昨天注册了一个网站, 和正常一样, 账号密码, 可是最后, 有了一项 2FA 绑定, 需要谷歌验证器. 打开后, 一种似曾相识的感觉飘来, 没错,就是很久很久以前的qq令牌,依稀记得这个是S40的jar了.</p>
-<p>小时候就像过, 这个怎么这么神奇, 又不联网,怎么能都知道密码是多少呢.所以,当日常百科,来个所以然 </p>
-<h2 id="2FA的概念"><a href="#2FA的概念" class="headerlink" title="2FA的概念"></a>2FA的概念</h2><p>2FA 是(two-fact authentication)的缩写, 下面是百科的定义</p>
+        <h2 id="前"><a href="#前" class="headerlink" title="前"></a>前</h2><p>这个题目可能显得比较不严谨，但是也想不到什么好的名字。这篇主要就是实现，在一个 Swarm 集群里面的 Nginx 的服务部署。且实现可以很快的进行 文件变更以及配置变更的统一提交。</p>
+<p>这里至于之前的对于Swarm 的服务功能的测试不同了，更加偏向应用。再往后一部分，<strong>将会使用stack</strong> 来实现一个真正可用的服务架构。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>使用Swarm 很容易的实现了一个服务：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker service create \</span><br><span class="line">--replicas 2 \	# 两个副本（一共）</span><br><span class="line">--network ngx_net \ 	# 虚拟网络</span><br><span class="line">--name my-test \		# 服务名</span><br><span class="line">-p 80:80 nginx			# 端口映射（本地到容器）</span><br></pre></td></tr></table></figure>
+<p>但是实际上要对这些服务进行以下内容的变更，就需要挂载<strong>外部卷</strong>了。</p>
+<h3 id="外部卷的挂载"><a href="#外部卷的挂载" class="headerlink" title="外部卷的挂载"></a>外部卷的挂载</h3><p>在创建服务的时候，可以使用以下，命令进行 一个数据卷的创建，以及挂载。而且在服务被创建的时候，这些容器会被拷贝到多个节点上去，命令如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 创建一个挂载卷</span><br><span class="line">docker volume create --name myvolume</span><br><span class="line"># 在容器内挂载卷</span><br><span class="line">docker service create \</span><br><span class="line">--replicas 2 \</span><br><span class="line">--network ngx_net \</span><br><span class="line">--mount type=volume,src=myvolume,dst=/wangshibo \</span><br><span class="line">--name test-nginx nginx</span><br></pre></td></tr></table></figure>
+<p>但是问题来了，如果部署完成之后，对配置文件进行变更，这文件并不会同步到每个节点上。这里打算使用 NFS 进行部署</p>
+<h3 id="NFS-的部署"><a href="#NFS-的部署" class="headerlink" title="NFS 的部署"></a>NFS 的部署</h3><p>为了实现多节点的配置文件的同步，以及数据卷的统一管理，这里就直接使用NFS</p>
+<p>使用 apt 直接进行服务的安装 ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get install nfs-common 		# 这个在所有节点进行安装</span><br><span class="line">apt-get install nfs-kernel-server	# 这里是NFS的服务，安装在服务节点上</span><br></pre></td></tr></table></figure>
+<p>配置共享目录 <code>/etc/exports</code> ，添加新行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/srv/nfs/  bgb1(rw,sync)  bgb2(rw,sync)  bgb3(rw,sync)</span><br></pre></td></tr></table></figure>
+<p>重启服务端的nfs服务，并且尝试挂载：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> service nfs-kernel-server start</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> b 主机上进行挂载</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> mount bgb0:/srv/nfs /mnt/</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>测试完成，NFS 部署完成。</p>
+<h3 id="NFS-共享卷挂载"><a href="#NFS-共享卷挂载" class="headerlink" title="NFS 共享卷挂载"></a>NFS 共享卷挂载</h3><p>为了实现多个节点之间的文件共享。<strong>这里遇到了很坑的问题，不知道是自己的理解问题还是BUG什么，具体症状是 NFS卷 不进行自动的挂载</strong>。</p>
+<p>新建一个NFS的卷，下面命令进行参数修改即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker volume create --driver local \</span><br><span class="line">--opt type=nfs4 \</span><br><span class="line">--opt o=addr=&lt;NFS-Server&gt;,rw \</span><br><span class="line">--opt device=:&lt;Shared-Path&gt; \</span><br><span class="line">share</span><br></pre></td></tr></table></figure>
+<hr>
+<p>由于上面的问题折腾了很久的时间，只好暂时使用手动进行挂载，后面再进行逐步的研究。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mount bgb0:/srv/nfs /var/lib/docker/volumes/share/_data</span><br><span class="line"><span class="meta">#</span><span class="bash"> 用作页面 /usr/share/nginx/html/</span></span><br><span class="line">mount bgb0:/srv/nfs/nginx/html /var/lib/docker/volumes/Nginx_html/_data</span><br><span class="line"><span class="meta">#</span><span class="bash"> 用作配置 /etc/nginx/</span></span><br><span class="line">mount bgb0:/srv/nfs/nginx/conf /var/lib/docker/volumes/Nginx_conf/_data</span><br></pre></td></tr></table></figure>
+<p>和第一部分的创建服务一样，这里直接使用Portainer来进行创建各个节点的卷，<strong>然后手动执行上面的命令，进行NFS的挂载，没有美感</strong></p>
+<p>（应该又是一个 BUG ，在创建服务的时候初始配置，如果直接使用了当前的卷，其默认的的是新建新的卷。而不是对原有的卷来进行拷贝，这点待会可能去提个 Issue 。）<strong>需要在服务创建之后，后面进行第二次的挂载，才能正确的挂载 nginx_html 这个卷</strong></p>
+<p>当全部进行手动挂载之后，所有的配置文件都可可以从NFS主机处获取。实现配置的统一管理</p>
+<hr>
+<p>记得映射 <strong>80 和 443</strong> 完成主机功能配置。</p>
+<h3 id="Nginx-配置"><a href="#Nginx-配置" class="headerlink" title="Nginx 配置"></a>Nginx 配置</h3><p>当前面的基于 NFS 的共享配置完成之后，可以直接对之前的配置进行平行迁移即可，（copy-paste）。</p>
+<p>完成配置文件的迁移之后，可以直接在终端里面进行平滑升级。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker service update WebTest</span><br></pre></td></tr></table></figure>
+<h3 id="frpc-的部署"><a href="#frpc-的部署" class="headerlink" title="frpc 的部署"></a>frpc 的部署</h3><p>这里这里可以直接在 DockerHub上面找到相应的镜像，前面还以为没有，打算自己写 Dockerfile的，现在既然遇上了就直接使用了。</p>
 <blockquote>
-<p>2FA是基于时间、历史长度、实物（信用卡、SMS手机、令牌、指纹）等自然变量结合一定的加密算法组合出一组动态密码，一般每60秒刷新一次。不容易被获取和破解，相对安全。</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9odWIuZG9ja2VyLmNvbS9yL3hkZHhkZC9mcnBjL3RhZ3M=" title="https://hub.docker.com/r/xddxdd/frpc/tags">xddxdd/frpc<i class="fa fa-external-link"></i></span> 这个是 frpc 的image ，里面刚好有 armv7 的版本 。</p>
 </blockquote>
-<p>其实2FA 广义上说是一种认证方法, 比如去银行取钱, 银行卡, 和它的密码都需要,你才能取出钱来, 这个就是一种广义上的2FA.再者也有网上银行的U盾(虽然真的很鸡肋), 也是实现2FA, 它里面有着证书.</p>
-<h2 id="OTP概念"><a href="#OTP概念" class="headerlink" title="OTP概念"></a>OTP概念</h2><p>OTP(one-time password), 一次一密, 如果有点密码学的基础, 就知道一次一密, 理论上是绝对安全的. </p>
-<p>其实在现实生活中, OTP也是存在的比如最常用的短信验证码, 邮箱验证码. 这些都是算的上是一次一密, 只不过,显得不是那么专业. </p>
-<p>(现在我国的短信,还是使用的2G频段的明文SMS, <span class="exturl" data-url="aHR0cDovL2JiLm9zbW9jb20ub3JnL3RyYWMv" title="http://bb.osmocom.org/trac/">GSM嗅探<i class="fa fa-external-link"></i></span>很容易就做到)</p>
-<h3 id="认证器的原理"><a href="#认证器的原理" class="headerlink" title="认证器的原理"></a>认证器的原理</h3><p>使用认证器的时候, 有以下几个步骤</p>
-<ul>
-<li>会从网站上获取一个秘钥. (这样服务器和手机都会有这个串)</li>
-<li>成功导入之后, 会有一个6位的数字, 而且是动态的</li>
-<li>在服务器输入当前的数字,以便验证</li>
-</ul>
-<p>其中基本的原理, 就是这个<code>hash(pri-key, time)</code><br>服务器进行验证</p>
-<pre><code>if(input() == hash(pri-key, time))
-    ...
-else
-    ...
-</code></pre><h2 id="OTP原理"><a href="#OTP原理" class="headerlink" title="OTP原理"></a>OTP原理</h2><p>上面的伪代码看上去是那么回事, 可是时间虽说是统一变量, 不同设备之间当然会有不同的时间差, 那么如何保证这个问题.</p>
-<p>的确, 这个是时间, 是服务器和客户端直接获取的本地量, 如果直接进行hash, 那么肯定会因为时间细小差别导致认证失败. 我们一般见到, 验证码是有一定的有效时间的, 这个也就是精妙之处的存在</p>
-<p>假定有一个函数<code>gettime()</code>, 可以获得时间戳(unix-timestamp)(1970-1-1)到现在的秒数</p>
-<pre><code>hash_para = gettime() / 30    //这样进行除运算,得到的是到现在有多少个三十秒
-</code></pre><p>这样,就完美的解决了这个问题, 保证了密码的动态, 和准确</p>
-<p>(设备时间, 不能喝网络时间错的太远…还记得那时候 的qq令牌, 时间不对, 密码不对, 当时差点炸掉)</p>
-<h2 id="编程实现"><a href="#编程实现" class="headerlink" title="编程实现"></a>编程实现</h2><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>这种基于时间的2FA, 算是十分安全的了, 比那一成不变的密码(admin),好上太多了.<br>不过,如果在传输过程中泄漏了pri-key, 那也是完了…</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">entry point		/usr/bin/frpc</span><br><span class="line">working Dir		/frp</span><br></pre></td></tr></table></figure>
+<p>这里，直接 bind 绑定 host 的目录，到容器内部</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--mount type=bind,src=/conf,dst=/frp</span><br></pre></td></tr></table></figure>
+<p>主机目录配置文件 <code>frpc.ini</code> ，其配内容如下</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">server_addr</span> = *******</span><br><span class="line"><span class="attr">server_port</span> = <span class="number">7000</span></span><br><span class="line"><span class="attr">token</span> = *******</span><br><span class="line"></span><br><span class="line"><span class="section">[web_swarm]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">192.168</span>.***.***</span><br><span class="line"><span class="attr">local_port</span> = <span class="number">443</span></span><br><span class="line"><span class="attr">remote_port</span> = ******</span><br></pre></td></tr></table></figure>
+<p>之后直接对容器进行重启即可。</p>
+<h3 id="后"><a href="#后" class="headerlink" title="后"></a>后</h3><p>这里是在云服务器上使用 Nginx 做一个 upstream ， 具体的细节前面有讲 不在赘述。至此功能测试完毕。</p>
+<h2 id="续"><a href="#续" class="headerlink" title="续"></a>续</h2><p>后面将会使用 Stack 和 network 功能， 实现结构的整体部署。还得解决 NFS 的不自动挂载的问题</p>
+<blockquote>
+<p>是不是每个人年轻的时候都有这样一段日子，鸿鹄志高却难遂，迷茫地过着，昏昏噩噩地耗，最终不是妥协泯然众人，就是找不到出口被生活围困。这时候家人朋友，看在眼里，哪怕不说，心里想的也是“小镇青年何必心怀远方”这样的想法吧。（J·M·库切《青春》）</p>
+</blockquote>
+<p>### </p>
 
       
     </div>
@@ -624,7 +630,7 @@ else
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://blog.diglp.xyz/2018/02/01/2FA/" title="2FA 双因素认证">https://blog.diglp.xyz/2018/02/01/2FA/</a>
+    <a href="https://blog.diglp.xyz/2019/03/13/OP_Swarm_nginx/" title="Nginx 的 Swarm 化">https://blog.diglp.xyz/2019/03/13/OP_Swarm_nginx/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
@@ -635,6 +641,16 @@ else
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Docker/" rel="tag"># Docker</a>
+          
+            <a href="/tags/Swarm/" rel="tag"># Swarm</a>
+          
+            <a href="/tags/Nginx/" rel="tag"># Nginx</a>
+          
+        </div>
+      
 
       
       
@@ -644,8 +660,8 @@ else
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/17/STM32F1x/" rel="next" title="STM32 逆向初步">
-                <i class="fa fa-chevron-left"></i> STM32 逆向初步
+              <a href="/2019/03/12/OP_Swarm_集群使用/" rel="next" title="Swarm的服务">
+                <i class="fa fa-chevron-left"></i> Swarm的服务
               </a>
             
           </div>
@@ -653,10 +669,6 @@ else
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/01/想想未来/" rel="prev" title="未来已来">
-                未来已来 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -947,7 +959,7 @@ else
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前"><span class="nav-number">1.</span> <span class="nav-text">前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2FA的概念"><span class="nav-number">2.</span> <span class="nav-text">2FA的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OTP概念"><span class="nav-number">3.</span> <span class="nav-text">OTP概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#认证器的原理"><span class="nav-number">3.1.</span> <span class="nav-text">认证器的原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OTP原理"><span class="nav-number">4.</span> <span class="nav-text">OTP原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编程实现"><span class="nav-number">5.</span> <span class="nav-text">编程实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">6.</span> <span class="nav-text">后记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前"><span class="nav-number">1.</span> <span class="nav-text">前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#外部卷的挂载"><span class="nav-number">2.1.</span> <span class="nav-text">外部卷的挂载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NFS-的部署"><span class="nav-number">2.2.</span> <span class="nav-text">NFS 的部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NFS-共享卷挂载"><span class="nav-number">2.3.</span> <span class="nav-text">NFS 共享卷挂载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx-配置"><span class="nav-number">2.4.</span> <span class="nav-text">Nginx 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#frpc-的部署"><span class="nav-number">2.5.</span> <span class="nav-text">frpc 的部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后"><span class="nav-number">2.6.</span> <span class="nav-text">后</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#续"><span class="nav-number">3.</span> <span class="nav-text">续</span></a></li></ol></div>
             
 
           </div>
@@ -1136,9 +1148,9 @@ else
 
 <script>
   var disqus_config = function() {
-    this.page.url = "https://blog.diglp.xyz/2018/02/01/2FA/";
-    this.page.identifier = "2018/02/01/2FA/";
-    this.page.title = '2FA 双因素认证';
+    this.page.url = "https://blog.diglp.xyz/2019/03/13/OP_Swarm_nginx/";
+    this.page.identifier = "2019/03/13/OP_Swarm_nginx/";
+    this.page.title = 'Nginx 的 Swarm 化';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
