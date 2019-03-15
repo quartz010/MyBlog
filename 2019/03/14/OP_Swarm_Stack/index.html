@@ -100,18 +100,18 @@
 
 
 
-  <meta name="description" content="前这次的一个period是基于《Nodejs区块链开发》这本书的的区块链项目–亿书，的源码学习笔记  EbookCoin项目地址  P2P网络在书中的标题是一个精巧的P2P网络的实现. 模块包含这部分主要的包含文件包括  ./modules/peer.js         // 用于实现作为节点的功能 ./modules/transport.js    // 实现传输？ ./helper/rout">
-<meta name="keywords" content="区块链原理,EbookCoin">
+  <meta name="description" content="前本来想着集群稳定呢，结果早上六点docker 的网络就突然挂了。默认网关除了问题，ping 外网不可达。导致远程主机域名无法解析，8.8.4.4:53 不可达，整体服务不可用。 这篇，接着上面的内容，实现 frp 和 Nignx 的服务的Stack 化。前面遇到的问题，后面在找个整体的时间进行解决吧。 架构描述 以及 Compose实现描述这里主要是使用 frp 和 Nginx ，前者用于穿透，">
+<meta name="keywords" content="Docker,Swarm,Nginx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="EbookCoin 源码 0x2">
-<meta property="og:url" content="https://blog.diglp.xyz/2018/05/03/EbookCoin_0x2/index.html">
+<meta property="og:title" content="从Service到Stack">
+<meta property="og:url" content="https://blog.diglp.xyz/2019/03/14/OP_Swarm_Stack/index.html">
 <meta property="og:site_name" content="R4y&#39;s Blog">
-<meta property="og:description" content="前这次的一个period是基于《Nodejs区块链开发》这本书的的区块链项目–亿书，的源码学习笔记  EbookCoin项目地址  P2P网络在书中的标题是一个精巧的P2P网络的实现. 模块包含这部分主要的包含文件包括  ./modules/peer.js         // 用于实现作为节点的功能 ./modules/transport.js    // 实现传输？ ./helper/rout">
+<meta property="og:description" content="前本来想着集群稳定呢，结果早上六点docker 的网络就突然挂了。默认网关除了问题，ping 外网不可达。导致远程主机域名无法解析，8.8.4.4:53 不可达，整体服务不可用。 这篇，接着上面的内容，实现 frp 和 Nignx 的服务的Stack 化。前面遇到的问题，后面在找个整体的时间进行解决吧。 架构描述 以及 Compose实现描述这里主要是使用 frp 和 Nginx ，前者用于穿透，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-04T11:57:26.000Z">
+<meta property="og:updated_time" content="2019-03-15T01:27:26.571Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="EbookCoin 源码 0x2">
-<meta name="twitter:description" content="前这次的一个period是基于《Nodejs区块链开发》这本书的的区块链项目–亿书，的源码学习笔记  EbookCoin项目地址  P2P网络在书中的标题是一个精巧的P2P网络的实现. 模块包含这部分主要的包含文件包括  ./modules/peer.js         // 用于实现作为节点的功能 ./modules/transport.js    // 实现传输？ ./helper/rout">
+<meta name="twitter:title" content="从Service到Stack">
+<meta name="twitter:description" content="前本来想着集群稳定呢，结果早上六点docker 的网络就突然挂了。默认网关除了问题，ping 外网不可达。导致远程主机域名无法解析，8.8.4.4:53 不可达，整体服务不可用。 这篇，接着上面的内容，实现 frp 和 Nignx 的服务的Stack 化。前面遇到的问题，后面在找个整体的时间进行解决吧。 架构描述 以及 Compose实现描述这里主要是使用 frp 和 Nginx ，前者用于穿透，">
 
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="https://blog.diglp.xyz/2018/05/03/EbookCoin_0x2/"/>
+  <link rel="canonical" href="https://blog.diglp.xyz/2019/03/14/OP_Swarm_Stack/"/>
 
 
 
@@ -130,7 +130,7 @@
   };
 </script>
 
-  <title>EbookCoin 源码 0x2 | R4y's Blog</title>
+  <title>从Service到Stack | R4y's Blog</title>
   
 
 
@@ -377,7 +377,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.diglp.xyz/2018/05/03/EbookCoin_0x2/"/>
+    <link itemprop="mainEntityOfPage" href="https://blog.diglp.xyz/2019/03/14/OP_Swarm_Stack/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Author"/>
@@ -394,7 +394,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">EbookCoin 源码 0x2
+          <h2 class="post-title" itemprop="name headline">从Service到Stack
 
               
             
@@ -420,7 +420,7 @@
                 
               
 
-              <time title="创建时间：2018-05-03 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-03T00:00:00+08:00">2018-05-03</time>
+              <time title="创建时间：2019-03-14 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-14T00:00:00+08:00">2019-03-14</time>
             
 
             
@@ -437,7 +437,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-04 19:57:26" itemprop="dateModified" datetime="2019-03-04T19:57:26+08:00">2019-03-04</time>
+                <time title="修改时间：2019-03-15 09:27:26" itemprop="dateModified" datetime="2019-03-15T09:27:26+08:00">2019-03-15</time>
               
             
           </span>
@@ -454,7 +454,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/OP之路/" itemprop="url" rel="index"><span itemprop="name">OP之路</span></a></span>
 
                 
                 
@@ -473,8 +473,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/05/03/EbookCoin_0x2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/03/EbookCoin_0x2/" itemprop="commentCount"></span>
+                <a href="/2019/03/14/OP_Swarm_Stack/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/14/OP_Swarm_Stack/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -504,7 +504,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">13k</span>
+                <span title="本文字数">3.1k</span>
               
 
               
@@ -518,7 +518,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:21</span>
+                <span title="阅读时长">0:05</span>
               
             </div>
           
@@ -538,411 +538,41 @@
       
 
       
-        <h2 id="前"><a href="#前" class="headerlink" title="前"></a>前</h2><p>这次的一个period是基于《Nodejs区块链开发》这本书的的区块链项目–亿书，的源码学习笔记</p>
+        <h2 id="前"><a href="#前" class="headerlink" title="前"></a>前</h2><p>本来想着集群稳定呢，结果早上六点docker 的网络就突然挂了。默认网关除了问题，ping 外网不可达。导致远程主机域名无法解析，<code>8.8.4.4:53</code> 不可达，整体服务不可用。</p>
+<p>这篇，接着上面的内容，实现 frp 和 Nignx 的服务的Stack 化。前面遇到的问题，后面在找个整体的时间进行解决吧。</p>
+<h2 id="架构描述-以及-Compose实现"><a href="#架构描述-以及-Compose实现" class="headerlink" title="架构描述 以及 Compose实现"></a>架构描述 以及 Compose实现</h2><h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>这里主要是使用 frp 和 Nginx ，前者用于穿透，后者进行页面的反代。所以这里的就是两层的服务。应该还有一级提供负载均衡的server，不过Swarm 的本身已经提供了 VIP 以及负载均衡的功能。 </p>
+<h3 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker-Compose"></a>Docker-Compose</h3><p>docker-compose 是用来做docker 的多容器控制，可以通过一个描述文件，来对服务，或者容器，进行整体的搭建，大大简化了操作流程以及可维护和可拓展性。这里的内容参考了网上的例子，进行了简单的修改。实现了前面所描述的架构。</p>
+<p>具体的 <code>.yml</code> 文件如下</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">"3.2"</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"><span class="attr">  nginx:</span></span><br><span class="line"><span class="attr">    image:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">    ports:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">"80"</span>	<span class="comment"># 对外暴露端口</span></span><br><span class="line"><span class="attr">    volumes:</span></span><br><span class="line"><span class="attr">      - nginx_conf:</span><span class="string">/etc/nginx</span></span><br><span class="line"><span class="attr">    networks:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">backend</span></span><br><span class="line"><span class="attr">    deploy:</span></span><br><span class="line"><span class="attr">      replicas:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">      update_config:</span></span><br><span class="line"><span class="attr">        parallelism:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">        delay:</span> <span class="number">10</span><span class="string">s</span></span><br><span class="line"><span class="attr">      restart_policy:</span></span><br><span class="line"><span class="attr">        condition:</span> <span class="string">on-failure</span></span><br><span class="line">  </span><br><span class="line"><span class="attr">  frp:</span></span><br><span class="line"><span class="attr">    image:</span> <span class="string">xddxdd/frpc:arm32v7</span></span><br><span class="line"><span class="attr">    networks:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">backend</span></span><br><span class="line"><span class="attr">    volumes:</span></span><br><span class="line"><span class="attr">     - frpc_ini:</span><span class="string">/frp</span></span><br><span class="line"><span class="attr">    deploy:</span></span><br><span class="line"><span class="attr">      replicas:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">      update_config:</span></span><br><span class="line"><span class="attr">        parallelism:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">        delay:</span> <span class="number">10</span><span class="string">s</span></span><br><span class="line"><span class="attr">      restart_policy:</span></span><br><span class="line"><span class="attr">        condition:</span> <span class="string">on-failure</span></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line"><span class="attr">  backend:</span></span><br><span class="line"><span class="comment"># 这里是应该建立的卷</span></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line"><span class="attr">  nginx_conf:</span> </span><br><span class="line"><span class="attr">    driver_opts:</span></span><br><span class="line"><span class="attr">      type:</span> <span class="string">"nfs4"</span></span><br><span class="line"><span class="attr">      o:</span> <span class="string">"addr=192.168.1.130,nolock,soft,rw"</span></span><br><span class="line"><span class="attr">      device:</span> <span class="string">":/srv/nfs/nginx/conf"</span></span><br><span class="line"><span class="attr">  frpc_ini:</span> </span><br><span class="line"><span class="attr">    driver_opts:</span>  </span><br><span class="line"><span class="attr">      type:</span> <span class="string">"nfs4"</span></span><br><span class="line"><span class="attr">      o:</span> <span class="string">"addr=192.168.1.130,nolock,soft,rw"</span></span><br><span class="line"><span class="attr">      device:</span> <span class="string">":/srv/nfs/frpc"</span></span><br></pre></td></tr></table></figure>
+<p>一个好消息：在这种配置的情况下比较奇迹的是可以进行 <strong>NFS 的自动挂载</strong>了。解决了前面一个很大的问题。也不清楚是之前的BUG 还是什么情况。</p>
 <blockquote>
-<p>EbookCoin<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0Vib29rY29pbi9lYm9va2NvaW4uZ2l0" title="https://github.com/Ebookcoin/ebookcoin.git">项目地址<i class="fa fa-external-link"></i></span></p>
+<p>Compose下面使用nfs : <span class="exturl" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvNDUyODI2MDgvaG93LXRvLWRpcmVjdGx5LW1vdW50LW5mcy1zaGFyZS12b2x1bWUtaW4tY29udGFpbmVyLXVzaW5nLWRvY2tlci1jb21wb3NlLXYz" title="https://stackoverflow.com/questions/45282608/how-to-directly-mount-nfs-share-volume-in-container-using-docker-compose-v3">How to directly mount NFS share/volume in container using docker compose v3<i class="fa fa-external-link"></i></span></p>
 </blockquote>
-<h2 id="P2P网络"><a href="#P2P网络" class="headerlink" title="P2P网络"></a>P2P网络</h2><p>在书中的标题是一个精巧的P2P网络的实现.</p>
-<h3 id="模块包含"><a href="#模块包含" class="headerlink" title="模块包含"></a>模块包含</h3><p>这部分主要的包含文件包括</p>
-<ul>
-<li>./modules/peer.js         // 用于实现作为节点的功能</li>
-<li>./modules/transport.js    // 实现传输？</li>
-<li>./helper/router.js        // 如其名，路由</li>
-</ul>
-<p>transport 和 router 作为 <strong>peer</strong> 的两个辅助模块，一起实现了一个p2p网络上的独立节点。</p>
-<h3 id="router-js-路由拓展"><a href="#router-js-路由拓展" class="headerlink" title="router.js 路由拓展"></a>router.js 路由拓展</h3><p>这个文件内容不多，<strong>42 line</strong></p>
-<ul>
-<li><p><strong>27</strong> 路由定义 </p>
-<pre><code>var Router = function () {
-    var router = require(&apos;express&apos;).Router();
-
-    router.use(function (req, res, next) {
-        res.header(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);
-        res.header(&quot;Access-Control-Allow-Headers&quot;, &quot;Origin, X-Requested-With, Content-Type, Accept&quot;);
-        next();
-    });
-
-    router.map = map;
-
-    return router;
-}
-</code></pre><p>  这段代码，实现了一个 Router 的辅助模块。定义 router 是一个 基于Express 的拓展。实现两个功能：</p>
-<ul>
-<li><code>&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;</code> <code>&quot;Access-Control-Allow-Headers&quot;, &quot;Origin, X-Requested-With,     Content-Type, Accept&quot;</code>说明允许跨域请求，任何的ip和端口的节点都可以被访问。 </li>
-<li><code>router.map</code> 设置(指定)了地址的映射方法。</li>
-</ul>
-</li>
-</ul>
-<pre><code>&gt; [什么是跨域请求](https://blog.csdn.net/github_37360787/article/details/54834789)    
-</code></pre><ul>
-<li><p><strong>3</strong> 地址映射</p>
-<p>  这里的map有两个参数，root，config。</p>
-<pre><code>function map(root, config) {
-</code></pre><ul>
-<li>root：定义开放API的逻辑函数</li>
-<li><p>config：定义了路由和root所定义的函数之间的对应关系。</p>
-<p>等同于<br>  router.get(‘/peers’, function(req,res,next){</p>
-<pre><code>root.getPeers(...);
-</code></pre><p>  });</p>
-<p><strong>在Js中对象是散列的，所以<code>root.getPeer()</code> 和 root[‘getPeer’]相同</strong></p>
-<p>  router<a href="route[1], function (req, res, next">route[0]</a> {</p>
-<p>像是这里，实际上分割参数后，第一个就是目标(/peer)，第二个就是方法。</p>
-<p>在 peer.js 的文件中，可以看到对map函数的调用<br>  router.map(shared, {</p>
-<pre><code>&quot;get /&quot;: &quot;getPeers&quot;,
-&quot;get /version&quot;: &quot;version&quot;,
-&quot;get /get&quot;: &quot;getPeer&quot;
-</code></pre><p>  });</p>
-<p>通过阅读源码我们可以知道，router 是对 <strong>get /version</strong>的分割。所以route[0] 是 <strong>get</strong>，route[1] 就是我们的请求的url。</p>
-<p>那么这样的话我们可以把上面的代码进行转换</p>
-<p>  router<a href="&#39;/&#39;, function (req, res, next">get</a> {</p>
-<p><code>router.get</code> 又是什么？ 这样我们转到前面的路由定义</p>
-<p>  var router = require(‘express’).Router();</p>
-<p>所以说是 <strong>express框架</strong> 所提供的路由对象的方法。那么到网上检索之</p>
+<hr>
+<p>这里<strong>有一个坑</strong>。在Portainer 上面直接进行 Stack 部署的话，会有报错，说是平台不支持，但是的确是拉的arm的。报错信息如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">State Message	pending task scheduling</span><br><span class="line">Error message	no suitable node (unsupported platform on 3 nodes; 1 node not available for new tasks)</span><br></pre></td></tr></table></figure>
+<p>查证之后，得到以下的回答</p>
 <blockquote>
-<p><span class="exturl" data-url="aHR0cDovL3d3dy5leHByZXNzanMuY29tLmNuL2d1aWRlL3JvdXRpbmcuaHRtbA==" title="http://www.expressjs.com.cn/guide/routing.html">ExpressRouter<i class="fa fa-external-link"></i></span><br>用官方的话讲:对象的一个实例， METHOD 是一个 HTTP 请求方法， path 是服务器上的路径， callback 是当路由匹配时要执行的函数</p>
+<p>参考链接 =  <span class="exturl" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvNDg5NjIzOTkvbm8tc3VpdGFibGUtbm9kZS11bmFibGUtdG8tZGVwbG95LWltYWdlLXVzaW5nLWRvY2tlci1zZXJ2aWNl" title="https://stackoverflow.com/questions/48962399/no-suitable-node-unable-to-deploy-image-using-docker-service">no suitable node - unable to deploy image using docker service<i class="fa fa-external-link"></i></span></p>
 </blockquote>
-<p>所以说，这里的代码，实际上是实现了路由地址和内容的绑定</p>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<pre><code>这里有个point 
-    var router = this;
-
-这里的函数式编程就厉害了，凭空的一个 this ，实际上了解了之后，知道，这个this 就是指的**调用当前函数的对象**。
-
-        var router = new Router();
-
-        router.map(shared, {
-            &quot;get /&quot;: &quot;getPeers&quot;,
-            &quot;get /version&quot;: &quot;version&quot;,
-            &quot;get /get&quot;: &quot;getPeer&quot;
-        });
-</code></pre><h3 id="peer-js-节点"><a href="#peer-js-节点" class="headerlink" title="peer.js 节点"></a>peer.js 节点</h3><h4 id="节点路由"><a href="#节点路由" class="headerlink" title="节点路由"></a>节点路由</h4><ul>
-<li><p><strong>16</strong> 构造器 </p>
-<p>  这里是JS中 Peer 的构造器。</p>
-<pre><code>// Constructor
-function Peer(cb, scope) {
-    library = scope;                // 这里的scope 就是从app.js 传来的
-    self = this;
-    self.__private = privated;
-    privated.attachApi();
-
-    setImmediate(cb, null, self);    // 定时执行
-}
-</code></pre></li>
-</ul>
-<hr>
+<p>在命令行里进行创建，带一个 <code>--resolve-image never</code> 的参数，这样可以解决报错：<strong>镜像平台不支持的问题</strong> 但前提是，镜像的架构必须相同。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stack deploy --compose-file str.yml --resolve-image never home</span><br></pre></td></tr></table></figure>
+<h2 id="项目细节"><a href="#项目细节" class="headerlink" title="项目细节"></a>项目细节</h2><p>这里需要解决的问题，就是网络的问题。在前面的方法里面是直接把端口暴露在了 HOST 上面，这样占用主机资源显然是不符合<strong>容器化的思想</strong>。这里就使用Docker 的强大的网络功能，来实现一个真正的服务。swarm 的服务网络其自动带有了 负载均衡 以及 <strong>VIP</strong>。所以，这里实现目标就是 FRP 到 VIP的映射</p>
+<h3 id="Stack的内部网络"><a href="#Stack的内部网络" class="headerlink" title="Stack的内部网络"></a>Stack的内部网络</h3><p>Swarm 的自建 Layout 网络默认的是VIP模式，可以inspect服务得到服务所在网络的VIP。这个服务，跑了 Nginx 镜像的多个副本。这些副本共用一个 VIP。实现了负载均衡以及高可用，当单容器挂了之后，自动的进行 IP 的漂移。</p>
+<p>获取 service 的VIP 如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">docker service  inspect nginxs</span><br><span class="line"></span><br><span class="line">"Endpoint": &#123;</span><br><span class="line">	"Spec": &#123;</span><br><span class="line">		"Mode": "vip"</span><br><span class="line">	&#125;,</span><br><span class="line">	"VirtualIPs": [</span><br><span class="line">        &#123;</span><br><span class="line">            "NetworkID": "ktsw8uaob2n0ppsh93p5upils",</span><br><span class="line">            "Addr": "10.0.14.9/24"</span><br><span class="line">        &#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于前面已经配置了，这个 Stack ，两个服务是在同一个子网（backend）中。所以 ，frp服务是和nginx 的网络是联通的。所以可以直接访问 其VIP。由于，好像使用stack了NFS 的问题自动解决了。这里直接修改主机上的配置文件即可。</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">root@bgb0:/tmp# cat /srv/nfs/frpc/frpc.ini </span><br><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">server_addr</span> = ****.****.xyz </span><br><span class="line"><span class="attr">server_port</span> = ****</span><br><span class="line"><span class="attr">token</span> = myfrptest</span><br><span class="line"><span class="section">[web_swarm]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">10.0</span>.<span class="number">14.9</span>	# 这里是 Nginx服务的VIP</span><br><span class="line"><span class="attr">local_port</span> = <span class="number">443</span></span><br><span class="line"><span class="attr">remote_port</span> = ****</span><br></pre></td></tr></table></figure>
+<p>之后，更新该服务，重新加载配置。发现外网服务可达，已实现目标功能。开心</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
 <ul>
-<li><p><strong>25</strong> 功能绑定    </p>
-<p>  可以使用这样的方法实现保护函数。这个函数的功能从字面意义上就是绑定API。实际上就是使得我们的 http 请求对应的API，绑定到具体的返回操作。</p>
-<pre><code>// private methods
-privated.attachApi = function () {
-    var router = new Router();
-
-    // 作为中间件
-    // 没有挂载路径的中间件，应用的每个请求都会执行该中间件
-    // 所以这段代码可以理解为，模块是否加载，如果没有，就返回错误
-    router.use(function (req, res, next) {
-        if (modules) return next();
-        res.status(500).send({success: false, error: &quot;Blockchain is loading&quot;});
-    });
-</code></pre></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC82MGJjY2JkYjZhZjk=" title="https://www.jianshu.com/p/60bccbdb6af9">Docker Swarm 入门：Service Network 管理<i class="fa fa-external-link"></i></span> 通过这篇，对网络有了基本了解 （小姐姐好看）</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC9kYmE5MzQyMDcxZDg=" title="https://www.jianshu.com/p/dba9342071d8">Docker Swarm 服务发现和负载均衡原理<i class="fa fa-external-link"></i></span></li>
+<li><span class="exturl" data-url="aHR0cDovL3d3dy5odWlsb2cuY29tLz9wPTEwMzg=" title="http://www.huilog.com/?p=1038">docker swarm 集群及多主机overlay网络测试<i class="fa fa-external-link"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLjUxY3RvLmNvbS9nYW5iaW5nLzIwOTEyOTI=" title="https://blog.51cto.com/ganbing/2091292">“三剑客”之Swarm应用数据持久化管理（volume 、bind 、 nfs）<i class="fa fa-external-link"></i></span></li>
 </ul>
-<pre><code>        // 绑定关系
-        router.map(shared, {
-            &quot;get /&quot;: &quot;getPeers&quot;,
-            &quot;get /version&quot;: &quot;version&quot;,
-            &quot;get /get&quot;: &quot;getPeer&quot;
-        });
-
-        // 怎么绕开了这个报错的中间件？
-        router.use(function (req, res) {
-            res.status(500).send({success: false, error: &quot;API endpoint not found&quot;});
-        });
-
-这里的 **express.use** 是作为中间件，这个前面就应该看看。
-
-&gt;中间件（Middleware） 是一个函数，它可以访问请求对象（request object (req)）, 响应对象（response object (res)）, 和 web 应用中处于请求-响应循环流程中的中间件，一般被命名为 next 的变量。
-
-这里还有很重要的一点:**如果当前中间件没有终结请求-响应循环，则必须调用 next() 方法将控制权交给下一个中间件，否则请求就会挂起。**
-
-&gt; [Express_中间件](http://www.expressjs.com.cn/guide/using-middleware.html)
-</code></pre><hr>
-<ul>
-<li><p><strong>44</strong> 拓展Express</p>
-<pre><code>    library.network.app.use(&apos;/api/peers&apos;, router);
-    library.network.app.use(function (err, req, res, next) {
-            if (!err) return next();
-            library.logger.error(req.url, err.toString());
-            res.status(500).send({success: false, error: err.toString()});
-    });
-};
-</code></pre><p>  这一部分，一样的是以 use打头，前面是路径，后面是 Obj。所以这里是对上面的我们定义的 <code>var router = require(&#39;express&#39;).Router()</code> 的一个拓展。这样，以下请求，将会使用 <strong>router这部分的功能</strong>。</p>
-<ul>
-<li><span class="exturl" data-url="aHR0cDovL2lwOnBvcnQvYXBpL3BlZXJzLw==" title="http://ip:port/api/peers/">http://ip:port/api/peers/<i class="fa fa-external-link"></i></span></li>
-<li><span class="exturl" data-url="aHR0cDovL2lwOnBvcnQvYXBpL3BlZXJzL3ZlcnNpb24v" title="http://ip:port/api/peers/version/">http://ip:port/api/peers/version/<i class="fa fa-external-link"></i></span></li>
-<li><p><span class="exturl" data-url="aHR0cDovL2lwOnBvcnQvYXBpL3BlZXJzL2dldC8=" title="http://ip:port/api/peers/get/">http://ip:port/api/peers/get/<i class="fa fa-external-link"></i></span></p>
-<p>后继的中间件，就是对错误情况进行处理了</p>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<ul>
-<li><p><strong>455</strong> 合法性检测<br>  这个是 z_scheme 模块中的功能，意在实现合法性检测。</p>
-<pre><code>library.scheme.validate(query, {
-    type: &quot;object&quot;,
-    properties: {
-        ip_str: {
-            type: &quot;string&quot;,
-            minLength: 1
-        },
-        port: {
-            type: &quot;integer&quot;,
-            minimum: 0,
-            maximum: 65535
-        }
-    },
-    required: [&apos;ip_str&apos;, &apos;port&apos;]
-}, function (err) {
-</code></pre><p>  可以看到，<strong>validate</strong> 的字面意思就是证实的意思。所以这样，可以用此，保证查询地址的合法性。</p>
-<p>  之后通过 <code>privated.getByFilter({</code> 查询路由表，这里涉及到 dblite，使用的是SQLite 数据库</p>
-</li>
-</ul>
-<h4 id="节点存储"><a href="#节点存储" class="headerlink" title="节点存储"></a>节点存储</h4><pre><code>在上面的部分实现了，对于单个节点的查询功能，使得可以返回路由信息等。这在这里就会有，关于节点信息的存储。
-</code></pre><hr>
-<ul>
-<li><p><strong>节点初始化</strong></p>
-<p>  由于P2P,没有中心服务器，所以各个节点之间，只能靠自己的网络发现，来寻找彼此，所以，使用互联网节点进行初始化，是很重要的事情。可以很大的提高组网速度。</p>
-<p>  在Config.js 文件中，也提供了初始化的节点列表</p>
-<pre><code>&quot;peers&quot;: {
-    &quot;list&quot;: [
-        {
-            ip:0.0.0.0
-            port:7000
-        }
-    ],
-    &quot;blackList&quot;: [],
-    &quot;options&quot;: {
-        &quot;timeout&quot;: 4000
-    }
-},
-</code></pre></li>
-</ul>
-<hr>
-<ul>
-<li><p><strong>347 写入节点</strong></p>
-<p>  根据函数的命名。可以看出这个是一个服务函数。是在区块链准备完成之后进行的。</p>
-<blockquote>
-<p><strong><span class="exturl" data-url="aHR0cDovL2Jsb2cuMTYzLmNvbS92aW5jZW50X3cvYmxvZy9zdGF0aWMvMjQ3Njk3MDUxMjAxNjkyNjc1NjMyODUzLw==" title="http://blog.163.com/vincent_w/blog/static/247697051201692675632853/">async简介<i class="fa fa-external-link"></i></span></strong></p>
 </blockquote>
-<pre><code>Peer.prototype.onBlockchainReady = function () {
-async.eachSeries(library.config.peers.list, function (peer, cb) {
-    library.dbLite.query(&quot;INSERT OR IGNORE INTO peers(ip, port, state, sharePort) VALUES($ip, $port, $state, $sharePort)&quot;, {
-        ip: ip.toLong(peer.ip),
-        port: peer.port,
-        state: 2,
-        sharePort: Number(true)
-    }, cb);
-}, function (err) {
-</code></pre><p>  这里是对列表中的每个项目，进行顺序执行。执行数据库查询语句，把已知的数据插入到数据库中</p>
-<pre><code>INSERT OR IGNORE INTO peers(ip, port, state, sharePort) VALUES($ip, $port, $state, $sharePort)
-</code></pre><p>  这里就是插入语句，IGNORE 如果主键重复，就对其进行忽略，对于相同的列名进行插入。后面的指定是 插入内容的合法格式。这里的 <strong>state:2</strong> 是默认值，说明是<strong>正常节点</strong>。</p>
-</li>
-</ul>
-<pre><code>**364** 这里是使用的 bus 辅助模块，相当于模块之间的通信总线，当节点准备完毕之后，发送 **peerReady** 消息。触发了 **peerReady事件**。
-
-    library.bus.message(&apos;peerReady&apos;);
-</code></pre><hr>
-<ul>
-<li><p><strong>374 节点更新</strong></p>
-<p>  这部分实现的节点数据的更新。</p>
-<pre><code>Peer.prototype.onPeerReady = function () {
-    setImmediate(function nextUpdatePeerList() {    // 这里是定时执行的函数，前面见过
-        privated.updatePeerList(function (err) {
-            err &amp;&amp; library.logger.error(&apos;updatePeerList timer&apos;, err);
-            setTimeout(nextUpdatePeerList, 60 * 1000);
-        })
-    });
-
-    setImmediate(function nextBanManager() {
-        privated.banManager(function (err) {
-            err &amp;&amp; library.logger.error(&apos;banManager timer&apos;, err);
-            setTimeout(nextBanManager, 65 * 1000)
-        });
-    });
-};
-</code></pre><p>  <code>setImmediate()</code> 立即执行预定的Callback.在I/O 实践回调之后立即触发。这里有领个，我们可以得知，第一个是循环(60s)更新节点列表，第二个是更新节点状态。</p>
-<p>  <strong>52</strong> 这里是上面定时执行的节点更新函数。</p>
-<pre><code>privated.updatePeerList = function (cb) {
-    modules.transport.getFromRandomPeer({
-        api: &apos;/list&apos;,
-        method: &apos;GET&apos;
-    }, function (err, data) {
-</code></pre><p>  这里是对<code>modules.transport.getFromRandomPeer()</code>的一次封装。翻译过来就是随机节点获取。<strong>474</strong></p>
-<p>  这里是随机节点传输的实现函数：</p>
-</li>
-</ul>
-<pre><code>    Transport.prototype.getFromRandomPeer = function (config, options, cb) {
-        if (typeof options == &apos;function&apos;) {
-            cb = options;
-            options = config;
-            config = {};
-        }
-        config.limit = 1;
-        async.retry(20, function (cb) {
-            modules.peer.list(config, function (err, peers) {    // 这里的函数就是list的callback
-                if (!err &amp;&amp; peers.length) {
-                    var peer = peers[0];
-                    self.getFromPeer(peer, options, cb);    // 这里使用自身函数实现对其他节点的 Get请求
-                } else {
-                    return cb(err || &quot;No peers in db&quot;);
-                }
-            });
-        }, function (err, results) {
-            cb(err, results);
-        });
-    };
-
-这里的 `async.retry` 是指对后面的函数重复 20 次。这里重复的 List 方法在Peer的定义里如下    **232**
-
-    Peer.prototype.list = function (options, cb) {
-        options.limit = options.limit || 100;
-
-        library.dbLite.query(&quot;select p.ip, p.port, p.state, p.os, p.sharePort, p.version from peers p &quot; + (options.dappid ? &quot; inner join peers_dapp pd on p.id = pd.peerId and pd.dappid = $dappid &quot; : &quot;&quot;) + &quot; where p.state &gt; 0 and p.sharePort = 1 ORDER BY RANDOM() LIMIT $limit&quot;, options, {
-            &quot;ip&quot;: String,
-            &quot;port&quot;: Number,
-            &quot;state&quot;: Number,
-            &quot;os&quot;: String,
-            &quot;sharePort&quot;: Number,
-            &quot;version&quot;: String
-        }, function (err, rows) {
-            cb(err, rows);
-        });
-    };
-
-这里实现了，对已知节点的数据查询，而且最大的查询数量是100个，其查询结果传入回调函数 cb。在上面的list调用中，rows，作为实参传给了 peers。如果没错误，且节点内容合法，读取 `peer[0]` (即IP地址)，对其发送 **getFromPeer** 请求！获取其他API。
-
-
-**518** 重点函数 getFromPeer
-
-实现了对其他节点的请求。下面是对请求结构的构造。
-
-    var req = {
-        url: &apos;http://&apos; + ip.fromLong(peer.ip) + &apos;:&apos; + peer.port + url,
-        method: options.method,
-        json: true,
-        headers: _.extend({}, privated.headers, options.headers),
-        timeout: library.config.peers.options.timeout
-    };
-
-get函数会直接返回请求结果
-
-    return request(req, function (err, response, body) {
-    if (err || response.statusCode != 200) {    // 这里是对请求异常，分无法连接，和返回错误两种
-        library.logger.debug(&apos;Request&apos;, {
-            url: req.url,
-            statusCode: response ? response.statusCode : &apos;unknown&apos;,
-            err: err
-        });
-
-        if (peer) {
-            if (err &amp;&amp; (err.code == &quot;ETIMEDOUT&quot; || err.code == &quot;ESOCKETTIMEDOUT&quot; || err.code == &quot;ECONNREFUSED&quot;)) {
-                // 这里对于，异常节点，故障。进行删除
-                modules.peer.remove(peer.ip, peer.port, function (err) {
-                    if (!err) {
-                        library.logger.info(&apos;Removing peer &apos; + req.method + &apos; &apos; + req.url)
-                    }
-                });
-            } else {
-                // 这里是返回值异常的节点，对其状态更改ban掉
-                if (!options.not_ban) {    
-                    modules.peer.state(peer.ip, peer.port, 0, 600, function (err) {
-                        if (!err) {
-                            library.logger.info(&apos;Ban 10 min &apos; + req.method + &apos; &apos; + req.url);
-                        }
-                    });
-                }
-            }
-        }
-        cb &amp;&amp; cb(err || (&apos;request status code&apos; + response.statusCode));
-        return;
-    }
-
-
-这里是**核心函数**的前面的错误处理的部分，主要分两种情况，对无法连接和返回值异常的节点进行处理。前者直接进行删除，后者先ban十分钟。
-
----
-
-**564** 在这个部分，对于请求的返回信息，进行解析，一样的使用的是`scheme.validate()`方法，其判断其格式是否如给定一样，如果解析失败，那么返回空数据。
-
-    var report = library.scheme.validate(response.headers, {
-        type: &quot;object&quot;,
-        properties: {
-            os: {
-                type: &quot;string&quot;,
-                maxLength: 64
-            },
-            port: {
-                type: &quot;integer&quot;,
-                minimum: 1,
-                maximum: 65535
-            },
-            &apos;share-port&apos;: {
-                type: &quot;integer&quot;,
-                minimum: 0,
-                maximum: 1
-            },
-            version: {
-                type: &quot;string&quot;,
-                maxLength: 11
-            }
-        },
-        required: [&apos;port&apos;, &apos;share-port&apos;, &apos;version&apos;]
-    });
-
-    if (!report) {
-        return cb &amp;&amp; cb(null, {body: body, peer: peer});
-    }
-
-**593** 这里剩下的就是正常的，可以被解析的数据了。先对其端口合法化进行检测，之后对比自身版本号是否相同，一切一切都OK了，那么我们就使用update进行更新
-
-        var port = response.headers.port;
-        if (port &gt; 0 &amp;&amp; port &lt;= 65535 &amp;&amp; response.headers[&apos;version&apos;] == library.config.version) {
-            modules.peer.update({
-                ip: peer.ip,
-                port: port,
-                state: 2,
-                os: response.headers[&apos;os&apos;],
-                sharePort: Number(!!response.headers[&apos;share-port&apos;]),
-                version: response.headers[&apos;version&apos;]
-            });
-        }
-
-        cb &amp;&amp; cb(null, {body: body, peer: peer});
-
-至此，节点列表更新循环完毕。
-
-
-**382** 节点状态刷新循环。
-
-这个循环时循环的 BanManager
-
-    rivated.banManager = function (cb) {
-        library.dbLite.query(&quot;UPDATE peers SET state = 1, clock = null where (state = 0 and clock - $now &lt; 0)&quot;, {now: Date.now()}, cb);
-    };
-
-这里就比较简单，对于超时的节点，对其状态进行刷新。
-</code></pre><hr>
-<p>至此，一个P2P的网络构建完成。</p>
-<h2 id="后"><a href="#后" class="headerlink" title="后"></a>后</h2><p>虽说，通过这部分的源码理解，和对其源码设计的思考。基本上是了解了，一个基于http的P2P网络的构成。总结讲，就是对节点其他节点的列表请求来拓展自己目前的节点列表，从而一步步的构成一个P2P网络。</p>
-<p>不过，实际上，还是有很多值得思考，和未知的地方，</p>
-<ol>
-<li>网络发现，因为我们不可能一开始就有多数的节点，所以网络发现感觉挺重要</li>
-<li>关于节点间通信，如果作为对等节点，基本的功能可以通过 api 实现，不过如果我是想，进行一个 点对点的通信，而不是广播请求。那么又将如何实现？</li>
-</ol>
+<h2 id="后面的话"><a href="#后面的话" class="headerlink" title="后面的话"></a>后面的话</h2><p>构思基本已经实现了，一个基于容器技术的服务部署。后面，想着对系统的整体的日志监控，依旧使用前面的ELK。完成之后，算是项目收工，后面开始Golang了</p>
 
       
     </div>
@@ -1000,7 +630,7 @@ get函数会直接返回请求结果
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://blog.diglp.xyz/2018/05/03/EbookCoin_0x2/" title="EbookCoin 源码 0x2">https://blog.diglp.xyz/2018/05/03/EbookCoin_0x2/</a>
+    <a href="https://blog.diglp.xyz/2019/03/14/OP_Swarm_Stack/" title="从Service到Stack">https://blog.diglp.xyz/2019/03/14/OP_Swarm_Stack/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
@@ -1013,9 +643,11 @@ get函数会直接返回请求结果
       
         <div class="post-tags">
           
-            <a href="/tags/区块链原理/" rel="tag"># 区块链原理</a>
+            <a href="/tags/Docker/" rel="tag"># Docker</a>
           
-            <a href="/tags/EbookCoin/" rel="tag"># EbookCoin</a>
+            <a href="/tags/Swarm/" rel="tag"># Swarm</a>
+          
+            <a href="/tags/Nginx/" rel="tag"># Nginx</a>
           
         </div>
       
@@ -1028,8 +660,8 @@ get函数会直接返回请求结果
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/02/EbookCoin_0x1/" rel="next" title="EbookCoin 源码 0x1">
-                <i class="fa fa-chevron-left"></i> EbookCoin 源码 0x1
+              <a href="/2019/03/13/OP_Swarm_nginx/" rel="next" title="Nginx 的 Swarm 化">
+                <i class="fa fa-chevron-left"></i> Nginx 的 Swarm 化
               </a>
             
           </div>
@@ -1037,10 +669,6 @@ get函数会直接返回请求结果
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/12/EbookCoin_0x3/" rel="prev" title="EbookCoin 源码 0x3">
-                EbookCoin 源码 0x3 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1331,7 +959,7 @@ get函数会直接返回请求结果
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前"><span class="nav-number">1.</span> <span class="nav-text">前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P2P网络"><span class="nav-number">2.</span> <span class="nav-text">P2P网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模块包含"><span class="nav-number">2.1.</span> <span class="nav-text">模块包含</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#router-js-路由拓展"><span class="nav-number">2.2.</span> <span class="nav-text">router.js 路由拓展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#peer-js-节点"><span class="nav-number">2.3.</span> <span class="nav-text">peer.js 节点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#节点路由"><span class="nav-number">2.3.1.</span> <span class="nav-text">节点路由</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#节点存储"><span class="nav-number">2.3.2.</span> <span class="nav-text">节点存储</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后"><span class="nav-number">3.</span> <span class="nav-text">后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前"><span class="nav-number">1.</span> <span class="nav-text">前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构描述-以及-Compose实现"><span class="nav-number">2.</span> <span class="nav-text">架构描述 以及 Compose实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述"><span class="nav-number">2.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-Compose"><span class="nav-number">2.2.</span> <span class="nav-text">Docker-Compose</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目细节"><span class="nav-number">3.</span> <span class="nav-text">项目细节</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Stack的内部网络"><span class="nav-number">3.1.</span> <span class="nav-text">Stack的内部网络</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后面的话"><span class="nav-number">5.</span> <span class="nav-text">后面的话</span></a></li></ol></div>
             
 
           </div>
@@ -1520,9 +1148,9 @@ get函数会直接返回请求结果
 
 <script>
   var disqus_config = function() {
-    this.page.url = "https://blog.diglp.xyz/2018/05/03/EbookCoin_0x2/";
-    this.page.identifier = "2018/05/03/EbookCoin_0x2/";
-    this.page.title = 'EbookCoin 源码 0x2';
+    this.page.url = "https://blog.diglp.xyz/2019/03/14/OP_Swarm_Stack/";
+    this.page.identifier = "2019/03/14/OP_Swarm_Stack/";
+    this.page.title = '从Service到Stack';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
