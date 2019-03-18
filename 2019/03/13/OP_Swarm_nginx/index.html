@@ -107,14 +107,14 @@
 </script>
 
   <meta name="description" content="前这个题目可能显得比较不严谨，但是也想不到什么好的名字。这篇主要就是实现，在一个 Swarm 集群里面的 Nginx 的服务部署。且实现可以很快的进行 文件变更以及配置变更的统一提交。 这里至于之前的对于Swarm 的服务功能的测试不同了，更加偏向应用。再往后一部分，将会使用stack 来实现一个真正可用的服务架构。 正文使用Swarm 很容易的实现了一个服务： 12345docker servi">
-<meta name="keywords" content="Docker,Nginx,Swarm">
+<meta name="keywords" content="Docker,Swarm,Nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nginx 的 Swarm 化">
 <meta property="og:url" content="https://blog.diglp.xyz/2019/03/13/OP_Swarm_nginx/index.html">
 <meta property="og:site_name" content="R4y&#39;s Blog">
 <meta property="og:description" content="前这个题目可能显得比较不严谨，但是也想不到什么好的名字。这篇主要就是实现，在一个 Swarm 集群里面的 Nginx 的服务部署。且实现可以很快的进行 文件变更以及配置变更的统一提交。 这里至于之前的对于Swarm 的服务功能的测试不同了，更加偏向应用。再往后一部分，将会使用stack 来实现一个真正可用的服务架构。 正文使用Swarm 很容易的实现了一个服务： 12345docker servi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-13T14:52:33.000Z">
+<meta property="og:updated_time" content="2019-03-16T06:25:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx 的 Swarm 化">
 <meta name="twitter:description" content="前这个题目可能显得比较不严谨，但是也想不到什么好的名字。这篇主要就是实现，在一个 Swarm 集群里面的 Nginx 的服务部署。且实现可以很快的进行 文件变更以及配置变更的统一提交。 这里至于之前的对于Swarm 的服务功能的测试不同了，更加偏向应用。再往后一部分，将会使用stack 来实现一个真正可用的服务架构。 正文使用Swarm 很容易的实现了一个服务： 12345docker servi">
@@ -284,7 +284,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">30</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">31</span></a>
 
   </li>
         
@@ -322,7 +322,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">74</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">76</span></a>
 
   </li>
 
@@ -426,12 +426,24 @@
                 
               
 
-              <time title="创建时间：2019-03-13 00:00:00 / 修改时间：22:52:33" itemprop="dateCreated datePublished" datetime="2019-03-13T00:00:00+08:00">2019-03-13</time>
+              <time title="创建时间：2019-03-13 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-13T00:00:00+08:00">2019-03-13</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-16 14:25:23" itemprop="dateModified" datetime="2019-03-16T14:25:23+08:00">2019-03-16</time>
               
             
           </span>
@@ -498,7 +510,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.6k</span>
+                <span title="本文字数">2.7k</span>
               
 
               
@@ -546,7 +558,7 @@
 <p>配置共享目录 <code>/etc/exports</code> ，添加新行。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/srv/nfs/  bgb1(rw,sync)  bgb2(rw,sync)  bgb3(rw,sync)</span><br></pre></td></tr></table></figure>
 <p>重启服务端的nfs服务，并且尝试挂载：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> service nfs-kernel-server start</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> b 主机上进行挂载</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> mount bgb0:/srv/nfs /mnt/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> service nfs-kernel-server start</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> b 主机上进行挂载</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> mount bgb0:/srv/nfs /mnt/</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> chmod a+x /srv/nfs -R</span></span><br></pre></td></tr></table></figure>
 <hr>
 <p>测试完成，NFS 部署完成。</p>
 <h3 id="NFS-共享卷挂载"><a href="#NFS-共享卷挂载" class="headerlink" title="NFS 共享卷挂载"></a>NFS 共享卷挂载</h3><p>为了实现多个节点之间的文件共享。<strong>这里遇到了很坑的问题，不知道是自己的理解问题还是BUG什么，具体症状是 NFS卷 不进行自动的挂载</strong>。</p>
@@ -651,9 +663,9 @@
           
             <a href="/tags/Docker/" rel="tag"># Docker</a>
           
-            <a href="/tags/Nginx/" rel="tag"># Nginx</a>
-          
             <a href="/tags/Swarm/" rel="tag"># Swarm</a>
+          
+            <a href="/tags/Nginx/" rel="tag"># Nginx</a>
           
         </div>
       
@@ -759,7 +771,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">74</span>
+                    <span class="site-state-item-count">76</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -865,7 +877,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">30</span>
+                      
+                    
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1008,7 +1022,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">384k</span>
+    <span title="站点总字数">388k</span>
   
 
   
@@ -1017,7 +1031,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">10:40</span>
+    <span title="站点阅读时长">10:46</span>
   
 </div>
 
