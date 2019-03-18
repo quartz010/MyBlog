@@ -44,33 +44,6 @@
   </entry>
   
   <entry>
-    <title>收工-关于Swarm的总结</title>
-    <link href="https://blog.diglp.xyz/2019/03/14/OP_Swarm_Sumup/"/>
-    <id>https://blog.diglp.xyz/2019/03/14/OP_Swarm_Sumup/</id>
-    <published>2019-03-13T16:00:00.000Z</published>
-    <updated>2019-03-18T05:08:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前面的话"><a href="#前面的话" class="headerlink" title="前面的话"></a>前面的话</h2><p>这篇算是这段时间的对 Docker 的集群项目的一个总结，想写点什么不过发现前面都零零星星写的差不多了，所以这篇就水水的把期间遇到的有指导性的文章进行一次收集吧。</p><blockquote><p>发现了没，浏览器的标签不是收敛的。</p></blockquote><h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><p>这里收集了一些优秀且有参考意义的文章，总是舍不得关掉的那种。</p><blockquote><ul><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vZnVuZGVidWcvcC82ODIzODk3Lmh0bWw=" title="https://www.cnblogs.com/fundebug/p/6823897.html">生产环境中使用Docker Swarm的一些建议 – Fundebug博客 <i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20va2V2aW5ncmFjZS9wLzY4NzAzNTkuaHRtbA==" title="https://www.cnblogs.com/kevingrace/p/6870359.html">Docker管理工具-Swarm部署记录<i class="fa fa-external-link"></i></span> 很棒的一個博客站，長期學習</li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cucGJldGEubWUvZG9ja2VyLXZvbHVtZS1taWdyYXRlLw==" title="https://www.pbeta.me/docker-volume-migrate/">Docker volume 跨服务器迁移 – way to go<i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cucGJldGEubWUva2lsbC14bXJpZy8=" title="https://www.pbeta.me/kill-xmrig/">服务器清除 xmrig 后门程序记录 – way to go<i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cucGJldGEubWUvZG9ja2VyLWxubXAv" title="https://www.pbeta.me/docker-lnmp/">Docker 搭建 Nginx+MySQL+ PHP (LNMP)基础环境 – way to go<i class="fa fa-external-link"></i></span> 很棒的文章，干货实用。</li><li><span class="exturl" data-url="aHR0cDovL3d3dy5haWRhbnN1LmNvbS8yMDE3L2RvY2tlci1jb250YWluZXJzLXNlcnZpY2VzLw==" title="http://www.aidansu.com/2017/docker-containers-services/">Docker 镜像、容器与服务<i class="fa fa-external-link"></i></span> 一個實例，簡潔明瞭的構建自己的一個鏡像</li></ul><ul><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuYm9va3N0YWNrLmNuL2Jvb2tzL2RvY2tlci1zd2FybS1ndWlkZXM=" title="https://www.bookstack.cn/books/docker-swarm-guides">Docker Swarm 深入浅出<i class="fa fa-external-link"></i></span>  很好的一本書</li><li><span class="exturl" data-url="aHR0cHM6Ly95ZWFzeS5naXRib29rcy5pby9kb2NrZXJfcHJhY3RpY2Uv" title="https://yeasy.gitbooks.io/docker_practice/">Docker — 从入门到实践<i class="fa fa-external-link"></i></span> </li></ul><ul><li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLm1hbGx1eC5tZS8yMDE3LzAzLzE5L2NvbnN1bC8=" title="https://blog.mallux.me/2017/03/19/consul/">Consul 与 Registrator <i class="fa fa-external-link"></i></span>怕自己弄丢的好文章</li><li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLm1hbGx1eC5tZS8yMDE3LzAzLzExL21mcy8=" title="https://blog.mallux.me/2017/03/11/mfs/">02 - Moosefs 分布式文件系统<i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLm1hbGx1eC5tZS8yMDE3LzAyLzIyL3RyYWVmaWsv" title="https://blog.mallux.me/2017/02/22/traefik/">Traefik 微服务代理<i class="fa fa-external-link"></i></span></li></ul></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;前面的话&quot;&gt;&lt;a href=&quot;#前面的话&quot; class=&quot;headerlink&quot; title=&quot;前面的话&quot;&gt;&lt;/a&gt;前面的话&lt;/h2&gt;&lt;p&gt;这篇算是这段时间的对 Docker 的集群项目的一个总结，想写点什么不过发现前面都零零星星写的差不多了，所以这篇就水水的把期
-      
-    
-    </summary>
-    
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="Docker" scheme="https://blog.diglp.xyz/tags/Docker/"/>
-    
-      <category term="Swarm" scheme="https://blog.diglp.xyz/tags/Swarm/"/>
-    
-  </entry>
-  
-  <entry>
     <title>从Service到Stack</title>
     <link href="https://blog.diglp.xyz/2019/03/14/OP_Swarm_Stack/"/>
     <id>https://blog.diglp.xyz/2019/03/14/OP_Swarm_Stack/</id>
@@ -96,6 +69,33 @@
       <category term="Swarm" scheme="https://blog.diglp.xyz/tags/Swarm/"/>
     
       <category term="Nginx" scheme="https://blog.diglp.xyz/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>收工-关于Swarm的总结</title>
+    <link href="https://blog.diglp.xyz/2019/03/14/OP_Swarm_Sumup/"/>
+    <id>https://blog.diglp.xyz/2019/03/14/OP_Swarm_Sumup/</id>
+    <published>2019-03-13T16:00:00.000Z</published>
+    <updated>2019-03-18T05:08:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前面的话"><a href="#前面的话" class="headerlink" title="前面的话"></a>前面的话</h2><p>这篇算是这段时间的对 Docker 的集群项目的一个总结，想写点什么不过发现前面都零零星星写的差不多了，所以这篇就水水的把期间遇到的有指导性的文章进行一次收集吧。</p><blockquote><p>发现了没，浏览器的标签不是收敛的。</p></blockquote><h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><p>这里收集了一些优秀且有参考意义的文章，总是舍不得关掉的那种。</p><blockquote><ul><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vZnVuZGVidWcvcC82ODIzODk3Lmh0bWw=" title="https://www.cnblogs.com/fundebug/p/6823897.html">生产环境中使用Docker Swarm的一些建议 – Fundebug博客 <i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20va2V2aW5ncmFjZS9wLzY4NzAzNTkuaHRtbA==" title="https://www.cnblogs.com/kevingrace/p/6870359.html">Docker管理工具-Swarm部署记录<i class="fa fa-external-link"></i></span> 很棒的一個博客站，長期學習</li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cucGJldGEubWUvZG9ja2VyLXZvbHVtZS1taWdyYXRlLw==" title="https://www.pbeta.me/docker-volume-migrate/">Docker volume 跨服务器迁移 – way to go<i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cucGJldGEubWUva2lsbC14bXJpZy8=" title="https://www.pbeta.me/kill-xmrig/">服务器清除 xmrig 后门程序记录 – way to go<i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cucGJldGEubWUvZG9ja2VyLWxubXAv" title="https://www.pbeta.me/docker-lnmp/">Docker 搭建 Nginx+MySQL+ PHP (LNMP)基础环境 – way to go<i class="fa fa-external-link"></i></span> 很棒的文章，干货实用。</li><li><span class="exturl" data-url="aHR0cDovL3d3dy5haWRhbnN1LmNvbS8yMDE3L2RvY2tlci1jb250YWluZXJzLXNlcnZpY2VzLw==" title="http://www.aidansu.com/2017/docker-containers-services/">Docker 镜像、容器与服务<i class="fa fa-external-link"></i></span> 一個實例，簡潔明瞭的構建自己的一個鏡像</li></ul><ul><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuYm9va3N0YWNrLmNuL2Jvb2tzL2RvY2tlci1zd2FybS1ndWlkZXM=" title="https://www.bookstack.cn/books/docker-swarm-guides">Docker Swarm 深入浅出<i class="fa fa-external-link"></i></span>  很好的一本書</li><li><span class="exturl" data-url="aHR0cHM6Ly95ZWFzeS5naXRib29rcy5pby9kb2NrZXJfcHJhY3RpY2Uv" title="https://yeasy.gitbooks.io/docker_practice/">Docker — 从入门到实践<i class="fa fa-external-link"></i></span> </li></ul><ul><li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLm1hbGx1eC5tZS8yMDE3LzAzLzE5L2NvbnN1bC8=" title="https://blog.mallux.me/2017/03/19/consul/">Consul 与 Registrator <i class="fa fa-external-link"></i></span>怕自己弄丢的好文章</li><li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLm1hbGx1eC5tZS8yMDE3LzAzLzExL21mcy8=" title="https://blog.mallux.me/2017/03/11/mfs/">02 - Moosefs 分布式文件系统<i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLm1hbGx1eC5tZS8yMDE3LzAyLzIyL3RyYWVmaWsv" title="https://blog.mallux.me/2017/02/22/traefik/">Traefik 微服务代理<i class="fa fa-external-link"></i></span></li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前面的话&quot;&gt;&lt;a href=&quot;#前面的话&quot; class=&quot;headerlink&quot; title=&quot;前面的话&quot;&gt;&lt;/a&gt;前面的话&lt;/h2&gt;&lt;p&gt;这篇算是这段时间的对 Docker 的集群项目的一个总结，想写点什么不过发现前面都零零星星写的差不多了，所以这篇就水水的把期
+      
+    
+    </summary>
+    
+      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="Docker" scheme="https://blog.diglp.xyz/tags/Docker/"/>
+    
+      <category term="Swarm" scheme="https://blog.diglp.xyz/tags/Swarm/"/>
     
   </entry>
   
