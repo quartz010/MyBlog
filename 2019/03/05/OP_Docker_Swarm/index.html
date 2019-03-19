@@ -285,7 +285,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">31</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">33</span></a>
 
   </li>
         
@@ -323,7 +323,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">76</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">77</span></a>
 
   </li>
 
@@ -548,8 +548,8 @@
         <h2 id="快速部署"><a href="#快速部署" class="headerlink" title="快速部署"></a>快速部署</h2><h3 id="Docker-的安装"><a href="#Docker-的安装" class="headerlink" title="Docker 的安装"></a>Docker 的安装</h3><p>Docker 的安装，这里直接使用官方提供的一键安装的脚本。一路绿灯</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://get.docker.com/ | sh</span><br><span class="line"></span><br><span class="line">curl -sSL https://get.daocloud.io/docker | sh</span><br></pre></td></tr></table></figure>
 <h3 id="创建Swarm集群"><a href="#创建Swarm集群" class="headerlink" title="创建Swarm集群"></a>创建Swarm集群</h3><p>直接使用 Docker 的 <code>swarm</code> 来进行集群的创建。直接通过help可以查看相关的参数</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 初始化 Swarm 集群</span></span><br><span class="line">docker swarm init --advertise-addr 192.168.xxx.xxx	# 这里是主机的地址 注意保持静态 IP</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 得到 Worker 的join-token</span></span><br><span class="line">docker swarm join-token worker</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 输入join之后直接加入集群</span></span><br><span class="line">docker node ls</span><br><span class="line">ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION</span><br><span class="line">6km4644t62w3h3g7iujceerl1 *   bgb1         Ready               Active              Leader              18.06.3-ce</span><br><span class="line">kwi9t231ulc2dry75zzg52580     bgb2         Ready               Active                                  18.06.3-ce</span><br></pre></td></tr></table></figure>
-<h3 id="Portainer-服务部署"><a href="#Portainer-服务部署" class="headerlink" title="Portainer 服务部署"></a>Portainer 服务部署</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">拉镜像</span></span><br><span class="line">docker pull portainer/portainer</span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建挂载卷</span></span><br><span class="line">docker volume create portainer_data</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建挂载目录,不然后面挂载会报错</span></span><br><span class="line">mkdir -p /opt/portainer</span><br><span class="line"></span><br><span class="line">docker service create \</span><br><span class="line">--name portainer \</span><br><span class="line">--publish 9000:9000 \</span><br><span class="line">--replicas=1 \</span><br><span class="line">--constraint 'node.role == manager' \</span><br><span class="line">--mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock \</span><br><span class="line">--mount type=bind,src=//opt/portainer,dst=/data \</span><br><span class="line">portainer/portainer \</span><br><span class="line">-H unix:///var/run/docker.sock</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 列出所有的服务</span></span><br><span class="line">docker service ls</span><br><span class="line">ID                  NAME                MODE                REPLICAS            IMAGE                        PORTS</span><br><span class="line">plmkdifqivcs        mAgent_agent        global              4/4                 portainer/agent:latest</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 初始化 Swarm 集群</span><br><span class="line">docker swarm init --advertise-addr 192.168.xxx.xxx	# 这里是主机的地址 注意保持静态 IP</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 得到 Worker 的join-token</span><br><span class="line">docker swarm join-token worker</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 输入join之后直接加入集群</span><br><span class="line">docker node ls</span><br><span class="line">ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION</span><br><span class="line">6km4644t62w3h3g7iujceerl1 *   bgb1         Ready               Active              Leader              18.06.3-ce</span><br><span class="line">kwi9t231ulc2dry75zzg52580     bgb2         Ready               Active                                  18.06.3-ce</span><br></pre></td></tr></table></figure>
+<h3 id="Portainer-服务部署"><a href="#Portainer-服务部署" class="headerlink" title="Portainer 服务部署"></a>Portainer 服务部署</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>拉镜像</span><br><span class="line">docker pull portainer/portainer</span><br><span class="line"><span class="meta">#</span> 创建挂载卷</span><br><span class="line">docker volume create portainer_data</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 创建挂载目录,不然后面挂载会报错</span><br><span class="line">mkdir -p /opt/portainer</span><br><span class="line"></span><br><span class="line">docker service create \</span><br><span class="line">--name portainer \</span><br><span class="line">--publish 9000:9000 \</span><br><span class="line">--replicas=1 \</span><br><span class="line">--constraint 'node.role == manager' \</span><br><span class="line">--mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock \</span><br><span class="line">--mount type=bind,src=//opt/portainer,dst=/data \</span><br><span class="line">portainer/portainer \</span><br><span class="line">-H unix:///var/run/docker.sock</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 列出所有的服务</span><br><span class="line">docker service ls</span><br><span class="line">ID                  NAME                MODE                REPLICAS            IMAGE                        PORTS</span><br><span class="line">plmkdifqivcs        mAgent_agent        global              4/4                 portainer/agent:latest</span><br></pre></td></tr></table></figure>
 <hr>
 <p>这里注意的是，这里的部署是服务部署，而不是单个容器的部署。</p>
 <p>容器的部署是针对与单个节点的。在上面的部署方式也可以使用：</p>
@@ -748,7 +748,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">76</span>
+                    <span class="site-state-item-count">77</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -856,7 +856,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">31</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -999,7 +1003,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">388k</span>
+    <span title="站点总字数">391k</span>
   
 
   
@@ -1008,7 +1012,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">10:46</span>
+    <span title="站点阅读时长">10:52</span>
   
 </div>
 

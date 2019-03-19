@@ -108,7 +108,7 @@
 </script>
 
   <meta name="description" content="前本来想着集群稳定呢，结果早上六点docker 的网络就突然挂了。默认网关除了问题，ping 外网不可达。导致远程主机域名无法解析，8.8.4.4:53 不可达，整体服务不可用。 这篇，接着上面的内容，实现 frp 和 Nignx 的服务的Stack 化。前面遇到的问题，后面在找个整体的时间进行解决吧。 架构描述 以及 Compose实现描述这里主要是使用 frp 和 Nginx ，前者用于穿透，">
-<meta name="keywords" content="Docker,Nginx,Swarm">
+<meta name="keywords" content="Docker,Swarm,Nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从Service到Stack">
 <meta property="og:url" content="https://blog.diglp.xyz/2019/03/14/OP_Swarm_Stack/index.html">
@@ -285,7 +285,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">31</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">33</span></a>
 
   </li>
         
@@ -323,7 +323,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">76</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">77</span></a>
 
   </li>
 
@@ -654,9 +654,9 @@
           
             <a href="/tags/Docker/" rel="tag"># Docker</a>
           
-            <a href="/tags/Nginx/" rel="tag"># Nginx</a>
-          
             <a href="/tags/Swarm/" rel="tag"># Swarm</a>
+          
+            <a href="/tags/Nginx/" rel="tag"># Nginx</a>
           
         </div>
       
@@ -669,8 +669,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/14/OP_Swarm_Sumup/" rel="next" title="收工-关于Swarm的总结">
-                <i class="fa fa-chevron-left"></i> 收工-关于Swarm的总结
+              <a href="/2019/03/13/OP_Swarm_nginx/" rel="next" title="Nginx 的 Swarm 化">
+                <i class="fa fa-chevron-left"></i> Nginx 的 Swarm 化
               </a>
             
           </div>
@@ -679,8 +679,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/17/OP_Cluster_Monitor/" rel="prev" title="基于Docke的集群监控">
-                基于Docke的集群监控 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/14/OP_Swarm_Sumup/" rel="prev" title="收工-关于Swarm的总结">
+                收工-关于Swarm的总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -764,7 +764,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">76</span>
+                    <span class="site-state-item-count">77</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -872,7 +872,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">31</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1015,7 +1019,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">388k</span>
+    <span title="站点总字数">391k</span>
   
 
   
@@ -1024,7 +1028,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">10:46</span>
+    <span title="站点阅读时长">10:52</span>
   
 </div>
 
