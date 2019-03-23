@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/Han/dist/han.min.css?v=3.3"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.0"/>
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2964020631130494",
+    enable_page_level_ads: true
+  });
+</script>
+
+  <meta name="description" content="前这次的一个period是基于《Nodejs区块链开发》这本书的的区块链项目–亿书，的源码学习笔记  EbookCoin项目地址  最近的拖延症严重到极致，我都是有点佩服自己了，应该一周前的是现在还没有解决。 地址前：前面的部分，从篇幅都可以看出是个极简单的功能，一句话概括就是通过一个初始密码，生成一个密钥对，然后保存在account结构中。当然，我们的一个账户，将会实现一个 全面的api，用来显">
+<meta name="keywords" content="区块链原理,EbookCoin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EbookCoin 源码 0x4">
+<meta property="og:url" content="https://www.diglp.xyz/2018/05/13/BC_EbookCoin_0x4/index.html">
+<meta property="og:site_name" content="R4y&#39;s Blog">
+<meta property="og:description" content="前这次的一个period是基于《Nodejs区块链开发》这本书的的区块链项目–亿书，的源码学习笔记  EbookCoin项目地址  最近的拖延症严重到极致，我都是有点佩服自己了，应该一周前的是现在还没有解决。 地址前：前面的部分，从篇幅都可以看出是个极简单的功能，一句话概括就是通过一个初始密码，生成一个密钥对，然后保存在account结构中。当然，我们的一个账户，将会实现一个 全面的api，用来显">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-04T11:57:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EbookCoin 源码 0x4">
+<meta name="twitter:description" content="前这次的一个period是基于《Nodejs区块链开发》这本书的的区块链项目–亿书，的源码学习笔记  EbookCoin项目地址  最近的拖延症严重到极致，我都是有点佩服自己了，应该一周前的是现在还没有解决。 地址前：前面的部分，从篇幅都可以看出是个极简单的功能，一句话概括就是通过一个初始密码，生成一个密钥对，然后保存在account结构中。当然，我们的一个账户，将会实现一个 全面的api，用来显">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="R4y's Blog" type="application/atom+xml"/>
+
+
+
+
+  <link rel="canonical" href="https://www.diglp.xyz/2018/05/13/BC_EbookCoin_0x4/"/>
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>EbookCoin 源码 0x4 | R4y's Blog</title>
+  
+
+
+
+
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-118678642-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-118678642-1');
+  </script>
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">R4y's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">个人回收站</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">38</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类<span class="badge">13</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">79</span></a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1YXJ0ejAxMA==" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.diglp.xyz/2018/05/13/BC_EbookCoin_0x4/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Author"/>
+      <meta itemprop="description" content="Why join the navy, When you can be a PIRATE"/>
+      <meta itemprop="image" content="/images/avatar.jpg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="R4y's Blog"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">EbookCoin 源码 0x4
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-13 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-13T00:00:00+08:00">2018-05-13</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-04 19:57:26" itemprop="dateModified" datetime="2019-03-04T19:57:26+08:00">2019-03-04</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/05/13/BC_EbookCoin_0x4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/13/BC_EbookCoin_0x4/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">8.7k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">0:10</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前"><a href="#前" class="headerlink" title="前"></a>前</h2><p>这次的一个period是基于《Nodejs区块链开发》这本书的的区块链项目–亿书，的源码学习笔记</p>
+<blockquote>
+<p>EbookCoin<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0Vib29rY29pbi9lYm9va2NvaW4uZ2l0" title="https://github.com/Ebookcoin/ebookcoin.git">项目地址<i class="fa fa-external-link"></i></span></p>
+</blockquote>
+<p>最近的拖延症严重到极致，我都是有点佩服自己了，应该一周前的是现在还没有解决。</p>
+<h2 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h2><p>前：前面的部分，从篇幅都可以看出是个极简单的功能，一句话概括就是通过一个初始密码，生成一个密钥对，然后保存在account结构中。当然，我们的一个账户，将会实现一个 全面的api，用来显示账户的信息，像是余额，地址，私钥。。。</p>
+<hr>
+<h3 id="文件包含"><a href="#文件包含" class="headerlink" title="文件包含"></a>文件包含</h3><ul>
+<li>./modules/accounts.js</li>
+<li>./logic/account.js</li>
+<li>./modules/contracts.js</li>
+</ul>
+<p>accounts.js 实现了账户功能</p>
+<p>account.js 实现了账户属性</p>
+<p>contracts.js 实现了联系人的功能</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><ul>
+<li><p>API</p>
+<p>  已知，ebook是基于HTTP实现的区块链项目，所以，其功能是由其api实现的。所以这里从其实现的功能入手。这个称之为中间件，拓展路由的。</p>
+</li>
+</ul>
+<pre><code>        router.map(shared, {
+            &quot;post /open&quot;: &quot;open&quot;,
+            &quot;get /getBalance&quot;: &quot;getBalance&quot;,
+            &quot;get /getPublicKey&quot;: &quot;getPublickey&quot;,
+            &quot;post /generatePublicKey&quot;: &quot;generatePublickey&quot;,
+            &quot;get /delegates&quot;: &quot;getDelegates&quot;,
+            &quot;get /delegates/fee&quot;: &quot;getDelegatesFee&quot;,
+            &quot;put /delegates&quot;: &quot;addDelegates&quot;,
+            &quot;get /username/get&quot;: &quot;getUsername&quot;,
+            &quot;get /username/fee&quot;: &quot;getUsernameFee&quot;,
+            &quot;put /username&quot;: &quot;addUsername&quot;,
+            &quot;get /&quot;: &quot;getAccount&quot;
+        });
+
+通过些拓展的API我们可以发现，一个账户的具体要实现的功能.打开账户,余额,公钥,等等.
+
+在后面的代码里,实现了中间件功能的添加,可以实现了在EXPRESS的 框架里的功能拓展.
+
+        library.network.app.use(&apos;/api/accounts&apos;, router);
+
+如果在http的请求层次,我们和得到如以下的映射
+
+        get /api/getBalance -&gt; shared.getBalance
+        post /api/open -&gt; shared.open
+</code></pre><ul>
+<li><p>账户地址</p>
+<p>  在比特币系统中地址实际上有多种, 1 开头的 账户地址,以及 3 开头的测试地址.所以根据地址的形式可以实现不同种类的地址分类.地址的生成过程在前面的地方有涉及,这里再贴出代码.</p>
+<pre><code>Accounts.prototype.generateAddressByPublicKey = function (publicKey) {
+    var publicKeyHash = crypto.createHash(&apos;sha256&apos;).update(publicKey, &apos;hex&apos;).digest();
+    var temp = new Buffer(8);
+    for (var i = 0; i &lt; 8; i++) {
+        temp[i] = publicKeyHash[7 - i];
+    }
+
+    var address = bignum.fromBuffer(temp).toString() + &apos;L&apos;;    // 注意这里是在后面添加了L
+    if (!address) {
+        throw Error(&quot;wrong publicKey &quot; + publicKey);
+    }
+    return address;
+};
+</code></pre></li>
+</ul>
+<pre><code>在亿书的项目里面,使用了地址后面的后缀对不同的地址进行区分.上面的 **L** 是用于生成常规地址的.还有一类的地址,是块地址(这个好像在传统体系里面没有).其使用的是结尾的**C作为标识**
+
+    privated.getAddressByPublicKey = function (publicKey) {
+        var publicKeyHash = crypto.createHash(&apos;sha256&apos;).update(publicKey, &apos;hex&apos;).digest();
+        var temp = new Buffer(8);
+        for (var i = 0; i &lt; 8; i++) {
+            temp[i] = publicKeyHash[7 - i];
+        }
+
+        var address = bignum.fromBuffer(temp).toString() + &quot;C&quot;;
+        return address;
+    }
+
+    generatorId: privated.getAddressByPublicKey(raw.b_generatorPublicKey),
+</code></pre><ul>
+<li><p>别名地址</p>
+<p>  在亿书的项目中很好的加入了别名地址这个东西.比如我们在BTC体系下的转账需要输入很长的账户地址,往往,这个地址是十分难以记忆的,座椅在亿书的体系中引入了别名系统(ALIAS),就像支付宝的用户名一样,我们不需要一大堆冗长的字符串,只需要用户名一样的东西,就可以进行转账.具体的实现原理是在数据库中同时保存地址和别名.</p>
+<p>  由于别名通常是用于转账的时候,所以别名的引用代码,在trsnaction的模块里</p>
+<pre><code>shared.addTransactions = function (req, cb) {
+    var body = req.body;
+    library.scheme.validate(body, {
+        type: &quot;object&quot;,
+        properties: {
+            secret: {
+                ... // 用于检验合法性
+            }
+        },
+        required: [&quot;secret&quot;, &quot;amount&quot;, &quot;recipientId&quot;]
+    }, function (err) {
+        if (err) {
+            return cb(err[0].message);
+        }
+
+        // 这里是对密码的检验
+        var hash = crypto.createHash(&apos;sha256&apos;).update(body.secret, &apos;utf8&apos;).digest();    
+        var keypair = ed.MakeKeypair(hash);
+
+        if (body.publicKey) {
+            if (keypair.publicKey.toString(&apos;hex&apos;) != body.publicKey) {
+                return cb(&quot;Invalid passphrase&quot;);
+            }
+        }
+
+        var query = {};
+
+        // 神奇的正则表达式
+        var isAddress = /^[0-9]+[L|l]$/g;
+
+        // 这里里的IF 就是显得很重要的了,实际上这里是对其进行的一次判断,
+        // 如果是合法的地址,那么就是使用地址查询, 如果不是地址就是使用别名查询
+        if (isAddress.test(body.recipientId)) {
+            query.address = body.recipientId;
+        } else {
+            query.username = body.recipientId;
+        }
+
+        library.balancesSequence.add(function (cb) {
+            modules.accounts.getAccount(query, function (err, recipient) {
+
+                ... // 合法性判断
+
+                var recipientId = recipient ? recipient.address : body.recipientId;
+                var recipientUsername = recipient ? recipient.username : null;
+
+                    ... // 一系列的正则判断
+
+                            try {
+                                // 创建交易结构
+                                var transaction = library.logic.transaction.create({
+                                    type: TransactionTypes.SEND,
+                                    amount: body.amount,
+                                    sender: account,
+                                    recipientId: recipientId,
+                                    recipientUsername: recipientUsername,
+                                    keypair: keypair,
+                                    requester: keypair,
+                                    secondKeypair: secondKeypair
+                                });
+                            } catch (e) {
+                                return cb(e.toString());
+</code></pre></li>
+</ul>
+<pre><code>具体部分注释中标出. 这里的 recipientID 可以是地址,也可以是用户名.
+</code></pre><hr>
+<ul>
+<li><p>别名注册</p>
+<p>  别名在地址生成的本身是不需要的,需要的只是 secret ,所以,别名的注册是另一个功能. </p>
+<pre><code>shared.addUsername = function (req, cb) {
+    var body = req.body;
+    library.scheme.validate(body, {
+        ... // 格式检测
+            }
+        },
+        required: [&apos;secret&apos;, &apos;username&apos;]
+    }, function (err) {
+        if (err) {
+            return cb(err[0].message);
+        }
+
+        var hash = crypto.createHash(&apos;sha256&apos;).update(body.secret, &apos;utf8&apos;).digest();
+        var keypair = ed.MakeKeypair(hash);
+        // 打开钱包的密码判断
+        if (body.publicKey) {
+            if (keypair.publicKey.toString(&apos;hex&apos;) != body.publicKey) {
+                return cb(&quot;Invalid passphrase&quot;);
+            }
+        }
+
+        library.balancesSequence.add(function (cb) {
+
+            // 判断是否多重签名        
+            if (body.multisigAccountPublicKey &amp;&amp; body.multisigAccountPublicKey != keypair.publicKey.toString(&apos;hex&apos;)) {
+
+                    modules.accounts.getAccount({publicKey: keypair.publicKey}, function (err, requester) {
+                        ... // 合法性 
+
+                        var secondKeypair = null;
+
+                        if (requester.secondSignature) {
+                            var secondHash = crypto.createHash(&apos;sha256&apos;).update(body.secondSecret, &apos;utf8&apos;).digest();
+                            secondKeypair = ed.MakeKeypair(secondHash);
+                        }
+
+                        try {
+                            var transaction = library.logic.transaction.create({
+                                type: TransactionTypes.USERNAME,
+                                username: body.username,
+                                sender: account,
+                                keypair: keypair,
+                                secondKeypair: secondKeypair,
+                                requester: keypair
+                            });
+                        } catch (e) {
+                            return cb(e.toString());
+                        }
+                        modules.transactions.receiveTransactions([transaction], cb);
+                    });
+                });
+            } else {
+                self.getAccount({publicKey: keypair.publicKey.toString(&apos;hex&apos;)}, function (err, account) {
+                    if (err) {
+                    ... // 合法性检测
+
+                    var secondKeypair = null;
+
+                    if (account.secondSignature) {
+                        var secondHash = crypto.createHash(&apos;sha256&apos;).update(body.secondSecret, &apos;utf8&apos;).digest();
+                        secondKeypair = ed.MakeKeypair(secondHash);
+                    }
+
+                    try {
+                        var transaction = library.logic.transaction.create({
+                            type: TransactionTypes.USERNAME,
+                            username: body.username,
+                            sender: account,
+                            keypair: keypair,
+                            secondKeypair: secondKeypair
+                        });
+                    } catch (e) {
+                        return cb(e.toString());
+                    }
+                    ... //
+</code></pre></li>
+</ul>
+<pre><code>在这部分的代码中,实际上的主要函数,是在上面创建的一个交易,这个交易是写在链上的,`type: TransactionTypes.USERNAME,`,这样就可以建立一个别名,实现地址的映射.
+</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>看完这部份的功能, 其实发现了一个共性我们可以很简单的概述我们上面所有的 操作的功能.就是 <strong>交易</strong> ,<strong>没错一切就是交易.</strong></p>
+<p>这里的交易实际上是一种泛化,其实是指的在区块链上所有的记录,也就是上链.一旦数据上链,那么就是产生一个不可改变的记录值.</p>
+<p>这里 的api 实际上是对特殊交易种类的不同封装.</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>一杯可乐~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Author 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="Author 比特币"/>
+        <p>比特币</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Author</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://www.diglp.xyz/2018/05/13/BC_EbookCoin_0x4/" title="EbookCoin 源码 0x4">https://www.diglp.xyz/2018/05/13/BC_EbookCoin_0x4/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/区块链原理/" rel="tag"># 区块链原理</a>
+          
+            <a href="/tags/EbookCoin/" rel="tag"># EbookCoin</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/12/BC_EbookCoin_0x3/" rel="next" title="EbookCoin 源码 0x3">
+                <i class="fa fa-chevron-left"></i> EbookCoin 源码 0x3
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/14/BC_EbookCoin_0x5/" rel="prev" title="EbookCoin 源码 0x5">
+                EbookCoin 源码 0x5 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+    
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Author"/>
+            
+              <p class="site-author-name" itemprop="name">Author</p>
+              <p class="site-description motion-element" itemprop="description">Why join the navy, When you can be a PIRATE</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">79</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">38</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1YXJ0ejAxMA==" title="GitHub &rarr; https://github.com/quartz010"><i class="fa fa-fw fa-github"></i>GitHub</span>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="bWFpbHRvOnF1YXJ0ejAxMEBvdXRsb29rLmNvbQ==" title="E-Mail &rarr; mailto:quartz010@outlook.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</span>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"/></span>
+             </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <span class="exturl" data-url="aHR0cDovL3d3dy5ydW5vb2IuY29tLw==" title="http://www.runoob.com/">菜鸟教程</span>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <span class="exturl" data-url="aHR0cHM6Ly93d3cuc21hcnRmb3guY2Mv" title="https://www.smartfox.cc/">狐狸菌の秘密基地</span>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <span class="exturl" data-url="aHR0cDovL2hhY2suYmVzdC8=" title="http://hack.best/">Aoao's Blog</span>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <span class="exturl" data-url="aHR0cHM6Ly9jaGllcnFqLmdpdGh1Yi5pby8=" title="https://chierqj.github.io/">Chierqj's Blog</span>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前"><span class="nav-number">1.</span> <span class="nav-text">前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#地址"><span class="nav-number">2.</span> <span class="nav-text">地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件包含"><span class="nav-number">2.1.</span> <span class="nav-text">文件包含</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">2.2.</span> <span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Author</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">402k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">8:08</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span></div>
+
+
+
+  <div class="footer-custom">Hosted by <a target="_blank" rel="external nofollow" href="https://pages.github.com"><b>GitHub Pages</b></a> <span class="post-meta-divider">|</span> <span id="busuanzi_container_site_uv">本站访客数:<span id="busuanzi_value_site_uv"></span></span></div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.0"></script>
+
+  <script src="/js/src/motion.js?v=7.0.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=7.0.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
+
+
+
+  
+  
+  <script id="dsq-count-scr" src="https://diglp.disqus.com/count.js" async></script>
+
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://www.diglp.xyz/2018/05/13/BC_EbookCoin_0x4/";
+    this.page.identifier = "2018/05/13/BC_EbookCoin_0x4/";
+    this.page.title = 'EbookCoin 源码 0x4';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://diglp.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    $(function() {
+      var offsetTop = $('#comments').offset().top - $(window).height();
+      if (offsetTop <= 0) {
+        // load directly when there's no a scrollbar
+        loadComments();
+      } else {
+        $(window).on('scroll.disqus_scroll', function() {
+          // offsetTop may changes because of manually resizing browser window or lazy loading images.
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          var scrollTop = $(window).scrollTop();
+
+          // pre-load comments a bit? (margin or anything else)
+          if (offsetTop - scrollTop < 60) {
+            $(window).off('.disqus_scroll');
+            loadComments();
+          }
+        });
+      }
+    });
+  
+</script>
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/pangu/dist/pangu.min.js?v=3.3"></script>
+  <script>pangu.spacingPage();</script>
+
+
+  
+  <script src="/js/src/js.cookie.js?v=7.0.0"></script>
+  <script src="/js/src/scroll-cookie.js?v=7.0.0"></script>
+
+
+  
+  <script src="/js/src/exturl.js?v=7.0.0"></script>
+
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+</body>
+</html>

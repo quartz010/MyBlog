@@ -5,9 +5,9 @@
   <subtitle>个人回收站</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://blog.diglp.xyz/"/>
-  <updated>2019-03-21T13:20:30.000Z</updated>
-  <id>https://blog.diglp.xyz/</id>
+  <link href="https://www.diglp.xyz/"/>
+  <updated>2019-03-23T14:20:27.309Z</updated>
+  <id>https://www.diglp.xyz/</id>
   
   <author>
     <name>R4yd</name>
@@ -17,9 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>30 min for Golang</title>
+    <link href="https://www.diglp.xyz/2019/03/23/DEV_30min_for_Go/"/>
+    <id>https://www.diglp.xyz/2019/03/23/DEV_30min_for_Go/</id>
+    <published>2019-03-22T16:00:00.000Z</published>
+    <updated>2019-03-23T14:20:27.309Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前面的话"><a href="#前面的话" class="headerlink" title="前面的话"></a>前面的话</h2><p>想想自己说是学 <code>Go</code> 已经想了了半年了都，可自己以前一直想的 <strong>WeGene</strong> 一样。从有想法到付款，一下子晃了一年过去了。</p><p><strong>看着价钱从 299 到 499</strong> ,突然和进行看的《时间管理》书里面写到，<code>迟早都要做，晚做不如早做好</code> 。想想好像的确该认清点什么了。</p><hr><p>对了，这篇文章 全篇参考 </p><blockquote><ul><li><span class="exturl" data-url="aHR0cDovL3d3dy5ydW5vb2IuY29tL2dvL2dvLXR1dG9yaWFsLmh0bWw=" title="http://www.runoob.com/go/go-tutorial.html">Go语言教程 – RUNOOB<i class="fa fa-external-link"></i></span></li></ul></blockquote><h2 id="Go-简介"><a href="#Go-简介" class="headerlink" title="Go 简介"></a>Go 简介</h2><blockquote><p>先弄懂哪里使得他如此有魅力</p></blockquote><p>Go 自 2007 年开始研发，在2009 年开源。<br>Go 的语言的特色如下：</p><ul><li>简洁、快速、安全</li><li>并行、有趣、开源</li><li>内存管理、数组安全、编译迅速</li></ul><p>最大的亮点在于与身俱来的并发能力，用于服务端的开发。之前也有遇到很多的基于GO的项目：<code>frp，docker-compose，etc.</code> 。</p><hr><p>这里大量应用 《Go语言程序设计》这本书里的几句箴言（几大惊喜）</p><ol><li><p>大道至简的哲学    语言最小化</p></li><li><p>并行支持    </p></li><li><p>非侵入式接口    </p></li><li><p>极度简化但是完备的OOP</p></li><li><p>错误处理规范E</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f, err :- os.Open(file)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    <span class="comment">//err</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">defer</span> f.Close()</span><br></pre></td></tr></table></figure></li><li><p>功能的内聚。</p></li><li><p>消除了堆和栈的边界</p></li><li><p>Go 对C的支持</p></li></ol><h2 id="Go-基础"><a href="#Go-基础" class="headerlink" title="Go 基础"></a>Go 基础</h2><h3 id="hello-world-开始"><a href="#hello-world-开始" class="headerlink" title="hello world 开始"></a>hello world 开始</h3><p>传统？Go 程序的基础组成由 <code>包声明，引入包，函数，变量，语句&amp;注释，注释</code></p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="comment">// 导入格式化输入的包</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">/*注释与C类似*/</span></span><br><span class="line">    fmt.Print(<span class="string">"test"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><p>Go 的精致的地方，在朋友当时吹吹这个用 首字母大大小写来区别函数的可见性的时候，就觉得不一般了。这里强制规定了：<strong>左花括号不能换行</strong>（消灭异端？？） 。</p><h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><ul><li><p>左花括号不可换行</p></li><li><p>其实感觉吸取JS 的风格，不需要 <code>;</code> 如果同行多语句，需要使用 分号进行分隔。</p></li><li><p>注释风格同 C</p></li><li><p>标识符大小写敏感，同C，不可以数字开头，不可占用关键字，不可带运算符</p></li><li><p>关键字 ， （虽然不知道怎么用，先认识一些）</p><p>| -        | -           | -      | -         | -      |<br>| ——– | ———– | —— | ——— | —— |<br>| case     | defer       | go     | map       | struct |<br>| chan     | else        | goto   | package   | switch |<br>| const    | fallthrough | if     | range     | type   |<br>| continue | for         | import | return    | var    |<br>| break    | default     | func   | interface | select |</p></li><li><p>基本数据类型</p><p>布尔，数字，字符串，其他派生（指针，数组，结构体，Channel，函数，切片，接口，Map）</p><p>这里直接 合并了 C 里面常用的几个 <code>typedef</code> ：<code>uint8,int64,float64,complex128</code></p></li></ul><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul><li><p>类似与  JS 使用 var 关键字进行变量定义</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> &lt;identifer&gt; &lt;<span class="keyword">type</span>&gt;</span><br><span class="line"><span class="keyword">var</span> num1 <span class="keyword">int64</span></span><br><span class="line"><span class="keyword">var</span> num2 = <span class="number">123</span># 编译语言，自动确定类型</span><br><span class="line">num := <span class="number">123</span># 省略 <span class="keyword">var</span> 关键字， := 为声明语句</span><br></pre></td></tr></table></figure></li><li><p>多变量声明的方式</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a,b,c := <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span></span><br><span class="line"><span class="keyword">var</span> (</span><br><span class="line">a <span class="keyword">int8</span></span><br><span class="line">b <span class="keyword">int64</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure></li><li><p>值类型和引用类型</p><p>这里结合 C 的思想，这里的变量是内存中的值。通过 <code>&amp;</code> 对变量进行取值。</p><p>但是，引类型是不一样的，这里理解为 指针吧，引用的值是保存其值的内存地址。</p></li><li><p>局部变量不允许声明但不使用，全局变量支持。</p></li><li><p>两个值进行交换 <code>a,b = b,a</code></p></li><li><p>空白标识符用于抛弃值</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a,_,c = <span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span></span><br></pre></td></tr></table></figure></li></ul><h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><ul><li><p>同多数语言使用 <code>const</code> 标识符。</p>  <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a,c,d = <span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">    Unknown = <span class="number">0</span></span><br><span class="line">    Female = <span class="number">1</span></span><br><span class="line">    Male = <span class="number">2</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure></li><li><p><code>iota</code> 这里不是 C 里面的 <code>int to ascii</code> ，可以理解为，编译器维护的一个全局的常量。<strong>iota 在 const关键字出现时将被重置为 0(const 内部的第一行之前)，const 中每新增一行常量声明将使 iota 计数一次(iota 可理解为 const 语句块中的行索引)。</strong></p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const (</span><br><span class="line">    a = iota   //0</span><br><span class="line">    b          //1</span><br><span class="line">    c          //2</span><br><span class="line">    d = &quot;ha&quot;   //独立值，iota += 1</span><br><span class="line">    e          //&quot;ha&quot;   iota += 1</span><br><span class="line">    f = 100    //iota +=1</span><br><span class="line">    g          //100  iota +=1</span><br><span class="line">    h = iota   //7,恢复计数</span><br><span class="line">    i          //8</span><br><span class="line">)</span><br></pre></td></tr></table></figure></li></ul><h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><ul><li><p>基础的都支持 包括 ++ 和 – 。</p></li><li><p>关系运算符也是一样的。</p></li><li><p>逻辑运算也一样</p></li><li><p>位运算也一样 （^ 这个叫做脱字符），支持位移</p></li><li><p>复合运算符，较之于 C 有了拓展</p><p>= ， += ，-=， *= ，&lt;&lt;= …</p></li><li><p>取值，指向 &amp;*</p></li><li><p>优先级…记不住，用括号吧</p></li></ul><h3 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h3><ul><li><p><code>if/if-else</code> , <code>switch</code>, <code>select</code>  多了个没有用过的， 下面给出基本格式</p>  <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="literal">true</span> &#123;</span><br><span class="line">    fmt.Print(<span class="string">"123"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    fmt.Print(<span class="string">"NO"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">switch</span> val &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">        fmt.Print(<span class="string">"123"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">        fmt.Print(<span class="string">"123"</span>)</span><br><span class="line">    <span class="keyword">case</span> grade == <span class="string">"F"</span>:</span><br><span class="line">    fmt.Printf(<span class="string">"不及格\n"</span> )</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">select</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> communication clause  :</span><br><span class="line">       statement(s);      </span><br><span class="line">    <span class="keyword">case</span> communication clause  :</span><br><span class="line">       statement(s); </span><br><span class="line">    <span class="comment">/* 你可以定义任意数量的 case */</span></span><br><span class="line">    <span class="keyword">default</span> : <span class="comment">/* 可选 */</span></span><br><span class="line">       statement(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>Type Switch 这个可以根据 类型来决定 Case，异常一样。<strong>不过很奇怪啊，是编译语言，类型还能变吗</strong></p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">switch x.(type)&#123;</span><br><span class="line">    case type:</span><br><span class="line">       statement(s);      </span><br><span class="line">    case type:</span><br><span class="line">       statement(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p><code>fallthrough</code> 强制的执行下一个 Case 的内部代码，（感觉很大的提高了灵活性）</p></li><li><p>select 之前没有见过 不过看其解释如下：</p><blockquote><p>select是Go中的一个控制结构，类似于用于通信的switch语句。每个case必须是一个通信操作，要么是发送要么是接收。</p><p>select随机执行一个可运行的case。如果没有case可运行，它将阻塞，直到有case可运行。一个默认的子句应该总是可运行的。</p></blockquote><p>  <strong>这样就突然清楚了，LinuxC 里面的用于异步IO的 <code>select()</code> 在这里被表现为一个结构了，妙啊</strong></p><p>  关于这个结构的介绍，应该是和并发是息息相关的，现在看的有点蒙。先跳吧</p></li></ul><h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><ul><li><p>缩减关键词，去掉了 while 使用for 实现 当和直到。形式如下</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> init; condition; post &#123; &#125;<span class="comment">// 同 for(1;2;4) &#123;3&#125;</span></span><br><span class="line"><span class="keyword">for</span> condition &#123; &#125;<span class="comment">// 同 while(condition)&#123;&#125;</span></span><br><span class="line"><span class="keyword">for</span> &#123; &#125;<span class="comment">// 同 for(;;)&#123;&#125;</span></span><br></pre></td></tr></table></figure></li><li><p>使用 for 也可以很方便的对元素进行迭代</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> key, value := <span class="keyword">range</span> oldMap &#123;</span><br><span class="line">    newMap[key] = value</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>break，continue， goto</p><p>brk 和 ctnu 一样的功能，记得switch 也需要 brk</p><p>没想到这里还留着 goto ，一样的 <code>goto lable</code> ，一般不要乱跳，用来统一异常处理也行。</p></li><li><p><code>for true {fmt.print(&#39;dala&#39;)}</code></p></li></ul><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul><li><p>和 C 一样，<code>main()</code> 为必须的函数入口。</p></li><li><p>函数定义格式如下：</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">function_name</span><span class="params">( [parameter list] )</span> [<span class="title">return_types</span>]</span> &#123;</span><br><span class="line">   <span class="comment">//函数体</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">test</span> <span class="params">(a, b <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>多返回值 和python类似，可以进行多个值的返回</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">swap</span><span class="params">(x, y <span class="keyword">string</span>)</span> <span class="params">(<span class="keyword">string</span>, <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line">   <span class="keyword">return</span> y, x</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 多个参数进行接收</span></span><br><span class="line">a,b := swap(<span class="string">"a"</span>, <span class="string">"sd"</span>)</span><br><span class="line">_,c := swap(<span class="string">"c"</span>, <span class="string">"ddd"</span>)</span><br></pre></td></tr></table></figure></li><li><p>值传递，和引用传递，类似于 CPP 语法</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 定义交换值函数*/</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">swap</span><span class="params">(x *<span class="keyword">int</span>, y *<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">   <span class="keyword">var</span> temp <span class="keyword">int</span></span><br><span class="line">   temp = *x    <span class="comment">/* 保持 x 地址上的值 */</span></span><br><span class="line">   *x = *y      <span class="comment">/* 将 y 值赋给 x */</span></span><br><span class="line">   *y = temp    <span class="comment">/* 将 temp 值赋给 y */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这里是直接传递引用的，如果在 CPP 的惯性下，可能更愿意理解为指针。</p></li></ul><h3 id="变量的作用域Scope"><a href="#变量的作用域Scope" class="headerlink" title="变量的作用域Scope"></a>变量的作用域Scope</h3><ul><li>局部变量，全局变量，形式变量。</li><li>全局变量可以在整个包甚至外部包（被导出后）使用。</li><li>同CPP里面的变量相同，记得初始化局部变量，全局变量，默认初始化为 0/nil</li></ul><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ul><li><p>和其他语言一样，常见的顺序的数据结构。定义形式如下：</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明</span></span><br><span class="line"><span class="keyword">var</span> variable_name [SIZE] variable_type</span><br><span class="line"><span class="keyword">var</span> balance [<span class="number">10</span>] <span class="keyword">float32</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义形式比较诡异</span></span><br><span class="line"><span class="keyword">var</span> balance = [<span class="number">5</span>]<span class="keyword">float32</span>&#123;<span class="number">1000.0</span>, <span class="number">2.0</span>, <span class="number">3.4</span>, <span class="number">7.0</span>, <span class="number">50.0</span>&#125;</span><br></pre></td></tr></table></figure></li><li><p>可以很方便的使用 for range 进行遍历：</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">array := [<span class="number">5</span>]<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">7</span>&#125;</span><br><span class="line"><span class="keyword">for</span> i := <span class="keyword">range</span> array &#123;</span><br><span class="line">fmt.Println(array[i])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>二维数组一样，行列的形式。</p></li><li><p>数组作为参数 使用 C 的惯性，写出以下的三种形式。</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">func1</span><span class="params">(a []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line"><span class="keyword">return</span> a[<span class="number">1</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// func2 在编译的时候是会报错的。</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">func2</span><span class="params">(a *<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line"><span class="keyword">return</span> a[<span class="number">1</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">func3</span><span class="params">(a [5]<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line"><span class="keyword">return</span> a[<span class="number">1</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><ul><li>这里也是 Go 的精髓 ，保留了指针，但是为了保证稳定， 削减了其Hack 的灵活性</li><li>指针的内容大体上和 C 类似</li><li>空指针被定义为了 <code>nil</code></li><li>大体上的用法和 C 类似，如果具体讲起可能需要一本 《Go与指针》了XD</li><li><code>var pptr **int</code> 像是 <code>char ** argv</code> 一样的是存在的</li></ul><h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><ul><li><p>这个在 Go 里面可是个好东西。当时在 C 里面辛辛苦苦一大堆的函数指针，图啥呢</p></li><li><p>其定义格式 以及初始化如下：</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> struct_variable_type <span class="keyword">struct</span> &#123;</span><br><span class="line">   member definition;</span><br><span class="line">   member definition;</span><br><span class="line">   ...</span><br><span class="line">   member definition;</span><br><span class="line">&#125;</span><br><span class="line">variable_name := structure_variable_type &#123;value1, value2...valuen&#125;</span><br><span class="line"><span class="comment">// 成员名，可以作为键进行映射</span></span><br><span class="line">variable_name := structure_variable_type &#123; key1: value1, key2: value2..., keyn: valuen&#125;</span><br></pre></td></tr></table></figure></li><li><p>其用法和一般 OO语言类似</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Books <span class="keyword">struct</span> &#123;</span><br><span class="line">   title <span class="keyword">string</span></span><br><span class="line">   author <span class="keyword">string</span></span><br><span class="line">   subject <span class="keyword">string</span></span><br><span class="line">   book_id <span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Book1 Books        <span class="comment">/* 声明 Book1 为 Books 类型 */</span></span><br><span class="line"><span class="keyword">var</span> Book2 Books        <span class="comment">/* 声明 Book2 为 Books 类型 */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* book 1 描述 */</span></span><br><span class="line">Book1.title = <span class="string">"Go 语言"</span></span><br><span class="line">Book1.author = <span class="string">"www.runoob.com"</span></span><br><span class="line">Book1.subject = <span class="string">"Go 语言教程"</span></span><br><span class="line">Book1.book_id = <span class="number">6495407</span></span><br></pre></td></tr></table></figure></li><li><p>一样的存在结构体（对象）的指针。<strong>得力于GC不需要delete就不用紧张了</strong> </p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Book1 books;</span><br><span class="line"><span class="keyword">var</span> struct_pointer *Books</span><br><span class="line">struct_pointer = &amp;Book1;</span><br><span class="line"></span><br><span class="line">a := book&#123;<span class="number">123</span>, <span class="number">456</span>&#125;</span><br><span class="line">b := book&#123;a: <span class="number">123</span>, b: <span class="number">123</span>&#125;</span><br><span class="line">fmt.Print(a, b)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> book <span class="keyword">struct</span> &#123;</span><br><span class="line">a <span class="keyword">int</span></span><br><span class="line">b <span class="keyword">int</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h3 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h3><ul><li><p>很方便的提供了和python 的类似的 数组切片方式</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s := arr[startIndex:endIndex]</span><br></pre></td></tr></table></figure></li><li><p><code>len()</code> 和 <code>cap()</code> 分别是获取数组元素个数，和可以容纳的最大元素数。</p></li><li><p><code>append()</code> 和 <code>copy()</code> </p><p>这里的数组是基础的元素，不能使用 append </p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a := [<span class="number">5</span>]<span class="keyword">int</span>&#123;<span class="number">123</span>,<span class="number">123</span>,<span class="number">123</span>&#125;</span><br><span class="line">a.<span class="built_in">append</span>(<span class="number">123</span>) <span class="comment">// 这里报错</span></span><br><span class="line">a = <span class="built_in">append</span>(a, <span class="number">1</span>)</span><br><span class="line"><span class="comment">// 使用 make 可以创建一个新的数组</span></span><br><span class="line">b := <span class="built_in">make</span>([]<span class="keyword">int</span>, <span class="built_in">len</span>(numbers), (<span class="built_in">cap</span>(numbers))*<span class="number">2</span>)</span><br></pre></td></tr></table></figure></li></ul><h3 id="Range"><a href="#Range" class="headerlink" title="Range"></a>Range</h3><ul><li>用于遍历结构的一个常用功能。 感觉类似 Python 的 range</li><li>range 会返回两个参数，分别是 index，和元素</li></ul><h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><ul><li><p>和py一样的键值对</p></li><li><p>声明形式一样很奇怪</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 声明变量，默认 map 是 nil */</span></span><br><span class="line"><span class="keyword">var</span> map_variable <span class="keyword">map</span>[key_data_type]value_data_type</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 使用 make 函数 */</span></span><br><span class="line">map_variable := <span class="built_in">make</span>(<span class="keyword">map</span>[key_data_type]value_data_type)</span><br></pre></td></tr></table></figure></li><li><p>值得注意的是，键值的类型在声明的时候已经指定。</p></li><li><p>遍历键值</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> country := <span class="keyword">range</span> countryCapitalMap &#123;</span><br><span class="line">    fmt.Println(country, <span class="string">"首都是"</span>, countryCapitalMap [country])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>GO 的错误处理，虽然不是这个部分的，不过从这里的代码细节可以看出，双返回值其中的一个内容就是错误码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">capital, ok := countryCapitalMap [ &quot;美国&quot; ] /*如果确定是真实的,则存在,否则不存在 */</span><br><span class="line">/*fmt.Println(capital) */</span><br><span class="line">/*fmt.Println(ok) */</span><br><span class="line">if (ok) &#123;</span><br><span class="line">    fmt.Println(&quot;美国的首都是&quot;, capital)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    fmt.Println(&quot;美国的首都不存在&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><ul><li>Go 支持递归调用</li></ul><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><ul><li><p>接口是一种数据类型，</p></li><li><p>任何其他类型，只要实现了这些方法就是实现了这个接口</p></li><li><p>接口定义的示例代码：</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 定义接口 */</span></span><br><span class="line"><span class="keyword">type</span> interface_name <span class="keyword">interface</span> &#123;</span><br><span class="line">   method_name1 [return_type]</span><br><span class="line">   method_name2 [return_type]</span><br><span class="line">   method_name3 [return_type]</span><br><span class="line">   ...</span><br><span class="line">   method_namen [return_type]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 定义结构体 */</span></span><br><span class="line"><span class="keyword">type</span> struct_name <span class="keyword">struct</span> &#123;</span><br><span class="line">   <span class="comment">/* variables */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 实现接口方法 */</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(struct_name_variable struct_name)</span> <span class="title">method_name1</span><span class="params">()</span> [<span class="title">return_type</span>]</span> &#123;</span><br><span class="line">   <span class="comment">/* 方法实现 */</span></span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(struct_name_variable struct_name)</span> <span class="title">method_namen</span><span class="params">()</span> [<span class="title">return_type</span>]</span> &#123;</span><br><span class="line">   <span class="comment">/* 方法实现*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>非侵入式 的接口。这里给了个例子，慢慢发现真的很精妙。</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Phone <span class="keyword">interface</span> &#123;</span><br><span class="line">    call()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> NokiaPhone <span class="keyword">struct</span> &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">                 fmt.Println(<span class="string">"I am Nokia, I can call you!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> IPhone <span class="keyword">struct</span> &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(iPhone IPhone)</span> <span class="title">call</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">"I am iPhone, I can call you!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> phone Phone<span class="comment">// 声明接口</span></span><br><span class="line">    phone = <span class="built_in">new</span>(NokiaPhone)<span class="comment">// 赋值到对象</span></span><br><span class="line">    phone.call()<span class="comment">// 调用接口</span></span><br><span class="line">    phone = <span class="built_in">new</span>(IPhone)</span><br><span class="line">    phone.call()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><ul><li><p>Go 的错误处理是接口特性的很好的体现</p></li><li><p>具体内容比较核心，属于语言特性，后面再深入学习</p></li></ul><h3 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h3><ul><li><p>Go 的极重要的特性</p></li><li><p>使用关键字 <code>go</code> 来启动 goruntine</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> foo(a,b,c)<span class="comment">// 有点像Node的异步</span></span><br><span class="line"><span class="keyword">go</span> foo1(x,y,z)</span><br></pre></td></tr></table></figure></li><li><p><strong>通道 Channel</strong></p><ul><li><p>用来传递数据的一个数据结构</p></li><li><p>用于两个 goroutine 之间的的值来同步和通信</p></li><li><p>通道声明：</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>)</span><br><span class="line"></span><br><span class="line">ch &lt;- v    <span class="comment">// 把 v 发送到通道 ch</span></span><br><span class="line">v := &lt;-ch  <span class="comment">// 从 ch 接收数据</span></span><br><span class="line">           <span class="comment">// 并把值赋给 v</span></span><br></pre></td></tr></table></figure></li><li><p>通道缓存实例：</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 这里我们定义了一个可以存储整数类型的带缓冲通道</span></span><br><span class="line">        <span class="comment">// 缓冲区大小为2</span></span><br><span class="line">        ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 因为 ch 是带缓冲的通道，我们可以同时发送两个数据</span></span><br><span class="line">        <span class="comment">// 而不用立刻需要去同步读取数据</span></span><br><span class="line">        ch &lt;- <span class="number">1</span></span><br><span class="line">        ch &lt;- <span class="number">2</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取这两个数据</span></span><br><span class="line">        fmt.Println(&lt;-ch)</span><br><span class="line">        fmt.Println(&lt;-ch)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul></li></ul><h2 id="后面的话"><a href="#后面的话" class="headerlink" title="后面的话"></a>后面的话</h2><p>至此30分钟的教程完结，是自己针对有编程经验前提下的精简吧。</p><p>后面的并发，和错误处理的部分，是Go 的特性，还会进行详尽的学习。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前面的话&quot;&gt;&lt;a href=&quot;#前面的话&quot; class=&quot;headerlink&quot; title=&quot;前面的话&quot;&gt;&lt;/a&gt;前面的话&lt;/h2&gt;&lt;p&gt;想想自己说是学 &lt;code&gt;Go&lt;/code&gt; 已经想了了半年了都，可自己以前一直想的 &lt;strong&gt;WeGene&lt;/st
+      
+    
+    </summary>
+    
+      <category term="DEV" scheme="https://www.diglp.xyz/categories/DEV/"/>
+    
+    
+      <category term="golang" scheme="https://www.diglp.xyz/tags/golang/"/>
+    
+      <category term="30min" scheme="https://www.diglp.xyz/tags/30min/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Weekly.0</title>
-    <link href="https://blog.diglp.xyz/2019/03/22/Weekly_0/"/>
-    <id>https://blog.diglp.xyz/2019/03/22/Weekly_0/</id>
+    <link href="https://www.diglp.xyz/2019/03/22/Weekly_0/"/>
+    <id>https://www.diglp.xyz/2019/03/22/Weekly_0/</id>
     <published>2019-03-21T16:00:00.000Z</published>
     <updated>2019-03-21T13:20:30.000Z</updated>
     
@@ -35,17 +62,17 @@
     
     </summary>
     
-      <category term="每周分享" scheme="https://blog.diglp.xyz/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+      <category term="每周分享" scheme="https://www.diglp.xyz/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
     
     
-      <category term="每周分享" scheme="https://blog.diglp.xyz/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+      <category term="每周分享" scheme="https://www.diglp.xyz/tags/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
   <entry>
     <title>OpenFaaS 的部署</title>
-    <link href="https://blog.diglp.xyz/2019/03/19/OP_OpenFaaS/"/>
-    <id>https://blog.diglp.xyz/2019/03/19/OP_OpenFaaS/</id>
+    <link href="https://www.diglp.xyz/2019/03/19/OP_OpenFaaS/"/>
+    <id>https://www.diglp.xyz/2019/03/19/OP_OpenFaaS/</id>
     <published>2019-03-18T16:00:00.000Z</published>
     <updated>2019-03-19T15:08:20.000Z</updated>
     
@@ -61,23 +88,23 @@
     
     </summary>
     
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
+      <category term="OP之路" scheme="https://www.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="Docker" scheme="https://blog.diglp.xyz/tags/Docker/"/>
+      <category term="Docker" scheme="https://www.diglp.xyz/tags/Docker/"/>
     
-      <category term="Swarm" scheme="https://blog.diglp.xyz/tags/Swarm/"/>
+      <category term="Swarm" scheme="https://www.diglp.xyz/tags/Swarm/"/>
     
-      <category term="kubernetes" scheme="https://blog.diglp.xyz/tags/kubernetes/"/>
+      <category term="kubernetes" scheme="https://www.diglp.xyz/tags/kubernetes/"/>
     
-      <category term="OpenFaaS" scheme="https://blog.diglp.xyz/tags/OpenFaaS/"/>
+      <category term="OpenFaaS" scheme="https://www.diglp.xyz/tags/OpenFaaS/"/>
     
   </entry>
   
   <entry>
     <title>Docker的集群监控</title>
-    <link href="https://blog.diglp.xyz/2019/03/17/OP_Cluster_Monitor/"/>
-    <id>https://blog.diglp.xyz/2019/03/17/OP_Cluster_Monitor/</id>
+    <link href="https://www.diglp.xyz/2019/03/17/OP_Cluster_Monitor/"/>
+    <id>https://www.diglp.xyz/2019/03/17/OP_Cluster_Monitor/</id>
     <published>2019-03-16T16:00:00.000Z</published>
     <updated>2019-03-18T12:29:00.000Z</updated>
     
@@ -92,46 +119,19 @@
     
     </summary>
     
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
+      <category term="OP之路" scheme="https://www.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="monitor" scheme="https://blog.diglp.xyz/tags/monitor/"/>
+      <category term="monitor" scheme="https://www.diglp.xyz/tags/monitor/"/>
     
-      <category term="Docker" scheme="https://blog.diglp.xyz/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>收工-关于Swarm的总结</title>
-    <link href="https://blog.diglp.xyz/2019/03/14/OP_Swarm_Sumup/"/>
-    <id>https://blog.diglp.xyz/2019/03/14/OP_Swarm_Sumup/</id>
-    <published>2019-03-13T16:00:00.000Z</published>
-    <updated>2019-03-18T05:08:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前面的话"><a href="#前面的话" class="headerlink" title="前面的话"></a>前面的话</h2><p>这篇算是这段时间的对 Docker 的集群项目的一个总结，想写点什么不过发现前面都零零星星写的差不多了，所以这篇就水水的把期间遇到的有指导性的文章进行一次收集吧。</p><blockquote><p>发现了没，浏览器的标签不是收敛的。</p></blockquote><h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><p>这里收集了一些优秀且有参考意义的文章，总是舍不得关掉的那种。</p><blockquote><ul><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vZnVuZGVidWcvcC82ODIzODk3Lmh0bWw=" title="https://www.cnblogs.com/fundebug/p/6823897.html">生产环境中使用Docker Swarm的一些建议 – Fundebug博客 <i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20va2V2aW5ncmFjZS9wLzY4NzAzNTkuaHRtbA==" title="https://www.cnblogs.com/kevingrace/p/6870359.html">Docker管理工具-Swarm部署记录<i class="fa fa-external-link"></i></span> 很棒的一個博客站，長期學習</li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cucGJldGEubWUvZG9ja2VyLXZvbHVtZS1taWdyYXRlLw==" title="https://www.pbeta.me/docker-volume-migrate/">Docker volume 跨服务器迁移 – way to go<i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cucGJldGEubWUva2lsbC14bXJpZy8=" title="https://www.pbeta.me/kill-xmrig/">服务器清除 xmrig 后门程序记录 – way to go<i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cucGJldGEubWUvZG9ja2VyLWxubXAv" title="https://www.pbeta.me/docker-lnmp/">Docker 搭建 Nginx+MySQL+ PHP (LNMP)基础环境 – way to go<i class="fa fa-external-link"></i></span> 很棒的文章，干货实用。</li><li><span class="exturl" data-url="aHR0cDovL3d3dy5haWRhbnN1LmNvbS8yMDE3L2RvY2tlci1jb250YWluZXJzLXNlcnZpY2VzLw==" title="http://www.aidansu.com/2017/docker-containers-services/">Docker 镜像、容器与服务<i class="fa fa-external-link"></i></span> 一個實例，簡潔明瞭的構建自己的一個鏡像</li></ul><ul><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuYm9va3N0YWNrLmNuL2Jvb2tzL2RvY2tlci1zd2FybS1ndWlkZXM=" title="https://www.bookstack.cn/books/docker-swarm-guides">Docker Swarm 深入浅出<i class="fa fa-external-link"></i></span>  很好的一本書</li><li><span class="exturl" data-url="aHR0cHM6Ly95ZWFzeS5naXRib29rcy5pby9kb2NrZXJfcHJhY3RpY2Uv" title="https://yeasy.gitbooks.io/docker_practice/">Docker — 从入门到实践<i class="fa fa-external-link"></i></span> </li></ul><ul><li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLm1hbGx1eC5tZS8yMDE3LzAzLzE5L2NvbnN1bC8=" title="https://blog.mallux.me/2017/03/19/consul/">Consul 与 Registrator <i class="fa fa-external-link"></i></span>怕自己弄丢的好文章</li><li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLm1hbGx1eC5tZS8yMDE3LzAzLzExL21mcy8=" title="https://blog.mallux.me/2017/03/11/mfs/">02 - Moosefs 分布式文件系统<i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLm1hbGx1eC5tZS8yMDE3LzAyLzIyL3RyYWVmaWsv" title="https://blog.mallux.me/2017/02/22/traefik/">Traefik 微服务代理<i class="fa fa-external-link"></i></span></li></ul></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;前面的话&quot;&gt;&lt;a href=&quot;#前面的话&quot; class=&quot;headerlink&quot; title=&quot;前面的话&quot;&gt;&lt;/a&gt;前面的话&lt;/h2&gt;&lt;p&gt;这篇算是这段时间的对 Docker 的集群项目的一个总结，想写点什么不过发现前面都零零星星写的差不多了，所以这篇就水水的把期
-      
-    
-    </summary>
-    
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="Docker" scheme="https://blog.diglp.xyz/tags/Docker/"/>
-    
-      <category term="Swarm" scheme="https://blog.diglp.xyz/tags/Swarm/"/>
+      <category term="Docker" scheme="https://www.diglp.xyz/tags/Docker/"/>
     
   </entry>
   
   <entry>
     <title>从Service到Stack</title>
-    <link href="https://blog.diglp.xyz/2019/03/14/OP_Swarm_Stack/"/>
-    <id>https://blog.diglp.xyz/2019/03/14/OP_Swarm_Stack/</id>
+    <link href="https://www.diglp.xyz/2019/03/14/OP_Swarm_Stack/"/>
+    <id>https://www.diglp.xyz/2019/03/14/OP_Swarm_Stack/</id>
     <published>2019-03-13T16:00:00.000Z</published>
     <updated>2019-03-16T06:29:45.000Z</updated>
     
@@ -146,21 +146,48 @@
     
     </summary>
     
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
+      <category term="OP之路" scheme="https://www.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="Docker" scheme="https://blog.diglp.xyz/tags/Docker/"/>
+      <category term="Docker" scheme="https://www.diglp.xyz/tags/Docker/"/>
     
-      <category term="Swarm" scheme="https://blog.diglp.xyz/tags/Swarm/"/>
+      <category term="Swarm" scheme="https://www.diglp.xyz/tags/Swarm/"/>
     
-      <category term="Nginx" scheme="https://blog.diglp.xyz/tags/Nginx/"/>
+      <category term="Nginx" scheme="https://www.diglp.xyz/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>收工-关于Swarm的总结</title>
+    <link href="https://www.diglp.xyz/2019/03/14/OP_Swarm_Sumup/"/>
+    <id>https://www.diglp.xyz/2019/03/14/OP_Swarm_Sumup/</id>
+    <published>2019-03-13T16:00:00.000Z</published>
+    <updated>2019-03-18T05:08:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前面的话"><a href="#前面的话" class="headerlink" title="前面的话"></a>前面的话</h2><p>这篇算是这段时间的对 Docker 的集群项目的一个总结，想写点什么不过发现前面都零零星星写的差不多了，所以这篇就水水的把期间遇到的有指导性的文章进行一次收集吧。</p><blockquote><p>发现了没，浏览器的标签不是收敛的。</p></blockquote><h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><p>这里收集了一些优秀且有参考意义的文章，总是舍不得关掉的那种。</p><blockquote><ul><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vZnVuZGVidWcvcC82ODIzODk3Lmh0bWw=" title="https://www.cnblogs.com/fundebug/p/6823897.html">生产环境中使用Docker Swarm的一些建议 – Fundebug博客 <i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20va2V2aW5ncmFjZS9wLzY4NzAzNTkuaHRtbA==" title="https://www.cnblogs.com/kevingrace/p/6870359.html">Docker管理工具-Swarm部署记录<i class="fa fa-external-link"></i></span> 很棒的一個博客站，長期學習</li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cucGJldGEubWUvZG9ja2VyLXZvbHVtZS1taWdyYXRlLw==" title="https://www.pbeta.me/docker-volume-migrate/">Docker volume 跨服务器迁移 – way to go<i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cucGJldGEubWUva2lsbC14bXJpZy8=" title="https://www.pbeta.me/kill-xmrig/">服务器清除 xmrig 后门程序记录 – way to go<i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cucGJldGEubWUvZG9ja2VyLWxubXAv" title="https://www.pbeta.me/docker-lnmp/">Docker 搭建 Nginx+MySQL+ PHP (LNMP)基础环境 – way to go<i class="fa fa-external-link"></i></span> 很棒的文章，干货实用。</li><li><span class="exturl" data-url="aHR0cDovL3d3dy5haWRhbnN1LmNvbS8yMDE3L2RvY2tlci1jb250YWluZXJzLXNlcnZpY2VzLw==" title="http://www.aidansu.com/2017/docker-containers-services/">Docker 镜像、容器与服务<i class="fa fa-external-link"></i></span> 一個實例，簡潔明瞭的構建自己的一個鏡像</li></ul><ul><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuYm9va3N0YWNrLmNuL2Jvb2tzL2RvY2tlci1zd2FybS1ndWlkZXM=" title="https://www.bookstack.cn/books/docker-swarm-guides">Docker Swarm 深入浅出<i class="fa fa-external-link"></i></span>  很好的一本書</li><li><span class="exturl" data-url="aHR0cHM6Ly95ZWFzeS5naXRib29rcy5pby9kb2NrZXJfcHJhY3RpY2Uv" title="https://yeasy.gitbooks.io/docker_practice/">Docker — 从入门到实践<i class="fa fa-external-link"></i></span> </li></ul><ul><li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLm1hbGx1eC5tZS8yMDE3LzAzLzE5L2NvbnN1bC8=" title="https://blog.mallux.me/2017/03/19/consul/">Consul 与 Registrator <i class="fa fa-external-link"></i></span>怕自己弄丢的好文章</li><li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLm1hbGx1eC5tZS8yMDE3LzAzLzExL21mcy8=" title="https://blog.mallux.me/2017/03/11/mfs/">02 - Moosefs 分布式文件系统<i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLm1hbGx1eC5tZS8yMDE3LzAyLzIyL3RyYWVmaWsv" title="https://blog.mallux.me/2017/02/22/traefik/">Traefik 微服务代理<i class="fa fa-external-link"></i></span></li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前面的话&quot;&gt;&lt;a href=&quot;#前面的话&quot; class=&quot;headerlink&quot; title=&quot;前面的话&quot;&gt;&lt;/a&gt;前面的话&lt;/h2&gt;&lt;p&gt;这篇算是这段时间的对 Docker 的集群项目的一个总结，想写点什么不过发现前面都零零星星写的差不多了，所以这篇就水水的把期
+      
+    
+    </summary>
+    
+      <category term="OP之路" scheme="https://www.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="Docker" scheme="https://www.diglp.xyz/tags/Docker/"/>
+    
+      <category term="Swarm" scheme="https://www.diglp.xyz/tags/Swarm/"/>
     
   </entry>
   
   <entry>
     <title>Nginx 的 Swarm 化</title>
-    <link href="https://blog.diglp.xyz/2019/03/13/OP_Swarm_nginx/"/>
-    <id>https://blog.diglp.xyz/2019/03/13/OP_Swarm_nginx/</id>
+    <link href="https://www.diglp.xyz/2019/03/13/OP_Swarm_nginx/"/>
+    <id>https://www.diglp.xyz/2019/03/13/OP_Swarm_nginx/</id>
     <published>2019-03-12T16:00:00.000Z</published>
     <updated>2019-03-16T06:25:23.000Z</updated>
     
@@ -175,21 +202,21 @@
     
     </summary>
     
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
+      <category term="OP之路" scheme="https://www.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="Docker" scheme="https://blog.diglp.xyz/tags/Docker/"/>
+      <category term="Docker" scheme="https://www.diglp.xyz/tags/Docker/"/>
     
-      <category term="Swarm" scheme="https://blog.diglp.xyz/tags/Swarm/"/>
+      <category term="Swarm" scheme="https://www.diglp.xyz/tags/Swarm/"/>
     
-      <category term="Nginx" scheme="https://blog.diglp.xyz/tags/Nginx/"/>
+      <category term="Nginx" scheme="https://www.diglp.xyz/tags/Nginx/"/>
     
   </entry>
   
   <entry>
     <title>Swarm的服务</title>
-    <link href="https://blog.diglp.xyz/2019/03/12/OP_Swarm_%E9%9B%86%E7%BE%A4%E4%BD%BF%E7%94%A8/"/>
-    <id>https://blog.diglp.xyz/2019/03/12/OP_Swarm_集群使用/</id>
+    <link href="https://www.diglp.xyz/2019/03/12/OP_Swarm_%E9%9B%86%E7%BE%A4%E4%BD%BF%E7%94%A8/"/>
+    <id>https://www.diglp.xyz/2019/03/12/OP_Swarm_集群使用/</id>
     <published>2019-03-11T16:00:00.000Z</published>
     <updated>2019-03-12T14:22:19.000Z</updated>
     
@@ -204,19 +231,19 @@
     
     </summary>
     
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
+      <category term="OP之路" scheme="https://www.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="Docker" scheme="https://blog.diglp.xyz/tags/Docker/"/>
+      <category term="Docker" scheme="https://www.diglp.xyz/tags/Docker/"/>
     
-      <category term="Swarm" scheme="https://blog.diglp.xyz/tags/Swarm/"/>
+      <category term="Swarm" scheme="https://www.diglp.xyz/tags/Swarm/"/>
     
   </entry>
   
   <entry>
     <title>Docker集群搭建</title>
-    <link href="https://blog.diglp.xyz/2019/03/05/OP_Docker_Swarm/"/>
-    <id>https://blog.diglp.xyz/2019/03/05/OP_Docker_Swarm/</id>
+    <link href="https://www.diglp.xyz/2019/03/05/OP_Docker_Swarm/"/>
+    <id>https://www.diglp.xyz/2019/03/05/OP_Docker_Swarm/</id>
     <published>2019-03-04T16:00:00.000Z</published>
     <updated>2019-03-16T01:58:44.000Z</updated>
     
@@ -231,19 +258,19 @@
     
     </summary>
     
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
+      <category term="OP之路" scheme="https://www.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="Docker" scheme="https://blog.diglp.xyz/tags/Docker/"/>
+      <category term="Docker" scheme="https://www.diglp.xyz/tags/Docker/"/>
     
-      <category term="Swarm" scheme="https://blog.diglp.xyz/tags/Swarm/"/>
+      <category term="Swarm" scheme="https://www.diglp.xyz/tags/Swarm/"/>
     
   </entry>
   
   <entry>
     <title>Nginx 访问量统计接口</title>
-    <link href="https://blog.diglp.xyz/2019/03/03/OP_Nginx%E8%AE%BF%E9%97%AE%E9%87%8F%E7%BB%9F%E8%AE%A1%E6%8E%A5%E5%8F%A3/"/>
-    <id>https://blog.diglp.xyz/2019/03/03/OP_Nginx访问量统计接口/</id>
+    <link href="https://www.diglp.xyz/2019/03/03/OP_Nginx%E8%AE%BF%E9%97%AE%E9%87%8F%E7%BB%9F%E8%AE%A1%E6%8E%A5%E5%8F%A3/"/>
+    <id>https://www.diglp.xyz/2019/03/03/OP_Nginx访问量统计接口/</id>
     <published>2019-03-02T16:00:00.000Z</published>
     <updated>2019-03-04T11:57:26.000Z</updated>
     
@@ -260,17 +287,17 @@
     
     </summary>
     
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
+      <category term="OP之路" scheme="https://www.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="Nginx" scheme="https://blog.diglp.xyz/tags/Nginx/"/>
+      <category term="Nginx" scheme="https://www.diglp.xyz/tags/Nginx/"/>
     
   </entry>
   
   <entry>
     <title>Keepalive 实现 HA</title>
-    <link href="https://blog.diglp.xyz/2019/03/01/OP_KeepAlive%E5%AE%9E%E7%8E%B0HA/"/>
-    <id>https://blog.diglp.xyz/2019/03/01/OP_KeepAlive实现HA/</id>
+    <link href="https://www.diglp.xyz/2019/03/01/OP_KeepAlive%E5%AE%9E%E7%8E%B0HA/"/>
+    <id>https://www.diglp.xyz/2019/03/01/OP_KeepAlive实现HA/</id>
     <published>2019-02-28T16:00:00.000Z</published>
     <updated>2019-03-04T11:57:26.000Z</updated>
     
@@ -285,17 +312,17 @@
     
     </summary>
     
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
+      <category term="OP之路" scheme="https://www.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="Nginx" scheme="https://blog.diglp.xyz/tags/Nginx/"/>
+      <category term="Nginx" scheme="https://www.diglp.xyz/tags/Nginx/"/>
     
   </entry>
   
   <entry>
     <title>Proxy 缓存 及 命中率统计</title>
-    <link href="https://blog.diglp.xyz/2019/02/28/OP_%E4%BB%A3%E7%90%86%E7%BC%93%E5%AD%98_%E5%91%BD%E4%B8%AD%E7%8E%87%E7%BB%9F%E8%AE%A1/"/>
-    <id>https://blog.diglp.xyz/2019/02/28/OP_代理缓存_命中率统计/</id>
+    <link href="https://www.diglp.xyz/2019/02/28/OP_%E4%BB%A3%E7%90%86%E7%BC%93%E5%AD%98_%E5%91%BD%E4%B8%AD%E7%8E%87%E7%BB%9F%E8%AE%A1/"/>
+    <id>https://www.diglp.xyz/2019/02/28/OP_代理缓存_命中率统计/</id>
     <published>2019-02-27T16:00:00.000Z</published>
     <updated>2019-03-04T11:57:26.000Z</updated>
     
@@ -310,17 +337,17 @@
     
     </summary>
     
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
+      <category term="OP之路" scheme="https://www.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="Nginx" scheme="https://blog.diglp.xyz/tags/Nginx/"/>
+      <category term="Nginx" scheme="https://www.diglp.xyz/tags/Nginx/"/>
     
   </entry>
   
   <entry>
     <title>Supervisor 进程管理系统</title>
-    <link href="https://blog.diglp.xyz/2019/02/23/OP_Supervisord/"/>
-    <id>https://blog.diglp.xyz/2019/02/23/OP_Supervisord/</id>
+    <link href="https://www.diglp.xyz/2019/02/23/OP_Supervisord/"/>
+    <id>https://www.diglp.xyz/2019/02/23/OP_Supervisord/</id>
     <published>2019-02-22T16:00:00.000Z</published>
     <updated>2019-03-04T11:57:26.000Z</updated>
     
@@ -335,17 +362,17 @@
     
     </summary>
     
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
+      <category term="OP之路" scheme="https://www.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="Supervisor" scheme="https://blog.diglp.xyz/tags/Supervisor/"/>
+      <category term="Supervisor" scheme="https://www.diglp.xyz/tags/Supervisor/"/>
     
   </entry>
   
   <entry>
     <title>另一次内网穿透(reverse proxy)</title>
-    <link href="https://blog.diglp.xyz/2019/02/21/OP_%E5%8F%A6%E4%B8%80%E6%AC%A1%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F(reverse%20proxy)/"/>
-    <id>https://blog.diglp.xyz/2019/02/21/OP_另一次内网穿透(reverse proxy)/</id>
+    <link href="https://www.diglp.xyz/2019/02/21/OP_%E5%8F%A6%E4%B8%80%E6%AC%A1%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F(reverse%20proxy)/"/>
+    <id>https://www.diglp.xyz/2019/02/21/OP_另一次内网穿透(reverse proxy)/</id>
     <published>2019-02-20T16:00:00.000Z</published>
     <updated>2019-03-04T11:57:26.000Z</updated>
     
@@ -361,19 +388,19 @@
     
     </summary>
     
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
+      <category term="OP之路" scheme="https://www.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="Nginx" scheme="https://blog.diglp.xyz/tags/Nginx/"/>
+      <category term="Nginx" scheme="https://www.diglp.xyz/tags/Nginx/"/>
     
-      <category term="Frp" scheme="https://blog.diglp.xyz/tags/Frp/"/>
+      <category term="Frp" scheme="https://www.diglp.xyz/tags/Frp/"/>
     
   </entry>
   
   <entry>
     <title>记一次内网穿透配置(tunnel)</title>
-    <link href="https://blog.diglp.xyz/2019/02/20/OP_%E6%84%9A%E8%A0%A2%E7%9A%84%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%96%B9%E6%A1%88(tunnel)/"/>
-    <id>https://blog.diglp.xyz/2019/02/20/OP_愚蠢的内网穿透方案(tunnel)/</id>
+    <link href="https://www.diglp.xyz/2019/02/20/OP_%E6%84%9A%E8%A0%A2%E7%9A%84%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%96%B9%E6%A1%88(tunnel)/"/>
+    <id>https://www.diglp.xyz/2019/02/20/OP_愚蠢的内网穿透方案(tunnel)/</id>
     <published>2019-02-19T16:00:00.000Z</published>
     <updated>2019-03-04T11:57:26.000Z</updated>
     
@@ -390,15 +417,15 @@
     
     </summary>
     
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
+      <category term="OP之路" scheme="https://www.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
     
     
   </entry>
   
   <entry>
     <title>ELK 日志可视化平台 搭建</title>
-    <link href="https://blog.diglp.xyz/2019/02/14/OP_ELK%20%E6%97%A5%E5%BF%97%E5%8F%AF%E8%A7%86%E5%8C%96%20%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0/"/>
-    <id>https://blog.diglp.xyz/2019/02/14/OP_ELK 日志可视化 搭建笔记/</id>
+    <link href="https://www.diglp.xyz/2019/02/14/OP_ELK%20%E6%97%A5%E5%BF%97%E5%8F%AF%E8%A7%86%E5%8C%96%20%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0/"/>
+    <id>https://www.diglp.xyz/2019/02/14/OP_ELK 日志可视化 搭建笔记/</id>
     <published>2019-02-13T16:00:00.000Z</published>
     <updated>2019-03-04T11:57:26.000Z</updated>
     
@@ -413,17 +440,17 @@
     
     </summary>
     
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
+      <category term="OP之路" scheme="https://www.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="ELK" scheme="https://blog.diglp.xyz/tags/ELK/"/>
+      <category term="ELK" scheme="https://www.diglp.xyz/tags/ELK/"/>
     
   </entry>
   
   <entry>
     <title>Nginx 折腾笔记（SSL配置以及路由重写）</title>
-    <link href="https://blog.diglp.xyz/2019/02/08/OP_Nginx%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0%EF%BC%88SSL%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E8%B7%AF%E7%94%B1%E9%87%8D%E5%86%99%EF%BC%89/"/>
-    <id>https://blog.diglp.xyz/2019/02/08/OP_Nginx折腾笔记（SSL配置以及路由重写）/</id>
+    <link href="https://www.diglp.xyz/2019/02/08/OP_Nginx%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0%EF%BC%88SSL%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E8%B7%AF%E7%94%B1%E9%87%8D%E5%86%99%EF%BC%89/"/>
+    <id>https://www.diglp.xyz/2019/02/08/OP_Nginx折腾笔记（SSL配置以及路由重写）/</id>
     <published>2019-02-07T16:00:00.000Z</published>
     <updated>2019-03-04T11:57:26.000Z</updated>
     
@@ -439,17 +466,17 @@
     
     </summary>
     
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
+      <category term="OP之路" scheme="https://www.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="Nginx" scheme="https://blog.diglp.xyz/tags/Nginx/"/>
+      <category term="Nginx" scheme="https://www.diglp.xyz/tags/Nginx/"/>
     
   </entry>
   
   <entry>
     <title>Nginx 折腾笔记 （路由配置以及认证）</title>
-    <link href="https://blog.diglp.xyz/2019/02/07/OP_Nginx%20%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0%20%EF%BC%88%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E8%AE%A4%E8%AF%81%EF%BC%89/"/>
-    <id>https://blog.diglp.xyz/2019/02/07/OP_Nginx 折腾笔记 （路由配置以及认证）/</id>
+    <link href="https://www.diglp.xyz/2019/02/07/OP_Nginx%20%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0%20%EF%BC%88%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E8%AE%A4%E8%AF%81%EF%BC%89/"/>
+    <id>https://www.diglp.xyz/2019/02/07/OP_Nginx 折腾笔记 （路由配置以及认证）/</id>
     <published>2019-02-06T16:00:00.000Z</published>
     <updated>2019-03-04T11:57:26.000Z</updated>
     
@@ -466,17 +493,17 @@
     
     </summary>
     
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
+      <category term="OP之路" scheme="https://www.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="Nginx" scheme="https://blog.diglp.xyz/tags/Nginx/"/>
+      <category term="Nginx" scheme="https://www.diglp.xyz/tags/Nginx/"/>
     
   </entry>
   
   <entry>
     <title>写给小安的WEB入坑指南</title>
-    <link href="https://blog.diglp.xyz/2019/01/30/web_%E5%86%99%E7%BB%99%E5%B0%8F%E5%AE%89%E7%9A%84WEB%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97/"/>
-    <id>https://blog.diglp.xyz/2019/01/30/web_写给小安的WEB入坑指南/</id>
+    <link href="https://www.diglp.xyz/2019/01/30/web_%E5%86%99%E7%BB%99%E5%B0%8F%E5%AE%89%E7%9A%84WEB%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97/"/>
+    <id>https://www.diglp.xyz/2019/01/30/web_写给小安的WEB入坑指南/</id>
     <published>2019-01-29T16:00:00.000Z</published>
     <updated>2019-03-04T11:57:26.000Z</updated>
     
@@ -492,17 +519,17 @@
     
     </summary>
     
-      <category term="WEB" scheme="https://blog.diglp.xyz/categories/WEB/"/>
+      <category term="WEB" scheme="https://www.diglp.xyz/categories/WEB/"/>
     
     
-      <category term="web" scheme="https://blog.diglp.xyz/tags/web/"/>
+      <category term="web" scheme="https://www.diglp.xyz/tags/web/"/>
     
   </entry>
   
   <entry>
     <title>Nginx 折腾笔记（LB 和 Tunnel）</title>
-    <link href="https://blog.diglp.xyz/2019/01/20/OP_Nginx%20%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0%EF%BC%88LB%20%E5%92%8C%20Tunnel%EF%BC%89/"/>
-    <id>https://blog.diglp.xyz/2019/01/20/OP_Nginx 折腾笔记（LB 和 Tunnel）/</id>
+    <link href="https://www.diglp.xyz/2019/01/20/OP_Nginx%20%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0%EF%BC%88LB%20%E5%92%8C%20Tunnel%EF%BC%89/"/>
+    <id>https://www.diglp.xyz/2019/01/20/OP_Nginx 折腾笔记（LB 和 Tunnel）/</id>
     <published>2019-01-19T16:00:00.000Z</published>
     <updated>2019-03-04T11:57:26.000Z</updated>
     
@@ -518,37 +545,10 @@
     
     </summary>
     
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
+      <category term="OP之路" scheme="https://www.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="Nginx" scheme="https://blog.diglp.xyz/tags/Nginx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker 初步</title>
-    <link href="https://blog.diglp.xyz/2019/01/08/OP_Docker_proj/"/>
-    <id>https://blog.diglp.xyz/2019/01/08/OP_Docker_proj/</id>
-    <published>2019-01-07T16:00:00.000Z</published>
-    <updated>2019-03-04T11:57:26.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前"><a href="#前" class="headerlink" title="前"></a>前</h2><p>这篇，是一个Docker 的实战篇，使用Docker实现一个文件上传的web页面。ps：本来是要实现上传后自动编译并且允许返回结果的。因为各种原因就烂尾了，就这样吧先。</p><p>因为这篇，是比较基础的操作，很多东西还是有悖了Docker的 <strong>Build，ship，and run</strong> 的思想。这里还需要进行手动，所以显得比较有悖初衷。不过做一个过程的记录还是可以的。</p><hr><p>后面就打算实现一个标标准准的Docker 的工程，体现出 <strong>微服务</strong> 的思想。</p><blockquote><p>Docker 的一个容器理应是只跑一个进程（服务）的。</p></blockquote><h2 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h2><p>先从Dockerhub上拉镜像，这里需要 Nginx 和 Uwsgi，这里选取了<span class="exturl" data-url="aHR0cHM6Ly9odWIuZG9ja2VyLmNvbS9yL3RpYW5nb2xvL3V3c2dpLW5naW54" title="https://hub.docker.com/r/tiangolo/uwsgi-nginx">tiangolo/uwsgi-nginx<i class="fa fa-external-link"></i></span> 这个镜像。 </p><p>在启动镜像的时候使用交互模式：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd -p 80:80 --name test2 docker.io/tiangolo/uwsgi-nginx:latest /bin/sh</span><br></pre></td></tr></table></figure><p>这个时候，Dockerfile 里面的CMD命令将会被重载为后面的 <code>/bin/sh</code></p><p>在交互模式下，attach 了容器之后，可以使用 <code>ctrl+p，ctrl+q</code> 组合键进行 detach</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker attach bf00008eee04</span><br><span class="line">docker attach test2</span><br></pre></td></tr></table></figure><hr><p>创建挂载卷容器，在对应的环境 编译 uwsgi， 之后可以之间拷贝到本地</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -tdi -v /tmp/tttmm/:/tmp/mm --name share docker.io/tiangolo/uwsgi-nginx:latest /bin/bash</span><br></pre></td></tr></table></figure><p>这里使用 bash 好用得多。另外这里附上 uwsgi 的CGI版本的一键编译的script：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://uwsgi.it/install | bash -s cgi /tmp/uwsgi</span><br></pre></td></tr></table></figure><hr><h2 id="CGI-部署"><a href="#CGI-部署" class="headerlink" title="CGI 部署"></a>CGI 部署</h2><p>跑一个综合的容器， 有端口映射以及卷挂载功能：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -tdi -p 80:80 -v /tmp/tttmm/:/tmp/mm --name share docker.io/tiangolo/uwsgi-nginx:latest /bin/bash</span><br></pre></td></tr></table></figure><p>由于 镜像自带的uwsgi 的版本是app的，其没有编译 CGI 功能。所以在这里需要进行替换。之间在容器内使用上述命令进行编译。对 <code>/usr/local/bin/uwsgi</code> 进行替换，对配置文件进行修改</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[uwsgi]</span></span><br><span class="line"><span class="attr">socket</span> = /tmp/uwsgi.sock</span><br><span class="line"><span class="attr">chown-socket</span> = nginx:nginx</span><br><span class="line"><span class="attr">chmod-socket</span> = <span class="number">664</span></span><br><span class="line"><span class="attr">hook-master-start</span> = unix_signal:<span class="number">15</span> gracefully_kill_them_allroot@<span class="number">251</span>a2c8dc0b2:/usr/local/bin#</span><br></pre></td></tr></table></figure><p>这里是用户自定义的：</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[uwsgi]</span></span><br><span class="line"><span class="attr">plugins</span> = cgi</span><br><span class="line"><span class="attr">cgi</span> = /app</span><br><span class="line"><span class="attr">cgi-allowed-ext</span> = .py</span><br><span class="line"><span class="attr">cgi-helper</span> = .py=python</span><br></pre></td></tr></table></figure><p>指定CGI根目录，以及对应的后缀文件的解析器。后面再修改Nginx配置即可。</p><hr><p>编写实例 CGI 脚本。使用其标准输出作为页面内容：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"Content-Type: text/html"</span>)</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line">print(<span class="string">"&lt;html&gt;"</span>)</span><br><span class="line">print(<span class="string">"&lt;h2&gt;First CGI server Base on Docker&lt;/h2&gt;"</span>)</span><br><span class="line">print(<span class="string">"&lt;p&gt;Hello ann&lt;/p&gt;"</span>)</span><br><span class="line">print(<span class="string">"&lt;p&gt;cause you are my world XD&lt;/p&gt;"</span>)</span><br><span class="line">print(<span class="string">"&lt;/html&gt;"</span>)</span><br></pre></td></tr></table></figure><hr><p>至此，启动 <code>/usr/bin/supervisord</code> 便可以启动相关进程</p><blockquote><p>Supervisor (<span class="exturl" data-url="aHR0cDovL3N1cGVydmlzb3JkLm9yZy8=" title="http://supervisord.org/">http://supervisord.org<i class="fa fa-external-link"></i></span>) 是一个用 Python 写的进程管理工具，可以很方便的用来启动、重启、关闭进程（不仅仅是 Python 进程）。除了对单个进程的控制，还可以同时启动、关闭多个进程，比如很不幸的服务器出问题导致所有应用程序都被杀死，此时可以用 supervisor 同时启动所有应用程序而不是一个一个地敲命令启动。</p></blockquote><p>在客户端使用 浏览器请求便可以得到返回结果</p><hr><h2 id="Post-文件以及编译执行"><a href="#Post-文件以及编译执行" class="headerlink" title="Post 文件以及编译执行"></a>Post 文件以及编译执行</h2><p>前面实现了一个简单的CGI, 后面开始完善整个功能，实现文件的POST 上传以及在线的编译。</p><p>先需要对 Nginx 配置进行修改：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        root /app/html;# 这里是页面的目录</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location /cgi-bin &#123;</span><br><span class="line">        root /app/cgi-bin;# cgi 的目录</span><br><span class="line">        include uwsgi_params;</span><br><span class="line">uwsgi_modifier1 9;</span><br><span class="line">        uwsgi_pass unix:///tmp/uwsgi.sock;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>重启 Nginx 的服务，使其配置生效，测试 页面 以及 CGI 脚本。</p><p>这里先构建文件的上传入口，简易的上传 页面：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>update<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>UploadPoint<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">"upload-form"</span> <span class="attr">action</span>=<span class="string">"/cgi-bin/upload.py"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span> &gt;</span></span><br><span class="line">        　　　<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"upload"</span> <span class="attr">name</span>=<span class="string">"upload"</span> /&gt;</span> <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">        　　　<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Upload"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><p>以及后端的实现文件保存以及编译的功能</p><p>下面是CGI代码：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> cgi, cgitb </span><br><span class="line"></span><br><span class="line">form = cgi.FieldStorage() </span><br><span class="line">fileitem = form[<span class="string">'upload'</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> fileitem.filename:</span><br><span class="line">    print(<span class="string">"Content-type:text/html"</span>)</span><br><span class="line">    print()</span><br><span class="line">    print(<span class="string">"&lt;html&gt;"</span>)</span><br><span class="line">    print(<span class="string">"&lt;head&gt;"</span>)</span><br><span class="line">    print(<span class="string">"&lt;meta charset=\"utf-8\"&gt;"</span>)</span><br><span class="line">    print(<span class="string">"&lt;title&gt;succeed&lt;/title&gt;"</span>)</span><br><span class="line">    print(<span class="string">"&lt;/head&gt;"</span>)</span><br><span class="line">    print(<span class="string">"&lt;body&gt;"</span>)</span><br><span class="line">    print(<span class="string">"&lt;h2&gt; 输入的内容是：%s&lt;/h2&gt;"</span>)</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'tmpfile/'</span> + fileitem.filename, <span class="string">'wb+'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(fileitem.file.read())</span><br><span class="line">        print(<span class="string">'&lt;p&gt;文件已保存&lt;/p&gt;'</span>)</span><br><span class="line">    print(<span class="string">"&lt;/body&gt;"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    text_content = <span class="string">"没有内容"</span></span><br><span class="line">    print(<span class="string">"Content-type:text/html"</span>)</span><br><span class="line">    print()</span><br><span class="line">    print(<span class="string">"&lt;html&gt;"</span>)</span><br><span class="line">    print(<span class="string">"&lt;head&gt;"</span>)</span><br><span class="line">    print(<span class="string">"&lt;meta charset=\"utf-8\"&gt;"</span>)</span><br><span class="line">    print(<span class="string">"&lt;title&gt;failed&lt;/title&gt;"</span>)</span><br><span class="line">    print(<span class="string">"&lt;/head&gt;"</span>)</span><br><span class="line">    print(<span class="string">"&lt;body&gt;"</span>)</span><br><span class="line">    print(<span class="string">"&lt;h2&gt; 输入的内容是：%s&lt;/h2&gt;"</span> % text_content)</span><br><span class="line">    print(<span class="string">"&lt;/body&gt;"</span>)</span><br><span class="line">    print(<span class="string">"&lt;/html&gt;"</span>)</span><br></pre></td></tr></table></figure><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><span class="exturl" data-url="aHR0cHM6Ly91d3NnaS1kb2NzLXpoLnJlYWR0aGVkb2NzLmlvL3poX0NOL2xhdGVzdC9DR0kuaHRtbA==" title="https://uwsgi-docs-zh.readthedocs.io/zh_CN/latest/CGI.html">在uWSGI上运行CGI脚本<i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cDovL2xpeWFuZ2xpYW5nLm1lL3Bvc3RzLzIwMTUvMDYvdXNpbmctc3VwZXJ2aXNvci8=" title="http://liyangliang.me/posts/2015/06/using-supervisor/">使用 supervisor 管理进程<i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9odWIuZG9ja2VyLmNvbS9yL3RpYW5nb2xvL3V3c2dpLW5naW54" title="https://hub.docker.com/r/tiangolo/uwsgi-nginx">镜像地址 tiangolo/uwsgi-nginx<i class="fa fa-external-link"></i></span></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;这篇，是一个Docker 的实战篇，使用Docker实现一个文件上传的web页面。ps：本来是要实现上传后自动编译并且允许返回结果的。因为各种原因就
-      
-    
-    </summary>
-    
-      <category term="OP之路" scheme="https://blog.diglp.xyz/categories/OP%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="Docker" scheme="https://blog.diglp.xyz/tags/Docker/"/>
-    
-      <category term="CGI" scheme="https://blog.diglp.xyz/tags/CGI/"/>
+      <category term="Nginx" scheme="https://www.diglp.xyz/tags/Nginx/"/>
     
   </entry>
   

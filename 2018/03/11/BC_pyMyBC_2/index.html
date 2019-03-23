@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/Han/dist/han.min.css?v=3.3"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.0"/>
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2964020631130494",
+    enable_page_level_ads: true
+  });
+</script>
+
+  <meta name="description" content="怎么学习区块链知识呢? 各种的资料看的头大，还是晕晕乎乎。所以那不如自己实现一个吧？？ 说是自己实现，实际上想先对源码进行解读。这里给出的源码，是一个基于Python实现的一个功能较为健全的区块链。下面给出项目地址  项目地址  P2P网络为什么使用P2P我们日常里用的磁链，迅雷之类的东西都是P2P技术实现的，所以P2P这个名词听起来不会太陌生。 其实在这里是对P2P技术的一种泛化，指的是这一类的">
+<meta name="keywords" content="区块链原理,PyBlkCha">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Py区块链源码笔记 （2）P2P网络">
+<meta property="og:url" content="https://www.diglp.xyz/2018/03/11/BC_pyMyBC_2/index.html">
+<meta property="og:site_name" content="R4y&#39;s Blog">
+<meta property="og:description" content="怎么学习区块链知识呢? 各种的资料看的头大，还是晕晕乎乎。所以那不如自己实现一个吧？？ 说是自己实现，实际上想先对源码进行解读。这里给出的源码，是一个基于Python实现的一个功能较为健全的区块链。下面给出项目地址  项目地址  P2P网络为什么使用P2P我们日常里用的磁链，迅雷之类的东西都是P2P技术实现的，所以P2P这个名词听起来不会太陌生。 其实在这里是对P2P技术的一种泛化，指的是这一类的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-23T04:12:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Py区块链源码笔记 （2）P2P网络">
+<meta name="twitter:description" content="怎么学习区块链知识呢? 各种的资料看的头大，还是晕晕乎乎。所以那不如自己实现一个吧？？ 说是自己实现，实际上想先对源码进行解读。这里给出的源码，是一个基于Python实现的一个功能较为健全的区块链。下面给出项目地址  项目地址  P2P网络为什么使用P2P我们日常里用的磁链，迅雷之类的东西都是P2P技术实现的，所以P2P这个名词听起来不会太陌生。 其实在这里是对P2P技术的一种泛化，指的是这一类的">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="R4y's Blog" type="application/atom+xml"/>
+
+
+
+
+  <link rel="canonical" href="https://www.diglp.xyz/2018/03/11/BC_pyMyBC_2/"/>
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Py区块链源码笔记 （2）P2P网络 | R4y's Blog</title>
+  
+
+
+
+
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-118678642-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-118678642-1');
+  </script>
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">R4y's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">个人回收站</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">38</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类<span class="badge">13</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">79</span></a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1YXJ0ejAxMA==" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.diglp.xyz/2018/03/11/BC_pyMyBC_2/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Author"/>
+      <meta itemprop="description" content="Why join the navy, When you can be a PIRATE"/>
+      <meta itemprop="image" content="/images/avatar.jpg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="R4y's Blog"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Py区块链源码笔记 （2）P2P网络
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-11 00:00:00" itemprop="dateCreated datePublished" datetime="2018-03-11T00:00:00+08:00">2018-03-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-23 12:12:36" itemprop="dateModified" datetime="2019-03-23T12:12:36+08:00">2019-03-23</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/03/11/BC_pyMyBC_2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/11/BC_pyMyBC_2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">6k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">0:07</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>怎么学习区块链知识呢? 各种的资料看的头大，还是晕晕乎乎。所以那不如自己实现一个吧？？</p>
+<p>说是自己实现，实际上想先对<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1YXJ0ejAxMC9ibG9ja2NoYWlu" title="https://github.com/quartz010/blockchain">源码<i class="fa fa-external-link"></i></span>进行解读。这里给出的源码，是一个基于Python实现的一个功能较为健全的区块链。下面给出项目地址</p>
+<blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1YXJ0ejAxMC9ibG9ja2NoYWlu" title="https://github.com/quartz010/blockchain">项目地址<i class="fa fa-external-link"></i></span></p>
+</blockquote>
+<h2 id="P2P网络"><a href="#P2P网络" class="headerlink" title="P2P网络"></a>P2P网络</h2><h3 id="为什么使用P2P"><a href="#为什么使用P2P" class="headerlink" title="为什么使用P2P"></a>为什么使用P2P</h3><p>我们日常里用的磁链，迅雷之类的东西都是P2P技术实现的，所以P2P这个名词听起来不会太陌生。</p>
+<p>其实在这里是对P2P技术的一种泛化，指的是这一类的去中心化的网络。所以P2P在区块链里面就是显得十分重要了。</p>
+<p>一个P2P网络的功能基本大致可以有一下三个：</p>
+<ul>
+<li>路由拓展    可以在自己的路由表里，发现或者初始化添加其他路由节点<br>   节点路由    请求向其他节点路由<br>   节点保存    把已知节点写入我们的路由表</li>
+</ul>
+<hr>
+<h3 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h3><p>这里是其项目里的测试代码</p>
+<blockquote>
+<p>这个测试模块可以参考python的unittest这个module。</p>
+</blockquote>
+<p>这里的测试类是用于节点注册测试<br>​<br>    class TestRegisterNodes(BlockchainTestCase):</p>
+<pre><code>def test_valid_nodes(self):
+    blockchain = Blockchain()
+
+    blockchain.register_node(&apos;http://192.168.0.1:5000&apos;)        # 可见该函数是实现节点注册
+
+    self.assertIn(&apos;192.168.0.1:5000&apos;, blockchain.nodes)
+
+def test_malformed_nodes(self):        # 畸形节点测试
+    blockchain = Blockchain()
+
+    blockchain.register_node(&apos;http//192.168.0.1:5000&apos;)        # 应该自行排除畸形节点
+
+    self.assertNotIn(&apos;192.168.0.1:5000&apos;, blockchain.nodes)
+
+def test_idempotency(self):            # 对等性测试
+    blockchain = Blockchain()
+
+    blockchain.register_node(&apos;http://192.168.0.1:5000&apos;)
+    blockchain.register_node(&apos;http://192.168.0.1:5000&apos;)
+
+    assert len(blockchain.nodes) == 1
+</code></pre><h4 id="节点注册"><a href="#节点注册" class="headerlink" title="节点注册"></a>节点注册</h4><p>核心函数<code>blockchain.register_node()</code></p>
+<pre><code>def register_node(self, address):
+    &quot;&quot;&quot;
+    Add a new node to the list of nodes
+    :param address: Address of node. Eg. &apos;http://192.168.0.5:5000&apos;
+    &quot;&quot;&quot;
+
+    parsed_url = urlparse(address)
+    if parsed_url.netloc:
+        self.nodes.add(parsed_url.netloc)
+    elif parsed_url.path:
+        # Accepts an URL without scheme like &apos;192.168.0.5:5000&apos;.
+        self.nodes.add(parsed_url.path)
+    else:
+        raise ValueError(&apos;Invalid URL&apos;)
+</code></pre><p><strong>urlparse()</strong> 的Doc </p>
+<pre><code>&gt;&gt;&gt; from urllib.parse import urlparse
+&gt;&gt;&gt; o = urlparse(&apos;http://www.cwi.nl:80/%7Eguido/Python.html&apos;)
+&gt;&gt;&gt; o   
+ParseResult(scheme=&apos;http&apos;, netloc=&apos;www.cwi.nl:80&apos;, path=&apos;/%7Eguido/Python.html&apos;,
+            params=&apos;&apos;, query=&apos;&apos;, fragment=&apos;&apos;)
+&gt;&gt;&gt; o.scheme
+&apos;http&apos;
+&gt;&gt;&gt; o.port
+80
+&gt;&gt;&gt; o.geturl()
+&apos;http://www.cwi.nl:80/%7Eguido/Python.html&apos;
+</code></pre><p>可见这个方法可以很容易的解析url。所以在工程代码里。是对域名，和路径的提取。如果不是合法值，就直接Raise一个异常</p>
+<p><strong>添加node</strong><br>​<br>在构造函数中有<code>self.nodes = set()</code>所以可见这个是一个集合。</p>
+<pre><code>self.nodes.add(parsed_url.path)        # 这行代码就是添加节点的地址
+</code></pre><p>这里在这个项目里有些过度简化。只是实现了节点添加的功能。</p>
+<pre><code># Flask 的route修饰符
+@app.route(&apos;/nodes/register&apos;, methods=[&apos;POST&apos;])
+def register_nodes():
+values = request.get_json()
+
+nodes = values.get(&apos;nodes&apos;)
+if nodes is None:
+    return &quot;Error: Please supply a valid list of nodes&quot;, 400
+
+for node in nodes:
+    blockchain.register_node(node)
+
+response = {
+    &apos;message&apos;: &apos;New nodes have been added&apos;,
+    &apos;total_nodes&apos;: list(blockchain.nodes),
+}
+return jsonify(response), 201
+</code></pre><p>这里代码可见，把node的list以json的形式直接post上去。解析之后直接append。</p>
+<hr>
+<h3 id="节点解析-resolve"><a href="#节点解析-resolve" class="headerlink" title="节点解析(resolve)"></a>节点解析(resolve)</h3><p>这段代码是请求的节点更新的代码，因为一个去中心的网络，需要实施的维护个更新自己的数据。也就是区块链中的账本。所以这段代码算是实现了简单的<strong>DAO</strong>(Distributed Autonomous Organization),翻译过来是<strong>分布式自治组织</strong>。</p>
+<p>节点之间进行互相的请求，以确保自己的区块高度是目前的最高区块，如果当前区块不是最高，则在其他的路由节点获取当前的区块信息。</p>
+<pre><code>@app.route(&apos;/nodes/resolve&apos;, methods=[&apos;GET&apos;])    # 请求响应
+def consensus():
+replaced = blockchain.resolve_conflicts()        # 区块冲突解决
+
+if replaced:            
+    response = {
+        &apos;message&apos;: &apos;Our chain was replaced&apos;,    # 如果其他节点区块高度大于我们，则更新我们的节点
+        &apos;new_chain&apos;: blockchain.chain
+    }
+else:
+    response = {
+        &apos;message&apos;: &apos;Our chain is authoritative(当局的)&apos;,    # 如果我们是最新，就保持
+        &apos;chain&apos;: blockchain.chain
+    }
+
+return jsonify(response), 200
+</code></pre><p>下面这段就是我们的区块更新的代码，同等简单的方式，更新获取相邻节点的区块高度。进行append判断。这里实现简单的共识算法，使用使用最高网络区块直接替换来解决区块的冲突。</p>
+<p>实际上，这里的共识的实现是十分重要和复杂的一个要点。因为在全部网络上，我们不可避免的存在着<strong>拜占庭节点</strong>（byzantine）来作恶。如果我们使用直接最高区块的简单的共识算法。那么网络上的的拜占庭节点，可随随便便的编造区块数据，并且使用PoS把他的伪造交易数据添加到链上。大家发现他是最高的，所以纷纷认为他是对的。这样对网络是毁灭性的打击</p>
+<pre><code>def resolve_conflicts(self):
+    &quot;&quot;&quot;
+    :return: True if our chain was replaced, False if not
+    &quot;&quot;&quot;
+
+    neighbours = self.nodes
+    new_chain = None
+
+    # 找到我们自己的区块高度
+    max_length = len(self.chain)
+
+    # 获取并且验证我们在网络上得到的区块
+    for node in neighbours:
+        response = requests.get(f&apos;http://{node}/chain&apos;)        # 获取网络节点的完整链，
+
+        if response.status_code == 200:
+            length = response.json()[&apos;length&apos;]        # 得到区块高度
+            chain = response.json()[&apos;chain&apos;]        # 和当前的完整链
+
+            # 检查是否最长链，并且检验链的有效性
+            if length &gt; max_length and self.valid_chain(chain):        # 最长链，并进行合法性检验
+                max_length = length    
+                new_chain = chain
+
+    #  如果有效且最长，我们替换我们的本地链
+    if new_chain:
+        self.chain = new_chain
+        return True
+
+    return False
+</code></pre><p>可见这里就实现了一个简易的区块共识协议，我们可以称之为最长就是最好 2333</p>
+<hr>
+<p><strong>合法区块检测</strong></p>
+<p>用于判断获取的链的合法性，简单的说就是进行；链上区块遍历，判断其hash是否成链，即 <code>block[&#39;previous_hash&#39;] != self.hash(last_block)</code> ,并且对区块的 proof ，last_proof，previous_hash ，进行一次hash计算，判断是否是四个0 开头的</p>
+<blockquote>
+<p>PoS 的过程可以看上一篇的内容 <a href="http://blog.diglp.xyz/2018/03/11/pyMyBC%20(2">挖矿</a>/)`</p>
+</blockquote>
+<pre><code>def valid_chain(self, chain):
+    &quot;&quot;&quot;
+    :param chain: A blockchain
+    :return: True if valid, False if not
+    &quot;&quot;&quot;
+
+    last_block = chain[0]
+    current_index = 1
+
+    while current_index &lt; len(chain):        # 遍历链上区块
+        block = chain[current_index]
+        print(f&apos;{last_block}&apos;)
+        print(f&apos;{block}&apos;)
+        print(&quot;\n-----------\n&quot;)
+        # 检查hash是否成链
+        if block[&apos;previous_hash&apos;] != self.hash(last_block):
+            return False
+
+        # 检查proof（nonce）是否合法
+        if not self.valid_proof(last_block[&apos;proof&apos;], block[&apos;proof&apos;], last_block[&apos;previous_hash&apos;]):
+            return False
+
+        last_block = block
+        current_index += 1
+
+    return True
+</code></pre><p>所以我们可以看到，区块链之所以安全，其内核基本就是靠这里所描述的功能保护的，虽然这里的代码是十分简易，不过大体上也是描述出了灵魂所在。可以使用hssh链，进行整个链的合法性校验，所以，使得链上的数据修改基本成为<strong>不可能！！！</strong></p>
+<hr>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>这里的源码实现的P2P网络是比较简单，这里只是实现了节点的添加，并没有实现节点路由和拓展，及路由表的查询。所以后面打算自己可以实现一个</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>这篇可能比较水，因为源码本身实在太过简化，后面考虑自己添加部分功能，可以及时PR÷</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>一杯可乐~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Author 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.png" alt="Author 比特币"/>
+        <p>比特币</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Author</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://www.diglp.xyz/2018/03/11/BC_pyMyBC_2/" title="Py区块链源码笔记 （2）P2P网络">https://www.diglp.xyz/2018/03/11/BC_pyMyBC_2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/区块链原理/" rel="tag"># 区块链原理</a>
+          
+            <a href="/tags/PyBlkCha/" rel="tag"># PyBlkCha</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/09/BC_pyMyBC_1/" rel="next" title="Py区块链源码笔记 （1）挖矿">
+                <i class="fa fa-chevron-left"></i> Py区块链源码笔记 （1）挖矿
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/12/BC_pyMyBC_3/" rel="prev" title="Py区块链源码笔记 （3）交易">
+                Py区块链源码笔记 （3）交易 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+    
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Author"/>
+            
+              <p class="site-author-name" itemprop="name">Author</p>
+              <p class="site-description motion-element" itemprop="description">Why join the navy, When you can be a PIRATE</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">79</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">38</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3F1YXJ0ejAxMA==" title="GitHub &rarr; https://github.com/quartz010"><i class="fa fa-fw fa-github"></i>GitHub</span>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="bWFpbHRvOnF1YXJ0ejAxMEBvdXRsb29rLmNvbQ==" title="E-Mail &rarr; mailto:quartz010@outlook.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</span>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"/></span>
+             </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <span class="exturl" data-url="aHR0cDovL3d3dy5ydW5vb2IuY29tLw==" title="http://www.runoob.com/">菜鸟教程</span>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <span class="exturl" data-url="aHR0cHM6Ly93d3cuc21hcnRmb3guY2Mv" title="https://www.smartfox.cc/">狐狸菌の秘密基地</span>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <span class="exturl" data-url="aHR0cDovL2hhY2suYmVzdC8=" title="http://hack.best/">Aoao's Blog</span>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <span class="exturl" data-url="aHR0cHM6Ly9jaGllcnFqLmdpdGh1Yi5pby8=" title="https://chierqj.github.io/">Chierqj's Blog</span>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#P2P网络"><span class="nav-number">1.</span> <span class="nav-text">P2P网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么使用P2P"><span class="nav-number">1.1.</span> <span class="nav-text">为什么使用P2P</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码分析"><span class="nav-number">1.2.</span> <span class="nav-text">源码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#节点注册"><span class="nav-number">1.2.1.</span> <span class="nav-text">节点注册</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点解析-resolve"><span class="nav-number">1.3.</span> <span class="nav-text">节点解析(resolve)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">1.4.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">2.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Author</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">402k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">8:08</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span></div>
+
+
+
+  <div class="footer-custom">Hosted by <a target="_blank" rel="external nofollow" href="https://pages.github.com"><b>GitHub Pages</b></a> <span class="post-meta-divider">|</span> <span id="busuanzi_container_site_uv">本站访客数:<span id="busuanzi_value_site_uv"></span></span></div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.0"></script>
+
+  <script src="/js/src/motion.js?v=7.0.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=7.0.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
+
+
+
+  
+  
+  <script id="dsq-count-scr" src="https://diglp.disqus.com/count.js" async></script>
+
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://www.diglp.xyz/2018/03/11/BC_pyMyBC_2/";
+    this.page.identifier = "2018/03/11/BC_pyMyBC_2/";
+    this.page.title = 'Py区块链源码笔记 （2）P2P网络';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://diglp.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    $(function() {
+      var offsetTop = $('#comments').offset().top - $(window).height();
+      if (offsetTop <= 0) {
+        // load directly when there's no a scrollbar
+        loadComments();
+      } else {
+        $(window).on('scroll.disqus_scroll', function() {
+          // offsetTop may changes because of manually resizing browser window or lazy loading images.
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          var scrollTop = $(window).scrollTop();
+
+          // pre-load comments a bit? (margin or anything else)
+          if (offsetTop - scrollTop < 60) {
+            $(window).off('.disqus_scroll');
+            loadComments();
+          }
+        });
+      }
+    });
+  
+</script>
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/pangu/dist/pangu.min.js?v=3.3"></script>
+  <script>pangu.spacingPage();</script>
+
+
+  
+  <script src="/js/src/js.cookie.js?v=7.0.0"></script>
+  <script src="/js/src/scroll-cookie.js?v=7.0.0"></script>
+
+
+  
+  <script src="/js/src/exturl.js?v=7.0.0"></script>
+
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+</body>
+</html>
