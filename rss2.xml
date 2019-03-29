@@ -1,0 +1,1686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>R4y&#39;s Blog</title>
+    <link>https://www.diglp.xyz/</link>
+    <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description>Why join the navy, When you can be a PIRATE</description>
+    <pubDate>Thu, 28 Mar 2019 02:16:51 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Weekly.1</title>
+      <link>https://www.diglp.xyz/2019/03/28/Weekly_1/</link>
+      <guid>https://www.diglp.xyz/2019/03/28/Weekly_1/</guid>
+      <pubDate>Wed, 27 Mar 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前面的话&quot;&gt;&lt;a href=&quot;#前面的话&quot; class=&quot;headerlink&quot; title=&quot;前面的话&quot;&gt;&lt;/a&gt;前面的话&lt;/h2&gt;&lt;p&gt;第二周了，谢谢谢谢，亲爱的小伙伴的友情鞭策。觉得大家看看前面的部分就好了，后面的
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/03/28/Weekly_1/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>30 min for Golang</title>
+      <link>https://www.diglp.xyz/2019/03/23/DEV_30min_for_Go/</link>
+      <guid>https://www.diglp.xyz/2019/03/23/DEV_30min_for_Go/</guid>
+      <pubDate>Fri, 22 Mar 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前面的话&quot;&gt;&lt;a href=&quot;#前面的话&quot; class=&quot;headerlink&quot; title=&quot;前面的话&quot;&gt;&lt;/a&gt;前面的话&lt;/h2&gt;&lt;p&gt;想想自己说是学 &lt;code&gt;Go&lt;/code&gt; 已经想了了半年了都，可自己以前一直想的
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/03/23/DEV_30min_for_Go/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>读本好书 《时间管理》</title>
+      <link>https://www.diglp.xyz/2019/03/22/OP_Time_manage/</link>
+      <guid>https://www.diglp.xyz/2019/03/22/OP_Time_manage/</guid>
+      <pubDate>Thu, 21 Mar 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;这本书，在图书馆一个角落里发现的，一查还是相当经典的一本书。自己是 &lt;em&gt;*&lt;/em&gt;p
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/03/22/OP_Time_manage/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Weekly.0</title>
+      <link>https://www.diglp.xyz/2019/03/22/Weekly_0/</link>
+      <guid>https://www.diglp.xyz/2019/03/22/Weekly_0/</guid>
+      <pubDate>Thu, 21 Mar 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前面的话&quot;&gt;&lt;a href=&quot;#前面的话&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/03/22/Weekly_0/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>OpenFaaS 的部署</title>
+      <link>https://www.diglp.xyz/2019/03/19/OP_OpenFaaS/</link>
+      <guid>https://www.diglp.xyz/2019/03/19/OP_OpenFaaS/</guid>
+      <pubDate>Mon, 18 Mar 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;## &lt;/p&gt;
+&lt;h2 id=&quot;前面的话&quot;&gt;&lt;a href=&quot;#前面的话&quot; class=&quot;headerlink&quot; title=&quot;前面的话&quot;&gt;&lt;/a&gt;前面的话&lt;/h2&gt;&lt;p&gt;本来说项目完结的转身离去，不过这样的一个平台带来的
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/03/19/OP_OpenFaaS/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Docker的集群监控</title>
+      <link>https://www.diglp.xyz/2019/03/17/OP_Cluster_Monitor/</link>
+      <guid>https://www.diglp.xyz/2019/03/17/OP_Cluster_Monitor/</guid>
+      <pubDate>Sat, 16 Mar 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前面的话&quot;&gt;&lt;a href=&quot;#前面的话&quot; class=&quot;headerlink&quot; title=&quot;前面的话&quot;&gt;&lt;/a&gt;前面的话&lt;/h2&gt;&lt;p&gt;再一次被 Docker 所带来的革命性的变量所震撼。&lt;strong&gt;Build，ship and
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/03/17/OP_Cluster_Monitor/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>收工-关于Swarm的总结</title>
+      <link>https://www.diglp.xyz/2019/03/14/OP_Swarm_Sumup/</link>
+      <guid>https://www.diglp.xyz/2019/03/14/OP_Swarm_Sumup/</guid>
+      <pubDate>Wed, 13 Mar 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前面的话&quot;&gt;&lt;a href=&quot;#前面的话&quot; class=&quot;headerlink&quot; title=&quot;前面的话&quot;&gt;&lt;/a&gt;前面的话&lt;/h2&gt;&lt;p&gt;这篇算是这段时间的对 Docker
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/03/14/OP_Swarm_Sumup/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>从Service到Stack</title>
+      <link>https://www.diglp.xyz/2019/03/14/OP_Swarm_Stack/</link>
+      <guid>https://www.diglp.xyz/2019/03/14/OP_Swarm_Stack/</guid>
+      <pubDate>Wed, 13 Mar 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;本来想着集群稳定呢，结果早上六点docker 的网络就突然挂了。默认网关除了问题，ping
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/03/14/OP_Swarm_Stack/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Nginx 的 Swarm 化</title>
+      <link>https://www.diglp.xyz/2019/03/13/OP_Swarm_nginx/</link>
+      <guid>https://www.diglp.xyz/2019/03/13/OP_Swarm_nginx/</guid>
+      <pubDate>Tue, 12 Mar 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;这个题目可能显得比较不严谨，但是也想不到什么好的名字。这篇主要就是实现，在一个 Swarm 集群里面的 Nginx
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/03/13/OP_Swarm_nginx/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Swarm的服务</title>
+      <link>https://www.diglp.xyz/2019/03/12/OP_Swarm_%E9%9B%86%E7%BE%A4%E4%BD%BF%E7%94%A8/</link>
+      <guid>https://www.diglp.xyz/2019/03/12/OP_Swarm_%E9%9B%86%E7%BE%A4%E4%BD%BF%E7%94%A8/</guid>
+      <pubDate>Mon, 11 Mar 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前面的话&quot;&gt;&lt;a href=&quot;#前面的话&quot; class=&quot;headerlink&quot; title=&quot;前面的话&quot;&gt;&lt;/a&gt;前面的话&lt;/h2&gt;&lt;p&gt;上一篇简单快速的进行swarm集群的部署，这可以开始使用了。这里试着部署一个 Nginx
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/03/12/OP_Swarm_%E9%9B%86%E7%BE%A4%E4%BD%BF%E7%94%A8/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Docker集群搭建</title>
+      <link>https://www.diglp.xyz/2019/03/05/OP_Docker_Swarm/</link>
+      <guid>https://www.diglp.xyz/2019/03/05/OP_Docker_Swarm/</guid>
+      <pubDate>Mon, 04 Mar 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;快速部署&quot;&gt;&lt;a href=&quot;#快速部署&quot; class=&quot;headerlink&quot; title=&quot;快速部署&quot;&gt;&lt;/a&gt;快速部署&lt;/h2&gt;&lt;h3 id=&quot;Docker-的安装&quot;&gt;&lt;a href=&quot;#Docker-的安装&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/03/05/OP_Docker_Swarm/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Nginx 访问量统计接口</title>
+      <link>https://www.diglp.xyz/2019/03/03/OP_Nginx%E8%AE%BF%E9%97%AE%E9%87%8F%E7%BB%9F%E8%AE%A1%E6%8E%A5%E5%8F%A3/</link>
+      <guid>https://www.diglp.xyz/2019/03/03/OP_Nginx%E8%AE%BF%E9%97%AE%E9%87%8F%E7%BB%9F%E8%AE%A1%E6%8E%A5%E5%8F%A3/</guid>
+      <pubDate>Sat, 02 Mar 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;这个post来自于之前偶遇的一个页面上的组件：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&quot;exturl&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/03/03/OP_Nginx%E8%AE%BF%E9%97%AE%E9%87%8F%E7%BB%9F%E8%AE%A1%E6%8E%A5%E5%8F%A3/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Keepalive 实现 HA</title>
+      <link>https://www.diglp.xyz/2019/03/01/OP_KeepAlive%E5%AE%9E%E7%8E%B0HA/</link>
+      <guid>https://www.diglp.xyz/2019/03/01/OP_KeepAlive%E5%AE%9E%E7%8E%B0HA/</guid>
+      <pubDate>Thu, 28 Feb 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;&lt;code&gt;HA(High Availability)&lt;/code&gt;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/03/01/OP_KeepAlive%E5%AE%9E%E7%8E%B0HA/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Proxy 缓存 及 命中率统计</title>
+      <link>https://www.diglp.xyz/2019/02/28/OP_%E4%BB%A3%E7%90%86%E7%BC%93%E5%AD%98_%E5%91%BD%E4%B8%AD%E7%8E%87%E7%BB%9F%E8%AE%A1/</link>
+      <guid>https://www.diglp.xyz/2019/02/28/OP_%E4%BB%A3%E7%90%86%E7%BC%93%E5%AD%98_%E5%91%BD%E4%B8%AD%E7%8E%87%E7%BB%9F%E8%AE%A1/</guid>
+      <pubDate>Wed, 27 Feb 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;车能跑之后，就希望跑的快点对吧？所以就想办法开始对其性能进行优化。 这里就使用
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/02/28/OP_%E4%BB%A3%E7%90%86%E7%BC%93%E5%AD%98_%E5%91%BD%E4%B8%AD%E7%8E%87%E7%BB%9F%E8%AE%A1/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Supervisor 进程管理系统</title>
+      <link>https://www.diglp.xyz/2019/02/23/OP_Supervisord/</link>
+      <guid>https://www.diglp.xyz/2019/02/23/OP_Supervisord/</guid>
+      <pubDate>Fri, 22 Feb 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;一台机器东西跑多了，就开始各种混乱了。如果是标准安装的注册了service
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/02/23/OP_Supervisord/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>另一次内网穿透(reverse proxy)</title>
+      <link>https://www.diglp.xyz/2019/02/21/OP_%E5%8F%A6%E4%B8%80%E6%AC%A1%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F(reverse%20proxy)/</link>
+      <guid>https://www.diglp.xyz/2019/02/21/OP_%E5%8F%A6%E4%B8%80%E6%AC%A1%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F(reverse%20proxy)/</guid>
+      <pubDate>Wed, 20 Feb 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;很快这就是第二篇了，上篇信誓旦旦说的更好的方案，实际上，这里较比而已只是有了一点点改进XD&lt;/p&gt;
+&lt;p&gt;上一篇：&lt;span
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/02/21/OP_%E5%8F%A6%E4%B8%80%E6%AC%A1%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F(reverse%20proxy)/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>记一次内网穿透配置(tunnel)</title>
+      <link>https://www.diglp.xyz/2019/02/20/OP_%E6%84%9A%E8%A0%A2%E7%9A%84%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%96%B9%E6%A1%88(tunnel)/</link>
+      <guid>https://www.diglp.xyz/2019/02/20/OP_%E6%84%9A%E8%A0%A2%E7%9A%84%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%96%B9%E6%A1%88(tunnel)/</guid>
+      <pubDate>Tue, 19 Feb 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;一个挺重要的网站,奈何只能内网访问, 想着把他外网映射出来…遂为之&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;这篇文章应该是 2018/1/14时候就已经完成了，总是缺一点内容于是就没有post 出去。现在是时候了，因为完成同样的事情，现在有了第二个更好的解决方案，所以这这里 post
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/02/20/OP_%E6%84%9A%E8%A0%A2%E7%9A%84%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%96%B9%E6%A1%88(tunnel)/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>ELK 日志可视化平台 搭建</title>
+      <link>https://www.diglp.xyz/2019/02/14/OP_ELK%20%E6%97%A5%E5%BF%97%E5%8F%AF%E8%A7%86%E5%8C%96%20%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0/</link>
+      <guid>https://www.diglp.xyz/2019/02/14/OP_ELK%20%E6%97%A5%E5%BF%97%E5%8F%AF%E8%A7%86%E5%8C%96%20%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0/</guid>
+      <pubDate>Wed, 13 Feb 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;架构选型&quot;&gt;&lt;a href=&quot;#架构选型&quot; class=&quot;headerlink&quot; title=&quot;架构选型&quot;&gt;&lt;/a&gt;架构选型&lt;/h2&gt;&lt;p&gt;这里使用ELK
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/02/14/OP_ELK%20%E6%97%A5%E5%BF%97%E5%8F%AF%E8%A7%86%E5%8C%96%20%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Nginx 折腾笔记（SSL配置以及路由重写）</title>
+      <link>https://www.diglp.xyz/2019/02/08/OP_Nginx%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0%EF%BC%88SSL%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E8%B7%AF%E7%94%B1%E9%87%8D%E5%86%99%EF%BC%89/</link>
+      <guid>https://www.diglp.xyz/2019/02/08/OP_Nginx%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0%EF%BC%88SSL%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E8%B7%AF%E7%94%B1%E9%87%8D%E5%86%99%EF%BC%89/</guid>
+      <pubDate>Thu, 07 Feb 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前面的话&quot;&gt;&lt;a href=&quot;#前面的话&quot; class=&quot;headerlink&quot; title=&quot;前面的话&quot;&gt;&lt;/a&gt;前面的话&lt;/h2&gt;&lt;p&gt;需求分析，由于 搭好了日志平台，本想着把Blog迁移到主机上，最后想想，算了&lt;/p&gt;
+&lt;p&gt;这里的博客的域名，本来是通过
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/02/08/OP_Nginx%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0%EF%BC%88SSL%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E8%B7%AF%E7%94%B1%E9%87%8D%E5%86%99%EF%BC%89/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Nginx 折腾笔记 （路由配置以及认证）</title>
+      <link>https://www.diglp.xyz/2019/02/07/OP_Nginx%20%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0%20%EF%BC%88%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E8%AE%A4%E8%AF%81%EF%BC%89/</link>
+      <guid>https://www.diglp.xyz/2019/02/07/OP_Nginx%20%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0%20%EF%BC%88%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E8%AE%A4%E8%AF%81%EF%BC%89/</guid>
+      <pubDate>Wed, 06 Feb 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前面的话&quot;&gt;&lt;a href=&quot;#前面的话&quot; class=&quot;headerlink&quot; title=&quot;前面的话&quot;&gt;&lt;/a&gt;前面的话&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;2008年，第一款安卓手机诞生，HTC
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/02/07/OP_Nginx%20%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0%20%EF%BC%88%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E8%AE%A4%E8%AF%81%EF%BC%89/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>写给小安的WEB入坑指南</title>
+      <link>https://www.diglp.xyz/2019/01/30/web_%E5%86%99%E7%BB%99%E5%B0%8F%E5%AE%89%E7%9A%84WEB%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97/</link>
+      <guid>https://www.diglp.xyz/2019/01/30/web_%E5%86%99%E7%BB%99%E5%B0%8F%E5%AE%89%E7%9A%84WEB%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97/</guid>
+      <pubDate>Tue, 29 Jan 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;什么是web&quot;&gt;&lt;a href=&quot;#什么是web&quot; class=&quot;headerlink&quot; title=&quot;什么是web&quot;&gt;&lt;/a&gt;什么是web&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;web（World Wide
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/01/30/web_%E5%86%99%E7%BB%99%E5%B0%8F%E5%AE%89%E7%9A%84WEB%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Nginx 折腾笔记（LB 和 Tunnel）</title>
+      <link>https://www.diglp.xyz/2019/01/20/OP_Nginx%20%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0%EF%BC%88LB%20%E5%92%8C%20Tunnel%EF%BC%89/</link>
+      <guid>https://www.diglp.xyz/2019/01/20/OP_Nginx%20%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0%EF%BC%88LB%20%E5%92%8C%20Tunnel%EF%BC%89/</guid>
+      <pubDate>Sat, 19 Jan 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前面的话&quot;&gt;&lt;a href=&quot;#前面的话&quot; class=&quot;headerlink&quot; title=&quot;前面的话&quot;&gt;&lt;/a&gt;前面的话&lt;/h2&gt;&lt;p&gt;突然又是折腾了一波nginx，其中一点点的配置和过程在这里记录一下。&lt;/p&gt;
+&lt;p&gt;下午又把
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/01/20/OP_Nginx%20%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0%EF%BC%88LB%20%E5%92%8C%20Tunnel%EF%BC%89/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Docker 初步</title>
+      <link>https://www.diglp.xyz/2019/01/08/OP_Docker_proj/</link>
+      <guid>https://www.diglp.xyz/2019/01/08/OP_Docker_proj/</guid>
+      <pubDate>Mon, 07 Jan 2019 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;这篇，是一个Docker
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2019/01/08/OP_Docker_proj/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>读本好书 《Docker 进阶与实践》</title>
+      <link>https://www.diglp.xyz/2018/12/31/Book_Docker%E8%BF%9B%E9%98%B6%E4%B8%8E%E5%AE%9E%E8%B7%B5/</link>
+      <guid>https://www.diglp.xyz/2018/12/31/Book_Docker%E8%BF%9B%E9%98%B6%E4%B8%8E%E5%AE%9E%E8%B7%B5/</guid>
+      <pubDate>Sun, 30 Dec 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/12/31/Book_Docker%E8%BF%9B%E9%98%B6%E4%B8%8E%E5%AE%9E%E8%B7%B5/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>读本好书 《XSS 蠕虫 &amp; 病毒》</title>
+      <link>https://www.diglp.xyz/2018/12/24/Book_XSS_worm&amp;virus/</link>
+      <guid>https://www.diglp.xyz/2018/12/24/Book_XSS_worm&amp;virus/</guid>
+      <pubDate>Sun, 23 Dec 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/12/24/Book_XSS_worm&amp;virus/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>读本好书 《操作系统思考》</title>
+      <link>https://www.diglp.xyz/2018/11/24/Book_ThinkOS/</link>
+      <guid>https://www.diglp.xyz/2018/11/24/Book_ThinkOS/</guid>
+      <pubDate>Fri, 23 Nov 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;中间有事情折腾来回飘，其中也是抽了抽时间看了看书。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;这里放上一幅偶遇的图，自己现在在哪里呢~&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://s6.sinaimg.cn/mw690/001WHoRhzy7ogx3x03ze5&amp;amp;690&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/11/24/Book_ThinkOS/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>读本好书 《Python 安全编程教程》</title>
+      <link>https://www.diglp.xyz/2018/10/29/Book_Python%E5%AE%89%E5%85%A8%E7%BC%96%E7%A8%8B/</link>
+      <guid>https://www.diglp.xyz/2018/10/29/Book_Python%E5%AE%89%E5%85%A8%E7%BC%96%E7%A8%8B/</guid>
+      <pubDate>Sun, 28 Oct 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;已经地几本了，鼓励一下自己啦。这本主要是讲 &lt;code&gt;python&lt;/code&gt; 用于安全相关的编程内容。本书的篇幅比较的短，这篇总结一下主要的内容。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;我们是愚者，我们是一只蜂 &lt;code&gt;1.6*10^9 &amp;gt;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/10/29/Book_Python%E5%AE%89%E5%85%A8%E7%BC%96%E7%A8%8B/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>读本好书 《Python 进阶》</title>
+      <link>https://www.diglp.xyz/2018/10/28/Book_interpy/</link>
+      <guid>https://www.diglp.xyz/2018/10/28/Book_interpy/</guid>
+      <pubDate>Sat, 27 Oct 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/10/28/Book_interpy/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>WeChell_WP</title>
+      <link>https://www.diglp.xyz/2018/10/21/CTF_WeChall_1/</link>
+      <guid>https://www.diglp.xyz/2018/10/21/CTF_WeChall_1/</guid>
+      <pubDate>Sat, 20 Oct 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;偶遇了一个网站 &lt;a href=&quot;www.wechall.net&quot;&gt;wechall.net&lt;/a&gt; ，发现是CTF
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/10/21/CTF_WeChall_1/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>读本好书 《白帽子讲WEB安全》</title>
+      <link>https://www.diglp.xyz/2018/10/14/Book_%E7%99%BD%E5%B8%BD%E5%AD%90web/</link>
+      <guid>https://www.diglp.xyz/2018/10/14/Book_%E7%99%BD%E5%B8%BD%E5%AD%90web/</guid>
+      <pubDate>Sat, 13 Oct 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/10/14/Book_%E7%99%BD%E5%B8%BD%E5%AD%90web/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Uwsgi 配置问题记录</title>
+      <link>https://www.diglp.xyz/2018/10/13/OP_Uwsgi%20%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
+      <guid>https://www.diglp.xyz/2018/10/13/OP_Uwsgi%20%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
+      <pubDate>Fri, 12 Oct 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;使用 Nginx 和 uwsgi 一起搭建提供 CGI
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/10/13/OP_Uwsgi%20%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>某个简单CTF的WP</title>
+      <link>https://www.diglp.xyz/2018/10/03/CTF_Writeup/</link>
+      <guid>https://www.diglp.xyz/2018/10/03/CTF_Writeup/</guid>
+      <pubDate>Tue, 02 Oct 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;得找到自己的一点点爱好吧，不然闲暇真是 boring 。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;晚上突然的心血来潮，找了个CTF
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/10/03/CTF_Writeup/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>正则简明</title>
+      <link>https://www.diglp.xyz/2018/09/20/%E6%AD%A3%E5%88%99%E5%A4%A7%E7%AA%81%E7%A0%B4/</link>
+      <guid>https://www.diglp.xyz/2018/09/20/%E6%AD%A3%E5%88%99%E5%A4%A7%E7%AA%81%E7%A0%B4/</guid>
+      <pubDate>Wed, 19 Sep 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;正则表达式，可谓是相当常用的东西了，看起来就是一堆奇怪的符号。正则表达式的强大之处就是在构建一个文本的规则&lt;/p&gt;
+&lt;p&gt; 这次就对正则表达式做一个简单的学习记录吧。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;参考链接 &lt;span class=&quot;exturl&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/09/20/%E6%AD%A3%E5%88%99%E5%A4%A7%E7%AA%81%E7%A0%B4/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Nginx 基础杂记</title>
+      <link>https://www.diglp.xyz/2018/09/09/OP_Nginx_CGI/</link>
+      <guid>https://www.diglp.xyz/2018/09/09/OP_Nginx_CGI/</guid>
+      <pubDate>Sat, 08 Sep 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/09/09/OP_Nginx_CGI/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>MongoDB 简明入门</title>
+      <link>https://www.diglp.xyz/2018/09/09/MangoDB/</link>
+      <guid>https://www.diglp.xyz/2018/09/09/MangoDB/</guid>
+      <pubDate>Sat, 08 Sep 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/09/09/MangoDB/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Nginx 简明入门</title>
+      <link>https://www.diglp.xyz/2018/09/06/OP_Nginx%20%E7%9A%84%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</link>
+      <guid>https://www.diglp.xyz/2018/09/06/OP_Nginx%20%E7%9A%84%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</guid>
+      <pubDate>Wed, 05 Sep 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;Nginx 是个好东西。。。&lt;/p&gt;
+&lt;p&gt;Nginx 的wiki
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/09/06/OP_Nginx%20%E7%9A%84%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Web 杂记</title>
+      <link>https://www.diglp.xyz/2018/08/20/web_2/</link>
+      <guid>https://www.diglp.xyz/2018/08/20/web_2/</guid>
+      <pubDate>Sun, 19 Aug 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;Foreword&quot;&gt;&lt;a href=&quot;#Foreword&quot; class=&quot;headerlink&quot; title=&quot;Foreword&quot;&gt;&lt;/a&gt;Foreword&lt;/h2&gt;&lt;p&gt;这个计划叫做 TC 计划， 没错，叫做 Tab
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/08/20/web_2/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Django WEB 开发入门</title>
+      <link>https://www.diglp.xyz/2018/08/10/web_1/</link>
+      <guid>https://www.diglp.xyz/2018/08/10/web_1/</guid>
+      <pubDate>Thu, 09 Aug 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;Foreword&quot;&gt;&lt;a href=&quot;#Foreword&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/08/10/web_1/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>HackWare Loader PC工作</title>
+      <link>https://www.diglp.xyz/2018/06/25/HackWare_PC_loader/</link>
+      <guid>https://www.diglp.xyz/2018/06/25/HackWare_PC_loader/</guid>
+      <pubDate>Sun, 24 Jun 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;前面的博文，差不多对 BP 所使用的 BL 做了个十分粗浅的理解了， 这一篇， 是对于其PC端上的和BootLoader
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/06/25/HackWare_PC_loader/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>HackWare BootLoader 原理</title>
+      <link>https://www.diglp.xyz/2018/06/21/HackWare_Booloader/</link>
+      <guid>https://www.diglp.xyz/2018/06/21/HackWare_Booloader/</guid>
+      <pubDate>Wed, 20 Jun 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;最近, follow 一个开源项目, BusPirate ,总线海盗,一个很棒的超多功能集一身的一个 tool. 对其中的 bootloader
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/06/21/HackWare_Booloader/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>HackTool MSF</title>
+      <link>https://www.diglp.xyz/2018/06/16/HackTool_MSF/</link>
+      <guid>https://www.diglp.xyz/2018/06/16/HackTool_MSF/</guid>
+      <pubDate>Fri, 15 Jun 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;MSF 是 Metasploit Framework 的缩写, 可能是最著名的安全工具,没有之一了.
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/06/16/HackTool_MSF/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>What is DAG?</title>
+      <link>https://www.diglp.xyz/2018/06/03/What_is_DAG/</link>
+      <guid>https://www.diglp.xyz/2018/06/03/What_is_DAG/</guid>
+      <pubDate>Sat, 02 Jun 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;What-is-DAG&quot;&gt;&lt;a href=&quot;#What-is-DAG&quot; class=&quot;headerlink&quot; title=&quot;What is DAG&quot;&gt;&lt;/a&gt;What is
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/06/03/What_is_DAG/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>读本好书 《Node.js区块链开发》</title>
+      <link>https://www.diglp.xyz/2018/06/02/BC_Book_NodeJs%E5%8C%BA%E9%93%BE%E5%BC%80%E5%8F%91/</link>
+      <guid>https://www.diglp.xyz/2018/06/02/BC_Book_NodeJs%E5%8C%BA%E9%93%BE%E5%BC%80%E5%8F%91/</guid>
+      <pubDate>Fri, 01 Jun 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;从现在开始填涂，实现最初的构想&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/06/02/BC_Book_NodeJs%E5%8C%BA%E9%93%BE%E5%BC%80%E5%8F%91/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>EbookCoin 源码 0x8 FIN</title>
+      <link>https://www.diglp.xyz/2018/05/30/EbookCoin_0x8_FIN/</link>
+      <guid>https://www.diglp.xyz/2018/05/30/EbookCoin_0x8_FIN/</guid>
+      <pubDate>Tue, 29 May 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/05/30/EbookCoin_0x8_FIN/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>EbookCoin 源码 0x7</title>
+      <link>https://www.diglp.xyz/2018/05/28/BC_EbookCoin_0x7/</link>
+      <guid>https://www.diglp.xyz/2018/05/28/BC_EbookCoin_0x7/</guid>
+      <pubDate>Sun, 27 May 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/05/28/BC_EbookCoin_0x7/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>HackTool HashCat</title>
+      <link>https://www.diglp.xyz/2018/05/28/HackTool_HashCat/</link>
+      <guid>https://www.diglp.xyz/2018/05/28/HackTool_HashCat/</guid>
+      <pubDate>Sun, 27 May 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;这个 catalogue ,用来记录一些炫酷好玩的HackTool.
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/05/28/HackTool_HashCat/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>EbookCoin 源码 0x6</title>
+      <link>https://www.diglp.xyz/2018/05/16/BC_EbookCoin_0x6/</link>
+      <guid>https://www.diglp.xyz/2018/05/16/BC_EbookCoin_0x6/</guid>
+      <pubDate>Tue, 15 May 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/05/16/BC_EbookCoin_0x6/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>EbookCoin 源码 0x5</title>
+      <link>https://www.diglp.xyz/2018/05/14/BC_EbookCoin_0x5/</link>
+      <guid>https://www.diglp.xyz/2018/05/14/BC_EbookCoin_0x5/</guid>
+      <pubDate>Sun, 13 May 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/05/14/BC_EbookCoin_0x5/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>EbookCoin 源码 0x4</title>
+      <link>https://www.diglp.xyz/2018/05/13/BC_EbookCoin_0x4/</link>
+      <guid>https://www.diglp.xyz/2018/05/13/BC_EbookCoin_0x4/</guid>
+      <pubDate>Sat, 12 May 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/05/13/BC_EbookCoin_0x4/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>EbookCoin 源码 0x3</title>
+      <link>https://www.diglp.xyz/2018/05/12/BC_EbookCoin_0x3/</link>
+      <guid>https://www.diglp.xyz/2018/05/12/BC_EbookCoin_0x3/</guid>
+      <pubDate>Fri, 11 May 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/05/12/BC_EbookCoin_0x3/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>EbookCoin 源码 0x2</title>
+      <link>https://www.diglp.xyz/2018/05/03/BC_EbookCoin_0x2/</link>
+      <guid>https://www.diglp.xyz/2018/05/03/BC_EbookCoin_0x2/</guid>
+      <pubDate>Wed, 02 May 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/05/03/BC_EbookCoin_0x2/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>EbookCoin 源码 0x1</title>
+      <link>https://www.diglp.xyz/2018/05/02/BC_EbookCoin_0x1/</link>
+      <guid>https://www.diglp.xyz/2018/05/02/BC_EbookCoin_0x1/</guid>
+      <pubDate>Tue, 01 May 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/05/02/BC_EbookCoin_0x1/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>读本好书 《区块链原理设计及应用》</title>
+      <link>https://www.diglp.xyz/2018/05/01/BC_Book_%E5%8C%BA%E5%9D%97%E9%93%BE%E5%8E%9F%E7%90%86%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BA%94%E7%94%A8/</link>
+      <guid>https://www.diglp.xyz/2018/05/01/BC_Book_%E5%8C%BA%E5%9D%97%E9%93%BE%E5%8E%9F%E7%90%86%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BA%94%E7%94%A8/</guid>
+      <pubDate>Mon, 30 Apr 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;可能自己渴望一个更高知的环境&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/05/01/BC_Book_%E5%8C%BA%E5%9D%97%E9%93%BE%E5%8E%9F%E7%90%86%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BA%94%E7%94%A8/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>读本好书 《揭秘家用路由器0Day挖掘技术》</title>
+      <link>https://www.diglp.xyz/2018/04/27/Book_%E8%B7%AF%E7%94%B10Day/</link>
+      <guid>https://www.diglp.xyz/2018/04/27/Book_%E8%B7%AF%E7%94%B10Day/</guid>
+      <pubDate>Thu, 26 Apr 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;我想未来对安全方面的需求会越来越大，随着这个体系的越发庞大，其潜在的安全威胁，可能愈发的丰富。&lt;/p&gt;
+&lt;h2 id=&quot;简介&quot;&gt;&lt;a
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/04/27/Book_%E8%B7%AF%E7%94%B10Day/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>读本好书《黑客大曝光——无线网络安全》</title>
+      <link>https://www.diglp.xyz/2018/04/25/Book_%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/</link>
+      <guid>https://www.diglp.xyz/2018/04/25/Book_%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/</guid>
+      <pubDate>Tue, 24 Apr 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;这本书其实早都有开始看了，只是时间太过于碎片化了，规格也在 500p，这里只是对书中的内容做极简要的总结。&lt;/p&gt;
+&lt;h2 id=&quot;简介&quot;&gt;&lt;a
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/04/25/Book_%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>剑指offer (4)</title>
+      <link>https://www.diglp.xyz/2018/04/06/%E5%89%91%E6%8C%87offer_4/</link>
+      <guid>https://www.diglp.xyz/2018/04/06/%E5%89%91%E6%8C%87offer_4/</guid>
+      <pubDate>Thu, 05 Apr 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;网络方面的问题离不开 TCP/IP这玩意，所以这次做个详尽的总结&lt;/p&gt;
+&lt;h2 id=&quot;网络&quot;&gt;&lt;a href=&quot;#网络&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/04/06/%E5%89%91%E6%8C%87offer_4/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>剑指offer (3)</title>
+      <link>https://www.diglp.xyz/2018/04/05/%E5%89%91%E6%8C%87offer_3/</link>
+      <guid>https://www.diglp.xyz/2018/04/05/%E5%89%91%E6%8C%87offer_3/</guid>
+      <pubDate>Wed, 04 Apr 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/04/05/%E5%89%91%E6%8C%87offer_3/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>剑指offer (2)</title>
+      <link>https://www.diglp.xyz/2018/04/01/%E5%89%91%E6%8C%87offer_2/</link>
+      <guid>https://www.diglp.xyz/2018/04/01/%E5%89%91%E6%8C%87offer_2/</guid>
+      <pubDate>Sat, 31 Mar 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;西西弗斯一般的生活，loop，loop，感觉良好，卒&lt;/p&gt;
+&lt;h2 id=&quot;For-A-While&quot;&gt;&lt;a
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/04/01/%E5%89%91%E6%8C%87offer_2/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>剑指offer (1)</title>
+      <link>https://www.diglp.xyz/2018/03/30/%E5%89%91%E6%8C%87offer_1/</link>
+      <guid>https://www.diglp.xyz/2018/03/30/%E5%89%91%E6%8C%87offer_1/</guid>
+      <pubDate>Thu, 29 Mar 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Let it known，don’t let it
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/03/30/%E5%89%91%E6%8C%87offer_1/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>日常励志</title>
+      <link>https://www.diglp.xyz/2018/03/29/misc_%E4%B8%80%E5%91%A8%E6%9D%82%E8%AE%B0_5/</link>
+      <guid>https://www.diglp.xyz/2018/03/29/misc_%E4%B8%80%E5%91%A8%E6%9D%82%E8%AE%B0_5/</guid>
+      <pubDate>Wed, 28 Mar 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/03/29/misc_%E4%B8%80%E5%91%A8%E6%9D%82%E8%AE%B0_5/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>MerkleTree与零知识证明</title>
+      <link>https://www.diglp.xyz/2018/03/15/MerkleTree_2/</link>
+      <guid>https://www.diglp.xyz/2018/03/15/MerkleTree_2/</guid>
+      <pubDate>Wed, 14 Mar 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;默克尔树这个数据结构，至于区块链就是他的骨架了。
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/03/15/MerkleTree_2/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>拜占庭将军与共识算法</title>
+      <link>https://www.diglp.xyz/2018/03/14/BC_Byzantium/</link>
+      <guid>https://www.diglp.xyz/2018/03/14/BC_Byzantium/</guid>
+      <pubDate>Tue, 13 Mar 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/03/14/BC_Byzantium/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>What is BlockChain?</title>
+      <link>https://www.diglp.xyz/2018/03/13/BC_What%20is%20BlockChain/</link>
+      <guid>https://www.diglp.xyz/2018/03/13/BC_What%20is%20BlockChain/</guid>
+      <pubDate>Mon, 12 Mar 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;现在比特币这个词，相比对普通人来说也是越来越熟悉了。所以这一篇文章的定位是一篇科普文，希望大家可以通过这篇文章，至少可以理解这个是什么玩意。&lt;/p&gt;
+&lt;p&gt;所谓区块链，就是比特币这种数字货币的底层技术。区块链这个名字虽然不是那么响亮，不过我真正的相信，这个将会是下一代的互联
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/03/13/BC_What%20is%20BlockChain/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Py区块链源码笔记 （3）交易</title>
+      <link>https://www.diglp.xyz/2018/03/12/BC_pyMyBC_3/</link>
+      <guid>https://www.diglp.xyz/2018/03/12/BC_pyMyBC_3/</guid>
+      <pubDate>Sun, 11 Mar 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;怎么学习区块链知识呢? 各种的资料看的头大，还是晕晕乎乎。所以那不如自己实现一个吧？？&lt;/p&gt;
+&lt;p&gt;说是自己实现，实际上想先对&lt;span class=&quot;exturl&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/03/12/BC_pyMyBC_3/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Py区块链源码笔记 （2）P2P网络</title>
+      <link>https://www.diglp.xyz/2018/03/11/BC_pyMyBC_2/</link>
+      <guid>https://www.diglp.xyz/2018/03/11/BC_pyMyBC_2/</guid>
+      <pubDate>Sat, 10 Mar 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;怎么学习区块链知识呢? 各种的资料看的头大，还是晕晕乎乎。所以那不如自己实现一个吧？？&lt;/p&gt;
+&lt;p&gt;说是自己实现，实际上想先对&lt;span class=&quot;exturl&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/03/11/BC_pyMyBC_2/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Py区块链源码笔记 （1）挖矿</title>
+      <link>https://www.diglp.xyz/2018/03/09/BC_pyMyBC_1/</link>
+      <guid>https://www.diglp.xyz/2018/03/09/BC_pyMyBC_1/</guid>
+      <pubDate>Thu, 08 Mar 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;怎么学习区块链知识呢? 各种的资料看的头大，还是晕晕乎乎。所以那不如自己实现一个吧？？&lt;/p&gt;
+&lt;p&gt;说是自己实现，实际上想先对&lt;span class=&quot;exturl&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/03/09/BC_pyMyBC_1/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>一周干货集 (3)</title>
+      <link>https://www.diglp.xyz/2018/03/07/misc_%E4%B8%80%E5%91%A8%E6%9D%82%E8%AE%B0_3/</link>
+      <guid>https://www.diglp.xyz/2018/03/07/misc_%E4%B8%80%E5%91%A8%E6%9D%82%E8%AE%B0_3/</guid>
+      <pubDate>Tue, 06 Mar 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/03/07/misc_%E4%B8%80%E5%91%A8%E6%9D%82%E8%AE%B0_3/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>HyperLeager 入坑手册</title>
+      <link>https://www.diglp.xyz/2018/03/07/HyperLedger/</link>
+      <guid>https://www.diglp.xyz/2018/03/07/HyperLedger/</guid>
+      <pubDate>Tue, 06 Mar 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/03/07/HyperLedger/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>读本好书《智能硬件安全》</title>
+      <link>https://www.diglp.xyz/2018/03/03/Book_%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6%E5%AE%89%E5%85%A8/</link>
+      <guid>https://www.diglp.xyz/2018/03/03/Book_%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6%E5%AE%89%E5%85%A8/</guid>
+      <pubDate>Fri, 02 Mar 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;我想未来对安全方面的需求会越来越大，随着这个体系的越发庞大，其潜在的安全威胁，可能愈发的丰富。&lt;/p&gt;
+&lt;h2 id=&quot;简介&quot;&gt;&lt;a
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/03/03/Book_%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6%E5%AE%89%E5%85%A8/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>什么是默克尔树</title>
+      <link>https://www.diglp.xyz/2018/02/28/MerkleTree_1/</link>
+      <guid>https://www.diglp.xyz/2018/02/28/MerkleTree_1/</guid>
+      <pubDate>Tue, 27 Feb 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;blockquote&gt;
+&lt;p&gt;许多区块链或是散列链都是基于一种叫做默克尔树的结构。与相对概念比较新的区块链技术相比，默克尔树最早诞生于1979年，由Ralph Merkle发明。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Hash&quot;&gt;&lt;a href=&quot;#Hash&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/02/28/MerkleTree_1/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>一周干货集 (2)</title>
+      <link>https://www.diglp.xyz/2018/02/25/misc_%E4%B8%80%E5%91%A8%E6%9D%82%E8%AE%B0_2/</link>
+      <guid>https://www.diglp.xyz/2018/02/25/misc_%E4%B8%80%E5%91%A8%E6%9D%82%E8%AE%B0_2/</guid>
+      <pubDate>Sat, 24 Feb 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;长路漫漫, 看看一群财富自由的人韬略江山, 心中还是有很多想法.现在知识和信息的膨胀速度,哪里容得娱乐的放肆&lt;/p&gt;
+&lt;h2
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/02/25/misc_%E4%B8%80%E5%91%A8%E6%9D%82%E8%AE%B0_2/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>一周干货集 (1)</title>
+      <link>https://www.diglp.xyz/2018/02/21/misc_%E4%B8%80%E5%91%A8%E6%9D%82%E8%AE%B0_1/</link>
+      <guid>https://www.diglp.xyz/2018/02/21/misc_%E4%B8%80%E5%91%A8%E6%9D%82%E8%AE%B0_1/</guid>
+      <pubDate>Tue, 20 Feb 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;想说的话&quot;&gt;&lt;a href=&quot;#想说的话&quot; class=&quot;headerlink&quot; title=&quot;想说的话&quot;&gt;&lt;/a&gt;想说的话&lt;/h2&gt;&lt;p&gt;这个算得上一个系列, 对于自己平时了解到的东西,做一个简析和总结, 避免了平时到处收集,
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/02/21/misc_%E4%B8%80%E5%91%A8%E6%9D%82%E8%AE%B0_1/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>CrowdSale 合约分析</title>
+      <link>https://www.diglp.xyz/2018/02/14/CrowdSale%E5%90%88%E7%BA%A6%E5%AE%9E%E7%8E%B0/</link>
+      <guid>https://www.diglp.xyz/2018/02/14/CrowdSale%E5%90%88%E7%BA%A6%E5%AE%9E%E7%8E%B0/</guid>
+      <pubDate>Tue, 13 Feb 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;前面的文章实现了自己创建的 Token 在以太坊网络的发布, 这一篇, 接着来, 也是涉及到了更多的东西. 这次实现一个合约,
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/02/14/CrowdSale%E5%90%88%E7%BA%A6%E5%AE%9E%E7%8E%B0/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>ERC20 Token 合约代码分析</title>
+      <link>https://www.diglp.xyz/2018/02/13/ERC20%20Token%20%E5%90%88%E7%BA%A6%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90/</link>
+      <guid>https://www.diglp.xyz/2018/02/13/ERC20%20Token%20%E5%90%88%E7%BA%A6%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90/</guid>
+      <pubDate>Mon, 12 Feb 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;合约接口代码&quot;&gt;&lt;a href=&quot;#合约接口代码&quot; class=&quot;headerlink&quot; title=&quot;合约接口代码&quot;&gt;&lt;/a&gt;合约接口代码&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;//
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/02/13/ERC20%20Token%20%E5%90%88%E7%BA%A6%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>发行自己的ERC20 Token</title>
+      <link>https://www.diglp.xyz/2018/02/12/BC_%E5%8F%91%E8%A1%8C%E8%87%AA%E5%B7%B1%E7%9A%84ERC20%20Token/</link>
+      <guid>https://www.diglp.xyz/2018/02/12/BC_%E5%8F%91%E8%A1%8C%E8%87%AA%E5%B7%B1%E7%9A%84ERC20%20Token/</guid>
+      <pubDate>Sun, 11 Feb 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;这次主要实现 发行一个自己的ERC20 标准的 Token. (然后进行ICO, 圈钱跑路, 走上人生巅峰,XD)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;其实把Token 叫做代币, 容易让人产生误解.实际上是一种凭证,
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/02/12/BC_%E5%8F%91%E8%A1%8C%E8%87%AA%E5%B7%B1%E7%9A%84ERC20%20Token/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>宠物商店Dapp 学习笔记</title>
+      <link>https://www.diglp.xyz/2018/02/11/%E5%AE%A0%E7%89%A9%E5%95%86%E5%BA%97(pet-shop)%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <guid>https://www.diglp.xyz/2018/02/11/%E5%AE%A0%E7%89%A9%E5%95%86%E5%BA%97(pet-shop)%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <pubDate>Sat, 10 Feb 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;truffle 可以算是一个超级强大的 Ethereum 开发工具集, 集各种的功能集一身, 今天, 照着官方的文档, 和 手把手的教程, 完成了其中提供的一个demo.&lt;/p&gt;
+&lt;h2 id=&quot;truffle的目录结构&quot;&gt;&lt;a href=&quot;#truffle的目录结构&quot;
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/02/11/%E5%AE%A0%E7%89%A9%E5%95%86%E5%BA%97(pet-shop)%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>智能合约 HelloWorld</title>
+      <link>https://www.diglp.xyz/2018/02/09/ETH%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%8F%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%20helloworld/</link>
+      <guid>https://www.diglp.xyz/2018/02/09/ETH%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%8F%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%20helloworld/</guid>
+      <pubDate>Thu, 08 Feb 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;&lt;img src=&quot;http://www.ethdocs.org/en/latest/_images/cpp_35k9.png&quot; alt=&quot;CPP&quot;&gt;    &lt;img
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/02/09/ETH%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%8F%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%20helloworld/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>TeaHour_ETH笔记</title>
+      <link>https://www.diglp.xyz/2018/02/05/teatime%E8%AF%AD%E5%BD%95/</link>
+      <guid>https://www.diglp.xyz/2018/02/05/teatime%E8%AF%AD%E5%BD%95/</guid>
+      <pubDate>Sun, 04 Feb 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;听了Terry Tai 和 Jan Xie 两位大神的 &lt;a href=&quot;teahour.fm&quot;&gt;TeaHour&lt;/a&gt; 电台里谈到ethereum, 受益良多.&lt;br&gt;这篇文章算是自己的笔记, 边听边记吧. 再自行整理的
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/02/05/teatime%E8%AF%AD%E5%BD%95/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>未来已来</title>
+      <link>https://www.diglp.xyz/2018/02/01/%E6%83%B3%E6%83%B3%E6%9C%AA%E6%9D%A5/</link>
+      <guid>https://www.diglp.xyz/2018/02/01/%E6%83%B3%E6%83%B3%E6%9C%AA%E6%9D%A5/</guid>
+      <pubDate>Wed, 31 Jan 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;偶然间看见了网上的这样一段话。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;任何在我出生时已经有的科技都是稀松平常的世界本来秩序的一部分。&lt;/li&gt;
+&lt;li&gt;任何在我15-35岁之间诞生的科技，都是改变世界的革命性产物。&lt;/li&gt;
+&lt;li&gt;任何在我35岁之后诞生的科
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/02/01/%E6%83%B3%E6%83%B3%E6%9C%AA%E6%9D%A5/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>2FA 双因素认证</title>
+      <link>https://www.diglp.xyz/2018/02/01/2FA/</link>
+      <guid>https://www.diglp.xyz/2018/02/01/2FA/</guid>
+      <pubDate>Wed, 31 Jan 2018 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h2&gt;&lt;p&gt;登陆在现在的网络生活中是少不了, 登陆的本质就是认证(authentication)&lt;/p&gt;
+&lt;p&gt;通过认证, 来证明你是就你,
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2018/02/01/2FA/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>STM32 逆向初步</title>
+      <link>https://www.diglp.xyz/2017/11/17/STM32F1x/</link>
+      <guid>https://www.diglp.xyz/2017/11/17/STM32F1x/</guid>
+      <pubDate>Thu, 16 Nov 2017 16:00:00 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;终于难得闲暇和久违的激情 , 赶紧动手 , 这次也是初步的体验 , 所以目的就是简单的 dump 程序 , 和基本反汇编&lt;/p&gt;
+&lt;h2
+          
+        
+      
+      </description>
+      
+      <comments>https://www.diglp.xyz/2017/11/17/STM32F1x/#disqus_thread</comments>
+    </item>
+    
+  </channel>
+</rss>
